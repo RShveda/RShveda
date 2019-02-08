@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vizzit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../main.js"></script>
+</head>
+<body>
+<div class="wrapper wrapper--home">
+    <header class="header header--home">
+        <div class="header__logo">
+            <img class="logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
+        </div>
+        <div class="header__location">
+
+        </div>
+        <button class="header__button btn btn--nav">
+            <span class="btn--nav__line"></span>
+            <span class="btn--nav__line"></span>
+            <span class="btn--nav__line"></span>
+        </button>
+        <nav class="header__nav">
+            <div class="header__nav__top">
+                <img class="logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
+                <button class="btn btn--close">
+                    <span class="btn--close__line"></span>
+                    <span class="btn--close__line"></span>
+                </button>
+            </div>
+            <ul>
+                <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">Buy</a></li>
+                <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">Rent</a></li>
+                <li class="header__nav__item"><a href="#">Customer Account</a></li>
+                <li class="header__nav__item"><a href="#">Language</a></li>
+                <li class="header__nav__item header__nav__item--hidden-desktop"><a href="#">About</a></li>
+            </ul>
+            <div class="header__nav__footer">
+                Interested in Vizzit project?<br>
+                <a href="#" target="_blank">Learn here</a> how it works!
+                <span>
+                    © 2019 Vizzit<br>
+                    <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                </span>
+            </div>
+        </nav>
+    </header>
+    <section class="content content--home">
+        <img class="content--home__logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
+        <div class="content--home__form-area">
+            <h1 class="title title--home">All Properties from France</h1>
+            <p class="subtitle subtitle--home">The VizzitBot got <b>1,245,351</b> listings over <b>20,234</b> agency websites</p>
+            <form class="form form--location">
+                <div class="form--location__input-area">
+                    <input class="input input--location" type="text" placeholder="City or Zipcode">
+                    <div class="input--location__results">
+                        <ul>
+                            <li class="input--location__item">Location 1</li>
+                            <li class="input--location__item">Location 2</li>
+                            <li class="input--location__item">Location 3</li>
+                            <li class="input--location__item">Location 4</li>
+                            <li class="input--location__item">Location 5</li>
+                            <li class="input--location__item">Location 6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="buttons-row form__buttons-row">
+                    <button class="btn btn--main btn--sale buttons-row__btn">For sale</button>
+                    <button class="btn btn--main btn--rent buttons-row_btn">To rent</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer class="footer footer--home">
+        <div class="footer--home__details">Interested in Vizzit project? <a href="#" target="_blank">Learn here</a> how it works!</div>
+        <div class="footer--home__bottom">
+            <button class="btn btn--main btn--agency">Agency Section</button>
+            <div class="footer--home__nav">
+                <a href="#">About</a>
+                © 2019 Vizzit - <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

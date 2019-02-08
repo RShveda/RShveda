@@ -1,0 +1,643 @@
+/* ============================================= */
+/*                 General Params                */
+/* ============================================= */
+:root {
+    --orange:#ee650d;
+    --orange-hover:#ff7c28;
+    --darkblue:#233034;
+    --darkgray:#484848;
+    --gray:#989696;
+    --lightgray:#dadada;
+}
+html,body {
+    margin:0;
+    padding:0;
+    font-size: 1em;
+    font-family: "OpenSans Regular", sans-serif;
+}
+input,button,select{
+    -webkit-appearance: none;
+}
+*{
+    box-sizing: border-box;
+}
+/* ============================================= */
+/*                     Fonts                     */
+/* ============================================= */
+@font-face {
+    font-family: 'Montserrat Bold';
+    src: url(src/font/Montserrat-Bold.ttf)
+}
+@font-face {
+    font-family: 'Montserrat Regular';
+    src: url(src/font/Montserrat-Regular.ttf)
+}
+@font-face {
+    font-family: 'OpenSans Regular';
+    src: url(src/font/OpenSans-Regular.ttf)
+}
+@font-face {
+    font-family: 'OpenSans Semibold';
+    src: url(src/font/OpenSans-Semibold.ttf)
+}
+@font-face {
+    font-family: 'OpenSans Bold';
+    src: url(src/font/OpenSans-Bold.ttf)
+}
+/* ============================================= */
+/*                     Main                      */
+/* ============================================= */
+@media (min-width: 320px) {
+    header {
+        height: 50px;
+        border-bottom: 1px solid var(--lightgray);
+        display: flex;
+        justify-content: flex-end;
+    }
+    header > * {
+        flex:1;
+    }
+    .header--home .header__logo,
+    .header--home .header__location,
+    footer {
+        display: none;
+    }
+    .content--home {
+        padding: 0 24px;
+    }
+    .content--home {
+        padding-bottom: 48px;
+    }
+    .content--home__logo {
+        height: 50px;
+        display: block;
+        margin: 30px auto 50px;
+    }
+    .title {
+        font-family: "Montserrat Bold";
+        font-size: 2em;
+        color:var(--darkgray);
+        margin-top: 0;
+    }
+    .title--home {
+        text-align: center;
+    }
+    .subtitle--home {
+        display: none;
+    }
+    /* ------------- Input -------------- */
+    .input {
+        width: 100%;
+        height: 46px;
+        border-radius: 5px;
+        border:1px solid var(--lightgray);
+        color:var(--darkgray);
+        background-color: #fff;
+        outline:none;
+        padding-left: 14px;
+        font-family: "OpenSans Regular";
+        transition: .11s ease-out;
+        font-size: 1em;
+    }
+    .input:focus {
+        border-color:var(--gray);
+    }
+    .input--location {
+        background-image: url("src/img/icon-location.svg");
+        background-position: left 12px center;
+        background-size: 16px;
+        background-repeat: no-repeat;
+        padding-left: 36px;
+        margin-bottom: 14px;
+        font-size: 1.02em;
+    }
+    .buttons-row {
+        display: flex;
+        justify-content: space-between;
+    }
+    /* ------------- Buttons -------------- */
+    .btn {
+        height: 46px;
+        border-radius: 23px;
+        border:none;
+        outline:none;
+        font-family: "Montserrat Regular";
+        font-size: 1.02em;
+        cursor: pointer;
+    }
+    .btn--main {
+        background: var(--orange);
+        color:#fff;
+        transition: .11s ease-out;
+    }
+    .btn--main:hover {
+        background: var(--orange-hover);
+    }
+    .btn--nav,
+    .btn--filters {
+        max-width: 50px;
+        height: 50px;
+        width: 50px;
+        border-radius: 0;
+    }
+    .btn--filters {
+        background-color: var(--orange);
+        background-image: url("src/img/icon-filters.svg");
+        background-position: center;
+        background-size: 16px;
+        background-repeat: no-repeat;
+    }
+    .btn--nav {
+        background: none;
+    }
+    .btn--nav__line {
+        width: 18px;
+        height: 1px;
+        background: var(--darkblue);
+        display: block;
+        margin: 5px auto;
+    }
+    .btn--close {
+        background: none;
+        width: 50px;
+        border-radius: 0;
+        max-width: 50px;
+        height: 50px;
+    }
+    .btn--close__line {
+        width: 18px;
+        height: 1px;
+        background: var(--gray);
+        display: block;
+        margin: auto;
+        transform-origin:50% 50% ;
+    }
+    .btn--close__line:nth-child(even) {
+        transform: rotate(45deg);
+    }
+    .btn--close__line:nth-child(odd) {
+        transform: rotate(-45deg);
+    }
+    /* ------------- Header -------------- */
+    .header__logo {
+        width: 50px;
+        max-width: 50px;
+    }
+    .header__nav ul {
+        list-style: none;
+        padding: 24px 16px;
+        margin: 0;
+    }
+    /* ------------- Header Navigation (Menu) -------------- */
+    .header__nav {
+        flex:none;
+        position: fixed;
+        overflow-y: scroll;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 380px;
+        background: #fff;
+        transform: translateX(100%);
+        transition: .18s ease-out;
+        z-index: 10;
+    }
+    .header__nav--shown {
+        transform: translateX(0);
+    }
+    .header__nav__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .header__nav__top .logo {
+        height: 30px;
+        margin-left: 16px;
+    }
+    .header__nav__item {
+        font-family: "Montserrat Regular";
+        color:var(--darkblue);
+        font-size: 1.02em;
+    }
+    .header__nav__item a{
+        display: block;
+        padding: 15px 8px;
+        border-bottom: 1px solid var(--lightgray);
+    }
+    .header__nav a,
+    .header__nav a:hover,
+    .header__nav a:active,
+    .header__nav a:focus,
+    .header__nav a:visited {
+        text-decoration: none;
+        color:inherit;
+        outline:none;
+    }
+    .header__nav__item--hidden-mobile {
+        display: none;
+    }
+    .header__nav__footer {
+        position: absolute;
+        left:24px;
+        bottom:24px;
+        font-family: "Montserrat Regular";
+        font-size: 0.9em;
+        color:var(--darkblue);
+    }
+    .header__nav__footer > a,
+    .header__nav__footer > a:hover,
+    .header__nav__footer > a:active,
+    .header__nav__footer > a:focus,
+    .header__nav__footer > a:visited {
+        text-decoration: underline;
+    }
+    .header__nav__footer span {
+        display: block;
+        margin-top: 24px;
+        color:var(--gray);
+    }
+    /* ------------- Form (Location) -------------- */
+    .form__buttons-row .btn--main {
+        flex: 1;
+        max-width: calc(50% - 8px);
+    }
+    .form--location__input-area {
+        position: relative;
+    }
+    .input--location__results {
+        display: none;
+        position: absolute;
+        top: 46px;
+        border: 1px solid var(--lightgray);
+        border-top: none;
+        width: 100%;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        max-height: 215px;
+        overflow-y: scroll;
+        background: #fff;
+        z-index: 2;
+    }
+    .input--location__results ul {
+        margin: 0;
+        padding: 0;
+    }
+    .input--location__item {
+        list-style: none;
+        margin: 0;
+        padding: 10px 14px;
+        border-bottom: 1px solid #f7f6f6;
+        color: var(--darkgray);
+        cursor: pointer;
+        font-size: 1em;
+    }
+    .input--location__item:hover {
+        background: #f7f7f7;
+    }
+    .input--location__item:last-child {
+        border-bottom: none;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    /*--------------------------------------------*/
+    /*                  Listing                   */
+    /*--------------------------------------------*/
+    .header--listing .header__logo {
+        display: flex;
+        align-items: center;
+    }
+    .header--listing .header__logo .logo {
+        height: 30px;
+        position: absolute;
+        left: 16px;
+        clip: rect(0px, 24px, 30px, 0px);
+    }
+    .header__location{
+        font-family: "OpenSans Bold";
+        color:var(--darkblue);
+        font-size: 1.02em;
+        background-image: url(src/img/icon-location.svg);
+        background-position: left 7px center;
+        background-size: 10px;
+        background-repeat: no-repeat;
+        padding-left: 26px;
+        display: flex;
+        align-items: center;
+    }
+    .content--listing {
+        padding: 14px 16px;
+    }
+    .listing__filters-info,
+    .listing__results-info{
+        color:var(--darkgray);
+        font-size: 0.8em;
+    }
+    .listing__filters-info {
+        margin-bottom: 6px;
+    }
+    .listing__info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .listing__sort {
+        width: 120px;
+        max-width: 120px;
+    }
+    .listing__results-info > b {
+        font-size:1.2em;
+        font-weight: normal;
+        font-family: "OpenSans Bold";
+    }
+    .input--sort {
+        height: 30px;
+        font-size: 0.8em;
+        padding-left: 6px;
+        background-image: url(src/img/icon-dropdown.svg);
+        background-position: right 10px center;
+        background-size: 8px;
+        background-repeat: no-repeat;
+    }
+    .content--listing__grid {
+        padding-top: 16px;
+    }
+    .listing__item {
+        width: 100%;
+        border:1px solid var(--lightgray);
+        border-radius: 5px;
+        color:var(--darkgray);
+    }
+    .item__img-area {
+        /*width: 100%;*/
+        /*height: 190px;*/
+        /*width: 286px;*/
+        background: var(--lightgray);
+        position: relative;
+    }
+    .item__img-area:after {
+        content:'';
+        display: block;
+        padding-bottom: calc(100% / 1.5);
+    }
+    .item__content-area {
+        padding: 8px 8px 44px 8px;
+        position: relative;
+    }
+    .btn--secondary {
+        background: #fff;
+        border:1px solid var(--lightgray);
+        color:var(--orange);
+    }
+    .item__price {
+        font-family: "Montserrat Bold";
+        -webkit-appearance: none;
+        font-size: 1.2em;
+        color:var(--orange);
+        margin: 4px 0;
+    }
+    .item__location {
+        font-size:0.8em;
+        margin: 0 0 4px 0;
+    }
+    .item__added-date,
+    .item__btn--contact-agent {
+        position: absolute;
+        bottom: 8px;
+    }
+    .item__added-date {
+        font-size: 0.7em;
+        color: var(--gray);
+        left: 8px;
+    }
+    .item__btn--contact-agent {
+        width: 136px;
+        height: 36px;
+        font-size:0.8em;
+        right: 8px;
+    }
+    .item__main-details {
+        font-size: 0.8em;
+        margin-bottom: 8px;
+    }
+    .icon {
+        background-color: transparent;
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        display: block;
+    }
+    .icon--area {
+        background-image: url(src/img/icon-area.svg);
+    }
+    .icon--room {
+        background-image: url(src/img/icon-room.svg);
+    }
+    .icon--bedroom {
+        background-image: url(src/img/icon-bedroom.svg);
+    }
+    .detail__item:not(:last-child):after {
+        content:'';
+        display: inline-block;
+        vertical-align: middle;
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background: var(--lightgray);
+        margin: 0 4px;
+    }
+    .detail__item > sup {
+        font-size: 0.6em;
+    }
+    .detail__item__icon {
+        margin-right: 4px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 12px;
+        height: 12px;
+    }
+    .icon--favorite {
+        background-image: url(src/img/icon-favorite.svg);
+    }
+    .item__icon-favorite {
+        position: absolute;
+        top:8px;
+        right:8px;
+        width: 27px;
+        height: 24px;
+    }
+}
+@media (min-width: 769px) {
+    /* ------------- Header Navigation (Menu) -------------- */
+    .header__button,
+    .header__nav__footer,
+    .header__nav__top{
+        display: none;
+    }
+    .header__nav {
+        transform: translateX(0);
+        position: relative;
+        flex: 1;
+        height: auto;
+        min-height: 100%;
+        overflow: auto;
+    }
+    .header__nav ul {
+        padding: 0 24px;
+        display: flex;
+        justify-content: flex-end;
+        height: 100%;
+    }
+    .header__nav__item a {
+        border-bottom: 3px solid #fff;
+        border-top: 3px solid #fff;
+        padding: 15px 12px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        transition: .12s ease-out;
+    }
+    .header__nav__item a:hover {
+        border-bottom-color: var(--orange);
+    }
+    .header__nav__item--hidden-desktop {
+        display: none;
+    }
+    /* ------------- Content Part (Home) -------------- */
+    .content--home__logo {
+        height: 62px;
+    }
+    .content--home {
+        max-width: 690px;
+        margin: 60px auto;
+    }
+    .title--home {
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 2.34em;
+    }
+    .subtitle--home {
+        display: block;
+        font-family: "OpenSans Regular";
+        font-size: 1.34em;
+        color: var(--darkgray);
+        margin: 0 0 24px;
+    }
+    .subtitle--home > b {
+        font-family: "OpenSans Semibold";
+    }
+    .content--home__form-area {
+        width: 690px;
+    }
+    /* ------------- Form (Location) -------------- */
+    .input--location {
+        height: 56px;
+        background-position: left 16px center;
+        padding-left: 42px;
+    }
+    .input--location__results {
+        top: 56px;
+    }
+    .form--location {
+        display: flex;
+    }
+    .form--location > * {
+        flex:1;
+    }
+    .buttons-row {
+        max-width: 306px;
+        padding-left: 14px;
+    }
+    /* ------------- Input / Buttons -------------- */
+    .btn--main {
+        height: 56px;
+        border-radius: 28px;
+    }
+    .input,
+    .btn {
+        font-size: 1.1em;
+    }
+    /* ------------- Footer -------------- */
+    .wrapper--home {
+        height: 100vh;
+        min-height: 580px;
+        position: relative;
+    }
+    footer {
+        display: block;
+    }
+    .footer--home {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+    .footer--home__bottom {
+        height: 60px;
+        border-top: 1px solid var(--orange);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .btn--agency {
+        border-radius: 0;
+        width: 190px;
+        max-width: 190px;
+        font-size: 0.9em;
+        height: 100%;
+    }
+    .footer--home__nav,
+    .footer--home__details{
+        color:var(--darkgray);
+        font-family: "Montserrat Regular";
+        font-size: 0.9em;
+    }
+    .footer--home__details {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .footer--home__details > a,
+    .footer--home__details > a:hover,
+    .footer--home__details > a:active,
+    .footer--home__details > a:focus,
+    .footer--home__details > a:visited {
+        outline:none;
+        color:var(--orange);
+    }
+    .footer--home__nav > a,
+    .footer--home__nav > a:hover,
+    .footer--home__nav > a:active,
+    .footer--home__nav > a:focus,
+    .footer--home__nav > a:visited {
+        outline:none;
+        text-decoration: none;
+        color:inherit;
+    }
+    .footer--home__nav > a:first-child {
+        margin-right: 24px;
+    }
+    .footer--home__nav {
+        padding-right: 40px;
+    }
+}
+@media (min-width: 1024px) {
+    .wrapper--home {
+        min-height: 680px;
+    }
+    header {
+        height: 86px;
+    }
+    .content--home {
+        max-width: 956px;
+        margin: 160px auto;
+    }
+    .content--home > * {
+        display: inline-block;
+        vertical-align: bottom;
+    }
+    .content--home__logo {
+        height: 75px;
+        margin: 0 30px 4px 0;
+    }
+}
