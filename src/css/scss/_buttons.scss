@@ -1,0 +1,126 @@
+@include media-breakpoint-up(xs) {
+  .btn {
+    font-family: "Montserrat Regular";
+    transition: .11s ease-out;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited{
+      box-shadow: none;
+    }
+
+    &--main {
+      height: 46px;
+      font-size: 1.02em;
+      background: $orange-primary;
+      color: #fff;
+      &:hover,
+      &:active,
+      &:focus{
+        background: $orange-hover;
+        color:#fff;
+      }
+    }
+
+    &--secondary {
+      background: #fff;
+      border:1px solid $lightgray;
+      color:$orange-primary;
+      &:hover,
+      &:active,
+      &:focus{
+        background: $lightgray;;
+        color:inherit;
+      }
+    }
+
+    &--nav,
+    &--filters,
+    &--close {
+      max-width: 50px;
+      height: 50px;
+      width: 50px;
+      border-radius: 0;
+    }
+
+    &--filters {
+      background-color: $orange-primary;
+      background-image: url("../../src/img/icon-filters.svg");
+      background-position: center;
+      background-size: 16px;
+      background-repeat: no-repeat;
+    }
+
+    &--nav {
+      background: none;
+      &__line {
+        width: 18px;
+        height: 1px;
+        background: $darkblue;
+        display: block;
+        margin: 5px auto;
+      }
+    }
+
+    &--close {
+      background: none;
+      &__line {
+        width: 19px;
+        height: 1px;
+        background: $gray;
+        display: block;
+        margin: auto;
+        transform-origin:50% 50%;
+
+        &:nth-child(even) {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(odd) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    &--alert {
+      width: 46px;
+      height: 46px;
+      position: fixed;
+      left: 12px;
+      bottom:12px;
+      background-color: $orange-primary;
+      background-image: url(../../src/img/icon-alert.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 18px;
+      z-index: 5;
+      box-shadow: 0 1px 8px 0 rgba(0,0,0,0.24);
+
+      &__overlay {
+        width: 100%;
+        height: 70px;
+        background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1));
+        opacity: .7;
+        position: fixed;
+        bottom:0;
+        left:0;
+        z-index: 4;
+        pointer-events: none;
+      }
+    }
+
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .btn {
+    &--agency {
+      border-radius: 0;
+      width: 190px;
+      max-width: 190px;
+      font-size: 0.9em;
+      height: 100%;
+    }
+  }
+}

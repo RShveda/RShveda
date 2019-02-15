@@ -1,0 +1,46 @@
+@include media-breakpoint-up(md) {
+  .footer {
+    &--home {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      &__bottom {
+        height: 60px;
+        border-top: 1px solid $orange;
+      }
+      &__nav,
+      &__details{
+        color:$darkgray;
+        font-family: "Montserrat Regular";
+        font-size: 0.9em;
+      }
+      &__details {
+        text-align: center;
+        margin-bottom: 24px;
+        & > a,
+        & > a:hover,
+        & > a:active,
+        & > a:focus,
+        & > a:visited {
+          outline:none;
+          color:$orange;
+        }
+      }
+      &__nav {
+        padding-right: 40px;
+        & > a,
+        & > a:hover,
+        & > a:active,
+        & > a:focus,
+        & > a:visited {
+          outline:none;
+          text-decoration: none;
+          color:inherit;
+        }
+        & > a:first-child {
+          margin-right: 24px;
+        }
+      }
+    }
+  }
+}

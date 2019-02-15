@@ -4,40 +4,39 @@
     <meta charset="UTF-8">
     <title>Vizzit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="../main.css">
+    <!--<link rel="stylesheet" href="../main.css">-->
+    <link rel="stylesheet" href="../src/css/main-test.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../main.js"></script>
 </head>
 <body>
 <div class="wrapper wrapper--home">
-    <header class="header header--home">
+    <header class="header header--home d-flex justify-content-end">
         <div class="header__logo">
             <img class="logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
         </div>
-        <div class="header__location">
-
-        </div>
-        <button class="header__button btn btn--nav">
+        <div class="header__location"></div>
+        <button class="header__button btn btn--nav d-md-none" id="btn_nav">
             <span class="btn--nav__line"></span>
             <span class="btn--nav__line"></span>
             <span class="btn--nav__line"></span>
         </button>
         <nav class="header__nav">
-            <div class="header__nav__top">
+            <div class="header__nav__top d-flex justify-content-between align-items-center d-md-none">
                 <img class="logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
-                <button class="btn btn--close">
+                <button class="btn btn--close" id="btn_nav__close">
                     <span class="btn--close__line"></span>
                     <span class="btn--close__line"></span>
                 </button>
             </div>
-            <ul>
+            <ul class="d-md-flex justify-content-end">
                 <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">Buy</a></li>
                 <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">Rent</a></li>
                 <li class="header__nav__item"><a href="#">Customer Account</a></li>
                 <li class="header__nav__item"><a href="#">Language</a></li>
-                <li class="header__nav__item header__nav__item--hidden-desktop"><a href="#">About</a></li>
+                <li class="header__nav__item d-md-none"><a href="#">About</a></li>
             </ul>
-            <div class="header__nav__footer">
+            <div class="header__nav__footer d-md-none">
                 Interested in Vizzit project?<br>
                 <a href="#" target="_blank">Learn here</a> how it works!
                 <span>
@@ -47,7 +46,37 @@
             </div>
         </nav>
     </header>
-    <section class="content content--home">
+    <section class="container-fluid content content--home">
+        <div class="row">
+            <div class="col">
+                <img class="content--home__logo d-lg-inline-block" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
+                <div class="content--home__form-area d-lg-inline-block">
+                    <h1 class="title title--home">All Properties from France</h1>
+                    <p class="subtitle subtitle--home d-none d-md-block">The VizzitBot got <b>1,245,351</b> listings over <b>20,234</b> agency websites</p>
+                    <form class="form form--location d-md-flex">
+                        <div class="form-group form--location__input-area flex-fill">
+                            <input class="form-control input input--location" type="text" placeholder="City or Zipcode" id="input_location">
+                            <div class="input--location__results">
+                                <ul class="locations__list">
+                                    <li class="locations__list__item">Location 1</li>
+                                    <li class="locations__list__item">Location 2</li>
+                                    <li class="locations__list__item">Location 3</li>
+                                    <li class="locations__list__item">Location 4</li>
+                                    <li class="locations__list__item">Location 5</li>
+                                    <li class="locations__list__item">Location 6</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="buttons-row form__buttons-row d-flex justify-content-between flex-fill">
+                            <button class="btn btn--main btn--sale buttons-row__btn flex-fill">For sale</button>
+                            <button class="btn btn--main btn--rent buttons-row__btn flex-fill">To rent</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content content--home" style="display: none">
         <img class="content--home__logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
         <div class="content--home__form-area">
             <h1 class="title title--home">All Properties from France</h1>
@@ -73,9 +102,9 @@
             </form>
         </div>
     </section>
-    <footer class="footer footer--home">
+    <footer class="footer footer--home d-none d-md-block">
         <div class="footer--home__details">Interested in Vizzit project? <a href="#" target="_blank">Learn here</a> how it works!</div>
-        <div class="footer--home__bottom">
+        <div class="footer--home__bottom d-flex justify-content-between align-items-center">
             <button class="btn btn--main btn--agency">Agency Section</button>
             <div class="footer--home__nav">
                 <a href="#">About</a>
