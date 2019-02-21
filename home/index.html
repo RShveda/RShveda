@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <title>Vizzit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!--<link rel="stylesheet" href="../main.css">-->
-    <link rel="stylesheet" href="../src/css/main-test.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../main.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Custom -->
+    <link rel="stylesheet" href="../src/css/main.css">
+    <script type="text/javascript" src="../src/js/navigation.js"></script>
 </head>
 <body>
 <div class="wrapper wrapper--home">
@@ -21,7 +25,7 @@
             <span class="btn--nav__line"></span>
             <span class="btn--nav__line"></span>
         </button>
-        <nav class="header__nav">
+        <nav class="header__nav" id="nav_panel">
             <div class="header__nav__top d-flex justify-content-between align-items-center d-md-none">
                 <img class="logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
                 <button class="btn btn--close" id="btn_nav__close">
@@ -56,7 +60,7 @@
                     <form class="form form--location d-md-flex">
                         <div class="form-group form--location__input-area flex-fill">
                             <input class="form-control input input--location" type="text" placeholder="City or Zipcode" id="input_location">
-                            <div class="input--location__results">
+                            <div class="input--location__results" id="location_results">
                                 <ul class="locations__list">
                                     <li class="locations__list__item">Location 1</li>
                                     <li class="locations__list__item">Location 2</li>
@@ -74,32 +78,6 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="content content--home" style="display: none">
-        <img class="content--home__logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
-        <div class="content--home__form-area">
-            <h1 class="title title--home">All Properties from France</h1>
-            <p class="subtitle subtitle--home">The VizzitBot got <b>1,245,351</b> listings over <b>20,234</b> agency websites</p>
-            <form class="form form--location">
-                <div class="form--location__input-area">
-                    <input class="input input--location" type="text" placeholder="City or Zipcode">
-                    <div class="input--location__results">
-                        <ul>
-                            <li class="input--location__item">Location 1</li>
-                            <li class="input--location__item">Location 2</li>
-                            <li class="input--location__item">Location 3</li>
-                            <li class="input--location__item">Location 4</li>
-                            <li class="input--location__item">Location 5</li>
-                            <li class="input--location__item">Location 6</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="buttons-row form__buttons-row">
-                    <button class="btn btn--main btn--sale buttons-row__btn">For sale</button>
-                    <button class="btn btn--main btn--rent buttons-row_btn">To rent</button>
-                </div>
-            </form>
         </div>
     </section>
     <footer class="footer footer--home d-none d-md-block">

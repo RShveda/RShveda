@@ -5,8 +5,7 @@
 
     &:hover,
     &:active,
-    &:focus,
-    &:visited{
+    &:focus {
       box-shadow: none;
     }
 
@@ -28,8 +27,7 @@
       border:1px solid $lightgray;
       color:$orange-primary;
       &:hover,
-      &:active,
-      &:focus{
+      &:active{
         background: $lightgray;;
         color:inherit;
       }
@@ -110,6 +108,34 @@
       }
     }
 
+    &--login {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    &--signup {
+      width: 100%;
+      background: none;
+      color:$orange-primary;
+      text-decoration: underline;
+      &:hover,
+      &:active,
+      &:focus{
+        background: none;
+        color:$orange-hover;
+      }
+    }
+
+    &--modal-close {
+      position: absolute;
+      bottom:12px;
+      left:50%;
+      margin-left: -23px;
+      height: 46px;
+      width: 46px;
+      box-shadow: 0 1px 8px 0 rgba(0,0,0,0.24);
+    }
+
   }
 }
 
@@ -121,6 +147,35 @@
       max-width: 190px;
       font-size: 0.9em;
       height: 100%;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .btn {
+    &--alert{
+      position: relative;
+      width: auto;
+      top: auto;
+      left: auto;
+      height: auto;
+      background-color: transparent;
+      display: inline-block;
+      color: $orange-primary;
+      font-size: 1em;
+      box-shadow: none;
+      bottom: 0;
+      background-image: url(../../src/img/icon-alert-d.svg);
+      background-position: 0 center;
+      background-size: 20px;
+      padding: 0 0 0 26px;
+      border: none;
+      z-index: 1;
+      &:hover,
+      &:active,
+      &:focus{
+        color: $orange-hover;
+      }
     }
   }
 }

@@ -46,6 +46,7 @@
         font-family: "Montserrat Regular";
         color:$darkblue;
         font-size: 1.02em;
+        height: 100%;
         a{
           display: block;
           padding: 15px 8px;
@@ -85,23 +86,52 @@
         }
       }
     }
+    /* ------------- Listing -------------- */
+    &--listing {
+      position: fixed;
+      width: 100%;
+      z-index: 6;
+      .header__logo .logo {
+        height: 30px;
+        position: absolute;
+        left: 16px;
+        clip: rect(0px, 24px, 30px, 0px);
+      }
+      .header__logo a {
+        height: 30px;
+      }
+    }
+    &__location {
+      &__current {
+        font-family: "OpenSans Bold";
+        color:$darkblue;
+        font-size: 1.02em;
+        background-image: url(../../src/img/icon-location.svg);
+        background-position: left 7px center;
+        background-size: 10px;
+        background-repeat: no-repeat;
+        padding-left: 26px;
+      }
+    }
   }
 }
 @include media-breakpoint-up(md) {
-  /* ------------- Header Navigation (Menu) -------------- */
   .header {
+    /* ------------- Navigation (Menu) -------------- */
     &__nav {
       transform: translateX(0);
       position: relative;
       flex: 1;
-      height: auto;
+      height: 100%;
       min-height: 100%;
       overflow: auto;
+      z-index: 1;
       ul {
         padding: 0 24px;
         height: 100%;
       }
       &__item {
+        font-size: 0.9em;
         a {
           border-bottom: 3px solid #fff;
           border-top: 3px solid #fff;
@@ -111,21 +141,67 @@
           align-items: center;
           transition: .12s ease-out;
         }
-
         & a:hover {
           border-bottom-color: var(--orange);
         }
       }
     }
+    &__logo {
+      min-width: 50px;
+    }
+    &__location {
+      min-width: 290px;
+    }
   }
 }
 @include media-breakpoint-up(lg) {
-  .wrapper {
-    &--home {
-      min-height: 680px;
-    }
-  }
   .header {
     height: 86px;
+    &__nav {
+      &__item {
+        font-size: 1.02em;
+      }
+    }
+    &__logo {
+      min-width: 60px;
+      .logo {
+        clip: auto;
+      }
+    }
+    /* ------------- Listing -------------- */
+    &--listing {
+      .header__logo .logo {
+        height: 46px;
+        left: 20px;
+        clip: rect(0px, 38px, 46px, 0px);
+      }
+      .header__logo a {
+        height: 46px;
+      }
+    }
+    &__location {
+      min-width: 320px;
+    }
+  }
+}
+@include media-breakpoint-up(xl) {
+  .header {
+    &__logo {
+      min-width: 220px;
+    }
+    /* ------------- Listing -------------- */
+    &--listing {
+      .header__logo .logo {
+        height: 60px;
+        left: 40px;
+        clip: auto;
+      }
+      .header__logo a {
+        height: 60px;
+      }
+    }
+    &__location {
+      min-width: 444px;
+    }
   }
 }
