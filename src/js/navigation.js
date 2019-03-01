@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     setTimeout(function () {
                         locations_panel.style.display = 'none';
                         locations_panel.classList.remove('locations--shown');
-                    },300);
+                    },100);
                 }
             }
         });
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     input_location.addEventListener('blur', function() {
         setTimeout(function () {
             input_location_results.style.display = 'none';
-        },100);
+        },200);
     });
 
 });
