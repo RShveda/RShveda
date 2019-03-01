@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vizzit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Custom -->
+    <link rel="stylesheet" href="../src/css/main.css">
+    <!--<script type="text/javascript" src="../src/js/navigation.js"></script>-->
+    <script type="text/javascript" src="../src/js/listing_item.js"></script>
+</head>
+<body>
+<!-- The Modal -->
+<div class="modal fade" id="login_modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content mb-5">
+            <div class="modal-header d-block">
+                <h4 class="modal-title text-center">Log In</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <div class="form-group">
+                        <label for="user_email">Your Email</label>
+                        <input class="form-control input" type="email" placeholder="Enter Your Email" id="user_email">
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email">Your Password</label>
+                        <input class="form-control input" type="email" placeholder="Enter Your Password" id="user_password">
+                    </div>
+                </div>
+                <a href="#" class="link--forgot-pass">Forgot Password?</a>
+            </div>
+            <div class="modal-footer d-block">
+                <button class="btn btn--main btn--login">Log In</button>
+                <button class="btn btn--main btn--signup">Sign Up</button>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn--secondary btn--modal-close d-lg-none" data-dismiss="modal">
+        <span class="btn--close__line"></span>
+        <span class="btn--close__line"></span>
+    </button>
+</div>
+<!-- Modal Gallery -->
+<div class="modal fade modal-gallery" id="gallery_modal" data-backdrop="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body p-0 pr-md-4 pl-md-4">
+                <div class="preload-overlay"></div>
+                <div class="swiper-container main-gallery-copy">
+                    <div class="swiper-wrapper">
+                        <img class="swiper-slide" src="../src/img/house/1.jpg"/>
+                        <img class="swiper-slide" src="../src/img/house/2.jpg"/>
+                        <img class="swiper-slide" src="../src/img/house/3.jpg"/>
+                        <img class="swiper-slide" src="../src/img/house/4.jpg"/>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="swiper-container gallery-thumbs pr-2 pl-2 pr-md-0 pl-md-0">
+                    <div class="swiper-wrapper">
+                        <img class="swiper-slide" src="../src/img/house/1.jpg"/>
+                        <img class="swiper-slide" src="../src/img/house/2.jpg"/>
+                        <img class="swiper-slide" src="../src/img/house/3.jpg"/>
+                        <img class="swiper-slide" src="../src/img/house/4.jpg"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+        <span class="btn--close__line"></span>
+        <span class="btn--close__line"></span>
+    </button>
+    <button type="button" class="btn btn--gallery-close d-none d-md-block" data-dismiss="modal">
+        <span class="btn--close__line"></span>
+        <span class="btn--close__line"></span>
+    </button>
+</div>
+<div class="wrapper wrapper--advert">
+    <header class="header header--advert d-flex justify-content-end d-print-none">
+        <div class="header__logo d-flex align-items-center">
+            <a href="../home">
+                <img class="logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
+            </a>
+        </div>
+        <div class="header__back d-flex align-items-center flex-fill">
+            <a href="../listing" class="input d-flex align-items-center">Back to Results</a>
+        </div>
+        <button class="header__button btn btn--nav d-md-none" id="btn_nav">
+            <span class="btn--nav__line"></span>
+            <span class="btn--nav__line"></span>
+            <span class="btn--nav__line"></span>
+        </button>
+        <nav class="header__nav flex-md-fill" id="nav_panel">
+            <div class="header__nav__top d-flex justify-content-between align-items-center d-md-none">
+                <img class="logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
+                <button class="btn btn--close" id="btn_nav__close">
+                    <span class="btn--close__line"></span>
+                    <span class="btn--close__line"></span>
+                </button>
+            </div>
+            <ul class="d-md-flex justify-content-end">
+                <li class="header__nav__item d-none d-md-block"><a href="#">Buy</a></li>
+                <li class="header__nav__item d-none d-md-block"><a href="#">Rent</a></li>
+                <li class="header__nav__item"><a href="#">Customer Account</a></li>
+                <li class="header__nav__item"><a href="#">Language</a></li>
+                <li class="header__nav__item d-md-none"><a href="#">About</a></li>
+            </ul>
+            <div class="header__nav__footer d-md-none">
+                Interested in Vizzit project?<br>
+                <a href="#" target="_blank">Learn here</a> how it works!
+                <span>
+                    © 2019 Vizzit<br>
+                    <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                </span>
+            </div>
+        </nav>
+    </header>
+    <section class="content content--advert item-page">
+        <div class="item-page__content">
+            <div class="item__img-area" id="main_gallery_area">
+                <div class="swiper-container main-gallery">
+                    <div class="swiper-wrapper">
+                        <img class="swiper-slide" src="../src/img/house/1.jpg" data-toggle="modal" data-target="#gallery_modal"/>
+                        <img class="swiper-slide" src="../src/img/house/2.jpg" data-toggle="modal" data-target="#gallery_modal"/>
+                        <img class="swiper-slide" src="../src/img/house/3.jpg" data-toggle="modal" data-target="#gallery_modal"/>
+                        <img class="swiper-slide" src="../src/img/house/4.jpg" data-toggle="modal" data-target="#gallery_modal"/>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-9 content-side">
+                        <p class="item__price d-lg-none">
+                            30 000 000 €
+                        </p>
+                        <h1 class="item__title">Amazing 5 bedroom terraced house very well situated</h1>
+                        <p class="item__location">
+                            The Grande House, St. James`s, London,
+                            SW1A
+                        </p>
+                        <div class="item__main-details">
+                        <span class="detail__item">
+                            <i class="detail__item__icon icon icon--area"></i>156 m<sup>2</sup>
+                        </span>
+                            <span class="detail__item">
+                            <i class="detail__item__icon icon icon--room"></i>4 rooms
+                        </span>
+                            <span class="detail__item">
+                            <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                        </span>
+                        </div>
+                        <div class="d-flex d-lg-none d-print-none">
+                            <span class="input item__btn-favorite d-flex align-items-center justify-content-center" id="btn_favorite">Add to Favorites</span>
+                            <span class="input item__btn-share" id="shareButton"></span>
+                        </div>
+                        <div class="item__main-description">
+                            <div class="description__block">
+                                <h2 class="description__title">Property Summary</h2>
+                                <p class="description__text">
+                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
+                                    making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
+                                    and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,
+                                    sometimes by accident, sometimes on purpose (injected humour and the like).
+                                </p>
+                            </div>
+                            <div class="description__block">
+                                <h2 class="description__title">Main Characteristics</h2>
+                                <div class="description__text d-md-flex flex-wrap">
+                                <span class="detail__item d-block flex-md-fill">
+                                    <i class="detail__item__icon icon icon--mandate"></i>Exclusive mandate
+                                </span>
+                                    <span class="detail__item d-block flex-md-fill">
+                                    <i class="detail__item__icon icon icon--area"></i>156 m<sup>2</sup>
+                                </span>
+                                    <span class="detail__item d-block flex-md-fill">
+                                    <i class="detail__item__icon icon icon--room"></i>4 rooms
+                                </span>
+                                    <span class="detail__item d-block flex-md-fill">
+                                    <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                                </span>
+                                    <span class="detail__item d-block flex-md-fill">
+                                    <i class="detail__item__icon icon icon--bathroom"></i>1 bathroom
+                                </span>
+                                    <span class="detail__item d-block flex-md-fill">
+                                    <i class="detail__item__icon icon icon--shower"></i>1 shower room
+                                </span>
+                                    <span class="detail__item d-block flex-md-fill">
+                                    <i class="detail__item__icon icon icon--kitchen"></i>Kitchen
+                                </span>
+                                </div>
+                            </div>
+                            <div class="description__block d-none d-lg-block d-print-none">
+                                <h2 class="description__title d-flex justify-content-between">Photos<span class="text_link" id="see_all_photos" data-toggle="modal" data-target="#gallery_modal">see all photos</span></h2>
+                                <div class="item__photos-gallery">
+                                    <div class="swiper-container photos-gallery">
+                                        <div class="swiper-wrapper">
+                                            <img class="swiper-slide" src="../src/img/house/1.jpg" data-toggle="modal" data-target="#gallery_modal"/>
+                                            <img class="swiper-slide" src="../src/img/house/2.jpg" data-toggle="modal" data-target="#gallery_modal"/>
+                                            <img class="swiper-slide" src="../src/img/house/3.jpg" data-toggle="modal" data-target="#gallery_modal"/>
+                                            <img class="swiper-slide" src="../src/img/house/4.jpg" data-toggle="modal" data-target="#gallery_modal"/>
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-lg-flex">
+                                <div class="description__block flex-fill col-lg-6 pr-0 pl-0 pl-lg-0 pr-lg-2">
+                                    <h2 class="description__title">Price <span class="description__text-orange">30 000 000 €</span></h2>
+                                    <p class="description__text">
+                                        Agency fees to be paid by buyer included: 6.00% inc vat<br>
+                                        Price without fees: € 29 989 000<br>
+                                        Price / sq metre: €/m² 1,766.67<br>
+                                        <span class="description__text-orange">other currency</span>
+                                    </p>
+                                    <p class="description__text">
+                                        Reference: 49142a-11613<br>
+                                        Number of mandate: 2971/18<br>
+                                        Professional property listing<br>
+                                        Agency: TODEOR AGENCY<br>
+                                        <span class="description__text-orange">Consult the agency rates</span>
+                                    </p>
+                                </div>
+                                <div class="description__block flex-fill col-lg-6 pr-0 pl-0 pr-lg-0 pl-lg-2">
+                                    <h2 class="description__title">Location</h2>
+                                    <p class="description__text">
+                                        This property is near <span class="description__text-orange">Vendenheim</span>, in <span class="description__text-orange">Bas-Rhin</span> (region <span class="description__text-orange">Alsace</span>).
+                                    </p>
+                                    <div class="item__location-map text-center">
+                                        <img class="img-fluid" src="../src/img/map.png"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="description__block border-bottom-0 d-none d-lg-block">
+                                <h2 class="description__title">Popularity</h2>
+                                <div class="d-md-flex">
+                                    <div class="flex-fill col-lg-6 pl-lg-0 pr-lg-2">
+                                        <p class="description__text">
+                                            <i class="detail__item__icon icon icon--eye"></i>Seen <span class="description__text-orange">175</span> times since the 12/6/2018
+                                        </p>
+                                    </div>
+                                    <div class="flex-fill col-lg-6 pr-lg-0 pl-lg-2">
+                                        <p class="description__text">
+                                            <i class="detail__item__icon icon icon--favorite-orange"></i>Added to favourites by <span class="description__text-orange">129</span> persons
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-lg-block col-lg-3 contact-form-area p-0 pr-lg-3 pl-lg-0" id="contact_form">
+                        <div class="contact-form">
+                            <div class="header contact-form__header d-flex justify-content-between align-items-center d-lg-none">
+                                <span class="flex-fill">Contact Form</span>
+                                <button class="btn btn--close" id="btn_contact__close">
+                                    <span class="btn--close__line"></span>
+                                    <span class="btn--close__line"></span>
+                                </button>
+                            </div>
+                            <p class="contact-form__price item__price d-none d-lg-flex align-items-center">
+                                30 000 000 €
+                            </p>
+                            <div class="contact-form__agency-details d-lg-none">
+                                Contact <b>TODEOR AGENCY</b> about <b>Amazing 5 bedroom terraced house very well situated</b>
+                            </div>
+                            <div class="contact-form__body">
+                                <div class="text-right">
+                                    <a href="#" class="contact-form__link d-inline-block">Legal Notice</a>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control input" type="text" placeholder="Your name" id="client_name">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control input" type="text" placeholder="Your phone" id="client_phone">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control input" type="email" placeholder="Your email" id="client_email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="contact-form__label">You would like...</label>
+                                    <div class="row">
+                                        <div class="col-6 pr-0">
+                                            <label class="custom-input--small-checkbox">
+                                                <input type="checkbox" name="contacted">
+                                                <span class="input d-inline-block"></span>To be contacted
+                                            </label>
+                                            <label class="custom-input--small-checkbox">
+                                                <input type="checkbox" name="visit">
+                                                <span class="input d-inline-block"></span>To visit
+                                            </label>
+                                        </div>
+                                        <div class="col-6 pl-0">
+                                            <label class="custom-input--small-checkbox">
+                                                <input type="checkbox" name="photos">
+                                                <span class="input d-inline-block"></span>More photos
+                                            </label>
+                                            <label class="custom-input--small-checkbox">
+                                                <input type="checkbox" name="information">
+                                                <span class="input d-inline-block"></span>More information
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control input" type="email" placeholder="Type Your message" id="client_message"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="alert">
+                                        <span class="input d-inline-block"></span>Email alert on similar properties
+                                    </label>
+                                </div>
+                                <button class="btn btn--main contact-form__btn">Contact Agent</button>
+                            </div>
+                            <div class="d-none d-lg-flex">
+                                <span class="input item__btn-favorite d-flex align-items-center justify-content-center">Add to Favorites</span>
+                                <span class="input item__btn-share"></span>
+                                <span class="input item__btn-print" id="print_btn"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumbs__row d-none d-lg-block d-print-none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            Property France > Ile-de-France > Val-de-Marne > Vitry-sur-Seine
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-none d-lg-block item__similar-listings d-print-none">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="description__title">Similar Listings</h2>
+                        <div class="similar__carousel">
+                            <div class="swiper-container similar-listings">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="listing__item listing__item--small">
+                                            <i class="item__icon-favorite icon icon--favorite"></i>
+                                            <i class="item__icon-photos icon icon--photos">5</i>
+                                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                                <div class="swiper-container similar-gallery">
+                                                    <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/1.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/2.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/3.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/4.jpg"/>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-button-next similar-item-button-next"></div>
+                                                    <div class="swiper-button-prev similar-item-button-prev"></div>
+                                                    <div class="swiper-pagination"></div>
+                                                </div>
+                                                <a class="item__link--overlay" href="#" target="_blank"></a>
+                                            </div>
+                                            <div class="item__content-area flex-lg-fill">
+                                                <a class="item__link" href="#" target="_blank">
+                                                    <p class="item__price">
+                                                        30 000 000 €
+                                                    </p>
+                                                    <p class="item__location">
+                                                        The Grande House, St. James`s, London,
+                                                        SW1A
+                                                    </p>
+                                                    <div class="item__main-details">
+                                            <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--area"></i>156 m<sup>2</sup>
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--room"></i>4 rooms
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                                            </span>
+                                                    </div>
+                                                </a>
+                                                <span class="item__added-date">Added on 18/01/2019</span>
+                                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#login_modal">Contact Agent</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="listing__item listing__item--small">
+                                            <i class="item__icon-favorite icon icon--favorite"></i>
+                                            <i class="item__icon-photos icon icon--photos">5</i>
+                                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                                <div class="swiper-container similar-gallery">
+                                                    <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/1.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/2.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/3.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/4.jpg"/>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-button-next similar-item-button-next"></div>
+                                                    <div class="swiper-button-prev similar-item-button-prev"></div>
+                                                    <div class="swiper-pagination"></div>
+                                                </div>
+                                                <a class="item__link--overlay" href="#" target="_blank"></a>
+                                            </div>
+                                            <div class="item__content-area flex-lg-fill">
+                                                <a class="item__link" href="#" target="_blank">
+                                                    <p class="item__price">
+                                                        30 000 000 €
+                                                    </p>
+                                                    <p class="item__location">
+                                                        The Grande House, St. James`s, London,
+                                                        SW1A
+                                                    </p>
+                                                    <div class="item__main-details">
+                                            <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--area"></i>156 m<sup>2</sup>
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--room"></i>4 rooms
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                                            </span>
+                                                    </div>
+                                                </a>
+                                                <span class="item__added-date">Added on 18/01/2019</span>
+                                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#login_modal">Contact Agent</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="listing__item listing__item--small">
+                                            <i class="item__icon-favorite icon icon--favorite"></i>
+                                            <i class="item__icon-photos icon icon--photos">5</i>
+                                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                                <div class="swiper-container similar-gallery">
+                                                    <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/1.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/2.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/3.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/4.jpg"/>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-button-next similar-item-button-next"></div>
+                                                    <div class="swiper-button-prev similar-item-button-prev"></div>
+                                                    <div class="swiper-pagination"></div>
+                                                </div>
+                                                <a class="item__link--overlay" href="#" target="_blank"></a>
+                                            </div>
+                                            <div class="item__content-area flex-lg-fill">
+                                                <a class="item__link" href="#" target="_blank">
+                                                    <p class="item__price">
+                                                        30 000 000 €
+                                                    </p>
+                                                    <p class="item__location">
+                                                        The Grande House, St. James`s, London,
+                                                        SW1A
+                                                    </p>
+                                                    <div class="item__main-details">
+                                            <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--area"></i>156 m<sup>2</sup>
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--room"></i>4 rooms
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                                            </span>
+                                                    </div>
+                                                </a>
+                                                <span class="item__added-date">Added on 18/01/2019</span>
+                                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#login_modal">Contact Agent</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="listing__item listing__item--small">
+                                            <i class="item__icon-favorite icon icon--favorite"></i>
+                                            <i class="item__icon-photos icon icon--photos">5</i>
+                                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                                <div class="swiper-container similar-gallery">
+                                                    <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/1.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/2.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/3.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/4.jpg"/>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-button-next similar-item-button-next"></div>
+                                                    <div class="swiper-button-prev similar-item-button-prev"></div>
+                                                    <div class="swiper-pagination"></div>
+                                                </div>
+                                                <a class="item__link--overlay" href="#" target="_blank"></a>
+                                            </div>
+                                            <div class="item__content-area flex-lg-fill">
+                                                <a class="item__link" href="#" target="_blank">
+                                                    <p class="item__price">
+                                                        30 000 000 €
+                                                    </p>
+                                                    <p class="item__location">
+                                                        The Grande House, St. James`s, London,
+                                                        SW1A
+                                                    </p>
+                                                    <div class="item__main-details">
+                                            <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--area"></i>156 m<sup>2</sup>
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--room"></i>4 rooms
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                                            </span>
+                                                    </div>
+                                                </a>
+                                                <span class="item__added-date">Added on 18/01/2019</span>
+                                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#login_modal">Contact Agent</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="listing__item listing__item--small">
+                                            <i class="item__icon-favorite icon icon--favorite"></i>
+                                            <i class="item__icon-photos icon icon--photos">5</i>
+                                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                                <div class="swiper-container similar-gallery">
+                                                    <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/1.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/2.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/3.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/4.jpg"/>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-button-next similar-item-button-next"></div>
+                                                    <div class="swiper-button-prev similar-item-button-prev"></div>
+                                                    <div class="swiper-pagination"></div>
+                                                </div>
+                                                <a class="item__link--overlay" href="#" target="_blank"></a>
+                                            </div>
+                                            <div class="item__content-area flex-lg-fill">
+                                                <a class="item__link" href="#" target="_blank">
+                                                    <p class="item__price">
+                                                        30 000 000 €
+                                                    </p>
+                                                    <p class="item__location">
+                                                        The Grande House, St. James`s, London,
+                                                        SW1A
+                                                    </p>
+                                                    <div class="item__main-details">
+                                            <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--area"></i>156 m<sup>2</sup>
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--room"></i>4 rooms
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                                            </span>
+                                                    </div>
+                                                </a>
+                                                <span class="item__added-date">Added on 18/01/2019</span>
+                                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#login_modal">Contact Agent</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="listing__item listing__item--small">
+                                            <i class="item__icon-favorite icon icon--favorite"></i>
+                                            <i class="item__icon-photos icon icon--photos">5</i>
+                                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                                <div class="swiper-container similar-gallery">
+                                                    <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/1.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/2.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/3.jpg"/>
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="../src/img/house/4.jpg"/>
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-button-next similar-item-button-next"></div>
+                                                    <div class="swiper-button-prev similar-item-button-prev"></div>
+                                                    <div class="swiper-pagination"></div>
+                                                </div>
+                                                <a class="item__link--overlay" href="#" target="_blank"></a>
+                                            </div>
+                                            <div class="item__content-area flex-lg-fill">
+                                                <a class="item__link" href="#" target="_blank">
+                                                    <p class="item__price">
+                                                        30 000 000 €
+                                                    </p>
+                                                    <p class="item__location">
+                                                        The Grande House, St. James`s, London,
+                                                        SW1A
+                                                    </p>
+                                                    <div class="item__main-details">
+                                            <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--area"></i>156 m<sup>2</sup>
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--room"></i>4 rooms
+                                            </span>
+                                                        <span class="detail__item">
+                                                <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                                            </span>
+                                                    </div>
+                                                </a>
+                                                <span class="item__added-date">Added on 18/01/2019</span>
+                                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#login_modal">Contact Agent</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next similar-button-next"></div>
+                            <div class="swiper-button-prev similar-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer footer--global d-none d-lg-flex align-items-center d-print-none">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col d-flex justify-content-between align-items-center pr-5 pl-5">
+                    <div class="footer--global__nav">
+                        <ul class="list-unstyled m-0">
+                            <li class="list-inline-item"><a href="#">About</a></li>
+                            <li class="list-inline-item"><a href="#">Agency Section</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer--global__details">
+                        Interested in Vizzit project? <a href="#" target="_blank">Learn here</a> how it works!
+                    </div>
+                    <div class="footer--global__nav">
+                        © 2019 Vizzit - <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<a class="btn btn--call d-lg-none d-print-none" href="tel:555-33-55"></a>
+<button class="btn btn--main btn--contact d-lg-none d-print-none" id="btn_contact">Contact Agent</button>
+<div class="btn--alert__overlay d-lg-none d-print-none"></div>
+</body>
+</html>

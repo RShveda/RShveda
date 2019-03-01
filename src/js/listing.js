@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     Array.from(btn_favorite).forEach(function(element) {
         element.addEventListener('click', function () {
-           this.classList.toggle('icon--favorite-added');
+           this.classList.toggle('item__icon-favorite--added');
         });
     });
 
