@@ -35,12 +35,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     });
 
-    input_location.addEventListener('blur', function() {
-        setTimeout(function () {
-            input_location_results.style.display = 'none';
-        },100);
-    });
-
     Array.from(input_location_item).forEach(function(element) {
         element.addEventListener('click', function() {
             input_location.value = this.innerHTML;
@@ -56,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }
             }
         });
+    });
+
+    input_location.addEventListener('blur', function() {
+        setTimeout(function () {
+            input_location_results.style.display = 'none';
+        },100);
     });
 
 });
