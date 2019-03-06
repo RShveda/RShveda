@@ -116,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let btn_favorite = document.getElementsByClassName('item__btn-favorite');
 
     Array.from(btn_favorite).forEach(function(element) {
-        console.log(element);
         element.addEventListener('click', function () {
             Array.from(btn_favorite).forEach(function(element) {
                 element.classList.toggle('item__btn-favorite--added');
@@ -153,10 +152,50 @@ document.addEventListener("DOMContentLoaded", function(event) {
         contact_form.classList.remove('contact-form-area--shown');
     });
 
+    /* ==================== [Print Button] ===================== */
+
     let print_btn = document.getElementById('print_btn');
 
     print_btn.addEventListener('click', () => {
         window.print();
+    });
+
+    /* ==================== [Share Button / Copy to Clipboard] ===================== */
+
+    let btn_share = document.getElementsByClassName('item__btn-share'),
+        copyDone = document.getElementById('copyDone');
+
+    Array.from(btn_share).forEach(function(element) {
+        element.addEventListener('click', function () {
+
+        });
+    });
+
+    let clipboard = new ClipboardJS('.item__btn-share', {
+        text: function() {
+            return window.location.href;
+        }
+    });
+
+    clipboard.on('success', function(e) {
+        copyDone.style.display = 'block';
+        setTimeout(function () {
+            copyDone.classList.add('copy__message--success');
+        },10);
+        setTimeout(function () {
+            copyDone.classList.remove('copy__message--success');
+        },1000);
+        setTimeout(function () {
+            copyDone.style.display = 'none';
+            Array.from(btn_share).forEach(function(element) {
+                element.blur();
+            });
+        },1500);
+        e.clearSelection();
+    });
+
+    clipboard.on('error', function(e) {
+        alert('Copy Error');
     });
 
 });

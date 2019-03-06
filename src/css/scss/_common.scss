@@ -732,6 +732,9 @@
           border-left: none;
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
+          &:hover {
+            background-color: $lightgray;
+          }
         }
         &__main-description {
           margin-top: 36px;
@@ -939,6 +942,35 @@
     }
     &-prev {
       background-image: url(../../src/img/icon-prev-gray.svg);
+    }
+  }
+  .copy {
+    &__message {
+      position: fixed;
+      top: -100px;
+      left: 50%;
+      width: 200px;
+      margin-left:-100px;
+      padding: 10px 20px 10px 42px;
+      z-index: 10;
+      display: none;
+      font-family: Montserrat Regular;
+      font-size: 1.2em;
+      text-align: center;
+      color:#fff;
+      border-radius: 2em;
+      background-color: #26c57d;
+      background-image: url(../../src/img/icon-check-white.svg);
+      background-position: center left 17px;
+      background-size: 22px;
+      background-repeat: no-repeat;
+      box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+      cursor: default;
+      transition: .26s cubic-bezier(0.28, 0.97, 0.51, 1.27);
+      transform: translateY(0px);
+      &--success {
+        transform: translateY(130px);
+      }
     }
   }
 }

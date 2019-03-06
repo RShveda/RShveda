@@ -6404,6 +6404,8 @@ a.text-dark:hover, a.text-dark:focus {
     border-left: none;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
+    .item-page__content .item__btn-share:hover {
+      background-color: #dadada; }
   .item-page__content .item__main-description {
     margin-top: 36px; }
 
@@ -6559,6 +6561,32 @@ a.text-dark:hover, a.text-dark:focus {
   background-image: url(../../src/img/icon-next-gray.svg); }
 .swiper-button-prev {
   background-image: url(../../src/img/icon-prev-gray.svg); }
+
+.copy__message {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  padding: 10px 20px 10px 42px;
+  z-index: 10;
+  display: none;
+  font-family: Montserrat Regular;
+  font-size: 1.2em;
+  text-align: center;
+  color: #fff;
+  border-radius: 2em;
+  background-color: #26c57d;
+  background-image: url(../../src/img/icon-check-white.svg);
+  background-position: center left 17px;
+  background-size: 22px;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+  cursor: default;
+  transition: 0.26s cubic-bezier(0.28, 0.97, 0.51, 1.27);
+  transform: translateY(0px); }
+  .copy__message--success {
+    transform: translateY(130px); }
 
 @media (min-width: 768px) {
   /* ------------- Wrapper -------------- */
