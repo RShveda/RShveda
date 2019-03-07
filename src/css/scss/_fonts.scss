@@ -6,15 +6,24 @@
   font-family: 'Montserrat Regular';
   src: url('./../font/Montserrat-Regular.ttf');
 }
+
 @font-face {
   font-family: 'OpenSans Regular';
-  src: url('./../font/OpenSans-Regular.ttf');
+  src: url('./../font/OpenSans-Regular.eot');
+  src: url('./../font/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+  url('./../font/OpenSans-Regular.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'OpenSans Semibold';
-  src: url('./../font/OpenSans-Semibold.ttf');
+  src: url('./../font/OpenSans-Semibold.eot');
+  src: url('./../font/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+  url('./../font/OpenSans-Semibold.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'OpenSans Bold';
-  src: url('./../font/OpenSans-Bold.ttf');
+  src: url('./../font/OpenSans-Bold.eot');
+  src: url('./../font/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+  url('./../font/OpenSans-Bold.ttf') format('truetype');
 }

@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         btn_nav__close = document.getElementById('btn_nav__close'),
         nav_panel = document.getElementById('nav_panel');
 
-    btn_nav.addEventListener('click', () => {
+    btn_nav.addEventListener('click', function() {
         nav_panel.classList.add('header__nav--shown');
     });
 
-    btn_nav__close.addEventListener('click', () => {
+    btn_nav__close.addEventListener('click', function() {
         nav_panel.classList.remove('header__nav--shown');
     });
 
@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var mainGalleryCopy = new Swiper ('.main-gallery-copy', {
         slidesPerView: '1',
         grabCursor: true,
+        autoHeight: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -111,6 +112,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         },1);
     });
 
+    window.addEventListener("orientationchange", function() {
+        setTimeout(function () {
+            mainGalleryCopy.update();
+            mainGalleryCopy.updateAutoHeight(0);
+        },620)
+    });
+
     /* ==================== [Add to Favorite] ===================== */
 
     let btn_favorite = document.getElementsByClassName('item__btn-favorite');
@@ -144,11 +152,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         contact_form = document.getElementById('contact_form'),
         btn_contact__close = document.getElementById('btn_contact__close');
 
-    btn_contact.addEventListener('click',() => {
+    btn_contact.addEventListener('click',function() {
         contact_form.classList.add('contact-form-area--shown');
     });
 
-    btn_contact__close.addEventListener('click',() => {
+    btn_contact__close.addEventListener('click',function() {
         contact_form.classList.remove('contact-form-area--shown');
     });
 
@@ -156,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     let print_btn = document.getElementById('print_btn');
 
-    print_btn.addEventListener('click', () => {
+    print_btn.addEventListener('click', function() {
         window.print();
     });
 

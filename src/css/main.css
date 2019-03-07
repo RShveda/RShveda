@@ -5447,13 +5447,16 @@ a.text-dark:hover, a.text-dark:focus {
   src: url("./../font/Montserrat-Regular.ttf"); }
 @font-face {
   font-family: 'OpenSans Regular';
-  src: url("./../font/OpenSans-Regular.ttf"); }
+  src: url("./../font/OpenSans-Regular.eot");
+  src: url("./../font/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("./../font/OpenSans-Regular.ttf") format("truetype"); }
 @font-face {
   font-family: 'OpenSans Semibold';
-  src: url("./../font/OpenSans-Semibold.ttf"); }
+  src: url("./../font/OpenSans-Semibold.eot");
+  src: url("./../font/OpenSans-Semibold.eot?#iefix") format("embedded-opentype"), url("./../font/OpenSans-Semibold.ttf") format("truetype"); }
 @font-face {
   font-family: 'OpenSans Bold';
-  src: url("./../font/OpenSans-Bold.ttf"); }
+  src: url("./../font/OpenSans-Bold.eot");
+  src: url("./../font/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("./../font/OpenSans-Bold.ttf") format("truetype"); }
 .btn {
   font-family: "Montserrat Regular";
   transition: .11s ease-out; }
@@ -6822,7 +6825,7 @@ a.text-dark:hover, a.text-dark:focus {
 @media (min-width: 992px) {
   /* ------------- Wrapper -------------- */
   .wrapper--home {
-    min-height: 680px; }
+    min-height: 610px; }
 
   /* ------------- Content -------------- */
   .content--home {
@@ -6938,7 +6941,7 @@ a.text-dark:hover, a.text-dark:focus {
     height: 44px;
     filter: none;
     background-image: url(../../src/img/icon-favorite-d.svg); }
-    .listing__item--large .item__icon-favorite--added {
+    .listing__item--large .item__icon-favorite--added, .listing__item--large .item__icon-favorite:hover {
       background-image: url(../../src/img/icon-favorite-added-d.svg); }
 
   /* ------------- Item Details (Main Bullets) -------------- */
@@ -7138,6 +7141,48 @@ a.text-dark:hover, a.text-dark:focus {
 @media only screen and (min-device-width: 1280px) and (min-device-height: 960px) {
   .item-page__content .item__img-area {
     height: 700px; } }
+/* ------------- Tablet -------------- */
+@media only screen and (min-device-width: 992px) and (max-device-height: 600px) and (orientation: landscape) {
+  .content--home {
+    margin: 80px auto; } }
+/*** For IE ***/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .listing__item--large .item__img--main img,
+  .listing__item--large .item__img--miniatures-col img {
+    min-width: 1px; } }
+@supports (-ms-ime-align: auto) {
+  .listing__item--large .item__img--main img,
+  .listing__item--large .item__img--miniatures-col img {
+    min-width: 1px; } }
+@media all and (min-width: 992px) and (-ms-high-contrast: none), (min-width: 992px) and (-ms-high-contrast: active) {
+  .contact-form-area {
+    position: relative; } }
+/* ------------- iPhone 6, 7, & 8 Landscape for Gallery -------------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+  .modal-gallery .gallery-thumbs {
+    display: none; }
+
+  .modal-gallery .modal-body {
+    max-width: 130vh;
+    max-height: 90vh;
+    margin: 5vh auto; }
+
+  .modal.fade .btn--modal-close {
+    right: 10px;
+    left: auto; } }
+/* ------------- iPhone X, XS Max Landscape for Gallery -------------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  .modal-gallery .gallery-thumbs {
+    display: none; }
+
+  .modal-gallery .modal-body {
+    max-width: 140vh;
+    max-height: 90vh;
+    margin: 5vh auto; }
+
+  .modal.fade .btn--modal-close {
+    right: 10px;
+    left: auto; } }
 @media (min-width: 768px) {
   .footer--home {
     position: absolute;

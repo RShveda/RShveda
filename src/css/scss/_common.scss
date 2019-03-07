@@ -1303,7 +1303,7 @@
   /* ------------- Wrapper -------------- */
   .wrapper {
     &--home {
-      min-height: 680px;
+      min-height: 610px;
     }
   }
   /* ------------- Content -------------- */
@@ -1465,7 +1465,8 @@
       height: 44px;
       filter:none;
       background-image: url(../../src/img/icon-favorite-d.svg);
-      &--added {
+      &--added,
+      &:hover{
         background-image: url(../../src/img/icon-favorite-added-d.svg);
       }
     }
@@ -1777,5 +1778,82 @@ and (min-device-height : 960px) {
         }
       }
     }
+  }
+}
+
+/* ------------- Tablet -------------- */
+@media only screen
+and (min-device-width : 992px)
+and (max-device-height : 600px)
+and (orientation : landscape) {
+  .content--home {
+    margin: 80px auto;
+  }
+}
+
+/*** For IE ***/
+
+@media all and (-ms-high-contrast: none),(-ms-high-contrast: active) {
+  .listing__item--large .item__img--main img,
+  .listing__item--large .item__img--miniatures-col img{
+    min-width: 1px;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  .listing__item--large .item__img--main img,
+  .listing__item--large .item__img--miniatures-col img{
+    min-width: 1px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  @media all and (-ms-high-contrast: none),(-ms-high-contrast: active) {
+    .contact-form-area{
+      position: relative;
+    }
+  }
+}
+
+/* ------------- iPhone 6, 7, & 8 Landscape for Gallery -------------- */
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : landscape){
+  .modal-gallery .gallery-thumbs {
+    display: none;
+  }
+  .modal-gallery .modal-body {
+    //max-width: 120vh;
+    //max-height: 80vh;
+    max-width: 130vh;
+    max-height: 90vh;
+    margin: 5vh auto;
+  }
+  .modal.fade .btn--modal-close {
+    right: 10px;
+    left: auto;
+  }
+}
+
+/* ------------- iPhone X, XS Max Landscape for Gallery -------------- */
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 896px)
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : landscape) {
+  .modal-gallery .gallery-thumbs {
+    display: none;
+  }
+  .modal-gallery .modal-body {
+    //max-width: 120vh;
+    //max-height: 80vh;
+    max-width: 140vh;
+    max-height: 90vh;
+    margin: 5vh auto;
+  }
+  .modal.fade .btn--modal-close {
+    right: 10px;
+    left: auto;
   }
 }

@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         btn_locations__close = document.getElementById('btn_locations__close'),
         locations_panel = document.getElementById('locations_panel');
 
-    btn_locations.addEventListener('click', () => {
+    btn_locations.addEventListener('click', function() {
         locations_panel.style.display = 'block';
         setTimeout(function () {
             locations_panel.classList.add('locations--shown');
         },1);
     });
 
-    btn_locations__close.addEventListener('click', () => {
+    btn_locations__close.addEventListener('click', function() {
         locations_panel.style.display = 'none';
         locations_panel.classList.remove('locations--shown');
     });
@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         btn_filters__close = document.getElementById('btn_filters__close'),
         filters_panel = document.getElementById('filters_panel');
 
-    btn_filters.addEventListener('click', () => {
+    btn_filters.addEventListener('click', function() {
         filters_panel.classList.add('filters--shown');
     });
 
-    btn_filters__close.addEventListener('click', () => {
+    btn_filters__close.addEventListener('click', function() {
         filters_panel.classList.remove('filters--shown');
     });
 
