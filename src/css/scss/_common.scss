@@ -47,7 +47,7 @@
     &--location {
       background-image: url("../../src/img/icon-location.svg");
       background-position: left 12px center;
-      background-size: 16px;
+      background-size: 16px 24px;
       background-repeat: no-repeat;
       padding-left: 36px;
       margin-bottom: 14px;
@@ -449,7 +449,7 @@
         padding: 0 0 0 38px;
         background-image: url("../../src/img/icon-check.svg");
         background-position: left 12px center;
-        background-size: 16px;
+        background-size: 16px 16px;
         background-repeat: no-repeat;
       }
     }
@@ -711,7 +711,7 @@
           background-color: #fff;
           background-image: url(../../src/img/icon-favorite-d.svg);
           background-position: center left 14px;
-          background-size: 20px;
+          background-size: 20px 20px;
           background-repeat: no-repeat;
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
@@ -962,7 +962,7 @@
       background-color: #26c57d;
       background-image: url(../../src/img/icon-check-white.svg);
       background-position: center left 17px;
-      background-size: 22px;
+      background-size: 22px 20px;
       background-repeat: no-repeat;
       box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
       cursor: default;
@@ -1141,6 +1141,7 @@
       padding: 24px 0;
       .btn {
         max-width: 142px;
+        min-width: 142px;
         font-size: 0.9em;
         box-shadow: none;
         border: 1px solid $lightgray;
@@ -1523,7 +1524,7 @@
       .input {
         height: 46px;
         &--location {
-          background-size: 16px;
+          background-size: 16px 24px;
           background-image: url(../../src/img/icon-location.svg);
           padding-left: 36px;
           background-position: left 12px center;
@@ -1656,6 +1657,9 @@
       &__btn-print {
         cursor: pointer;
         border-bottom: none;
+        &:focus {
+          border-color: $lightgray;
+        }
       }
       &__btn-share,
       &__btn-print {
@@ -1676,11 +1680,13 @@
       }
       &__btn-share {
         max-width: 56px;
+        min-width: 48px;
         border-radius: 0;
         border-right: none;
       }
       &__btn-print {
         max-width: 56px;
+        min-width: 48px;
         border-top-right-radius: 0;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
@@ -1754,6 +1760,16 @@ and (min-device-width : 768px)
 and (orientation : portrait) {
   .content--home {
     margin: 140px auto;
+  }
+}
+
+/* ------------- iPad / Tablet / Landscape -------------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1366px)
+and (orientation : landscape) {
+  .item-page__content .item__img-area {
+    height: calc(100vh - 290px);
   }
 }
 

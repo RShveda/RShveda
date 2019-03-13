@@ -5878,7 +5878,7 @@ a.text-dark:hover, a.text-dark:focus {
   .input--location {
     background-image: url("../../src/img/icon-location.svg");
     background-position: left 12px center;
-    background-size: 16px;
+    background-size: 16px 24px;
     background-repeat: no-repeat;
     padding-left: 36px;
     margin-bottom: 14px;
@@ -6188,7 +6188,7 @@ a.text-dark:hover, a.text-dark:focus {
     padding: 0 0 0 38px;
     background-image: url("../../src/img/icon-check.svg");
     background-position: left 12px center;
-    background-size: 16px;
+    background-size: 16px 16px;
     background-repeat: no-repeat; }
 .custom-input--small-checkbox {
   width: 100%;
@@ -6388,7 +6388,7 @@ a.text-dark:hover, a.text-dark:focus {
     background-color: #fff;
     background-image: url(../../src/img/icon-favorite-d.svg);
     background-position: center left 14px;
-    background-size: 20px;
+    background-size: 20px 20px;
     background-repeat: no-repeat;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
@@ -6582,7 +6582,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #26c57d;
   background-image: url(../../src/img/icon-check-white.svg);
   background-position: center left 17px;
-  background-size: 22px;
+  background-size: 22px 20px;
   background-repeat: no-repeat;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
   cursor: default;
@@ -6711,6 +6711,7 @@ a.text-dark:hover, a.text-dark:focus {
       padding: 24px 0; }
       .filters__buttons-row .btn {
         max-width: 142px;
+        min-width: 142px;
         font-size: 0.9em;
         box-shadow: none;
         border: 1px solid #dadada;
@@ -6984,7 +6985,7 @@ a.text-dark:hover, a.text-dark:focus {
     .locations__header .input {
       height: 46px; }
       .locations__header .input--location {
-        background-size: 16px;
+        background-size: 16px 24px;
         background-image: url(../../src/img/icon-location.svg);
         padding-left: 36px;
         background-position: left 12px center;
@@ -7073,6 +7074,8 @@ a.text-dark:hover, a.text-dark:focus {
     .contact-form .item__btn-favorite, .contact-form .item__btn-share, .contact-form .item__btn-print {
       cursor: pointer;
       border-bottom: none; }
+      .contact-form .item__btn-favorite:focus, .contact-form .item__btn-share:focus, .contact-form .item__btn-print:focus {
+        border-color: #dadada; }
     .contact-form .item__btn-share:hover, .contact-form .item__btn-print:hover {
       background-color: #dadada; }
     .contact-form .item__btn-favorite {
@@ -7086,10 +7089,12 @@ a.text-dark:hover, a.text-dark:focus {
         color: #fff; }
     .contact-form .item__btn-share {
       max-width: 56px;
+      min-width: 48px;
       border-radius: 0;
       border-right: none; }
     .contact-form .item__btn-print {
       max-width: 56px;
+      min-width: 48px;
       border-top-right-radius: 0;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
@@ -7133,6 +7138,10 @@ a.text-dark:hover, a.text-dark:focus {
 @media only screen and (min-device-width: 768px) and (orientation: portrait) {
   .content--home {
     margin: 140px auto; } }
+/* ------------- iPad / Tablet / Landscape -------------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: landscape) {
+  .item-page__content .item__img-area {
+    height: calc(100vh - 290px); } }
 /* ------------- iPad Pro -------------- */
 @media only screen and (min-device-width: 1024px) and (orientation: portrait) {
   .content--home {
