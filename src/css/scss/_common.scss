@@ -62,6 +62,70 @@
       cursor: pointer;
     }
   }
+  /* ------------- Choices Input -------------- */
+  .choices {
+    font-family: "OpenSans Regular";
+    margin: 0;
+    &__inner {
+      color: $darkgray;
+      border-radius: 5px;
+      border: 1px solid #dadada;
+      background-color: #fff;
+      background-image: url(../../src/img/icon-location.svg);
+      background-position: left 12px top 10px;
+      background-size: 16px 24px;
+      background-repeat: no-repeat;
+      min-height: 46px;
+      padding-left: 36px;
+      padding-bottom: 2px;
+      padding-top: 5px;
+      margin: 0;
+    }
+    &__input {
+      height: 32px;
+      font-size: 1.2em;
+      background: #fff;
+      min-width:120px;
+      &::-ms-clear {
+        display: none;
+      }
+    }
+    &__heading {
+      font-family: "OpenSans Bold";
+      font-weight: normal;
+      color:$darkgray;
+      font-size: 0.8em;
+      border-bottom: 1px solid $lightgray;
+      border-top: 1px solid $lightgray;
+      background: rgba(218, 218, 218, 0.2);
+    }
+    &__list {
+      &--dropdown .choices__item--selectable.is-highlighted {
+        background-color: $gray-100;
+      }
+      &--multiple {
+        .choices {
+          &__item {
+            font-size: 1em;
+            background-color: $orange-primary;
+            border: 1px solid $orange-primary;
+            color: #fff;
+            &.is-highlighted {
+              background-color: $orange-hover;
+              border: 1px solid $orange-hover;
+            }
+          }
+        }
+      }
+    }
+    &[data-type*=select-multiple] .choices__button,
+    &[data-type*=text] .choices__button {
+      border-left: 1px solid #f99c63;
+    }
+  }
+  .is-open .choices__inner {
+    border-radius: 5px;
+  }
   /* ------------- Form (Location) -------------- */
   .buttons-row {
     &__btn {
@@ -496,6 +560,63 @@
         color:$darkblue;
         background-image: none;
         padding-left: 14px;
+      }
+      .choices {
+        position: relative;
+        height: 36px;
+        &__inner {
+          min-height: 36px;
+          max-height: 36px;
+          position: absolute;
+          color: #233034;
+          background-image: none;
+          padding-left: 5px;
+          padding-bottom: 2px;
+          padding-top: 4px;
+          &.choices__overflow:after {
+            content: '...';
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            width: 66px;
+            height: 34px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0), white);
+            font-size: 2em;
+            padding-left: 26px;
+            color: $gray;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            line-height: 0.6em;
+            pointer-events: none;
+          }
+        }
+        &__input {
+          height: 24px;
+          font-size: 1.1em;
+        }
+        &__list {
+          &--multiple {
+            display: inline-block;
+            .choices__item {
+              padding: 2px 8px;
+              font-size: 1em;
+              margin-top: 0;
+            }
+          }
+          &--dropdown {
+            .choices__item--selectable {
+              padding-right: 10px;
+            }
+          }
+        }
+        &.is-focused.is-open {
+          .choices__inner {
+            max-height: none;
+            &.choices__overflow:after {
+              display: none;
+            }
+          }
+        }
       }
     }
     &__list {
@@ -1015,10 +1136,63 @@
       }
     }
   }
+  /* ------------- Choices Input -------------- */
+  .choices {
+    height: 56px;
+    position: relative;
+    &__inner {
+      max-height: 56px;
+      position: absolute;
+      margin: 0;
+      background-position: left 16px top 15px;
+      min-height: 56px;
+      padding-left: 42px;
+      padding-bottom: 0;
+      padding-top: 7px;
+      &.choices__overflow:after {
+        content: '...';
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        width: 66px;
+        height: 54px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0), white);
+        font-size: 2em;
+        padding-left: 26px;
+        color: $gray;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        line-height: 1.3em;
+        pointer-events: none;
+      }
+    }
+    &__input {
+      height: 38px;
+    }
+    &__list--multiple {
+      display: inline-block;
+      .choices__item {
+        padding: 6px 13px;
+        margin-right: 4px;
+        margin-bottom: 6px;
+        margin-top: 2px;
+        font-size: 1.1em;
+      }
+    }
+    &.is-focused.is-open {
+      .choices__inner {
+        max-height: none;
+        &.choices__overflow:after {
+          display: none;
+        }
+      }
+    }
+  }
   /* ------------- Form (Location) -------------- */
   .form {
     &--location{
       &__input-area {
+        max-width: 384px;
         .input {
           font-size: 1.1em;
         }
@@ -1092,6 +1266,12 @@
           border-bottom-left-radius: 0;
           font-size: 0.8em;
           max-width: 110px;
+        }
+      }
+      .choices {
+        &__inner {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
         }
       }
     }
@@ -1307,7 +1487,7 @@
       margin: 160px auto;
       &__logo {
         height: 75px;
-        margin: 0 30px 18px 0;
+        margin: 0 30px 6px 0;
       }
       &__form-area {
         vertical-align: bottom;
@@ -1513,6 +1693,35 @@
       display: none;
     }
     &__header {
+      .choices {
+        height: 46px;
+        &__inner {
+          min-height: 46px;
+          max-height: 46px;
+          background-size: 16px 24px;
+          background-image: url(../../src/img/icon-location.svg);
+          padding-left: 36px;
+          background-position: left 12px top 10px;
+          &.choices__overflow:after {
+            height: 42px;
+            line-height: 0.9em;
+          }
+        }
+        &__input {
+          height: 34px;
+          margin-bottom: 4px;
+          margin-top: 1px;
+        }
+        .choices__list {
+          &--multiple .choices__item {
+            padding: 4px 13px;
+            margin-right: 4px;
+            margin-bottom: 6px;
+            margin-top: 2px;
+            font-size: 1.1em;
+          }
+        }
+      }
       .input {
         height: 46px;
         &--location {

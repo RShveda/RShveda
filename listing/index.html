@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -22,11 +21,19 @@
     <script type="text/javascript">
         if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
             document.write('<script src="../src/js/polyfill.js"><\/script>');
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="https://cdn.polyfill.io/v2/polyfill.js?features=es5,fetch,Element.prototype.classList,requestAnimationFrame,Node.insertBefore,Node.firstChild"><\/script>');
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.includes%2CString.prototype.includes%2CObject.assign%2CArray.prototype.findIndex%2CArray.prototype.find%2CArray.from"><\/script>');
     </script>
+    <!-- Choices -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <!-- Custom -->
     <link rel="stylesheet" href="../src/css/main.css">
     <script type="text/javascript" src="../src/js/navigation.js"></script>
     <script type="text/javascript" src="../src/js/listing.js"></script>
+    <script type="text/javascript" src="../src/js/choices_init.js"></script>
 </head>
 <body>
 <!-- Login Modal -->
@@ -139,7 +146,10 @@
             <span class="header__location__current d-md-none" id="btn_locations">London</span>
             <section class="locations d-md-block" id="locations_panel">
                 <div class="header locations__header d-flex justify-content-between justify-content-md-start align-items-center">
-                    <input class="form-control input input--location" type="text" placeholder="City or Zipcode" value="London" id="input_location" tabindex="-1">
+                    <!--<input class="form-control input input&#45;&#45;location" type="text" placeholder="City or Zipcode" value="London" id="input_location" tabindex="-1">-->
+                    <div class="d-fill" style="width: 100%">
+                        <select class="form-control input input--location" type="text" placeholder="City or Zipcode" id="input_choises" multiple></select>
+                    </div>
                     <select class="input input--dropdown input--distance d-none d-md-inline">
                         <option>+5 miles</option>
                         <option>+10 miles</option>
@@ -150,20 +160,6 @@
                         <span class="btn--close__line"></span>
                         <span class="btn--close__line"></span>
                     </button>
-                </div>
-                <div class="container locations__content p-md-0" id="location_results">
-                    <div class="row p-md-0 m-lg-0">
-                        <div class="col p-md-0">
-                            <ul class="locations__list">
-                                <li class="locations__list__item">Location 1</li>
-                                <li class="locations__list__item">Location 2</li>
-                                <li class="locations__list__item">Location 3</li>
-                                <li class="locations__list__item">Location 4</li>
-                                <li class="locations__list__item">Location 5</li>
-                                <li class="locations__list__item">Location 6</li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </section>
         </div>

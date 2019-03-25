@@ -12,6 +12,7 @@
     &__logo {
       width: 50px;
       max-width: 50px;
+      min-width: 50px;
       .logo {
         height: 30px;
         position: absolute;
@@ -102,6 +103,7 @@
       z-index: 6;
     }
     &__location {
+      max-width: calc(100% - 150px);
       &__current {
         font-family: "OpenSans Bold";
         color:$darkblue;
@@ -111,6 +113,9 @@
         background-size: 10px;
         background-repeat: no-repeat;
         padding-left: 26px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
     }
     /* ------------- Advert -------------- */
@@ -234,7 +239,7 @@
     }
     /* ------------- Listing -------------- */
     &__location {
-      min-width: 320px;
+      min-width: 380px;
     }
     /* ------------- Advert -------------- */
     &--advert {
