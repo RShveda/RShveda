@@ -6891,7 +6891,6 @@ a.text-dark:hover, a.text-dark:focus {
     height: 56px;
     position: relative; }
     .choices__inner {
-      max-height: 56px;
       position: absolute;
       margin: 0;
       background-position: left 16px top 15px;
@@ -6899,21 +6898,6 @@ a.text-dark:hover, a.text-dark:focus {
       padding-left: 42px;
       padding-bottom: 0;
       padding-top: 7px; }
-      .choices__inner.choices__overflow:after {
-        content: '...';
-        position: absolute;
-        top: 1px;
-        right: 1px;
-        width: 66px;
-        height: 54px;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0), white);
-        font-size: 2em;
-        padding-left: 26px;
-        color: #989696;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        line-height: 1.3em;
-        pointer-events: none; }
     .choices__input {
       height: 38px; }
     .choices__list--multiple {
