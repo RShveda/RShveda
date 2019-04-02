@@ -92,10 +92,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }, false);
 
     inputChoises.addEventListener('addItem', function(event) {
-        choices.hideDropdown();
+        // choices.hideDropdown();
         toggleDots();
         passValue();
-//      choices.clearChoices(); // this feature will be available in next version of lib
+        //choices.clearChoices(); // clear list of choices after choosing an item
     });
 
     inputChoises.addEventListener('removeItem', function () {
