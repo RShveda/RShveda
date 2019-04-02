@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function() {
     var inputChoises = document.getElementById("input_choises");
     var choices = new Choices(inputChoises, {
         items: [],
@@ -16,24 +16,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         maxItemCount: 5,
         position: 'bottom'
     });
-
-    // choices.ajax(function(callback) {
-    //     fetch('https://www.green-acres.fr/fr/Geo/AutoCompleteWithCategoriesResponsive?term=mar&countryId=fr')
-    //         .then(function(response) {
-    //                 response.json().then(function(data) {
-    //                     var data_ = JSON.parse(data);
-    //                     callback([], 'id', 'label');
-    //                     console.log("here");
-    //                     console.log(data_);
-    //                     choices.setChoices(addChoices(data_), 'value', 'label', true);
-    //                     var inputText = document.getElementsByClassName('choices__input--cloned');
-    //                     Array.from(inputText).forEach(function(element){
-    //                         element.focus();
-    //                     });
-    //                 });
-    //             }
-    //         )
-    // });
 
     function addChoices(data_) {
         var getCategories = [];
@@ -117,17 +99,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
     inputChoises.addEventListener('removeItem', function () {
-        // if(window.innerWidth > 767) {
         changeListPosition();
-        // }
         toggleDots();
         passValue();
     });
 
     inputChoises.addEventListener('showDropdown', function () {
-        // if(window.innerWidth > 767) {
         changeListPosition();
-        // }
         toggleDots();
     });
 
@@ -161,20 +139,39 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     function toggleDots() {
-        var choicesInner = document.getElementsByClassName('choices__inner'),
+        var choicesMain = document.getElementsByClassName('choices'),
+            choicesInner = document.getElementsByClassName('choices__inner'),
             choicesSelectedList = document.getElementsByClassName('choices__list--multiple'),
-            choicesSelectedListWidth;
+            countValue = 0;
+
 
         Array.from(choicesSelectedList).forEach(function(element){
-            choicesSelectedListWidth = element.offsetWidth;
+            countValue = element.childElementCount;
         });
 
-        if(choicesSelectedListWidth >= 210) {
-            Array.from(choicesInner).forEach(function(element){
-                element.classList.add('choices__overflow');
+        var countElement = document.createElement('div');
+        var countValueText = document.createTextNode(countValue);
+        countElement.setAttribute('class', 'choices__counter');
+        countElement.setAttribute('id', 'choicesCounter');
+        countElement.appendChild(countValueText);
+
+        if(countValue > 1) {
+            countValue = countValue - 1;
+            var countValueString = '+' + countValue;
+            Array.from(choicesMain).forEach(function(element){
+                if(!document.getElementById('choicesCounter')) {
+                    //element.classList.add('choices__overflow');
+                    element.appendChild(countElement);
+                    document.getElementById('choicesCounter').innerHTML = countValueString;
+                } else {
+                    document.getElementById('choicesCounter').innerHTML = countValueString;
+                }
             });
         } else {
-            Array.from(choicesInner).forEach(function(element){
+            Array.from(choicesMain).forEach(function(element){
+                if(document.getElementById('choicesCounter')) {
+                    document.getElementById('choicesCounter').remove();
+                }
                 if(element.classList.contains('choices__overflow')) {
                     element.classList.remove('choices__overflow');
                 }

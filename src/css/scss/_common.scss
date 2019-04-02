@@ -66,6 +66,9 @@
   .choices {
     font-family: "OpenSans Regular";
     margin: 0;
+    &__counter {
+      display: none;
+    }
     &__inner {
       color: $darkgray;
       border-radius: 5px;
@@ -1170,6 +1173,9 @@
           display: none;
         }
       }
+      .choices__counter {
+        display: none;
+      }
     }
   }
   /* ------------- Form (Location) -------------- */
@@ -1253,9 +1259,32 @@
         }
       }
       .choices {
+        &__counter {
+          display: block;
+          position: absolute;
+          top: 1px;
+          right: 1px;
+          height: calc(100% - 2px);
+          width: 56px;
+          padding-left: 12px;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0), white);
+          font-family: "OpenSans Bold";
+          font-size: 0.9em;
+          color: $darkblue;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          pointer-events: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         &__inner {
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
+        }
+        .choices__list--multiple .choices__item:first-child {
+          margin-right: 100%;
+          white-space: nowrap;
         }
       }
     }

@@ -6071,6 +6071,8 @@ a.text-dark:hover, a.text-dark:focus {
 .choices {
   font-family: "OpenSans Regular";
   margin: 0; }
+  .choices__counter {
+    display: none; }
   .choices__inner {
     color: #484848;
     border-radius: 5px;
@@ -6912,6 +6914,8 @@ a.text-dark:hover, a.text-dark:focus {
       max-height: none; }
       .choices.is-focused.is-open .choices__inner.choices__overflow:after {
         display: none; }
+    .choices.is-focused.is-open .choices__counter {
+      display: none; }
 
   /* ------------- Form (Location) -------------- */
   .form--location__input-area {
@@ -6966,9 +6970,30 @@ a.text-dark:hover, a.text-dark:focus {
       border-bottom-left-radius: 0;
       font-size: 0.8em;
       max-width: 110px; }
+    .locations__header .choices__counter {
+      display: block;
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      height: calc(100% - 2px);
+      width: 56px;
+      padding-left: 12px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0), white);
+      font-family: "OpenSans Bold";
+      font-size: 0.9em;
+      color: #233034;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
     .locations__header .choices__inner {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0; }
+    .locations__header .choices .choices__list--multiple .choices__item:first-child {
+      margin-right: 100%;
+      white-space: nowrap; }
     .locations__content {
       display: none;
       max-height: 215px;
