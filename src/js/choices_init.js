@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     inputChoises.addEventListener('addItem', function(event) {
         // choices.hideDropdown();
+        changeListPosition();
         toggleDots();
         passValue();
         //choices.clearChoices(); // clear list of choices after choosing an item
