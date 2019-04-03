@@ -6976,9 +6976,9 @@ a.text-dark:hover, a.text-dark:focus {
       top: 1px;
       right: 1px;
       height: calc(100% - 2px);
-      width: 56px;
-      padding-left: 12px;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0), white);
+      width: 60px;
+      padding-left: 22px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.92) 50%);
       font-family: "OpenSans Bold";
       font-size: 0.9em;
       color: #233034;
