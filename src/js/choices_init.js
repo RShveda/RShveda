@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
             timer = setTimeout(function() {
                 choices.ajax(function(callback) {
-                    // fetch(`https://www.green-acres.fr/fr/Geo/AutoCompleteWithCategoriesResponsive?term=${event.detail.value}&countryId=fr`)
                     fetch(setUrl)
                         .then(function(response) {
                                 response.json().then(function(data) {
@@ -92,22 +91,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }, false);
 
     inputChoises.addEventListener('addItem', function(event) {
-        // choices.hideDropdown();
         changeListPosition();
-        toggleDots();
+        toggleCounter();
         passValue();
         //choices.clearChoices(); // clear list of choices after choosing an item
     });
 
     inputChoises.addEventListener('removeItem', function () {
         changeListPosition();
-        toggleDots();
+        toggleCounter();
         passValue();
     });
 
     inputChoises.addEventListener('showDropdown', function () {
         changeListPosition();
-        toggleDots();
+        toggleCounter();
     });
 
     inputChoises.addEventListener('hideDropdown', function(){
@@ -139,9 +137,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    function toggleDots() {
+    function toggleCounter() {
         var choicesMain = document.getElementsByClassName('choices'),
-            choicesInner = document.getElementsByClassName('choices__inner'),
             choicesSelectedList = document.getElementsByClassName('choices__list--multiple'),
             countValue = 0;
 
@@ -161,7 +158,6 @@ document.addEventListener("DOMContentLoaded", function() {
             var countValueString = '+' + countValue;
             Array.from(choicesMain).forEach(function(element){
                 if(!document.getElementById('choicesCounter')) {
-                    //element.classList.add('choices__overflow');
                     element.appendChild(countElement);
                     document.getElementById('choicesCounter').innerHTML = countValueString;
                 } else {
