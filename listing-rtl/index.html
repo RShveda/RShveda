@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Vizzit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- noUiSlider (Range Sliders) -->
+    <link rel="stylesheet" href="../src/nouislider/nouislider.min.css">
+    <script type="text/javascript" src="../src/nouislider/nouislider.min.js"></script>
+    <script type="text/javascript" src="../src/nouislider/wNumb.js"></script>
+    <!-- for IE -->
+    <script type="text/javascript">
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="../src/js/polyfill.js"><\/script>');
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="https://cdn.polyfill.io/v2/polyfill.js?features=es5,fetch,Element.prototype.classList,requestAnimationFrame,Node.insertBefore,Node.firstChild,CustomEvent"><\/script>');
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.includes%2CString.prototype.includes%2CObject.assign%2CArray.prototype.findIndex%2CArray.prototype.find%2CArray.from%2CustomEvent"><\/script>');
+    </script>
+    <!-- Choices -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <!-- Custom -->
+    <link rel="stylesheet" href="../src/css/main.css">
+    <script type="text/javascript" src="../src/js/navigation.js"></script>
+    <script type="text/javascript" src="../src/js/listing.js"></script>
+    <script type="text/javascript" src="../src/js/choices_init.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        if (document.documentElement.lang === "ar") {
+            document.write('<link rel="stylesheet" href="../src/css/rtl.css">');
+            document.body.classList.add('direction-rtl');
+        } 
+    </script>
+    <!-- Login Modal -->
+    <div class="modal fade" id="login_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-block">
+                    <h4 class="modal-title text-center">Log In</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-form">
+                        <div class="form-group">
+                            <label for="user_email">Your Email</label>
+                            <input class="form-control input" type="email" placeholder="Enter Your Email" id="user_email" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="user_email">Your Password</label>
+                            <input class="form-control input" type="password" placeholder="Enter Your Password" id="user_password" autocomplete="off">
+                        </div>
+                    </div>
+                    <a href="#" class="link--forgot-pass">Forgot Password?</a>
+                </div>
+                <div class="modal-footer d-block">
+                    <button class="btn btn--main btn--login">Log In</button>
+                    <button class="btn btn--main btn--signup">Sign Up</button>
+                </div>
+            </div>
+            <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+                <span class="btn--close__line"></span>
+                <span class="btn--close__line"></span>
+            </button>
+        </div>
+    </div>
+    <!-- Contact Agent Modal -->
+    <div class="modal fade" id="contact_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <p class="contact-form__price item__price d-flex align-items-center">
+                        30 000 000 €
+                    </p>
+                    <div class="contact-form__agency-details">
+                        Contact <b>TODEOR AGENCY</b> about <b>Amazing 5 bedroom terraced house very well situated</b>
+                    </div>
+                    <div class="contact-form__body">
+                        <div class="text-right">
+                            <a href="#" class="contact-form__link d-inline-block">Legal Notice</a>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control input" type="text" placeholder="Your name" id="client_name" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control input" type="text" placeholder="Your phone" id="client_phone" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control input" type="email" placeholder="Your email" id="client_email" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label class="contact-form__label">You would like...</label>
+                            <div class="row">
+                                <div class="col-6 pr-0">
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="contacted">
+                                        <span class="input d-inline-block"></span>To be contacted
+                                    </label>
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="visit">
+                                        <span class="input d-inline-block"></span>To visit
+                                    </label>
+                                </div>
+                                <div class="col-6 pl-0">
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="photos">
+                                        <span class="input d-inline-block"></span>More photos
+                                    </label>
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="information">
+                                        <span class="input d-inline-block"></span>More information
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control input" type="email" placeholder="Type Your message" id="client_message" autocomplete="off"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="custom-input--small-checkbox">
+                                <input type="checkbox" name="alert">
+                                <span class="input d-inline-block"></span>Email alert on similar properties
+                            </label>
+                        </div>
+                        <button class="btn btn--main contact-form__btn">Contact Agent</button>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+                <span class="btn--close__line"></span>
+                <span class="btn--close__line"></span>
+            </button>
+        </div>
+    </div>
+    <div class="wrapper wrapper--listing">
+        <header class="header header--listing d-flex justify-content-end">
+            <div class="header__logo d-flex align-items-center">
+                <a href="../home">
+                    <img class="logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
+                </a>
+            </div>
+            <div class="header__location d-flex align-items-center flex-fill">
+                <span class="header__location__current d-md-none" id="btn_locations">London</span>
+                <section class="locations d-md-block" id="locations_panel">
+                    <div class="header locations__header d-flex justify-content-between justify-content-md-start align-items-center">
+                        <div class="d-fill w-100">
+                            <select class="form-control input input--location" type="text" placeholder="City or Zipcode" id="input_choises" multiple></select>
+                        </div>
+                        <select class="input input--dropdown input--distance d-none d-md-inline">
+                            <option>+5 miles</option>
+                            <option>+10 miles</option>
+                            <option>+15 miles</option>
+                            <option>+20 miles</option>
+                        </select>
+                        <button class="btn btn--close d-md-none" id="btn_locations__close">
+                            <span class="btn--close__line"></span>
+                            <span class="btn--close__line"></span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+            <button class="header__button btn btn--filters d-md-none" id="btn_filters"></button>
+            <button class="header__button btn btn--nav d-md-none" id="btn_nav">
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+            </button>
+            <nav class="header__nav" id="nav_panel">
+                <div class="header__nav__top d-flex justify-content-between align-items-center d-md-none">
+                    <img class="logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
+                    <button class="btn btn--close" id="btn_nav__close">
+                        <span class="btn--close__line"></span>
+                        <span class="btn--close__line"></span>
+                    </button>
+                </div>
+                <ul class="d-md-flex justify-content-end">
+                    <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">يشترى</a></li>
+                    <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">تأجير</a></li>
+                    <li class="header__nav__item"><a href="#">حساب العملاء</a></li>
+                    <li class="header__nav__item"><a href="#">لغة</a></li>
+                    <li class="header__nav__item d-md-none"><a href="#">حول</a></li>
+                </ul>
+                <div class="header__nav__footer d-md-none">
+                        مهتم في مشروع Vizzit؟<br>
+                    <a href="#" target="_blank">تعلم هنا</a> كيف تعمل!
+                    <span>
+                        © 2019 Vizzit<br>
+                        <a href="#" target="_blank">بسكويت</a>, <a href="#" target="_blank">الخصوصية والشروط</a>
+                    </span>
+                </div>
+            </nav>
+        </header>
+        <section class="filters" id="filters_panel">
+            <div class="header filters__header d-flex justify-content-between align-items-center d-md-none">
+                <span class="flex-fill">مرشحات</span>
+                <button class="btn btn--close" id="btn_filters__close">
+                    <span class="btn--close__line"></span>
+                    <span class="btn--close__line"></span>
+                </button>
+            </div>
+            <div class="filters__content">
+                <div class="filters__part filters__part--top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 d-md-none">
+                                <div class="filters__group--checker d-flex align-items-center mb-3">
+                                    <label class="custom-input--radio-checker flex-fill">
+                                        <input type="radio" name="listing-type" checked>
+                                        <span class="input d-flex align-items-center justify-content-center">Buy</span>
+                                    </label>
+                                    <label class="custom-input--radio-checker flex-fill">
+                                        <input type="radio" name="listing-type">
+                                        <span class="input d-flex align-items-center justify-content-center">Rent</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="filters__group">
+                                    <label>السعر</label>
+                                    <div class="d-none d-md-block">
+                                        <div class="text-center filters__group__value">
+                                            <span id="slider-price-value-from"></span>
+                                            -
+                                            <span id="slider-price-value-to"></span>
+                                        </div>
+                                        <div id="slider-price"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between d-md-none">
+                                        <select class="input input--dropdown">
+                                            <option>Min</option>
+                                            <option>$100</option>
+                                            <option>$200</option>
+                                            <option>$300</option>
+                                        </select>
+                                        <select class="input input--dropdown">
+                                            <option>Max</option>
+                                            <option>$100</option>
+                                            <option>$200</option>
+                                            <option>$300</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="filters__group">
+                                    <label>مكان عيش \ سكن</label>
+                                    <div class="d-none d-md-block">
+                                        <div class="text-center filters__group__value">
+                                            <span id="slider-living-space-value-from"></span> <span>m<sup>2</sup></span>
+                                            -
+                                            <span id="slider-living-space-value-to"></span> <span>m<sup>2</sup></span>
+                                        </div>
+                                        <div id="slider-living-space"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between d-md-none">
+                                        <select class="input input--dropdown">
+                                            <option>Min</option>
+                                            <option>$100</option>
+                                            <option>$200</option>
+                                            <option>$300</option>
+                                        </select>
+                                        <select class="input input--dropdown">
+                                            <option>Max</option>
+                                            <option>$100</option>
+                                            <option>$200</option>
+                                            <option>$300</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="filters__group">
+                                    <label>عدد الغرف</label>
+                                    <div class="d-none d-md-block">
+                                        <div class="text-center filters__group__value">
+                                            <span id="slider-rooms-value-from"></span>
+                                            -
+                                            <span id="slider-rooms-value-to"></span>
+                                        </div>
+                                        <div id="slider-rooms"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between d-md-none">
+                                        <select class="input input--dropdown">
+                                            <option>Min</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <select class="input input--dropdown">
+                                            <option>Max</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-block col-md-12 col-lg-3">
+                                <div class="filters__group filters__group--btn-area">
+                                    <div class="d-flex">
+                                        <span class="input input--dropdown filters__btn--more d-flex align-items-center" id="btn_more-filters">
+                                            + المزيد من المرشحات
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filters__part filters__part--bottom" id="filters_hidden_part">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-3">
+                                <div class="filters__group">
+                                    <label>ارقام الغرف</label>
+                                    <div class="d-none d-md-block">
+                                        <div class="text-center filters__group__value">
+                                            <span id="slider-bedrooms-value-from"></span>
+                                            -
+                                            <span id="slider-bedrooms-value-to"></span>
+                                        </div>
+                                        <div id="slider-bedrooms"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between d-md-none">
+                                        <select class="input input--dropdown">
+                                            <option>Min</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <select class="input input--dropdown">
+                                            <option>Max</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="filters__group mb-4">
+                                    <label>مساحة الأرض</label>
+                                    <div class="d-none d-md-block">
+                                        <div class="text-center filters__group__value">
+                                            <span id="slider-land-space-value-from"></span> <span>m<sup>2</sup></span>
+                                            -
+                                            <span id="slider-land-space-value-to"></span> <span>m<sup>2</sup></span>
+                                        </div>
+                                        <div id="slider-land-space"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between d-md-none">
+                                        <select class="input input--dropdown">
+                                            <option>Min</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <select class="input input--dropdown">
+                                            <option>Max</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row filters__check-row">
+                            <div class="col-md-4 col-lg-3">
+                                <div class="filters__group--checker d-flex align-items-center">
+                                    <label class="custom-input--checkbox-checker flex-fill">
+                                        <input type="checkbox" name="garden">
+                                        <span class="input d-flex align-items-center justify-content-left">حديقة</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="filters__group--checker d-flex align-items-center">
+                                    <label class="custom-input--checkbox-checker flex-fill">
+                                        <input type="checkbox" name="swimming-pool">
+                                        <span class="input d-flex align-items-center justify-content-left">حمام السباحة</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="filters__group--checker d-flex align-items-center">
+                                    <label class="custom-input--checkbox-checker flex-fill">
+                                        <input type="checkbox" name="balcony">
+                                        <span class="input d-flex align-items-center justify-content-left">شرفة</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="filters__group--checker d-flex align-items-center">
+                                    <label class="custom-input--checkbox-checker flex-fill">
+                                        <input type="checkbox" name="terrace">
+                                        <span class="input d-flex align-items-center justify-content-left">شرفة</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filters__buttons-row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col d-flex justify-content-between justify-content-md-end">
+                                    <button class="btn btn--secondary btn--clear flex-fill">Clear</button>
+                                    <button class="btn btn--secondary btn--apply flex-fill">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="listing__filters-info">
+            <div class="container content content--listing">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            عقارات للبيع في لندن ، 100 يورو - 5000 يورو ، 3-8 غرف ، 2-6 سرير<span class="d-none d-lg-inline-block text-separator">></span><button class="btn btn--alert" data-toggle="modal" data-target="#login_modal"><span class="d-none d-lg-block">Create Alert</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="container content content--listing">
+            <div class="row">
+                <div class="col col-lg-9">
+                    <div class="listing__info-row d-flex justify-content-between align-items-center">
+                        <div class="listing__results-info">
+                            <b>45,156</b> results
+                        </div>
+                        <div class="listing__sort">
+                            <select class="input input--dropdown">
+                                <option>Highest Price</option>
+                                <option>Lowest Price</option>
+                                <option>Newest</option>
+                                <option>Oldest</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="content--listing__grid d-md-flex flex-md-wrap justify-content-between">
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <a class="item__link" href="#" target="_blank">
+                                    <p class="item__price">
+                                        30 000 000 €
+                                    </p>
+                                    <p class="item__location">
+                                        The Grande House, St. James`s, London,
+                                        SW1A
+                                    </p>
+                                    <div class="item__main-details">
+                                        <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                        </span>
+                                            <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                        </span>
+                                            <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                        </span>
+                                    </div>
+                                    <div class="item__short-description d-none d-lg-block">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                    </div>
+                                </a>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/5.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/6.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/7.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/8.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/5.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/6.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/7.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/8.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <a class="item__link" href="#" target="_blank">
+                                    <p class="item__price">
+                                        30 000 000 €
+                                    </p>
+                                    <p class="item__location">
+                                        The Grande House, St. James`s, London,
+                                        SW1A
+                                    </p>
+                                    <div class="item__main-details">
+                                        <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                        </span>
+                                            <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                        </span>
+                                            <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                        </span>
+                                    </div>
+                                    <div class="item__short-description d-none d-lg-block">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                    </div>
+                                </a>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/5.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/6.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/7.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/8.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/5.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/6.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/7.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/8.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <a class="item__link" href="#" target="_blank">
+                                    <p class="item__price">
+                                        30 000 000 €
+                                    </p>
+                                    <p class="item__location">
+                                        The Grande House, St. James`s, London,
+                                        SW1A
+                                    </p>
+                                    <div class="item__main-details">
+                                        <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                        </span>
+                                            <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                        </span>
+                                            <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                        </span>
+                                    </div>
+                                    <div class="item__short-description d-none d-lg-block">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                    </div>
+                                </a>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/5.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/6.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/7.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/8.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/5.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/6.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/7.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/8.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <a class="item__link" href="#" target="_blank">
+                                    <p class="item__price">
+                                        30 000 000 €
+                                    </p>
+                                    <p class="item__location">
+                                        The Grande House, St. James`s, London,
+                                        SW1A
+                                    </p>
+                                    <div class="item__main-details">
+                                        <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                        </span>
+                                                <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                        </span>
+                                                <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                        </span>
+                                    </div>
+                                    <div class="item__short-description d-none d-lg-block">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                    </div>
+                                </a>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/5.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/6.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/7.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/8.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/5.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/6.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/7.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/8.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <a class="item__link" href="#" target="_blank">
+                                    <p class="item__price">
+                                        30 000 000 €
+                                    </p>
+                                    <p class="item__location">
+                                        The Grande House, St. James`s, London,
+                                        SW1A
+                                    </p>
+                                    <div class="item__main-details">
+                                        <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                        </span>
+                                                <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                        </span>
+                                                <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                        </span>
+                                    </div>
+                                    <div class="item__short-description d-none d-lg-block">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                    </div>
+                                </a>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/5.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/6.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/7.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/8.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/5.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/6.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/7.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/8.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <a class="item__link" href="#" target="_blank">
+                                    <p class="item__price">
+                                        30 000 000 €
+                                    </p>
+                                    <p class="item__location">
+                                        The Grande House, St. James`s, London,
+                                        SW1A
+                                    </p>
+                                    <div class="item__main-details">
+                                        <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                        </span>
+                                                <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                        </span>
+                                                <span class="detail__item">
+                                            <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                        </span>
+                                    </div>
+                                    <div class="item__short-description d-none d-lg-block">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                    </div>
+                                </a>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/5.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/6.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/7.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/8.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/5.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/6.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/7.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/8.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/5.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/6.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/7.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/8.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/5.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/6.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/7.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/8.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                        <div class="listing__item listing__item--large d-lg-flex">
+                            <i class="item__icon-favorite icon icon--favorite"></i>
+                            <i class="item__icon-photos icon icon--photos">5</i>
+                            <div class="item__img-area d-lg-flex flex-lg-fill">
+                                <div class="swiper-container d-lg-none">
+                                    <div class="swiper-wrapper">
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/1.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/2.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/3.jpg"/>
+                                        </a>
+                                        <a class="swiper-slide" href="#" target="_blank">
+                                            <img src="../src/img/house/4.jpg"/>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+                                <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+                                    <img src="../src/img/house/1.jpg"/>
+                                </div>
+                                <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/2.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/3.jpg"/>
+                                    </div>
+                                    <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                                        <img src="../src/img/house/4.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__content-area flex-lg-fill">
+                                <p class="item__price">
+                                    30 000 000 €
+                                </p>
+                                <p class="item__location">
+                                    The Grande House, St. James`s, London,
+                                    SW1A
+                                </p>
+                                <div class="item__main-details">
+                                    <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">4 rooms</span>
+                                    </span>
+                                            <span class="detail__item">
+                                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">2 bedrooms</span>
+                                    </span>
+                                </div>
+                                <div class="item__short-description d-none d-lg-block">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                </div>
+                                <span class="item__added-date">Added on 18/01/2019</span>
+                                <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row paginator">
+                        <div class="col">
+                            <span class="input paginator__btn paginator__btn--previous d-flex align-items-center justify-content-center">Previous</span>
+                        </div>
+                        <div class="col align-self-center">
+                            <div class="paginator__page text-center">
+                                <span class="d-inline-block"></span>صفحة</span>
+                                <select class="input input--dropdown">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <span class="d-inline-block">
+                                        من <span class="paginator__pages-count">32</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <span class="input paginator__btn paginator__btn--next d-flex align-items-center justify-content-center">Next</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-3 related">
+                    <h4 class="related__title">Sold House Prices</h4>
+                    <ul class="related__list">
+                        <li class="related__list__item"><a href="#">View House Prices in London</a></li>
+                    </ul>
+                    <h4 class="related__title">Exploring Related Searches</h4>
+                    <ul class="related__list">
+                        <li class="related__list__item"><a href="#">Property for Sale in London</a></li>
+                        <li class="related__list__item"><a href="#">Property for Rent in London</a></li>
+                        <li class="related__list__item"><a href="#">2 bedroom houses For Sale in London</a></li>
+                        <li class="related__list__item"><a href="#">3 bedroom houses For Sale in London</a></li>
+                        <li class="related__list__item"><a href="#">4 bedroom houses For Sale in London</a></li>
+                        <li class="related__list__item"><a href="#">5+ bedroom houses For Sale in London</a></li>
+                    </ul>
+                    <h4 class="related__title">Nearby London</h4>
+                    <ul class="related__list">
+                        <li class="related__list__item"><a href="#">Kent</a></li>
+                        <li class="related__list__item"><a href="#">Essex</a></li>
+                        <li class="related__list__item"><a href="#">Survey</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <footer class="footer footer--global d-none d-lg-flex align-items-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col d-flex justify-content-between align-items-center pr-5 pl-5">
+                        <div class="footer--global__nav">
+                            <ul class="list-unstyled m-0">
+                                <li class="list-inline-item"><a href="#">About</a></li>
+                                <li class="list-inline-item"><a href="#">Agency Section</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer--global__details">
+                            Interested in Vizzit project? <a href="#" target="_blank">Learn here</a> how it works!
+                        </div>
+                        <div class="footer--global__nav">
+                            © 2019 Vizzit - <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="btn--alert__overlay d-md-none"></div>
+    <div class="filters__overlay" id="filters_overlay"></div>
+</body>
+</html>

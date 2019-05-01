@@ -1,44 +1,132 @@
 .direction-rtl {
   direction: rtl; }
 
-@media (min-width: 0) {
-  .header {
-    /* ------------- Navigation (Menu) -------------- */ }
-    .header__nav {
-      transform: translateX(-100%); }
-      .header__nav--shown {
-        transform: translateX(0); }
-      .header__nav__top .logo {
-        margin-left: 0;
-        margin-right: 16px; }
-      .header__nav__item {
-        text-align: right; }
-      .header__nav__footer {
-        text-align: right;
-        left: unset;
-        right: 24px; }
+.btn--alert {
+  left: unset;
+  right: 12px; }
 
-  /* ------------- Choices Input -------------- */
-  .choices__inner {
-    padding-left: 7.5px;
-    padding-right: 36px;
-    background-position: right 12px top 10px;
-    text-align: right; }
-  .choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
-    border-left: none;
-    border-right: 1px solid #f99c63;
-    margin: 0 8px 0 -4px; }
-  .choices__list--multiple .choices__item[data-deletable] {
-    padding-left: 5px;
-    padding-right: 10px; }
-  .choices__heading {
-    text-align: right; } }
+.header {
+  /* ------------- Navigation (Menu) -------------- */
+  /* ------------- Navigation (Menu) Listing, Advert -------------- */ }
+  .header__nav {
+    transform: translateX(-100%); }
+    .header__nav--shown {
+      transform: translateX(0); }
+    .header__nav__top .logo {
+      margin-left: 0;
+      margin-right: 16px; }
+    .header__nav__item {
+      text-align: right; }
+    .header__nav__footer {
+      text-align: right;
+      left: unset;
+      right: 24px; }
+  .header__logo .logo {
+    left: unset;
+    right: -32px; }
+  .header__location__current {
+    background-position: right 7px center;
+    padding-left: 0;
+    padding-right: 26px; }
+
 @media (min-width: 768px) {
   .header {
     /* ------------- Navigation (Menu) -------------- */ }
     .header__nav {
-      transform: translateX(0); }
+      transform: translateX(0); } }
+/* ------------- Choices Input -------------- */
+.choices__inner {
+  padding-left: 7.5px;
+  padding-right: 36px;
+  background-position: right 12px top 10px;
+  text-align: right; }
+.choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
+  border-left: none;
+  border-right: 1px solid #f99c63;
+  margin: 0 8px 0 -4px; }
+.choices__list--multiple .choices__item[data-deletable] {
+  padding-left: 5px;
+  padding-right: 10px; }
+.choices__heading {
+  text-align: right; }
 
+/* ------------- Input -------------- */
+.input {
+  padding-left: 0;
+  padding-right: 14px; }
+  .input--dropdown {
+    background-position: left 10px center; }
+
+/*--------------------------------------------*/
+/*                  Listing                   */
+/*--------------------------------------------*/
+.content--listing {
+  text-align: right; }
+
+.item__icon-favorite {
+  right: unset;
+  left: 0; }
+.item__icon-photos {
+  left: unset;
+  right: 8px;
+  padding-left: 6px;
+  padding-right: 24px;
+  background-position: right 6px center; }
+.item__added-date {
+  left: unset;
+  right: 8px; }
+.item__btn--contact-agent {
+  right: unset;
+  left: 8px; }
+
+/* ------------- Item Details (Main Bullets) -------------- */
+.detail__item__icon {
+  margin-right: 0;
+  margin-left: 4px; }
+
+/* ------------- Filters -------------- */
+.filters {
+  transform: translateX(-100%); }
+  .filters--shown {
+    transform: translateX(0); }
+  .filters__header {
+    padding-left: 0;
+    padding-right: 16px; }
+    .filters__header span {
+      text-align: right; }
+  .filters__group {
+    text-align: right; }
+
+/* ------------- Custom Inputs (Radio and Checkbox) -------------- */
+.custom-input--radio-checker:first-child .input {
+  border-radius: 0 5px 5px 0; }
+.custom-input--radio-checker:last-child .input {
+  border-radius: 5px 0 0 5px; }
+.custom-input--checkbox-checker span {
+  padding: 0 38px 0 0;
+  background-position: right 12px center; }
+
+/* ------------- Listing Pagination -------------- */
+.paginator__btn--previous {
+  padding-left: 0;
+  padding-right: 6px; }
+  .paginator__btn--previous:after {
+    left: unset;
+    right: 6px;
+    transform: rotate(-90deg); }
+.paginator__btn--next {
+  padding-left: 6px;
+  padding-right: 0; }
+  .paginator__btn--next:after {
+    right: unset;
+    left: 6px;
+    transform: rotate(90deg); }
+.paginator__page .input {
+  padding-left: 0;
+  padding-right: 8px;
+  background-position: left 6px center; }
+
+@media (min-width: 768px) {
   /* ------------- Choices Input -------------- */
   .choices__inner {
     padding-right: 42px;

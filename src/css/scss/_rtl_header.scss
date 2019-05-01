@@ -1,0 +1,44 @@
+.header {
+    /* ------------- Navigation (Menu) -------------- */
+    &__nav {
+        transform: translateX(-100%);
+        &--shown {
+            transform: translateX(0);
+        }
+        &__top {
+            .logo {
+                margin-left: 0;
+                margin-right: 16px;
+            }
+        } 
+        &__item {
+            text-align: right;
+        }
+        &__footer {
+            text-align: right;
+            left: unset;
+            right: 24px;
+        }
+    }
+    /* ------------- Navigation (Menu) Listing, Advert -------------- */
+    &__logo {
+        .logo {
+            left: unset;
+            right: -32px;
+        }
+    }
+    &__location__current {
+        background-position: right 7px center;
+        padding-left: 0;
+        padding-right: 26px;
+    }
+}
+
+@media (min-width: $md) {
+    .header {
+        /* ------------- Navigation (Menu) -------------- */
+        &__nav {
+          transform: translateX(0);
+        }
+    }
+}
