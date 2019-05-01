@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     var inputChoises = document.getElementById("input_choises");
+    
+    // for RTL:
+    if (document.body.classList.contains("direction-rtl"))
+        inputChoises.dir = "rtl";  
+
     var choices = new Choices(inputChoises, {
         items: [],
         choices: [],
@@ -16,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         maxItemCount: 5,
         position: 'bottom'
     });
+
 
     function addChoices(data_) {
         var getCategories = [];

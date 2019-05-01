@@ -1,0 +1,114 @@
+.direction-rtl {
+    direction: rtl;
+}
+
+@media (min-width: 0) {
+    .header {
+        /* ------------- Navigation (Menu) -------------- */
+        &__nav {
+            transform: translateX(-100%);
+            &--shown {
+                transform: translateX(0);
+            }
+            &__top {
+                .logo {
+                    margin-left: 0;
+                    margin-right: 16px;
+                }
+            } 
+            &__item {
+                text-align: right;
+            }
+            &__footer {
+                text-align: right;
+                left: unset;
+                right: 24px;
+            }
+        }
+    }
+
+    /* ------------- Choices Input -------------- */
+    .choices {
+        &__inner {
+            padding-left: 7.5px;
+            padding-right: 36px;
+            background-position: right 12px top 10px;
+            text-align: right;
+        }
+        &[data-type*=select-multiple] .choices__button,
+        &[data-type*=text] .choices__button {
+            border-left: none;
+            border-right: 1px solid #f99c63;
+            margin: 0 8px 0 -4px;
+        }
+        &__list--multiple {
+            .choices__item[data-deletable] {
+                padding-left: 5px;
+                padding-right: 10px;
+            }
+        }
+        &__heading {
+            text-align: right;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        /* ------------- Navigation (Menu) -------------- */
+        &__nav {
+          transform: translateX(0);
+        }
+    }
+
+    /* ------------- Choices Input -------------- */
+    .choices {
+        &__inner {
+            padding-right: 42px;
+            background-position: right 16px top 15px;
+        }
+    }
+    /* ------------- Home -------------- */
+    .content {
+        &--home {
+            &__form-area {
+                text-align: right;
+            }
+        }
+    }
+    .title {
+        &--home {
+            text-align: right;
+        }
+    }
+    .form {
+        &__buttons-row {
+            padding-left: 0;
+            padding-right: 14px;
+        }
+    }
+    .footer {
+        &--home__nav {
+            padding-right: 0;
+            padding-left: 40px;
+            & > a {
+                display: inline-block;
+                &:first-child {
+                    margin-right: 0;
+                    margin-left: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    /* ------------- Home -------------- */
+    .content {
+        &--home {
+            &__logo {
+                margin: 0 0 6px 30px;
+            }
+        }
+    }
+}

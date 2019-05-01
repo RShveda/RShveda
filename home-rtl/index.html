@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Vizzit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- for IE -->
+    <script type="text/javascript">
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="../src/js/polyfill.js"><\/script>');
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="https://cdn.polyfill.io/v2/polyfill.js?features=es5,fetch,Element.prototype.classList,requestAnimationFrame,Node.insertBefore,Node.firstChild,CustomEvent"><\/script>');
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.includes%2CString.prototype.includes%2CObject.assign%2CArray.prototype.findIndex%2CArray.prototype.find%2CArray.from%2CustomEvent"><\/script>');
+    </script>
+    <!-- Choices -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <!-- Custom -->
+    <link rel="stylesheet" href="../src/css/main.css">
+    <script type="text/javascript" src="../src/js/navigation.js"></script>
+    <script type="text/javascript" src="../src/js/choices_init.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        if (document.documentElement.lang === "ar") {
+            document.write('<link rel="stylesheet" href="../src/css/rtl.css">');
+            document.body.classList.add('direction-rtl');
+        } 
+    </script>
+    <div class="wrapper wrapper--home">
+        <header class="header header--home d-flex justify-content-end">
+            <div class="header__logo">
+                <img class="logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
+            </div>
+            <div class="header__location"></div>
+            <button class="header__button btn btn--nav d-md-none" id="btn_nav">
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+            </button>
+            <nav class="header__nav" id="nav_panel">
+                <div class="header__nav__top d-flex justify-content-between align-items-center d-md-none">
+                    <img class="logo" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
+                    <button class="btn btn--close" id="btn_nav__close">
+                        <span class="btn--close__line"></span>
+                        <span class="btn--close__line"></span>
+                    </button>
+                </div>
+                <ul class="d-md-flex justify-content-end">
+                    <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">يشترى</a></li>
+                    <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">تأجير</a></li>
+                    <li class="header__nav__item"><a href="#">حساب العملاء</a></li>
+                    <li class="header__nav__item"><a href="#">لغة</a></li>
+                    <li class="header__nav__item d-md-none"><a href="#">حول</a></li>
+                </ul>
+                <div class="header__nav__footer d-md-none">
+                        مهتم في مشروع Vizzit؟<br>
+                    <a href="#" target="_blank">تعلم هنا</a> كيف تعمل!
+                    <span>
+                        © 2019 Vizzit<br>
+                        <a href="#" target="_blank">بسكويت</a>, <a href="#" target="_blank">الخصوصية والشروط</a>
+                    </span>
+                </div>
+            </nav>
+        </header>
+        <section class="container-fluid content content--home">
+            <div class="row">
+                <div class="col">
+                    <img class="content--home__logo d-lg-inline-block" src="../src/img/logo-full.svg" alt="Vizzit Logo"/>
+                    <div class="content--home__form-area d-lg-inline-block">
+                        <h1 class="title title--home">جميع العقارات من فرنسا</h1>
+                        <p class="subtitle subtitle--home d-none d-md-block">حصلت VizzitBot <b>1,245,351</b> قوائم أكثر <b>20,234</b> مواقع الوكالة</p>
+                        <form class="form form--location d-md-flex">
+                            <div class="form-group form--location__input-area flex-fill">
+                                <select class="form-control input input--location" type="text" placeholder="المدينة أو الرمز البريدي" id="input_choises" multiple ></select>
+                            </div>
+                            <div class="buttons-row form__buttons-row d-flex justify-content-between flex-fill">
+                                <button class="btn btn--main btn--sale buttons-row__btn flex-fill">For sale</button>
+                                <button class="btn btn--main btn--rent buttons-row__btn flex-fill">To rent</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer footer--home d-none d-md-block">
+            <div class="footer--home__details">مهتم في مشروع Vizzit؟ <a href="#" target="_blank">تعلم هنا</a> كيف تعمل!</div>
+            <div class="footer--home__bottom d-flex justify-content-between align-items-center">
+                <button class="btn btn--main btn--agency">Agency Section</button>
+                <div class="footer--home__nav">
+                    <a href="#">About</a>
+                    © 2019 Vizzit - <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
