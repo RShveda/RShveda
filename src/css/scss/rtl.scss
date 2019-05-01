@@ -1,8 +1,14 @@
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
 .direction-rtl {
     direction: rtl;
 }
 
-@media (min-width: 0) {
+@media (min-width: $xs) {
     .header {
         /* ------------- Navigation (Menu) -------------- */
         &__nav {
@@ -53,7 +59,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $md) {
     .header {
         /* ------------- Navigation (Menu) -------------- */
         &__nav {
@@ -102,7 +108,7 @@
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $lg) {
     /* ------------- Home -------------- */
     .content {
         &--home {
@@ -112,3 +118,7 @@
         }
     }
 }
+
+// @media (min-width: $xl) {
+
+// }
