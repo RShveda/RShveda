@@ -5,6 +5,10 @@
   left: unset;
   right: 12px; }
 
+@media (min-width: 992px) {
+  .btn--alert {
+    padding: 0 26px 0 0;
+    background-position: right 0 center; } }
 .header {
   /* ------------- Navigation (Menu) -------------- */
   /* ------------- Navigation (Menu) Listing, Advert -------------- */ }
@@ -34,6 +38,9 @@
     /* ------------- Navigation (Menu) -------------- */ }
     .header__nav {
       transform: translateX(0); } }
+@media (min-width: 992px) {
+  .header__logo .logo {
+    right: -54px; } }
 /* ------------- Choices Input -------------- */
 .choices__inner {
   padding-left: 7.5px;
@@ -192,10 +199,27 @@
     left: 1px;
     padding-left: 0;
     padding-right: 22px;
-    background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.92) 50%); } }
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.92) 50%); }
+
+  /* ------------- Filters -------------- */
+  .filters {
+    transform: translateX(0); } }
 @media (min-width: 992px) {
   /* ------------- Home -------------- */
   .content--home__logo {
-    margin: 0 0 6px 30px; } }
+    margin: 0 0 6px 30px; }
+
+  /*--------------------------------------------*/
+  /*                  Listing                   */
+  /*--------------------------------------------*/
+  .listing__item--large .item__btn--contact-agent {
+    right: unset;
+    left: 10px; } }
+.list-unstyled {
+  padding-right: 0; }
+
+.list-inline-item:not(:last-child) {
+  margin-right: 0;
+  margin-left: 0.5rem; }
 
 /*# sourceMappingURL=rtl.css.map */

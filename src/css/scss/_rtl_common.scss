@@ -244,6 +244,11 @@
             }
         }   
     }
+    /* ------------- Filters -------------- */
+    .filters {
+        transform: translateX(0);
+    }
+
 }
 
 @media (min-width: $lg) {
@@ -255,8 +260,18 @@
             }
         }
     }
+
+    /*--------------------------------------------*/
+    /*                  Listing                   */
+    /*--------------------------------------------*/
+    .listing {
+        &__item {
+            &--large {
+                .item__btn--contact-agent {
+                    right: unset;
+                    left: 10px;
+                }
+            } 
+        }
+    }
 }
-
-// @media (min-width: $xl) {
-
-// }

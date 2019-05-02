@@ -42,3 +42,13 @@
         }
     }
 }
+
+@media (min-width: $lg) {
+    .header {
+        &__logo {
+            .logo {
+                right: -54px;
+            }
+        }
+    }
+}
