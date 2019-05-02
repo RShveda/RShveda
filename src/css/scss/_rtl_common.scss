@@ -106,6 +106,22 @@
             background-position: right 12px center;
         }
     } 
+    &--small-checkbox {
+        span {
+            margin-right: 0;
+            margin-left: 6px;
+        }
+        &-wrapper {
+            &:first-child {
+                padding-right: 16px !important;
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-left: 16px !important;
+                padding-right: 0;
+            }
+        }
+    }
 }
 /* ------------- Listing Pagination -------------- */
 .paginator {
@@ -138,6 +154,23 @@
     }
 }
 
+/* ------------- Modal -------------- */
+.modal {
+    text-align: right;
+}
+/* ------------- Locations -------------- */
+.locations {
+    left: unset;
+    right: 0;
+    &__header {
+        padding-left: 0;
+        padding-right: 16px;
+        .choices__inner {
+            right: 0;
+            padding-right: 5px;
+        }
+    }
+}
 
 @media (min-width: $md) {
     /* ------------- Choices Input -------------- */
@@ -178,6 +211,38 @@
                 }
             }
         }
+    }
+    /*--------------------------------------------*/
+    /*                  Listing                   */
+    /*--------------------------------------------*/
+
+    /* ------------- Locations -------------- */
+    .locations {
+        &__header {
+            .choices__inner {
+                border-radius: 0 5px 5px 0;
+            }
+            .input--distance {
+                border-radius: 5px 0 0 5px;
+            }
+            .choices {
+                .choices__list--multiple {
+                    .choices__item {
+                        &:first-child {
+                            margin-right: 0;
+                            margin-left: 100%;
+                        }
+                    }
+                } 
+                .choices__counter {
+                    right: unset;
+                    left: 1px;
+                    padding-left: 0;
+                    padding-right: 22px;
+                    background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.92) 50%)
+                }
+            }
+        }   
     }
 }
 
