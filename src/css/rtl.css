@@ -41,6 +41,9 @@
 @media (min-width: 992px) {
   .header__logo .logo {
     right: -54px; } }
+@media (min-width: 1200px) {
+  .header__logo .logo {
+    right: 40px; } }
 /* ------------- Choices Input -------------- */
 .choices__inner {
   padding-left: 7.5px;
