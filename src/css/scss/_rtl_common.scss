@@ -40,10 +40,12 @@
 }
 .item {
     &__icon-favorite {
+        right: auto;
         right: unset;
         left: 0;
     }
     &__icon-photos {
+        left: auto;
         left: unset;
         right: 8px;
         padding-left: 6px;
@@ -51,10 +53,12 @@
         background-position: right 6px center;
     }
     &__added-date {
+        left: auto;
         left: unset;
         right: 8px;
     }
     &__btn--contact-agent {
+        right: auto;
         right: unset;
         left: 8px;
     }
@@ -139,6 +143,7 @@
             padding-left: 6px;
             padding-right: 0;
             &:after {
+                right: auto;
                 right: unset;
                 left: 6px;
                 transform: rotate(90deg);
@@ -160,6 +165,7 @@
 }
 /* ------------- Locations -------------- */
 .locations {
+    left: auto;
     left: unset;
     right: 0;
     &__header {
@@ -235,6 +241,7 @@
                     }
                 } 
                 .choices__counter {
+                    right: auto;
                     right: unset;
                     left: 1px;
                     padding-left: 0;
@@ -243,6 +250,18 @@
                 }
             }
         }   
+    }
+    .listing {
+        &__item--large {
+            .item__short-description {
+                &:after {
+                    right: auto;
+                    right: unset;
+                    left: 0;
+                    background: linear-gradient(90deg, white, rgba(255, 255, 255, 0));
+                }
+            }
+        }
     }
     /* ------------- Filters -------------- */
     .filters {
@@ -268,10 +287,21 @@
         &__item {
             &--large {
                 .item__btn--contact-agent {
+                    right: auto;
                     right: unset;
                     left: 10px;
                 }
             } 
+        }
+    }
+    /* ------------- Locations in Header -------------- */
+    .locations {
+        &__header {
+            .choices__inner {
+                padding-left: 5px;
+                padding-right: 36px;
+                background-position: right 12px top 10px;
+            }
         }
     }
 }

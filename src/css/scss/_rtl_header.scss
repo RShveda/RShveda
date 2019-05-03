@@ -16,6 +16,7 @@
         }
         &__footer {
             text-align: right;
+            left: auto;
             left: unset;
             right: 24px;
         }
@@ -23,6 +24,7 @@
     /* ------------- Navigation (Menu) Listing, Advert -------------- */
     &__logo {
         .logo {
+            left: auto;
             left: unset;
             right: -32px;
         }

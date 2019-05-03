@@ -2,6 +2,7 @@
   direction: rtl; }
 
 .btn--alert {
+  left: auto;
   left: unset;
   right: 12px; }
 
@@ -23,9 +24,11 @@
       text-align: right; }
     .header__nav__footer {
       text-align: right;
+      left: auto;
       left: unset;
       right: 24px; }
   .header__logo .logo {
+    left: auto;
     left: unset;
     right: -32px; }
   .header__location__current {
@@ -74,18 +77,22 @@
   text-align: right; }
 
 .item__icon-favorite {
+  right: auto;
   right: unset;
   left: 0; }
 .item__icon-photos {
+  left: auto;
   left: unset;
   right: 8px;
   padding-left: 6px;
   padding-right: 24px;
   background-position: right 6px center; }
 .item__added-date {
+  left: auto;
   left: unset;
   right: 8px; }
 .item__btn--contact-agent {
+  right: auto;
   right: unset;
   left: 8px; }
 
@@ -137,6 +144,7 @@
   padding-left: 6px;
   padding-right: 0; }
   .paginator__btn--next:after {
+    right: auto;
     right: unset;
     left: 6px;
     transform: rotate(90deg); }
@@ -151,6 +159,7 @@
 
 /* ------------- Locations -------------- */
 .locations {
+  left: auto;
   left: unset;
   right: 0; }
   .locations__header {
@@ -198,11 +207,18 @@
     margin-right: 0;
     margin-left: 100%; }
   .locations__header .choices .choices__counter {
+    right: auto;
     right: unset;
     left: 1px;
     padding-left: 0;
     padding-right: 22px;
     background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.92) 50%); }
+
+  .listing__item--large .item__short-description:after {
+    right: auto;
+    right: unset;
+    left: 0;
+    background: linear-gradient(90deg, white, rgba(255, 255, 255, 0)); }
 
   /* ------------- Filters -------------- */
   .filters {
@@ -216,8 +232,15 @@
   /*                  Listing                   */
   /*--------------------------------------------*/
   .listing__item--large .item__btn--contact-agent {
+    right: auto;
     right: unset;
-    left: 10px; } }
+    left: 10px; }
+
+  /* ------------- Locations in Header -------------- */
+  .locations__header .choices__inner {
+    padding-left: 5px;
+    padding-right: 36px;
+    background-position: right 12px top 10px; } }
 .list-unstyled {
   padding-right: 0; }
 
