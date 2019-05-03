@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -32,6 +32,14 @@
 </head>
 
 <body>
+    <!-- for RTL: -->
+    <script type="text/javascript">
+        if (document.documentElement.lang === "ar") {
+            document.write('<link rel="stylesheet" href="../src/css/rtl.css">');
+            document.body.classList.add('direction-rtl');
+        } 
+    </script>
+
     <div class="wrapper wrapper--listing d-flex flex-column justify-content-between">
         
 <header class="header header--listing d-flex justify-content-end">
@@ -169,9 +177,9 @@
                             <label>Living Space</label>
                             <div class="d-none d-md-block">
                                 <div class="text-center filters__group__value">
-                                    <span id="slider-living-space-value-from"></span> <span>m<sup>2</sup></span>
+                                    <span id="slider-living-space-value-from"></span> <span><span class="d-inline-block">m</span><sup class="d-inline-block">2</sup></span>
                                     -
-                                    <span id="slider-living-space-value-to"></span> <span>m<sup>2</sup></span>
+                                    <span id="slider-living-space-value-to"></span> <span><span class="d-inline-block">m</span><sup class="d-inline-block">2</sup></span>
                                 </div>
                                 <div id="slider-living-space"></div>
                             </div>
@@ -265,9 +273,9 @@
                             <label>Land Space</label>
                             <div class="d-none d-md-block">
                                 <div class="text-center filters__group__value">
-                                    <span id="slider-land-space-value-from"></span> <span>m<sup>2</sup></span>
+                                    <span id="slider-land-space-value-from"></span> <span><span class="d-inline-block">m</span><sup class="d-inline-block">2</sup></span>
                                     -
-                                    <span id="slider-land-space-value-to"></span> <span>m<sup>2</sup></span>
+                                    <span id="slider-land-space-value-to"></span> <span><span class="d-inline-block">m</span><sup class="d-inline-block">2</sup></span>
                                 </div>
                                 <div id="slider-land-space"></div>
                             </div>
@@ -369,19 +377,19 @@
             </div>
             <div class="content--listing__grid d-md-flex flex-md-wrap justify-content-between">
                     
-
+<!--- UPDATED LISTING ITEM START -->
 <div class="listing__item listing__item--large d-lg-flex">
     <i class="item__icon-favorite icon icon--favorite"></i>
     <i class="item__icon-photos icon icon--photos">2</i>
     <div class="item__img-area d-lg-flex flex-lg-fill">
         <div class="swiper-container d-lg-none d-lg-none">
             <div class="swiper-wrapper">
-                    <a class="swiper-slide" href="#" target="_blank">
-                        <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_1.jpg?636912981550000000" />
-                    </a>
-                    <a class="swiper-slide" href="#" target="_blank">
-                        <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_2.jpg?636912981550000000" />
-                    </a>
+                <a class="swiper-slide" href="#" target="_blank">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_1.jpg?636912981550000000" />
+                </a>
+                <a class="swiper-slide" href="#" target="_blank">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_2.jpg?636912981550000000" />
+                </a>
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -390,9 +398,9 @@
             <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_1.jpg?636912981550000000" />
         </div>
         <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
-                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
-                    <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_2.jpg?636912981550000000" />
-                </div>
+            <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_2.jpg?636912981550000000" />
+            </div>
         </div>
     </div>
     <div class="item__content-area flex-lg-fill">
@@ -401,25 +409,25 @@
                 210000 &#x20AC;
             </p>
             <div class="item__main-details">
-                    <span class="detail__item">
-                        <i class="detail__item__icon icon icon--area"></i>20 m<sup>2</sup>
-                    </span>
-                                    <span class="detail__item">
-                        <i class="detail__item__icon icon icon--room"></i>1 rooms
-                    </span>
-                                    <span class="detail__item">
-                        <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
-                    </span>
+                <span class="detail__item">
+                    <i class="detail__item__icon icon icon--area"></i><span class="d-inline-block">156 m<sup class="d-inline-block">2</sup></span>
+                </span>
+                <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i><span class="d-inline-block">1 rooms</span>
+                </span>
+                <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i><span class="d-inline-block">1 bedrooms</span>
+                </span>
             </div>
             <div class="item__short-description d-none d-lg-block">
                 Rue Lebrun, Paris 13&#xE8;me &#xE0; 3 mn du m&#xE9;tro Gobelins, nous vous pr&#xE9;sentons ce studio atypique de 20 m2 au rez de chauss&#xE9; sur rue, tr&#xE8;s lumineux avec porte blind&#xE9;e. Il se compose d&#x27;un grande pi&#xE8;ce de vie avec cuisine ouverte et d&#x27;une salle d&#x27;eau avec Wc. Chauffage &#xE9;lectrique individuel. Ancienne boutique reconvertie en studio dans un immeuble ancien et bien entretenu. Ce bien vous est pr&#xE9;sent&#xE9; par Imop l&#x27;agence immobili&#xE8;re en ligne au tarif unique de 3900&#x20AC;. Prix Fai: 210,000&#x20AC;
             </div>
         </a>
-            <span class="item__added-date">Added on 19/04/2019</span>
+        <span class="item__added-date">Added on 19/04/2019</span>
         <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
     </div>
 </div>
-
+<!--- UPDATED LISTING ITEM END -->
 
                     
 
@@ -2209,7 +2217,7 @@
                     </div>
                     <div class="col align-self-center">
                         <div class="paginator__page text-center">
-                            Page
+                            <span class="d-inline-block">Page</span>
                             <select id="" class="input input--dropdown dropdown--link">
                                         <option selected data-link="/properties">1</option>
                                         <option data-link="/properties/2">2</option>
@@ -2255,7 +2263,9 @@
                                         <option data-link="/properties/42">42</option>
                                         <option data-link="/properties/43">43</option>
                             </select>
-                            of <span class="paginator__pages-count">43</span>
+                            <span class="d-inline-block">
+                                of <span class="paginator__pages-count">43</span>
+                            </span>
                         </div>
                     </div>
                     <div class="col">
@@ -2371,7 +2381,7 @@
                     <div class="form-group">
                         <label class="contact-form__label">You would like...</label>
                         <div class="row">
-                            <div class="col-6 pr-0">
+                            <div class="col-6 pr-0 custom-input--small-checkbox-wrapper">
                                 <label class="custom-input--small-checkbox">
                                     <input type="checkbox" name="contacted">
                                     <span class="input d-inline-block"></span>To be contacted
@@ -2381,7 +2391,7 @@
                                     <span class="input d-inline-block"></span>To visit
                                 </label>
                             </div>
-                            <div class="col-6 pl-0">
+                            <div class="col-6 pl-0 custom-input--small-checkbox-wrapper">
                                 <label class="custom-input--small-checkbox">
                                     <input type="checkbox" name="photos">
                                     <span class="input d-inline-block"></span>More photos

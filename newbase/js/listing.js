@@ -76,24 +76,47 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /* ==================== [Sliders in Filters] ===================== */
 
     var sliderPrice = document.getElementById('slider-price');
-    noUiSlider.create(sliderPrice, {
-        start: [500000,10000000],
-        step: 10000,
-        behaviour: 'drag',
-        connect: true,
-        range: {
-            min: [100000],
-            max: [50000000]
-        },
-        ariaFormat: wNumb({
-            decimals: 0
-        }),
-        format: wNumb({
-            decimals: 0,
-            thousand: ' ',
-            suffix: ' €'
-        })
-    });
+    if (document.body.classList.contains("direction-rtl")) {
+        // for RTL:
+        noUiSlider.create(sliderPrice, {
+            start: [500000,10000000],
+            step: 10000,
+            behaviour: 'drag',
+            connect: true,
+            direction: 'rtl',
+            range: {
+                min: [100000],
+                max: [50000000]
+            },
+            ariaFormat: wNumb({
+                decimals: 0
+            }),
+            format: wNumb({
+                decimals: 0,
+                thousand: '',
+                suffix: ' €'
+            })
+        });
+    } else {
+        noUiSlider.create(sliderPrice, {
+            start: [500000,10000000],
+            step: 10000,
+            behaviour: 'drag',
+            connect: true,
+            range: {
+                min: [100000],
+                max: [50000000]
+            },
+            ariaFormat: wNumb({
+                decimals: 0
+            }),
+            format: wNumb({
+                decimals: 0,
+                thousand: ' ',
+                suffix: ' €'
+            })
+        });
+    }
 
     var sliderPriceValueFrom = document.getElementById('slider-price-value-from');
     var sliderPriceValueTo = document.getElementById('slider-price-value-to');
@@ -105,23 +128,45 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     //============================================
     var sliderLivingSpace = document.getElementById('slider-living-space');
-    noUiSlider.create(sliderLivingSpace, {
-        start: [100,250],
-        step: 10,
-        behaviour: 'drag',
-        connect: true,
-        range: {
-            min: [10],
-            max: [1000]
-        },
-        ariaFormat: wNumb({
-            decimals: 0
-        }),
-        format: wNumb({
-            decimals: 0,
-            thousand: ' '
-        })
-    });
+    if (document.body.classList.contains("direction-rtl")) {
+        // for RTL:
+        noUiSlider.create(sliderLivingSpace, {
+            start: [100,250],
+            step: 10,
+            behaviour: 'drag',
+            connect: true,
+            direction: 'rtl',
+            range: {
+                min: [10],
+                max: [1000]
+            },
+            ariaFormat: wNumb({
+                decimals: 0
+            }),
+            format: wNumb({
+                decimals: 0,
+                thousand: ''
+            })
+        });
+    } else {
+        noUiSlider.create(sliderLivingSpace, {
+            start: [100,250],
+            step: 10,
+            behaviour: 'drag',
+            connect: true,
+            range: {
+                min: [10],
+                max: [1000]
+            },
+            ariaFormat: wNumb({
+                decimals: 0
+            }),
+            format: wNumb({
+                decimals: 0,
+                thousand: ' '
+            })
+        });
+    }
 
     var sliderLivingSpaceValueFrom = document.getElementById('slider-living-space-value-from');
     var sliderLivingSpaceValueTo = document.getElementById('slider-living-space-value-to');
@@ -133,22 +178,43 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     //============================================
     var sliderRooms = document.getElementById('slider-rooms');
-    noUiSlider.create(sliderRooms, {
-        start: [3,6],
-        step: 1,
-        behaviour: 'drag',
-        connect: true,
-        range: {
-            min: [1],
-            max: [20]
-        },
-        ariaFormat: wNumb({
-            decimals: 0
-        }),
-        format: wNumb({
-            decimals: 0
-        })
-    });
+    if (document.body.classList.contains("direction-rtl")) {
+        // for RTL:
+        noUiSlider.create(sliderRooms, {
+            start: [3,6],
+            step: 1,
+            behaviour: 'drag',
+            connect: true,
+            direction: 'rtl',
+            range: {
+                min: [1],
+                max: [20]
+            },
+            ariaFormat: wNumb({
+                decimals: 0
+            }),
+            format: wNumb({
+                decimals: 0
+            })
+        });
+    } else {
+        noUiSlider.create(sliderRooms, {
+            start: [3,6],
+            step: 1,
+            behaviour: 'drag',
+            connect: true,
+            range: {
+                min: [1],
+                max: [20]
+            },
+            ariaFormat: wNumb({
+                decimals: 0
+            }),
+            format: wNumb({
+                decimals: 0
+            })
+        });
+    }
 
     var sliderRoomsValueFrom = document.getElementById('slider-rooms-value-from');
     var sliderRoomsValueTo = document.getElementById('slider-rooms-value-to');
@@ -160,22 +226,43 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     //============================================
     var sliderBedrooms = document.getElementById('slider-bedrooms');
-    noUiSlider.create(sliderBedrooms, {
-        start: [2,4],
-        step: 1,
-        behaviour: 'drag',
-        connect: true,
-        range: {
-            min: [1],
-            max: [10]
-        },
-        ariaFormat: wNumb({
-            decimals: 0
-        }),
-        format: wNumb({
-            decimals: 0
-        })
-    });
+    if (document.body.classList.contains("direction-rtl")) {
+        // for RTL:
+        noUiSlider.create(sliderBedrooms, {
+            start: [2,4],
+            step: 1,
+            behaviour: 'drag',
+            connect: true,
+            direction: 'rtl',
+            range: {
+                min: [1],
+                max: [10]
+            },
+            ariaFormat: wNumb({
+                decimals: 0
+            }),
+            format: wNumb({
+                decimals: 0
+            })
+        });
+    } else {
+        noUiSlider.create(sliderBedrooms, {
+            start: [2,4],
+            step: 1,
+            behaviour: 'drag',
+            connect: true,
+            range: {
+                min: [1],
+                max: [10]
+            },
+            ariaFormat: wNumb({
+                decimals: 0
+            }),
+            format: wNumb({
+                decimals: 0
+            })
+        });
+    }
 
     var sliderBedroomsValueFrom = document.getElementById('slider-bedrooms-value-from');
     var ssliderBedroomsValueTo = document.getElementById('slider-bedrooms-value-to');
@@ -187,23 +274,45 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     //============================================
     var sliderLandSpace = document.getElementById('slider-land-space');
-    noUiSlider.create(sliderLandSpace, {
-        start: [200,650],
-        step: 10,
-        behaviour: 'drag',
-        connect: true,
-        range: {
-            min: [100],
-            max: [1500]
-        },
-        ariaFormat: wNumb({
-            decimals: 0
-        }),
-        format: wNumb({
-            decimals: 0,
-            thousand: ' '
-        })
-    });
+    if (document.body.classList.contains("direction-rtl")) {
+        // for RTL:
+        noUiSlider.create(sliderLandSpace, {
+            start: [200,650],
+            step: 10,
+            behaviour: 'drag',
+            connect: true,
+            direction: 'rtl',
+            range: {
+                min: [100],
+                max: [1500]
+            },
+            ariaFormat: wNumb({
+                decimals: 0
+            }),
+            format: wNumb({
+                decimals: 0,
+                thousand: ''
+            })
+        });
+    } else {
+        noUiSlider.create(sliderLandSpace, {
+            start: [200,650],
+            step: 10,
+            behaviour: 'drag',
+            connect: true,
+            range: {
+                min: [100],
+                max: [1500]
+            },
+            ariaFormat: wNumb({
+                decimals: 0
+            }),
+            format: wNumb({
+                decimals: 0,
+                thousand: ' '
+            })
+        });
+    }
 
     var sliderLandSpaceValueFrom = document.getElementById('slider-land-space-value-from');
     var sliderLandSpaceValueTo = document.getElementById('slider-land-space-value-to');
