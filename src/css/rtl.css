@@ -205,7 +205,8 @@
   .locations__header .choices__inner {
     border-radius: 0 5px 5px 0; }
   .locations__header .input--distance {
-    border-radius: 5px 0 0 5px; }
+    border-radius: 5px 0 0 5px;
+    min-width: 110px; }
   .locations__header .choices .choices__list--multiple .choices__item:first-child {
     margin-right: 0;
     margin-left: 100%; }
@@ -244,6 +245,10 @@
     padding-left: 5px;
     padding-right: 36px;
     background-position: right 12px top 10px; } }
+@media (min-width: 1200px) {
+  /* ------------- Locations in Header -------------- */
+  .locations__header .input--distance {
+    min-width: 130px; } }
 .list-unstyled {
   padding-right: 0; }
 

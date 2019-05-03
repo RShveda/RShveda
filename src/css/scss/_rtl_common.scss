@@ -237,6 +237,7 @@
             }
             .input--distance {
                 border-radius: 5px 0 0 5px;
+                min-width: 110px;
             }
             .choices {
                 .choices__list--multiple {
@@ -308,6 +309,16 @@
                 padding-left: 5px;
                 padding-right: 36px;
                 background-position: right 12px top 10px;
+            }
+        }
+    }
+}
+@media (min-width: $xl) {
+    /* ------------- Locations in Header -------------- */
+    .locations {
+        &__header {
+            .input--distance {
+                min-width: 130px;
             }
         }
     }
