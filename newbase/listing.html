@@ -1,0 +1,2461 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="format-detection" content="telephone=no">
+
+
+    <title>Vizzit</title>
+
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css" />
+<meta name="x-stylesheet-fallback-test" content="" class="swiper-container" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("position","relative",["\/lib\/swiper\/dist\/swiper.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/13.1.3/nouislider.min.css" />
+<meta name="x-stylesheet-fallback-test" content="" class="noUi-target" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("position","relative",["\/lib\/nouislider\/nouislider.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<meta name="x-stylesheet-fallback-test" content="" class="choices" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("position","relative",["\/lib\/choices\/choices.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+
+    <link rel="stylesheet" href="./css/main.min.css" />
+
+</head>
+
+<body>
+    <div class="wrapper wrapper--listing d-flex flex-column justify-content-between">
+        
+<header class="header header--listing d-flex justify-content-end">
+    <div class="header__logo d-flex align-items-center">
+        <a href="">
+            <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+        </a>
+    </div>
+    <div class="header__location d-flex align-items-center flex-fill">
+        <span class="header__location__current d-md-none" id="btn_locations">London</span>
+        <section class="locations d-md-block" id="locations_panel">
+            <div class="header locations__header d-flex justify-content-between justify-content-md-start align-items-center">
+                <div class="d-fill w-100">
+                    <select class="form-control input input--location" type="text" placeholder="City or Zipcode" id="location-selector" multiple></select>
+                </div>
+                <select class="input input--dropdown input--distance d-none d-md-inline">
+                    <option>+5 miles</option>
+                    <option>+10 miles</option>
+                    <option>+15 miles</option>
+                    <option>+20 miles</option>
+                </select>
+                <button class="btn btn--close d-md-none" id="btn_locations__close">
+                    <span class="btn--close__line"></span>
+                    <span class="btn--close__line"></span>
+                </button>
+            </div>
+            <div class="container locations__content p-md-0" id="location_results">
+                <div class="row p-md-0 m-lg-0">
+                    <div class="col p-md-0">
+                        <ul class="locations__list">
+                            <li class="locations__list__item">Location 1</li>
+                            <li class="locations__list__item">Location 2</li>
+                            <li class="locations__list__item">Location 3</li>
+                            <li class="locations__list__item">Location 4</li>
+                            <li class="locations__list__item">Location 5</li>
+                            <li class="locations__list__item">Location 6</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <button class="header__button btn btn--filters d-md-none" id="btn_filters"></button>
+    <button class="header__button btn btn--nav d-md-none" id="btn_nav">
+    <span class="btn--nav__line"></span>
+    <span class="btn--nav__line"></span>
+    <span class="btn--nav__line"></span>
+</button>
+<nav class="header__nav flex-md-fill" id="nav_panel">
+    <div class="header__nav__top d-flex justify-content-between align-items-center d-md-none">
+        <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+        <button class="btn btn--close" id="btn_nav__close">
+            <span class="btn--close__line"></span>
+            <span class="btn--close__line"></span>
+        </button>
+    </div>
+    <ul class="d-md-flex justify-content-end">
+        <li class="header__nav__item d-none d-md-block"><a href="#">Buy</a></li>
+        <li class="header__nav__item d-none d-md-block"><a href="#">Rent</a></li>
+        <li class="header__nav__item"><a href="#">Customer Account</a></li>
+        <li class="header__nav__item"><a href="#">Language</a></li>
+        <li class="header__nav__item d-md-none"><a href="#">About</a></li>
+    </ul>
+    <div class="header__nav__footer d-md-none">
+        Interested in Vizzit project?<br>
+        <a href="#" target="_blank">Learn here</a> how it works!
+        <span>
+            © 2019 Vizzit<br>
+            <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+        </span>
+    </div>
+</nav>
+</header>
+        
+
+
+
+
+
+
+
+<section class="filters" id="filters_panel">
+    <div class="header filters__header d-flex justify-content-between align-items-center d-md-none">
+        <span class="flex-fill">Filters</span>
+        <button class="btn btn--close" id="btn_filters__close">
+            <span class="btn--close__line"></span>
+            <span class="btn--close__line"></span>
+        </button>
+    </div>
+    <div class="filters__content">
+        <div class="filters__part filters__part--top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 d-md-none">
+                        <div class="filters__group--checker d-flex align-items-center mb-3">
+                            <label class="custom-input--radio-checker flex-fill">
+                                <input type="radio" name="listing-type" checked>
+                                <span class="input d-flex align-items-center justify-content-center">Buy</span>
+                            </label>
+                            <label class="custom-input--radio-checker flex-fill">
+                                <input type="radio" name="listing-type">
+                                <span class="input d-flex align-items-center justify-content-center">Rent</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="filters__group">
+                            <label>Price</label>
+                            <div class="d-none d-md-block">
+                                <div class="text-center filters__group__value">
+                                    <span id="slider-price-value-from"></span>
+                                    -
+                                    <span id="slider-price-value-to"></span>
+                                </div>
+                                <div id="slider-price"></div>
+                            </div>
+                            <div class="d-flex justify-content-between d-md-none">
+                                <select class="input input--dropdown">
+                                    <option>Min</option>
+                                    <option>$100</option>
+                                    <option>$200</option>
+                                    <option>$300</option>
+                                </select>
+                                <select class="input input--dropdown">
+                                    <option>Max</option>
+                                    <option>$100</option>
+                                    <option>$200</option>
+                                    <option>$300</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="filters__group">
+                            <label>Living Space</label>
+                            <div class="d-none d-md-block">
+                                <div class="text-center filters__group__value">
+                                    <span id="slider-living-space-value-from"></span> <span>m<sup>2</sup></span>
+                                    -
+                                    <span id="slider-living-space-value-to"></span> <span>m<sup>2</sup></span>
+                                </div>
+                                <div id="slider-living-space"></div>
+                            </div>
+                            <div class="d-flex justify-content-between d-md-none">
+                                <select class="input input--dropdown">
+                                    <option>Min</option>
+                                    <option>$100</option>
+                                    <option>$200</option>
+                                    <option>$300</option>
+                                </select>
+                                <select class="input input--dropdown">
+                                    <option>Max</option>
+                                    <option>$100</option>
+                                    <option>$200</option>
+                                    <option>$300</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="filters__group">
+                            <label>Number of Rooms</label>
+                            <div class="d-none d-md-block">
+                                <div class="text-center filters__group__value">
+                                    <span id="slider-rooms-value-from"></span>
+                                    -
+                                    <span id="slider-rooms-value-to"></span>
+                                </div>
+                                <div id="slider-rooms"></div>
+                            </div>
+                            <div class="d-flex justify-content-between d-md-none">
+                                <select class="input input--dropdown">
+                                    <option>Min</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                                <select class="input input--dropdown">
+                                    <option>Max</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-none d-md-block col-md-12 col-lg-3">
+                        <div class="filters__group filters__group--btn-area">
+                            <div class="d-flex">
+                                <span class="input input--dropdown filters__btn--more d-flex align-items-center" id="btn_more-filters">
+                                    + More Filters
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filters__part filters__part--bottom" id="filters_hidden_part">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-lg-3">
+                        <div class="filters__group">
+                            <label>Number of Bedrooms</label>
+                            <div class="d-none d-md-block">
+                                <div class="text-center filters__group__value">
+                                    <span id="slider-bedrooms-value-from"></span>
+                                    -
+                                    <span id="slider-bedrooms-value-to"></span>
+                                </div>
+                                <div id="slider-bedrooms"></div>
+                            </div>
+                            <div class="d-flex justify-content-between d-md-none">
+                                <select class="input input--dropdown">
+                                    <option>Min</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                                <select class="input input--dropdown">
+                                    <option>Max</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="filters__group mb-4">
+                            <label>Land Space</label>
+                            <div class="d-none d-md-block">
+                                <div class="text-center filters__group__value">
+                                    <span id="slider-land-space-value-from"></span> <span>m<sup>2</sup></span>
+                                    -
+                                    <span id="slider-land-space-value-to"></span> <span>m<sup>2</sup></span>
+                                </div>
+                                <div id="slider-land-space"></div>
+                            </div>
+                            <div class="d-flex justify-content-between d-md-none">
+                                <select class="input input--dropdown">
+                                    <option>Min</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                                <select class="input input--dropdown">
+                                    <option>Max</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row filters__check-row">
+                    <div class="col-md-4 col-lg-3">
+                        <div class="filters__group--checker d-flex align-items-center">
+                            <label class="custom-input--checkbox-checker flex-fill">
+                                <input type="checkbox" name="garden">
+                                <span class="input d-flex align-items-center justify-content-left">Garden</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="filters__group--checker d-flex align-items-center">
+                            <label class="custom-input--checkbox-checker flex-fill">
+                                <input type="checkbox" name="swimming-pool">
+                                <span class="input d-flex align-items-center justify-content-left">Swimming Pool</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="filters__group--checker d-flex align-items-center">
+                            <label class="custom-input--checkbox-checker flex-fill">
+                                <input type="checkbox" name="balcony">
+                                <span class="input d-flex align-items-center justify-content-left">Balcony</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="filters__group--checker d-flex align-items-center">
+                            <label class="custom-input--checkbox-checker flex-fill">
+                                <input type="checkbox" name="terrace">
+                                <span class="input d-flex align-items-center justify-content-left">Terrace</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filters__buttons-row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col d-flex justify-content-between justify-content-md-end">
+                            <button class="btn btn--secondary btn--clear flex-fill">Clear</button>
+                            <button class="btn btn--secondary btn--apply flex-fill">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="filters__overlay" id="filters_overlay"></div>
+<div class="listing__filters-info">
+    <div class="container content content--listing">
+        <div class="row">
+            <div class="col">
+                <div>
+                    Properties For sale in London, 100€ - 5000€, 3-8 rooms, 2-6 bed<span class="d-none d-lg-inline-block text-separator">></span>
+                    <button class="btn btn--alert" data-toggle="modal" data-target="#login_modal">
+                        <span class="d-none d-lg-block">Create Alert</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="container content content--listing">
+    <div class="row">
+        <div class="col col-lg-9">
+            <div class="listing__info-row d-flex justify-content-between align-items-center">
+                <div class="listing__results-info">
+                    <b>857</b> results
+                </div>
+                <div class="listing__sort">
+                    <select class="input input--dropdown">
+                        <option>Highest Price</option>
+                        <option>Lowest Price</option>
+                        <option>Newest</option>
+                        <option>Oldest</option>
+                    </select>
+                </div>
+            </div>
+            <div class="content--listing__grid d-md-flex flex-md-wrap justify-content-between">
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">2</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_1.jpg?636912981550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_2.jpg?636912981550000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_1.jpg?636912981550000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_2.jpg?636912981550000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/57764a-studiolebrun">
+            <p class="item__price">
+                210000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>20 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>1 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Rue Lebrun, Paris 13&#xE8;me &#xE0; 3 mn du m&#xE9;tro Gobelins, nous vous pr&#xE9;sentons ce studio atypique de 20 m2 au rez de chauss&#xE9; sur rue, tr&#xE8;s lumineux avec porte blind&#xE9;e. Il se compose d&#x27;un grande pi&#xE8;ce de vie avec cuisine ouverte et d&#x27;une salle d&#x27;eau avec Wc. Chauffage &#xE9;lectrique individuel. Ancienne boutique reconvertie en studio dans un immeuble ancien et bien entretenu. Ce bien vous est pr&#xE9;sent&#xE9; par Imop l&#x27;agence immobili&#xE8;re en ligne au tarif unique de 3900&#x20AC;. Prix Fai: 210,000&#x20AC;
+            </div>
+        </a>
+            <span class="item__added-date">Added on 19/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">12</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_1.jpg?636911677220000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_2.jpg?636911677220000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_3.jpg?636911677220000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_4.jpg?636911677220000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_5.jpg?636911677220000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_6.jpg?636911677220000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_7.jpg?636911677220000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_8.jpg?636911677220000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_9.jpg?636911677220000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_10.jpg?636911677220000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_11.jpg?636911677220000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_12.jpg?636911677220000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_1.jpg?636911677220000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_2.jpg?636911677220000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_3.jpg?636911677220000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_4.jpg?636911677220000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/57764a-arealinfournier">
+            <p class="item__price">
+                770000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>90 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>5 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>3 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Tout proche du m&#xE9;tro Porte de Vanves (ligne 13) et du Tramway T3 et pr&#xE8;s du parc Georges Brassens (id&#xE9;al pour enfants), d&#x27;&#xE9;coles (maternelles et primaires) et dans un quartier commer&#xE7;ant, nous vous pr&#xE9;sentons&#xD;&#xA;ce bel appartement de 89.3 m2, bien agenc&#xE9; situ&#xE9; au 4&#xE9;me &#xE9;tage avec ascenseur d&#x27;un immeuble de 1970. Traversant Est - Ouest, il se compose d&#x27;une belle entr&#xE9;e avec placard, d&#x27;un s&#xE9;jour/salle &#xE0; manger de 24 m2 donnant sur un grand balcon de 9 m2, d&#x27;une cuisine &#xE9;quip&#xE9;e, s&#xE9;par&#xE9;e et d&#xEE;natoire de 13m2 (possibilit&#xE9; d&#x2019;ouverture sur le s&#xE9;jour). C&#xF4;t&#xE9; nuit de 3 chambres sur cour dont une petite (8.2 m2), d&#x27;un grand dressing, d&#x27;une salle de bain/buanderie, et d&#x2019;un wc s&#xE9;par&#xE9;. Une cave d&#x27;environ 6m2 compl&#xE8;te ce bien. 1 box ferm&#xE9; &#xE0; vendre en sus. Au pied de l&#x27;immeuble, vous trouverez un square priv&#xE9;, ferm&#xE9; et s&#xE9;curis&#xE9; pour les enfants. Local v&#xE9;lo/poussette dans l&#x27;immeuble. Charges: 390&#x20AC; par mois comprenant eau chaude et chauffage. Taxe fonci&#xE8;re : 1199&#x20AC;. Ce bien vous est pr&#xE9;sent&#xE9; par l&#x27;agence immobili&#xE8;re en ligne &#xE0; tarif unique de 3900&#x20AC;
+            </div>
+        </a>
+            <span class="item__added-date">Added on 18/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">8</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_1.jpg?636910799320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_2.jpg?636910799320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_3.jpg?636910799320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_4.jpg?636910799320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_5.jpg?636910799320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_6.jpg?636910799320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_7.jpg?636910799320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_8.jpg?636910799320000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_1.jpg?636910799320000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_2.jpg?636910799320000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_3.jpg?636910799320000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_4.jpg?636910799320000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/57764a-marronniers">
+            <p class="item__price">
+                2050000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>179 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>5 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>4 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Rue des Marronniers - 5 min m&#xE9;tro La Muette et 3 min Rer C - Imop vous pr&#xE9;sente cet bel appartement &#xE0; r&#xE9;nover de 179 m2 situ&#xE9; au 3&#xE8;me &#xE9;tage avec ascenseur d&#x27;un immeuble de 1930, s&#xE9;curis&#xE9; et bien entretenu.&#xD;&#xA;Traversant, lumineux, calme, il se composera apr&#xE8;s r&#xE9;novation d&#x27;une belle entr&#xE9;e, une cuisine ouverte et d&#xEE;natoire sur un double s&#xE9;jour expos&#xE9; plein Sud et 4 belles chambres (5 chambres possible)&#xD;&#xA;Charges 620&#x20AC; mensuel (chauffage collectif, eau froide, syndic, gardien, entretien)&#xD;&#xA;Une cave de 6 m2 compl&#xE8;te ce bien .&#xD;&#xA;Un grand boxe de 31 m2 (2 voitures en enfilade possible) peut &#xEA;tre vendu en suppl&#xE9;ment.&#xD;&#xA;Ecoles &#xE0; proximit&#xE9;: Lyc&#xE9;e Moli&#xE8;re, Ecoles Boulainvilliers et Saint Jean de Passy. Ce bien vous est propos&#xE9; par l&#x27;agence immobili&#xE8;re en ligne a tarif unique de 3900&#x20AC;.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 17/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">2</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-tulipes/Photos/57764a-tulipes_1.jpg?636918575480000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-tulipes/Photos/57764a-tulipes_2.jpg?636918575480000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/57764a/57764a-tulipes/Photos/57764a-tulipes_1.jpg?636918575480000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-tulipes/Photos/57764a-tulipes_2.jpg?636918575480000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/57764a-tulipes">
+            <p class="item__price">
+                387000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>44 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>2 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Villa des Tulipes 75018, 2mn porte de Clignancourt : tr&#xE8;s bel appartement traversant de 44 m2 (36m2 Carrez) au 3&#xE8;me et dernier &#xE9;tage sans ascenseur d&#x27;un charmant petit immeuble ancien, s&#xE9;curis&#xE9; et tr&#xE8;s bien entretenu. Sans aucun vis &#xE0; vis, calme et tr&#xE8;s lumineux, il se compose d&#x27;une entr&#xE9;e avec un wc s&#xE9;par&#xE9;, une belle chambre sur cour, une salle d&#x27;eau, un salon, une cuisine/salle &#xE0; manger avec double fen&#xEA;tre donnant acc&#xE8;s &#xE0; un balcon/terrasse - Tr&#xE8;s bon &#xE9;tat g&#xE9;n&#xE9;ral - Chauffage &#xE9;lectrique individuel - Double vitrage - Taxe fonci&#xE8;re 450&#x20AC; - Ce bien vous est pr&#xE9;sent&#xE9; par Imop l&#x27;agence immobili&#xE8;re &#xE0; tarif unique de 3900&#x20AC;.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 15/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">10</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_1.jpg?636921309650000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_2.jpg?636921309650000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_3.jpg?636921309650000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_4.jpg?636921309650000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_5.jpg?636921309650000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_6.jpg?636921309650000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_7.jpg?636921309650000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_8.jpg?636921309650000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_9.jpg?636921309650000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_10.jpg?636921309650000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_1.jpg?636921309650000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_2.jpg?636921309650000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_3.jpg?636921309650000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-delafontaine/Photos/57764a-delafontaine_4.jpg?636921309650000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/57764a-delafontaine">
+            <p class="item__price">
+                665000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>62 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>3 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Rue de la Fontaine au Roi (11&#xE8;me), &#xE0; 150m du canal Saint-Martin et &#xE0; 450m de la place de la R&#xE9;publique, nous vous pr&#xE9;sentons ce bel appartement de 62 m&#xB2; situ&#xE9; au 2&#xE8;me &#xE9;tage sur cour (sans ascenseur) d&#x27;un immeuble de 1880. Il se compose d&#x27;une grande pi&#xE8;ce de vie orient&#xE9;e ouest, lumineuse et sans vis-&#xE0;-vis, d&#x27;une cuisine ouverte, d&#x27;une chambre &#xE0; coucher avec salle de bains privative, d&#x27;une pi&#xE8;ce en enfilade faisant office de bureau / salon de lecture (possibilit&#xE9; d&#x27;am&#xE9;nagement en chambre s&#xE9;par&#xE9;e, cf. Plans), et d&#x27;un Wc / buanderie s&#xE9;par&#xE9;. Chauffage individuel au gaz. Une cave vient compl&#xE9;ter le bien. Taxe fonci&#xE8;re: 663 euros. Charges: 400 euros/trim. Pas de travaux &#xE0; pr&#xE9;voir dans la copropri&#xE9;t&#xE9;. Ce bien vous est pr&#xE9;sent&#xE9; par Imop l&#x27;agence immobili&#xE8;re au tarif unique de 3900 euros.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 04/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">5</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-blvd_victor/Photos/57764a-blvd_victor_1.jpg?636854808410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-blvd_victor/Photos/57764a-blvd_victor_2.jpg?636854808410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-blvd_victor/Photos/57764a-blvd_victor_3.jpg?636854808410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-blvd_victor/Photos/57764a-blvd_victor_4.jpg?636854808410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/57764a/57764a-blvd_victor/Photos/57764a-blvd_victor_5.jpg?636854808410000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/57764a/57764a-blvd_victor/Photos/57764a-blvd_victor_1.jpg?636854808410000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-blvd_victor/Photos/57764a-blvd_victor_2.jpg?636854808410000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-blvd_victor/Photos/57764a-blvd_victor_3.jpg?636854808410000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/57764a/57764a-blvd_victor/Photos/57764a-blvd_victor_4.jpg?636854808410000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="">
+            <p class="item__price">
+                399000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>43 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>2 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                A 5mn du m&#xE9;tro Porte de Versailles et 1mn du tramway (T3a) station Desnouettes, nous vous pr&#xE9;sentons cet appartement de 2 pi&#xE8;ces de 43 m&#xB2; situ&#xE9; au 5&#xE8;me &#xE9;tage avec ascenseur d&#x27;un immeuble de 1965, bien entretenu et s&#xE9;curis&#xE9;. Calme, lumineux et sans vis-&#xE0;-vis, il se compose d&#x27;une entr&#xE9;e avec rangement, d&#x27;une cuisine s&#xE9;par&#xE9;e et &#xE9;quip&#xE9;e (possibilit&#xE9; d&#x27;ouvrir sur le salon), d&#x27;un vaste s&#xE9;jour avec baie vitr&#xE9;e de 15 m&#xB2;, d&#x27;une chambre, d&#x27;une salle de bains et d&#x27;un Wc s&#xE9;par&#xE9; - Taxe fonci&#xE8;re 724&#x20AC; - Charges mensuelles 180&#x20AC; (ascenseur, gardien, eau froide, chauffage collectif) &#x2013; Une cave compl&#xE8;te ce bien. Ce bien vous est pr&#xE9;sent&#xE9; par Imop l&#x27;agence immobili&#xE8;re a tarif fixe (3900&#x20AC; tout compris)
+            </div>
+        </a>
+            <span class="item__added-date">Added on 12/02/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">8</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_1.jpg?636924402280000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_2.jpg?636924402280000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_3.jpg?636924402280000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_4.jpg?636924402280000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_5.jpg?636924402280000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_6.jpg?636924402280000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_7.jpg?636924402280000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_8.jpg?636924402280000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_1.jpg?636924402280000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_2.jpg?636924402280000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_3.jpg?636924402280000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2819898/Photos/51225a-2819898_4.jpg?636924402280000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/51225a-2819898">
+            <p class="item__price">
+                2800000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>108 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>4 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Appartement - Paris 6 - Saint Germain - Terrasse &#xD;&#xA;Au c&#x153;ur de Saint Germain, luxueux duplex de 4 pi&#xE8;ces avec terrasse, enti&#xE8;rement r&#xE9;nov&#xE9; et climatis&#xE9;. Cet appartement de 116 m&#xB2; est situ&#xE9; au dernier &#xE9;tage d&#x27;un immeuble historique desservi par un ascenseur. Ce bien comprend une entr&#xE9;e avec un escalier qui vous m&#xE8;ne &#xE0; un grand salon, une salle &#xE0; manger avec terrasse de plain pied, une cuisine ouverte &#xE9;quip&#xE9;e et meubl&#xE9;e, un d&#xE9;gagement avec dressing et des toilettes ind&#xE9;pendantes. A l&#x27;&#xE9;tage, une chambre avec une salle de douche et toilettes attenantes et un bureau. Deux caves compl&#xE8;tent ce bien. &#xD;&#xA;Sa triple exposition, ses beaux volumes, sa situation g&#xE9;ographique, sa vue au dessus de lieux mythiques de saint Germain et sa r&#xE9;novation de qualit&#xE9; en font un bien rare.
+            </div>
+        </a>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">3</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/56596a/56596a-186217/Photos/56596a-186217_1.jpg?636923953190000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/56596a/56596a-186217/Photos/56596a-186217_2.jpg?636923953190000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/56596a/56596a-186217/Photos/56596a-186217_3.jpg?636923953190000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/56596a/56596a-186217/Photos/56596a-186217_1.jpg?636923953190000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/56596a/56596a-186217/Photos/56596a-186217_2.jpg?636923953190000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/56596a/56596a-186217/Photos/56596a-186217_3.jpg?636923953190000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/56596a-186217">
+            <p class="item__price">
+                265000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>26 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>1 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>0 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                A vendre bureau dans petit immeuble proche du march&#xE9; de Levis&#xA;Situ&#xE9; au rez-de-chauss&#xE9;e, le bien se compose d&#x27;un grande pi&#xE8;ce principale, une petite kitchenette s&#xE9;par&#xE9;e et un coin Wc s&#xE9;par&#xE9;.&#xA;Possibilit&#xE9; d&#x27;acheter le bien occup&#xE9; ou libre
+            </div>
+        </a>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">8</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_1.jpg?636924243960000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_2.jpg?636924243960000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_3.jpg?636924243960000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_4.jpg?636924243960000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_5.jpg?636924243960000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_6.jpg?636924243960000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_7.jpg?636924243960000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_8.jpg?636924243960000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_1.jpg?636924243960000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_2.jpg?636924243960000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_3.jpg?636924243960000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/50358a/50358a-1638230/Photos/50358a-1638230_4.jpg?636924243960000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/50358a-1638230">
+            <p class="item__price">
+                12500000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>364 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>9 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>5 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                En Exclusivite, A Paris, dans le prestigieux quartier de l&#x27;Etoile, au 2&#xE8;me &#xE9;tage d&#x27;un immeuble haussmanien, Magnifique appartement de 367m&#xB2; avec vue exceptionnelle sur l&#x27;Arc de Triomphe et la Tour Eiffel, aux prestations luxueuses et raffin&#xE9;es, alliant une conception ultra moderne au charme des mat&#xE9;riaux d&#x27;&#xE9;poque. Les vastes pi&#xE8;ces de r&#xE9;ception avec leurs grandes double-fen&#xEA;tres( 3m de hauteur) donnant&#xA0; sur l&#x27;Arc de Triomphe offrent un cadre privil&#xE9;gi&#xE9;. Les 22 portes fen&#xEA;tres&#xA0; permettent &#xE0; l&#x27;ensemble de cet appartement d&#x27;&#xEA;tre inond&#xE9; de lumi&#xE8;re. 2 chambres avec salle de bain 2 master-bedrooms avec salle de bain et un bureau attenant &#xE0; une des Master. &#xD;&#xA;Appartement enti&#xE8;rement r&#xE9;nov&#xE9; et d&#xE9;cor&#xE9; par Bismuth &amp; Bismuth il y a un an.&#xD;&#xA;Possibilit&#xE9; d&#x27;acqu&#xE9;rir la totalit&#xE9; des meubles, tentures, luminaires et tapis (valeur 800.000&#x20AC;)&#xD;&#xA;studio ind&#xE9;pendant au 4&#xE8;me &#xE9;tage de 50m&#xB2; environ, communiquant avec un escalier de service reliant l&#x27;appartement.&#xD;&#xA;4 Caves d&#x27;une superficie totale de plus de 100m2 dont 2 avec porte blind&#xE9;e.&#xD;&#xA;1 parking priv&#xE9; dans la cour.
+            </div>
+        </a>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">1</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/56596a/56596a-181503/Photos/56596a-181503_1.jpg?636923953190000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/56596a/56596a-181503/Photos/56596a-181503_1.jpg?636923953190000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/56596a-181503">
+            <p class="item__price">
+                55000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>12 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>1 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>0 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Grande place de parking situ&#xE9; au niveau -5 d&#x27;un immeuble moderne &#xE0; l&#x27;angle entre l&#x27;avenue Paul Doumer et la rue de la Tour.&#xA;L&#x27;emplacement est id&#xE9;al car il n&#x27;y pas de v&#xE9;hicule directement &#xE0; c&#xF4;t&#xE9;.&#xA;Largeur : 2.83m&#xA;Longueur : 4.20m&#xA;Hauteur : 2m
+            </div>
+        </a>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">10</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_1.jpg?636920941730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_2.jpg?636920941730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_3.jpg?636920941730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_4.jpg?636920941730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_5.jpg?636920941730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_6.jpg?636920941730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_7.jpg?636920941730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_8.jpg?636920941730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_9.jpg?636920941730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_10.jpg?636920941730000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_1.jpg?636920941730000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_2.jpg?636920941730000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_3.jpg?636920941730000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2970682/Photos/51225a-2970682_4.jpg?636920941730000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/51225a-2970682">
+            <p class="item__price">
+                3300000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>115 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>4 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Dans le c&#x153;ur historique de Saint Germain, ce bel appartement de 115 m&#xB2; traversant et lumineux b&#xE9;n&#xE9;ficie d&#x27;une terrasse de 45 m&#xB2; environ avec une vue d&#xE9;gag&#xE9;e sur les toits de saint Germain et sur le haut de la coupole de l&#x27;institut de France. Il se compose d&#x27;une entr&#xE9;e, d&#x27;une double r&#xE9;ception et d&#x27;une cuisine ind&#xE9;pendante &#xE9;quip&#xE9;e. L&#x27;ensemble de ces pi&#xE8;ces s&#x27;ouvrent sur un large balcon. Deux chambres avec chacune un dressing et salle de douche. En compl&#xE9;ment deux places de parking et une cave compl&#xE8;tent ce bien.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 29/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">10</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_1.jpg?636919868290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_2.jpg?636919868290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_3.jpg?636919868290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_4.jpg?636919868290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_5.jpg?636919868290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_6.jpg?636919868290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_7.jpg?636919868290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_8.jpg?636919868290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_9.jpg?636919868290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_10.jpg?636919868290000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_1.jpg?636919868290000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_2.jpg?636919868290000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_3.jpg?636919868290000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1106/Photos/45315a-1106_4.jpg?636919868290000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/45315a-1106">
+            <p class="item__price">
+                865000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>93 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>4 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>3 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Franz-Liszt / Gare Du NORD&#xA;Situ&#xE9; au premier &#xE9;tage -Avec ascenseur- au sein d&#x27;un bel immeuble ancien parfaitement tenu, les inconditionnels de surfaces optimis&#xE9;es dont les am&#xE9;nagements mettent en valeur ses &#xE9;l&#xE9;ments structurels originels, appr&#xE9;cieront les prestations offertes par cet appartement 4/5 pi&#xE8;ces.&#xA;Il se compose: d&#x27;une entr&#xE9;e desservant un double s&#xE9;jour -Et sa structure en poutres apparentes-, d&#x27;une cuisine semi-ind&#xE9;pendante, de trois chambres (Deux sur courette et une sur rue), d&#x27;une salle de bains et d&#x27;un Wc ind&#xE9;pendant.&#xA;Un lieu plein de vie aux am&#xE9;nagements savamment pens&#xE9;s, qui n&#x27;attend plus que votre pr&#xE9;sence...&#xA;Surface Loi Carrez : 91,90 m2 1,50 m2 au sol pond&#xE9;r&#xE9;s pour moiti&#xE9;. Soit 92,50 m2 pond&#xE9;r&#xE9;s. dont 5.00 % honoraires Ttc &#xE0; la charge de l&#x27;acqu&#xE9;reur.&#xA;Copropri&#xE9;t&#xE9; de 50 lots (Pas de proc&#xE9;dure en cours).&#xA;Charges annuelles : 2508.00 euros.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 28/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">10</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_1.jpg?636918355320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_2.jpg?636918355320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_3.jpg?636918355320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_4.jpg?636918355320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_5.jpg?636918355320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_6.jpg?636918355320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_7.jpg?636918355320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_8.jpg?636918355320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_9.jpg?636918355320000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_10.jpg?636918355320000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_1.jpg?636918355320000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_2.jpg?636918355320000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_3.jpg?636918355320000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2942206/Photos/51225a-2942206_4.jpg?636918355320000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/51225a-2942206">
+            <p class="item__price">
+                1840000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>85 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>2 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Situ&#xE9; au 2&#xE8;me &#xE9;tage par escalier donnant enti&#xE8;rement sur une cour d&#x27;un magnifique H&#xF4;tel Particulier du Xvii, &#xE9;l&#xE9;gant appartement de 86 m&#xB2;. Il se compose d&#x27;un vaste s&#xE9;jour, d&#x27;une chambre avec sa salle de bains et son coin dressing, d&#x27;une cuisine ind&#xE9;pendante am&#xE9;nag&#xE9;e et &#xE9;quip&#xE9;e et des toilettes s&#xE9;par&#xE9;es. Les attributs de l&#x27;ancien ont &#xE9;t&#xE9; conserv&#xE9;s. Sa localisation exceptionnelle, son charme ind&#xE9;niable et sa situation au calme sur une cour arbor&#xE9;e en font un pied-&#xE0;-terre id&#xE9;al.&#xD;&#xA;Une cave.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 26/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">8</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_1.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_2.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_3.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_4.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_5.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_6.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_7.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_8.jpg?636916909030000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_1.jpg?636916909030000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_2.jpg?636916909030000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_3.jpg?636916909030000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1480/Photos/45315a-1480_4.jpg?636916909030000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/45315a-1480">
+            <p class="item__price">
+                600000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>60 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>2 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Tour Saint-Jacques/ Les Halles / BEAUBOURG&#xA;En plein coeur de Paris, &#xE0; moins de 100 m&#xE8;tres du centre Georges Pompidou. En Rez-de -chauss&#xE9;e, au calme d&#x27;une cour lumineuse, les inconditionnels de volumes atypiques appr&#xE9;cieront les prestations offertes par cet appartement 2 pi&#xE8;ces en duplex compos&#xE9; : &#xA;- En rez-de-chauss&#xE9;e haut: d&#x27;une entr&#xE9;e desservant une cuisine ind&#xE9;pendante, d&#x27;un s&#xE9;jour -Illumin&#xE9; par une vaste baie vitr&#xE9;e donnant sur cour et expos&#xE9;e plein sud-&#xA;- En rez-de-chauss&#xE9;e bas: d&#x27;une chambre b&#xE9;n&#xE9;ficiant de nombreux rangements, d&#x27;une salle de bains et d&#x27;un Wc ind&#xE9;pendant. &#xA;Un lieu de vie non conformiste qui n&#x27;attend plus que votre cr&#xE9;ativit&#xE9; pour &#xEA;tre sublim&#xE9; ! &#xA;Surface Loi Carrez: 53,69 m&#xB2; 12,17 m&#xB2; au sol pond&#xE9;r&#xE9;s pour moiti&#xE9;&#xA; - Soit 60 m&#xB2; pond&#xE9;r&#xE9;s. Dont 3.45 % honoraires Ttc &#xE0; la charge de l&#x27;acqu&#xE9;reur.&#xA;Copropri&#xE9;t&#xE9; de 76 lots (Pas de proc&#xE9;dure en cours).&#xA;Charges annuelles : 1900.00 euros.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 25/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">8</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_1.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_2.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_3.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_4.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_5.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_6.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_7.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_8.jpg?636916909030000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_1.jpg?636916909030000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_2.jpg?636916909030000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_3.jpg?636916909030000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1479/Photos/45315a-1479_4.jpg?636916909030000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/45315a-1479">
+            <p class="item__price">
+                600000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>60 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>2 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Tour Saint-Jacques/ Les Halles / BEAUBOURG&#xA;En plein coeur de Paris, &#xE0; moins de 100 m&#xE8;tres du centre Georges Pompidou. En Rez-de -chauss&#xE9;e, au calme d&#x27;une cour lumineuse, les inconditionnels de volumes atypiques appr&#xE9;cieront les prestations offertes par cet appartement 2 pi&#xE8;ces en duplex compos&#xE9; : &#xA;- En rez-de-chauss&#xE9;e haut: d&#x27;une entr&#xE9;e desservant une cuisine ind&#xE9;pendante, d&#x27;un s&#xE9;jour -Illumin&#xE9; par une vaste baie vitr&#xE9;e donnant sur cour et expos&#xE9;e plein sud-&#xA;- En rez-de-chauss&#xE9;e bas: d&#x27;une chambre b&#xE9;n&#xE9;ficiant de nombreux rangements, d&#x27;une salle de bains et d&#x27;un Wc ind&#xE9;pendant. &#xA;Un lieu de vie non conformiste qui n&#x27;attend plus que votre cr&#xE9;ativit&#xE9; pour &#xEA;tre sublim&#xE9; ! &#xA;Surface Loi Carrez: 53,69 m&#xB2; 12,17 m&#xB2; au sol pond&#xE9;r&#xE9;s pour moiti&#xE9;&#xA; - Soit 60 m&#xB2; pond&#xE9;r&#xE9;s. Dont 3.45 % honoraires Ttc &#xE0; la charge de l&#x27;acqu&#xE9;reur.&#xA;Copropri&#xE9;t&#xE9; de 76 lots (Pas de proc&#xE9;dure en cours).&#xA;Charges annuelles : 1900.00 euros.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 25/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">8</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_1.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_2.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_3.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_4.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_5.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_6.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_7.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_8.jpg?636916909030000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_1.jpg?636916909030000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_2.jpg?636916909030000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_3.jpg?636916909030000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1478/Photos/45315a-1478_4.jpg?636916909030000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/45315a-1478">
+            <p class="item__price">
+                600000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>60 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>2 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Tour Saint-Jacques/ Les Halles / BEAUBOURG&#xA;En plein coeur de Paris, &#xE0; moins de 100 m&#xE8;tres du centre Georges Pompidou. En Rez-de -chauss&#xE9;e, au calme d&#x27;une cour lumineuse, les inconditionnels de volumes atypiques appr&#xE9;cieront les prestations offertes par cet appartement 2 pi&#xE8;ces en duplex compos&#xE9; : &#xA;- En rez-de-chauss&#xE9;e haut: d&#x27;une entr&#xE9;e desservant une cuisine ind&#xE9;pendante, d&#x27;un s&#xE9;jour -Illumin&#xE9; par une vaste baie vitr&#xE9;e donnant sur cour et expos&#xE9;e plein sud-&#xA;- En rez-de-chauss&#xE9;e bas: d&#x27;une chambre b&#xE9;n&#xE9;ficiant de nombreux rangements, d&#x27;une salle de bains et d&#x27;un Wc ind&#xE9;pendant. &#xA;Un lieu de vie non conformiste qui n&#x27;attend plus que votre cr&#xE9;ativit&#xE9; pour &#xEA;tre sublim&#xE9; ! &#xA;Surface Loi Carrez: 53,69 m&#xB2; 12,17 m&#xB2; au sol pond&#xE9;r&#xE9;s pour moiti&#xE9;&#xA; - Soit 60 m&#xB2; pond&#xE9;r&#xE9;s. Dont 3.45 % honoraires Ttc &#xE0; la charge de l&#x27;acqu&#xE9;reur.&#xA;Copropri&#xE9;t&#xE9; de 76 lots (Pas de proc&#xE9;dure en cours).&#xA;Charges annuelles : 1900.00 euros.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 25/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">12</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_1.jpg?636917487550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_2.jpg?636917487550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_3.jpg?636917487550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_4.jpg?636917487550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_5.jpg?636917487550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_6.jpg?636917487550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_7.jpg?636917487550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_8.jpg?636917487550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_9.jpg?636917487550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_10.jpg?636917487550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_11.jpg?636917487550000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_12.jpg?636917487550000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_1.jpg?636917487550000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_2.jpg?636917487550000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_3.jpg?636917487550000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/30879a/30879a-vgp-1017/Photos/30879a-vgp-1017_4.jpg?636917487550000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/30879a-vgp-1017">
+            <p class="item__price">
+                2250000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>76 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>2 rooms
+                    </span>
+                            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Au 6 &#xE8;me et dernier &#xE9;tage d un immeuble ancien, loft de 76 m2 avec verri&#xE8;re ,vue sur les tours de Saint Sulpice et les toits de Paris .r&#xE9;nov&#xE9; avec go&#xFB;t et enti&#xE8;rement meubl&#xE9; en plein Saint Germain des Pr&#xE9;s.&#xD;&#xA;entr&#xE9;e, grande pi&#xE8;ce principale avec verri&#xE8;re,salle de douche ,cuisine &#xE9;quip&#xE9;e ,cave 10m2,domotique ,gardien.&#xD;&#xA;&#xD;&#xA;-montant annuel des charges 3016 euros&#xD;&#xA;-pas de prodedure en cours &#xD;&#xA;-nombre de lots dans la copropri&#xE9;t&#xE9; 10
+            </div>
+        </a>
+            <span class="item__added-date">Added on 25/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">8</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_1.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_2.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_3.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_4.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_5.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_6.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_7.jpg?636916909030000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_8.jpg?636916909030000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_1.jpg?636916909030000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_2.jpg?636916909030000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_3.jpg?636916909030000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/45315a/45315a-1481/Photos/45315a-1481_4.jpg?636916909030000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/45315a-1481">
+            <p class="item__price">
+                600000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>60 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>2 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Tour Saint-Jacques/ Les Halles / BEAUBOURG&#xA;En plein coeur de Paris, &#xE0; moins de 100 m&#xE8;tres du centre Georges Pompidou. En Rez-de -chauss&#xE9;e, au calme d&#x27;une cour lumineuse, les inconditionnels de volumes atypiques appr&#xE9;cieront les prestations offertes par cet appartement 2 pi&#xE8;ces en duplex compos&#xE9; : &#xA;- En rez-de-chauss&#xE9;e haut: d&#x27;une entr&#xE9;e desservant une cuisine ind&#xE9;pendante, d&#x27;un s&#xE9;jour -Illumin&#xE9; par une vaste baie vitr&#xE9;e donnant sur cour et expos&#xE9;e plein sud-&#xA;- En rez-de-chauss&#xE9;e bas: d&#x27;une chambre b&#xE9;n&#xE9;ficiant de nombreux rangements, d&#x27;une salle de bains et d&#x27;un Wc ind&#xE9;pendant. &#xA;Un lieu de vie non conformiste qui n&#x27;attend plus que votre cr&#xE9;ativit&#xE9; pour &#xEA;tre sublim&#xE9; ! &#xA;Surface Loi Carrez: 53,69 m&#xB2; 12,17 m&#xB2; au sol pond&#xE9;r&#xE9;s pour moiti&#xE9;&#xA; - Soit 60 m&#xB2; pond&#xE9;r&#xE9;s. Dont 3.45 % honoraires Ttc &#xE0; la charge de l&#x27;acqu&#xE9;reur.&#xA;Copropri&#xE9;t&#xE9; de 76 lots (Pas de proc&#xE9;dure en cours).&#xA;Charges annuelles : 1900.00 euros.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 25/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">12</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_1.jpg?636916630730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_2.jpg?636916630730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_3.jpg?636916630730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_4.jpg?636916630730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_5.jpg?636916630730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_6.jpg?636916630730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_7.jpg?636916630730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_8.jpg?636916630730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_9.jpg?636916630730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_10.jpg?636916630730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_11.jpg?636916630730000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_12.jpg?636916630730000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_1.jpg?636916630730000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_2.jpg?636916630730000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_3.jpg?636916630730000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51721a/51721a-2949921/Photos/51721a-2949921_4.jpg?636916630730000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/51721a-2949921">
+            <p class="item__price">
+                398000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>33 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>2 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Au 6&#xE8;me et dernier &#xE9;tage d&#x27;un bel immeuble en pierre de taille parfaitement entretenu et disposant d&#x27;un ascenseur. Joli 2 pi&#xE8;ces compos&#xE9; d&#x27;une entr&#xE9;e, s&#xE9;jour, chambre, cuisine ind&#xE9;pendante et salle de bains avec Wc. &#xD;&#xA;Vue d&#xE9;gag&#xE9;e, clair et calme.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 24/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">12</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_1.jpg?636916630900000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_2.jpg?636916630900000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_3.jpg?636916630900000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_4.jpg?636916630900000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_5.jpg?636916630900000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_6.jpg?636916630900000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_7.jpg?636916630900000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_8.jpg?636916630900000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_9.jpg?636916630900000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_10.jpg?636916630900000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_11.jpg?636916630900000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_12.jpg?636916630900000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_1.jpg?636916630900000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_2.jpg?636916630900000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_3.jpg?636916630900000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2938308/Photos/51225a-2938308_4.jpg?636916630900000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/51225a-2938308">
+            <p class="item__price">
+                1260000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>76 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>3 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Paris 5 - Notre-Dame - Vues Monuments - Traversant. Au 3&#xE8;me &#xE9;tage d&#x27;un bel immeuble , un appartement de 76,77 m&#xB2;carrez compos&#xE9; d&#x27;une entr&#xE9;e, une double r&#xE9;ception traversante avec vue sur la Seine, Notre Dame et sur cour d&#xE9;gag&#xE9;e, une cuisine ind&#xE9;pendante meubl&#xE9;e et &#xE9;quip&#xE9;e, deux chambres, une salle de bains, des toilettes ind&#xE9;pendantes et de nombreux rangements. Une cave compl&#xE8;te ce bien. Les vues exceptionnelles, l&#x27;absence de vis-&#xE0;-vis et le charme du lieu en font un bien rare.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 23/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">11</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_1.jpg?636914893410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_2.jpg?636914893410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_3.jpg?636914893410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_4.jpg?636914893410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_5.jpg?636914893410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_6.jpg?636914893410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_7.jpg?636914893410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_8.jpg?636914893410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_9.jpg?636914893410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_10.jpg?636914893410000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_11.jpg?636914893410000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_1.jpg?636914893410000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_2.jpg?636914893410000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_3.jpg?636914893410000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2931552/Photos/51225a-2931552_4.jpg?636914893410000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/51225a-2931552">
+            <p class="item__price">
+                3640000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>198 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>6 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>4 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Situ&#xE9; au 3&#xE8;me &#xE9;tage avec ascenseur d&#x27;un magnifique immeuble en pierre de taille, nous vous proposons un appartement d&#x27;environ 200 m&#xB2; comprenant une entr&#xE9;e desservant sur rue, un double s&#xE9;jour (2.87 Hsp) et une chambre avec sa salle d&#x27;eau, puis, sur cour, trois chambres, une salle de bains, une salle d&#x27;eau, une cuisine, une salle &#xE0; manger, une buanderie et de nombreux rangements. Une cave. Sa localisation et son plan familial sont quelques uns des atouts de ce bien.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 22/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">6</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2920772/Photos/51225a-2920772_1.jpg?636914893390000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2920772/Photos/51225a-2920772_2.jpg?636914893390000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2920772/Photos/51225a-2920772_3.jpg?636914893390000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2920772/Photos/51225a-2920772_4.jpg?636914893390000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2920772/Photos/51225a-2920772_5.jpg?636914893390000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2920772/Photos/51225a-2920772_6.jpg?636914893390000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/51225a/51225a-2920772/Photos/51225a-2920772_1.jpg?636914893390000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2920772/Photos/51225a-2920772_2.jpg?636914893390000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2920772/Photos/51225a-2920772_3.jpg?636914893390000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2920772/Photos/51225a-2920772_4.jpg?636914893390000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/51225a-2920772">
+            <p class="item__price">
+                1850000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>77 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>3 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>2 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Paris 7 - Bon Marche - Vaneau. Cet appartement traversant de 3 pi&#xE8;ces de 77.95 m&#xB2; Carrez avec une terrasse de plain pied de 43.8 m&#xB2; est situ&#xE9; au 3&#xE8;me &#xE9;tage avec ascenseur. Il est compos&#xE9; d&#x27;une entr&#xE9;e, d&#x2019;un salon avec un acc&#xE8;s direct sur une belle terrasse am&#xE9;nag&#xE9;e, expos&#xE9;e plein ouest, d&#x27;une cuisine ind&#xE9;pendante, de deux chambres, de nombreux rangements, d&#x2019;une salle d&#x2019;eau et des toilettes ind&#xE9;pendantes. &#xD;&#xA;Un box parking compl&#xE8;te ce bien.&#xD;&#xA;Sa situation dans une rue calme est &#xE0; deux pas des commerces et des transports de la rue de S&#xE8;vres.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 22/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">12</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_1.jpg?636914029290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_2.jpg?636914029290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_3.jpg?636914029290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_4.jpg?636914029290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_5.jpg?636914029290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_6.jpg?636914029290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_7.jpg?636914029290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_8.jpg?636914029290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_9.jpg?636914029290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_10.jpg?636914029290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_11.jpg?636914029290000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_12.jpg?636914029290000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_1.jpg?636914029290000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_2.jpg?636914029290000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_3.jpg?636914029290000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2581237/Photos/51225a-2581237_4.jpg?636914029290000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/51225a-2581237">
+            <p class="item__price">
+                4300000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>166 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>6 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>3 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Situ&#xE9; aux derniers &#xE9;tages avec ascenseur d&#x27;une belle copropri&#xE9;t&#xE9;,ce duplex enti&#xE8;rement r&#xE9;nov&#xE9; avec des prestations haut de gamme est compos&#xE9; d&#x27;un tr&#xE8;s vaste espace de r&#xE9;ception traversant, une cuisine am&#xE9;ricaine am&#xE9;nag&#xE9;e et &#xE9;quip&#xE9;e, un bureau, des toilettes, une salle d&#x27;eau/buanderie. Empruntant un escalier surplomb&#xE9; par une verri&#xE8;re, on acc&#xE8;de &#xE0; l&#x27;&#xE9;tage o&#xF9; se trouve une chambre parentale avec dressing et salle de bains compl&#xE8;te, 2 chambres, une salle d&#x27;eau, un wc, de nombreux rangements. Une cave compl&#xE8;te ce bien. Baign&#xE9; de lumi&#xE8;re, ce lieu calme et rare allie charme et modernit&#xE9;.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 21/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+                    
+
+<div class="listing__item listing__item--large d-lg-flex">
+    <i class="item__icon-favorite icon icon--favorite"></i>
+    <i class="item__icon-photos icon icon--photos">12</i>
+    <div class="item__img-area d-lg-flex flex-lg-fill">
+        <div class="swiper-container d-lg-none d-lg-none">
+            <div class="swiper-wrapper">
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_1.jpg?636913180110000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_2.jpg?636913180110000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_3.jpg?636913180110000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_4.jpg?636913180110000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_5.jpg?636913180110000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_6.jpg?636913180110000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_7.jpg?636913180110000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_8.jpg?636913180110000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_9.jpg?636913180110000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_10.jpg?636913180110000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_11.jpg?636913180110000000" />
+                    </a>
+                    <a class="swiper-slide" href="#" target="_blank">
+                        <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_12.jpg?636913180110000000" />
+                    </a>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="item__link--overlay d-none d-lg-block" href="#" target="_blank"></a>
+        <div class="item__img--main d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_1.jpg?636913180110000000" />
+        </div>
+        <div class="item__img--miniatures-col d-none d-lg-flex flex-column">
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_2.jpg?636913180110000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_3.jpg?636913180110000000" />
+                </div>
+                <div class="img-miniature-area d-lg-flex align-items-center justify-content-center">
+                    <img src="https://cdn.green-acres.com/51225a/51225a-2592302/Photos/51225a-2592302_4.jpg?636913180110000000" />
+                </div>
+        </div>
+    </div>
+    <div class="item__content-area flex-lg-fill">
+        <a target="_blank" class="item__link" href="/property/51225a-2592302">
+            <p class="item__price">
+                5300000 &#x20AC;
+            </p>
+            <div class="item__main-details">
+                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--area"></i>262 m<sup>2</sup>
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--room"></i>8 rooms
+                    </span>
+                                    <span class="detail__item">
+                        <i class="detail__item__icon icon icon--bedroom"></i>5 bedrooms
+                    </span>
+            </div>
+            <div class="item__short-description d-none d-lg-block">
+                Exclusivit&#xE9; - Maison - Paris 6 - Vaugirard / Cherche-Midi. Nich&#xE9;e au sein d&#x27;une all&#xE9;e priv&#xE9;e, cette maison en pleine propri&#xE9;t&#xE9; vous s&#xE9;duira par son cachet. Elle se compose d&#x27;une entr&#xE9;e, d&#x27;une grande pi&#xE8;ce &#xE0; vivre ouvrant sur une terrasse de 14 m&#xB2;, une belle cuisine &#xE9;quip&#xE9;e et un espace salle &#xE0; manger, un bureau et un wc invit&#xE9;. Au premier &#xE9;tage deux chambres, une salle de bains, une master avec salle de bains, un dressing et un wc. Au niveau inf&#xE9;rieur deux grandes chambres donnant sur un joli patio de 25 m&#xB2; qui est communiquant avec la terrasse par l&#x27;ext&#xE9;rieur, deux salles de bains, un wc, une buanderie et une chaufferie. Cette maison unique b&#xE9;n&#xE9;ficie d&#x27;un grand calme au c&#xBD;ur de Paris.
+            </div>
+        </a>
+            <span class="item__added-date">Added on 20/04/2019</span>
+        <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+    </div>
+</div>
+
+
+            </div>
+                <div class="row paginator">
+                    <div class="col">
+                    </div>
+                    <div class="col align-self-center">
+                        <div class="paginator__page text-center">
+                            Page
+                            <select id="" class="input input--dropdown dropdown--link">
+                                        <option selected data-link="/properties">1</option>
+                                        <option data-link="/properties/2">2</option>
+                                        <option data-link="/properties/3">3</option>
+                                        <option data-link="/properties/4">4</option>
+                                        <option data-link="/properties/5">5</option>
+                                        <option data-link="/properties/6">6</option>
+                                        <option data-link="/properties/7">7</option>
+                                        <option data-link="/properties/8">8</option>
+                                        <option data-link="/properties/9">9</option>
+                                        <option data-link="/properties/10">10</option>
+                                        <option data-link="/properties/11">11</option>
+                                        <option data-link="/properties/12">12</option>
+                                        <option data-link="/properties/13">13</option>
+                                        <option data-link="/properties/14">14</option>
+                                        <option data-link="/properties/15">15</option>
+                                        <option data-link="/properties/16">16</option>
+                                        <option data-link="/properties/17">17</option>
+                                        <option data-link="/properties/18">18</option>
+                                        <option data-link="/properties/19">19</option>
+                                        <option data-link="/properties/20">20</option>
+                                        <option data-link="/properties/21">21</option>
+                                        <option data-link="/properties/22">22</option>
+                                        <option data-link="/properties/23">23</option>
+                                        <option data-link="/properties/24">24</option>
+                                        <option data-link="/properties/25">25</option>
+                                        <option data-link="/properties/26">26</option>
+                                        <option data-link="/properties/27">27</option>
+                                        <option data-link="/properties/28">28</option>
+                                        <option data-link="/properties/29">29</option>
+                                        <option data-link="/properties/30">30</option>
+                                        <option data-link="/properties/31">31</option>
+                                        <option data-link="/properties/32">32</option>
+                                        <option data-link="/properties/33">33</option>
+                                        <option data-link="/properties/34">34</option>
+                                        <option data-link="/properties/35">35</option>
+                                        <option data-link="/properties/36">36</option>
+                                        <option data-link="/properties/37">37</option>
+                                        <option data-link="/properties/38">38</option>
+                                        <option data-link="/properties/39">39</option>
+                                        <option data-link="/properties/40">40</option>
+                                        <option data-link="/properties/41">41</option>
+                                        <option data-link="/properties/42">42</option>
+                                        <option data-link="/properties/43">43</option>
+                            </select>
+                            of <span class="paginator__pages-count">43</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                            <a class="nounderline" href="/properties/2">
+                                <span class="input paginator__btn paginator__btn--next d-flex align-items-center justify-content-center">Next</span>
+                            </a>
+                    </div>
+                </div>
+        </div>
+        <div class="d-none d-lg-block col-lg-3 related">
+            <h4 class="related__title">Sold House Prices</h4>
+            <ul class="related__list">
+                <li class="related__list__item"><a href="#">View House Prices in London</a></li>
+            </ul>
+            <h4 class="related__title">Exploring Related Searches</h4>
+            <ul class="related__list">
+                <li class="related__list__item"><a href="#">Property for Sale in London</a></li>
+                <li class="related__list__item"><a href="#">Property for Rent in London</a></li>
+                <li class="related__list__item"><a href="#">2 bedroom houses For Sale in London</a></li>
+                <li class="related__list__item"><a href="#">3 bedroom houses For Sale in London</a></li>
+                <li class="related__list__item"><a href="#">4 bedroom houses For Sale in London</a></li>
+                <li class="related__list__item"><a href="#">5+ bedroom houses For Sale in London</a></li>
+            </ul>
+            <h4 class="related__title">Nearby London</h4>
+            <ul class="related__list">
+                <li class="related__list__item"><a href="#">Kent</a></li>
+                <li class="related__list__item"><a href="#">Essex</a></li>
+                <li class="related__list__item"><a href="#">Survey</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+        <footer class="footer footer--global d-none d-lg-flex align-items-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col d-flex justify-content-between align-items-center pr-5 pl-5">
+                <div class="footer--global__nav">
+                    <ul class="list-unstyled m-0">
+                        <li class="list-inline-item"><a href="#">About</a></li>
+                        <li class="list-inline-item"><a href="#">Agency Section</a></li>
+                    </ul>
+                </div>
+                <div class="footer--global__details">
+                    Interested in Vizzit project? <a href="#" target="_blank">Learn here</a> how it works!
+                </div>
+                <div class="footer--global__nav">
+                    © 2019 Vizzit - <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+
+    
+<div class="modal fade" id="login_modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header d-block">
+                <h4 class="modal-title text-center">Log In</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <div class="form-group">
+                        <label for="user_email">Your Email</label>
+                        <input class="form-control input" type="email" placeholder="Enter Your Email" id="user_email" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email">Your Password</label>
+                        <input class="form-control input" type="password" placeholder="Enter Your Password" id="user_password" autocomplete="off">
+                    </div>
+                </div>
+                <a href="#" class="link--forgot-pass">Forgot Password?</a>
+            </div>
+            <div class="modal-footer d-block">
+                <button class="btn btn--main btn--login">Log In</button>
+                <button class="btn btn--main btn--signup">Sign Up</button>
+            </div>
+        </div>
+        <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+            <span class="btn--close__line"></span>
+            <span class="btn--close__line"></span>
+        </button>
+    </div>
+</div>
+
+    
+<div class="modal fade" id="contact_modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="contact-form">
+                <p class="contact-form__price item__price d-flex align-items-center">
+                    30 000 000 €
+                </p>
+                <div class="contact-form__agency-details">
+                    Contact <b>TODEOR AGENCY</b> about <b>Amazing 5 bedroom terraced house very well situated</b>
+                </div>
+                <div class="contact-form__body">
+                    <div class="text-right">
+                        <a href="#" class="contact-form__link d-inline-block">Legal Notice</a>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control input" type="text" placeholder="Your name" id="client_name" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control input" type="text" placeholder="Your phone" id="client_phone" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control input" type="email" placeholder="Your email" id="client_email" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label class="contact-form__label">You would like...</label>
+                        <div class="row">
+                            <div class="col-6 pr-0">
+                                <label class="custom-input--small-checkbox">
+                                    <input type="checkbox" name="contacted">
+                                    <span class="input d-inline-block"></span>To be contacted
+                                </label>
+                                <label class="custom-input--small-checkbox">
+                                    <input type="checkbox" name="visit">
+                                    <span class="input d-inline-block"></span>To visit
+                                </label>
+                            </div>
+                            <div class="col-6 pl-0">
+                                <label class="custom-input--small-checkbox">
+                                    <input type="checkbox" name="photos">
+                                    <span class="input d-inline-block"></span>More photos
+                                </label>
+                                <label class="custom-input--small-checkbox">
+                                    <input type="checkbox" name="information">
+                                    <span class="input d-inline-block"></span>More information
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control input" type="email" placeholder="Type Your message" id="client_message" autocomplete="off"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-input--small-checkbox">
+                            <input type="checkbox" name="alert">
+                            <span class="input d-inline-block"></span>Email alert on similar properties
+                        </label>
+                    </div>
+                    <button class="btn btn--main contact-form__btn">Contact Agent</button>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+            <span class="btn--close__line"></span>
+            <span class="btn--close__line"></span>
+        </button>
+    </div>
+</div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
+    </script>
+<script>(window.jQuery||document.write("\u003Cscript src=\u0022\/lib\/jquery\/dist\/jquery.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+<script>($.fn.modal||document.write("\u003Cscript src=\u0022\/lib\/bootstrap\/js\/bootstrap.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+<script>(Popper||document.write("\u003Cscript src=\u0022\/lib\/popper\/dist\/js\/popper.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script type="text/javascript" defer>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+        {
+            document.write('<script src="/js/polyfill.js"><\/script>');
+            document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CArray.prototype.includes%2CString.prototype.includes%2CObject.assign%2CArray.prototype.findIndex%2CArray.prototype.find%2CArray.from%2CCustomEvent%2Cfetch%2Ces5%2CElement.prototype.classList%2CrequestAnimationFrame"><\/script>');
+        }
+    </script>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js" crossorigin="anonymous">
+    </script>
+<script>(Swiper||document.write("\u003Cscript src=\u0022\/lib\/swiper\/dist\/swiper.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/13.1.3/nouislider.min.js" crossorigin="anonymous">
+    </script>
+<script>(noUiSlider||document.write("\u003Cscript src=\u0022\/lib\/nouislider\/nouislider.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.1.0/wNumb.min.js" crossorigin="anonymous">
+    </script>
+<script>(wNumb||document.write("\u003Cscript src=\u0022\/lib\/wnumb\/wnumb.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js" crossorigin="anonymous"></script>
+<script>(Choices||document.write("\u003Cscript src=\u0022\/lib\/choices\/choices.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script type="text/javascript" src="./js/tools.js" defer></script>
+    <script type="text/javascript" src="./js/listing.js" defer></script>
+    <script type="text/javascript" src="./js/navigation.js" defer></script>
+    <script type="text/javascript" src="./js/location_selector.js" defer></script>
+
+</body>
+</html>

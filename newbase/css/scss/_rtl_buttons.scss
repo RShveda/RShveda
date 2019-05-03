@@ -1,0 +1,16 @@
+.btn {
+  &--alert {
+    left: auto;
+    left: unset;
+    right: 12px;
+  }
+}
+
+@media (min-width: $lg) {
+  .btn {
+    &--alert {
+      padding: 0 26px 0 0;
+      background-position: right 0 center;
+    }
+  }
+}

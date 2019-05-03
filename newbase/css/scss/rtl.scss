@@ -1,0 +1,14 @@
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+.direction-rtl {
+    direction: rtl;
+}
+
+@import '_rtl_buttons';
+@import '_rtl_header';
+@import '_rtl_common';
+@import '_rtl_footer';

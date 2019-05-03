@@ -1,0 +1,43 @@
+@include media-breakpoint-up(xs) {
+  /* ------------- Icons -------------- */
+  .icon {
+    background-color: transparent;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    &--area {
+      background-image: url(../images/icon-area.svg);
+    }
+    &--room {
+      background-image: url(../images/icon-room.svg);
+    }
+    &--bedroom {
+      background-image: url(../images/icon-bedroom.svg);
+    }
+    &--photos {
+      background-image: url(../images/icon-camera.svg);
+    }
+    &--mandate {
+      background-image: url(../images/icon-mandate.svg);
+    }
+    &--bathroom {
+      background-image: url(../images/icon-bathroom.svg);
+    }
+    &--shower {
+      background-image: url(../images/icon-shower.svg);
+    }
+    &--kitchen {
+      background-image: url(../images/icon-kitchen.svg);
+    }
+    &--favorite {
+      background-image: url(../images/icon-favorite.svg);
+    }
+    &--eye {
+      background-image: url(../images/icon-eye.svg);
+    }
+    &--favorite-orange {
+      background-image: url(../images/icon-favorite-orange.svg);
+    }
+  }
+}
