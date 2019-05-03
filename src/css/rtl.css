@@ -73,7 +73,7 @@
 /*--------------------------------------------*/
 /*                  Listing                   */
 /*--------------------------------------------*/
-.listing__sort input {
+.listing__sort .input {
   padding-left: 0; }
 
 .content--listing {
