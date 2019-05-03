@@ -73,6 +73,9 @@
 /*--------------------------------------------*/
 /*                  Listing                   */
 /*--------------------------------------------*/
+.listing__sort input {
+  padding-left: 0; }
+
 .content--listing {
   text-align: right; }
 
