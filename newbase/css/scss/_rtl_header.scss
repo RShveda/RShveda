@@ -61,7 +61,8 @@
         &__nav {
           transform: translateX(0);
         }
-    }
+        
+    }   
 }
 
 @media (min-width: $lg) {
@@ -71,6 +72,17 @@
                 right: -54px;
             }
         }
+        &--advert {
+            .header__logo {
+                .logo {
+                    right: 20px;
+                }
+            }
+        }
+    }
+    .contact-form-area {
+        padding-right: 0 !important;
+        padding-left: 1rem !important;
     }
 }
 
@@ -79,6 +91,13 @@
         &__logo {
             .logo {
                 right: 40px;
+            }
+        }
+        &--advert {
+            .header__logo {
+                .logo {
+                    right: 40px;
+                }
             }
         }
     }
