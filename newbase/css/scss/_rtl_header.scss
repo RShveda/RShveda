@@ -21,7 +21,7 @@
             right: 24px;
         }
     }
-    /* ------------- Navigation (Menu) Listing, Advert -------------- */
+    /* ------------- Listing -------------- */
     &__logo {
         .logo {
             left: auto;
@@ -33,6 +33,25 @@
         background-position: right 7px center;
         padding-left: 0;
         padding-right: 26px;
+    }
+    /* ------------- Advert -------------- */
+    &--advert {
+        .header__logo {
+            .logo {
+                right: 16px;
+            }
+        }
+    }
+    &__back {
+        .input {
+            padding: 0 22px 0 0; 
+            &:after {
+                left: auto;
+                left: unset;
+                right: 6px;
+                transform: rotate(-90deg);
+            }
+        }
     }
 }
 

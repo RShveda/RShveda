@@ -1,8 +1,14 @@
 .btn {
-  &--alert {
+  &--alert, &--call {
     left: auto;
     left: unset;
     right: 12px;
+  }
+  &--contact {
+    right: auto;
+    right: unset;
+    left: 12px;
+    background-position: center right 15px;
   }
 }
 
