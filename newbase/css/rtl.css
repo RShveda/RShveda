@@ -317,7 +317,19 @@
   .breadcrumbs__row {
     text-align: right; }
   .breadcrumbs__item {
-    display: inline-block; } }
+    display: inline-block; }
+
+  .description__block {
+    padding-right: 0 !important;
+    padding-left: 0.5rem !important; }
+    .description__block .pl-lg-0 {
+      padding-right: 0 !important; }
+    .description__block .pr-lg-2 {
+      padding-left: 0.5rem !important; } }
+@supports (-ms-ime-align: auto) {
+  @media (min-width: 992px) {
+    .contact-form-area {
+      position: relative; } } }
 @media (min-width: 1200px) {
   /* ------------- Locations in Header -------------- */
   .locations__header .input--distance {
