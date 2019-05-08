@@ -383,12 +383,12 @@
         }
     }
     .description__block {
-        padding-right: 0 !important;
-        padding-left: 0.5rem !important;
-        .pl-lg-0 {
-            padding-right: 0 !important;
+        &.pr-lg-0.pl-lg-2 {
+            padding-left: 0 !important;
+            padding-right: 0.5rem !important;
         } 
-        .pr-lg-2 {
+        &.pl-lg-0.pr-lg-2 {
+            padding-right: 0 !important;
             padding-left: 0.5rem !important;
         }
     }

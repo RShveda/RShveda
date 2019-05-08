@@ -319,13 +319,12 @@
   .breadcrumbs__item {
     display: inline-block; }
 
-  .description__block {
+  .description__block.pr-lg-0.pl-lg-2 {
+    padding-left: 0 !important;
+    padding-right: 0.5rem !important; }
+  .description__block.pl-lg-0.pr-lg-2 {
     padding-right: 0 !important;
-    padding-left: 0.5rem !important; }
-    .description__block .pl-lg-0 {
-      padding-right: 0 !important; }
-    .description__block .pr-lg-2 {
-      padding-left: 0.5rem !important; } }
+    padding-left: 0.5rem !important; } }
 @supports (-ms-ime-align: auto) {
   @media (min-width: 992px) {
     .contact-form-area {
