@@ -10,6 +10,12 @@
     left: 12px;
     background-position: center right 15px;
   }
+  @include media-breakpoint-up(lg) {
+    &--alert {
+      padding: 0 26px 0 0;
+      background-position: right 0 center;
+    }
+  }
 }
 
 @media (min-width: $lg) {

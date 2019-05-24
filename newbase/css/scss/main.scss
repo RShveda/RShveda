@@ -1,27 +1,29 @@
 
-@import '../lib/bootstrap/scss/functions';
+@import '../../lib/bootstrap/scss/functions';
 
-// Override BS4 variables
-// @import 'variables';
-@import '../lib/bootstrap/scss/variables';
-@import '../lib/bootstrap/scss/mixins';
+@import '../../lib/bootstrap/scss/variables';
+
+// Custom variables
+@import 'custom_variables';
+
+@import '../../lib/bootstrap/scss/mixins';
 
 // Choose which one you want to use in project
 // import only need boostrap components
-@import '../lib/bootstrap/scss/root';
-@import '../lib/bootstrap/scss/reboot';
-@import '../lib/bootstrap/scss/type';
-@import '../lib/bootstrap/scss/images';
-@import '../lib/bootstrap/scss/grid';
-@import '../lib/bootstrap/scss/forms';
-@import '../lib/bootstrap/scss/buttons';
-@import '../lib/bootstrap/scss/transitions';
-@import '../lib/bootstrap/scss/custom-forms';
-@import '../lib/bootstrap/scss/nav';
-@import '../lib/bootstrap/scss/navbar';
-@import '../lib/bootstrap/scss/close';
-@import '../lib/bootstrap/scss/modal';
-@import '../lib/bootstrap/scss/utilities';
+@import '../../lib/bootstrap/scss/root';
+@import '../../lib/bootstrap/scss/reboot';
+@import '../../lib/bootstrap/scss/type';
+@import '../../lib/bootstrap/scss/images';
+@import '../../lib/bootstrap/scss/grid';
+@import '../../lib/bootstrap/scss/forms';
+@import '../../lib/bootstrap/scss/buttons';
+@import '../../lib/bootstrap/scss/transitions';
+@import '../../lib/bootstrap/scss/custom-forms';
+@import '../../lib/bootstrap/scss/nav';
+@import '../../lib/bootstrap/scss/navbar';
+@import '../../lib/bootstrap/scss/close';
+@import '../../lib/bootstrap/scss/modal';
+@import '../../lib/bootstrap/scss/utilities';
 
 // Add custom here
 @import '_fonts';

@@ -1,6 +1,6 @@
-@include media-breakpoint-up(md) {
-  .footer {
-    &--home {
+.footer {
+  &--home {
+    @include media-breakpoint-up(md) {
       width: 100%;
       &__bottom {
         height: 60px;
@@ -41,29 +41,31 @@
       }
     }
   }
-}
-
-@include media-breakpoint-up(lg) {
-  .footer {
-    &--global {
-      height: 86px;
-      width: 100%;
-      background: $darkblue;
-      color:#fff;
-      font-family: "Montserrat Regular";
-      font-size: 0.9em;
-      a,
-      a:hover,
-      a:active,
-      a:focus {
+  
+  &--global {
+    @include media-breakpoint-up(lg) {
+      &--global {
+        height: 86px;
+        width: 100%;
+        background: $darkblue;
         color:#fff;
-      }
-      &__details {
-        text-align: center;
-        a {
-          text-decoration: underline;
+        font-family: "Montserrat Regular";
+        font-size: 0.9em;
+        a,
+        a:hover,
+        a:active,
+        a:focus {
+          color:#fff;
+        }
+        &__details {
+          text-align: center;
+          a {
+            text-decoration: underline;
+          }
         }
       }
     }
   }
 }
+
+
