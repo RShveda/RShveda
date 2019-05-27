@@ -6,6 +6,8 @@
 @import '../../lib/bootstrap/scss/variables';
 @import '../../lib/bootstrap/scss/mixins';
 
+@import '../../lib/bootstrap/scss/mixins';
+
 // Choose which one you want to use in project
 // import only need boostrap components
 @import '../../lib/bootstrap/scss/root';
@@ -29,12 +31,6 @@
 @import '_header';
 @import '_icons';
 @import '_common';
-@import '_contact_form';
 @import '_locations_global';
-@import '_locations_listing';
-@import '_range_sliders';
-@import '_paginator';
 @import '_home';
-@import '_listing';
-@import '_advert';
 @import '_footer';

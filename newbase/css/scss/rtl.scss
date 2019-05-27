@@ -4,6 +4,14 @@ $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 
+@import '../../lib/bootstrap/scss/functions';
+
+// Custom variables
+@import 'custom_variables';
+
+@import '../../lib/bootstrap/scss/variables';
+@import '../../lib/bootstrap/scss/mixins';
+
 .direction-rtl {
     direction: rtl;
 }

@@ -1,0 +1,171 @@
+/* ------------- Choices Input -------------- */
+.choices {
+    font-family: "OpenSans Regular";
+    margin: 0;
+
+    &__counter {
+        display: none;
+    }
+
+    &__inner {
+        color: $darkgray;
+        border-radius: 5px;
+        border: 1px solid #dadada;
+        background-color: #fff;
+        background-image: $icon-location;
+        background-position: left 12px top 10px;
+        background-size: 16px 24px;
+        background-repeat: no-repeat;
+        min-height: 46px;
+        padding-left: 36px;
+        padding-bottom: 2px;
+        padding-top: 5px;
+        margin: 0;
+
+        @include media-breakpoint-up(md) {
+            //max-height: 56px;
+            position: absolute;
+            margin: 0;
+            background-position: left 16px top 15px;
+            min-height: 56px;
+            padding-left: 42px;
+            padding-bottom: 0;
+            padding-top: 7px;
+        }
+    }
+
+    &__input {
+        height: 32px;
+        font-size: 1.2em;
+        background: #fff;
+        min-width: 120px;
+
+        &::-ms-clear {
+            display: none;
+        }
+
+        @include media-breakpoint-up(md) {
+            height: 38px;
+        }
+    }
+
+    &__heading {
+        font-family: "OpenSans Bold";
+        font-weight: normal;
+        color: $darkgray;
+        font-size: 0.8em;
+        border-bottom: 1px solid $lightgray;
+        border-top: 1px solid $lightgray;
+        background: rgba(218, 218, 218, 0.2);
+    }
+
+    &__list {
+        &--dropdown .choices__item--selectable.is-highlighted {
+            background-color: $gray-100;
+        }
+
+        &--multiple {
+            .choices {
+                &__item {
+                    font-size: 1em;
+                    background-color: $orange-primary;
+                    border: 1px solid $orange-primary;
+                    color: #fff;
+
+                    &.is-highlighted {
+                        background-color: $orange-hover;
+                        border: 1px solid $orange-hover;
+                    }
+                }
+            }
+
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+                .choices__item {
+                  padding: 6px 13px;
+                  margin-right: 4px;
+                  margin-bottom: 6px;
+                  margin-top: 2px;
+                  font-size: 1.1em;
+                }
+            }
+        }
+    }
+
+    &[data-type*=select-multiple] .choices__button,
+    &[data-type*=text] .choices__button {
+        border-left: 1px solid #f99c63;
+    }
+
+    @include media-breakpoint-up(md) {
+        height: 56px;
+        position: relative;
+
+        &.is-focused.is-open {
+            .choices__inner {
+              max-height: none;
+              &.choices__overflow:after {
+                display: none;
+              }
+            }
+            .choices__counter {
+              display: none;
+            }
+          }
+    }
+}
+
+.is-open .choices__inner {
+    border-radius: 5px;
+}
+
+/* ------------- Input Location -------------- */
+.input--location {
+    background-image: $icon-location;
+    background-position: left 12px center;
+    background-size: 16px 24px;
+    background-repeat: no-repeat;
+    padding-left: 36px;
+    margin-bottom: 14px;
+    font-size: 1.02em;
+
+    &__results {
+        display: none;
+        position: absolute;
+        top: 46px;
+        border: 1px solid $lightgray;
+        border-top: none;
+        width: 100%;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        max-height: 215px;
+        overflow-y: scroll;
+        background: #fff;
+        z-index: 2;
+        font-family: "OpenSans Regular";
+
+        .locations__list {
+            display: block;
+
+            &__item {
+                padding: 10px 14px;
+                background-image: none;
+
+                &:last-child {
+                    border-bottom: none;
+                    border-bottom-right-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        height: 56px;
+        background-position: left 16px center;
+        padding-left: 42px;
+        &__results {
+            top: 56px;
+        }
+    }
+}

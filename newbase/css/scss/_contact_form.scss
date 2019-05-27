@@ -1,0 +1,312 @@
+.contact-form {
+    font-family: "OpenSans Regular";
+    position: relative;
+    background: #fff;
+    width: 100%;
+    min-height: 100%;
+    color: $darkgray;
+
+    &-area {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 12;
+        overflow: scroll;
+        transform: translateX(100%);
+        transition: .18s ease-out;
+
+        &--shown {
+            transform: translateX(0);
+        }
+
+        @include media-breakpoint-up(lg) {
+            position: sticky;
+            position: -webkit-sticky;
+            top: 30px;
+            left: auto;
+            z-index: 2;
+            overflow: visible;
+            transform: translateX(0);
+            margin-top: -64px;
+            min-width: 336px;
+        }
+    }
+
+    &__header {
+        padding-left: 16px;
+        width: 100%;
+
+        span {
+            font-family: "Montserrat Regular";
+            font-size: 1.02em;
+        }
+    }
+
+    &__agency-details {
+        background: rgba(218, 218, 218, 0.2);
+        border-bottom: 1px solid $lightgray;
+        font-size: 0.9em;
+        line-height: 1.2em;
+        padding: 12px 16px;
+    }
+
+    &__body {
+        padding: 0 24px 48px;
+
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 18px;
+        }
+    }
+
+    &__price.item__price {
+        @include media-breakpoint-up(lg) {
+            border-bottom: 1px solid #dadada;
+            margin: 0;
+            padding: 0 20px;
+            font-size: 1.6em;
+            height: 64px;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        font-size: 0.9em;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 1em;
+        }
+    }
+
+    &__link {
+        font-size: 0.8em;
+        color: $darkgray;
+        text-decoration: underline;
+        margin: 8px 0 10px;
+    }
+
+    &__label {
+        color: $gray;
+        font-size: 0.9em;
+    }
+
+    input.input {
+        height: 40px;
+    }
+
+    textarea {
+        height: 86px;
+        font-size: 0.9em;
+        resize: none;
+    }
+
+    .custom-input--small-checkbox {
+        font-size: 0.8em;
+    }
+
+    .item {
+        @include media-breakpoint-up(lg) {
+            &__btn-favorite,
+            &__btn-share,
+            &__btn-print {
+                cursor: pointer;
+                border-bottom: none;
+
+                &:focus {
+                    border-color: $lightgray;
+                }
+            }
+
+            &__btn-share,
+            &__btn-print {
+                &:hover {
+                    background-color: $lightgray;
+                }
+            }
+
+            &__btn-favorite {
+                border-left: none;
+                font-size: 0.9em;
+                border-top-left-radius: 0;
+
+                &--added {
+                    border-color: #f45a5b;
+                    background-color: #f45a5b;
+                    background-image: $icon-favorite-added-b;
+                    color: #fff;
+                }
+            }
+
+            &__btn-share {
+                max-width: 56px;
+                min-width: 48px;
+                border-radius: 0;
+                border-right: none;
+            }
+
+            &__btn-print {
+                max-width: 56px;
+                min-width: 48px;
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                background-image: $icon-print;
+                background-position: center;
+                background-size: 24px;
+                background-repeat: no-repeat;
+                border-right: none;
+                border-bottom: none;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        border: 1px solid $lightgray;
+        border-radius: 5px;
+    }
+}
+
+/* ------------- Modal -------------- */
+.modal {
+    font-family: "OpenSans Regular";
+
+    &-content {
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 1px 8px 0 rgba(0,0,0,0.24);
+        margin-bottom: 80px;
+    }
+    &-dialog {
+        @include media-breakpoint-up(md) {
+            max-width: 420px;
+        }
+    }
+
+    &-body,
+    &-footer,
+    &-header {
+        padding-right: 24px;
+        padding-left: 24px;
+        border: none;
+
+        @include media-breakpoint-up(md) {
+            padding-right: 34px;
+            padding-left: 34px;
+        }
+    }
+
+    &-body {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    &-header {
+        padding: 24px 24px 12px 24px;
+
+        @include media-breakpoint-up(md) {
+            padding-top: 34px;
+        }
+    }
+
+    &-title {
+        font-family: "Montserrat Regular";
+        color: $orange-primary;
+        font-size: 1.1em;
+    }
+
+    &-footer {
+        padding-bottom: 12px;
+
+        & > .btn {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding-bottom: 22px;
+        }
+    }
+
+    &-form {
+        & > .form-group:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &.fade {
+        .modal-dialog {
+            transform: translate3d(0, 80vh, 0);
+        }
+
+        .btn--modal-close {
+            transition: transform .25s ease-out;
+            transform-origin: 50% 50%;
+            transform: translateY(70px) rotate(360deg);
+        }
+
+        @include media-breakpoint-up(md) {
+            .modal-dialog {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+
+    &.show {
+        .modal-dialog {
+            transform: translate3d(0, 0, 0);
+        }
+
+        .btn--modal-close {
+            transform: translateY(0px) rotate(0deg);
+        }
+
+        @include media-breakpoint-up(md) {
+            .modal-dialog {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+
+    &-backdrop {
+        background: $darkblue;
+    }
+
+    .form-group {
+        margin-bottom: 8px;
+
+        label {
+            margin-bottom: 4px;
+            font-size: 0.8em;
+            color: $darkgray;
+        }
+    }
+
+    .link {
+        &--forgot-pass {
+            font-size: .9em;
+            color: $darkgray;
+            text-decoration: underline;
+        }
+    }
+
+    .contact-form {
+        border-radius: 5px;
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        &__body {
+            padding-bottom: 48px;
+        }
+
+        .item__price {
+            border-bottom: 1px solid #dadada;
+            margin: 0;
+            padding: 0 18px;
+            font-size: 1.4em;
+            height: 56px;
+        }
+    }
+}

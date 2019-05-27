@@ -1,0 +1,35 @@
+ /* ------------- Range Sliders -------------- */
+.noUi {
+    &-horizontal {
+      height: 4px;
+      .noUi-handle {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    &-target {
+      background: $lightgray;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+    }
+    &-connect {
+      background: $orange-primary;
+    }
+    &-handle {
+      outline:none;
+      border: 1px solid $lightgray;
+      border-radius: 18px;
+      cursor: pointer;
+      box-shadow: none;
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
+}
+html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
+    top: -7px;
+    right: -9px;
+    left: auto;
+}

@@ -1,0 +1,112 @@
+/* ------------- Home -------------- */
+.wrapper {
+    &--home {
+        height: 100vh;
+        @include media-breakpoint-up(lg) {
+            min-height: 610px;
+        }
+    }
+}
+
+.content {
+    /* ------------- Content Part (Home) -------------- */
+    &--home {
+        flex-grow: 1;
+        padding: 0 24px 48px 24px;
+        &__logo {
+            height: 50px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        @include media-breakpoint-up(md) {
+            max-width: 690px;
+            margin: 60px auto;
+            padding: 0;
+            &__logo {
+              height: 62px;
+            }
+            &__form-area {
+              width: 690px;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            max-width: 910px;
+            margin: 160px auto;
+
+            &__logo {
+                height: 75px;
+                margin: 0 30px 6px 0;
+            }
+
+            &__form-area {
+                vertical-align: bottom;
+            }
+        }
+    }
+}
+
+.title {
+    &--home {
+        text-align: center;
+        margin-bottom: 0.7em;
+
+        @include media-breakpoint-up(md) {
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 2.34em;
+        }
+    }
+}
+
+.subtitle {
+    &--home {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+            font-family: "OpenSans Regular";
+            font-size: 1.34em;
+            color: $darkgray;
+            margin: 0 0 24px;
+            & > b {
+                font-family: "OpenSans Semibold";
+            }
+        }
+    }
+}
+
+/* ------------- Form (Location) -------------- */
+.buttons-row {
+    &__btn {
+        max-width: calc(50% - 8px);
+    }
+    @include media-breakpoint-up(md) {
+        &__btn {
+            font-size: 1.1em;
+            height: 56px;
+        }
+    }
+}
+
+.form {
+    &--location {
+        &__input-area {
+            position: relative;
+        }
+
+        @include media-breakpoint-up(md) {
+            &__input-area {
+                max-width: 384px;
+                .input {
+                  font-size: 1.1em;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-up(md) {
+        &__buttons-row {
+            max-width: 306px;
+            padding-left: 14px;
+        }
+    }
+}
