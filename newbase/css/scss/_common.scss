@@ -70,8 +70,8 @@ a.nounderline {
             display: none;
 
             &:checked + span {
-                border-color: $orange-primary;
-                background-color: $orange-primary;
+                border-color: $primary;
+                background-color: $primary;
                 color: #fff;
             }
         }
@@ -103,9 +103,9 @@ a.nounderline {
             display: none;
 
             &:checked + span {
-                border-color: $orange-primary;
+                border-color: $primary;
                 background-image: $icon-check-white;
-                background-color: $orange-primary;
+                background-color: $primary;
                 color: #fff;
             }
         }
@@ -129,8 +129,8 @@ a.nounderline {
             display: none;
 
             &:checked + span {
-                border-color: $orange-primary;
-                background-color: $orange-primary;
+                border-color: $primary;
+                background-color: $primary;
                 color: #fff;
             }
         }

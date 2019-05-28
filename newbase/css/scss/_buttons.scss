@@ -12,7 +12,7 @@
   &--main {
     height: 46px;
     font-size: 1.02em;
-    background: $orange-primary;
+    background: $primary;
     color: #fff;
     &:hover,
     &:active,
@@ -25,7 +25,7 @@
   &--secondary {
     background: #fff;
     border:1px solid $lightgray;
-    color:$orange-primary;
+    color:$primary;
     &:hover,
     &:active{
       background: $lightgray;;
@@ -43,7 +43,7 @@
   }
 
   &--filters {
-    background-color: $orange-primary;
+    background-color: $primary;
     background-image: $icon-filters;
     background-position: center;
     background-size: 16px;
@@ -87,7 +87,7 @@
     position: fixed;
     left: 12px;
     bottom:12px;
-    background-color: $orange-primary;
+    background-color: $primary;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 5;
@@ -113,7 +113,7 @@
       height: auto;
       background-color: transparent;
       display: inline-block;
-      color: $orange-primary;
+      color: $primary;
       font-size: 1em;
       box-shadow: none;
       bottom: 0;
@@ -137,7 +137,7 @@
     position: fixed;
     left: 12px;
     bottom:12px;
-    background-color: $orange-primary;
+    background-color: $primary;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 5;
@@ -168,7 +168,7 @@
   &--signup {
     width: 100%;
     background: none;
-    color:$orange-primary;
+    color:$primary;
     text-decoration: underline;
     &:hover,
     &:active,
