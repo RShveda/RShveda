@@ -63,6 +63,13 @@ a.nounderline {
         -webkit-appearance: none;
         cursor: pointer;
     }
+    &--with-icon {
+      background-size: 1.5rem;
+      background-image: $icon-search;
+      padding-left: 3rem;
+      background-position: left 12px center;
+      background-repeat: no-repeat;
+    }
 }
 
 /* ------------- Custom Inputs (Radio and Checkbox) -------------- */

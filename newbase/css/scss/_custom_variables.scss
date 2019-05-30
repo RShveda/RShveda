@@ -38,6 +38,8 @@ $icon-check: url(../images/icon-check.svg);
 $icon-check-white: url(../images/icon-check-white.svg);
 $icon-share: url(../images/icon-share.svg);
 $icon-print: url(../images/icon-print.svg);
+$icon-search: url(../images/icon-search.svg);
+$icon-search-white: url(../images/icon-search-white.svg);
 
 // Custom color system:
 $orange-primary:#ee650d;
@@ -57,7 +59,7 @@ $lightgray:#dadada;
 
 // Color system
 
-// $white:    #fff !default;
+$white:    #fff !default;
 // $gray-100: #f8f9fa !default;
 // $gray-200: #e9ecef !default;
 // $gray-300: #dee2e6 !default;
@@ -846,14 +848,14 @@ $btn-border-radius:            2rem;//$border-radius !default;
 
 // Cards
 
-// $card-spacer-y:                     .75rem !default;
+$card-spacer-y:                     0.5rem;//.75rem !default;
 // $card-spacer-x:                     1.25rem !default;
 $card-border-width:                    0;//$border-width !default;
 $card-border-radius:                   8px;//$border-radius !default;
 $card-border-color:                    $lightgray;//rgba($black, .125) !default;
 $card-inner-border-radius:             7px;//calc(#{$card-border-radius} - #{$card-border-width}) !default;
-$card-cap-bg:                       $primary;//rgba($black, .03) !default;
-// $card-cap-color:                    inherit !default;
+$card-cap-bg:                       $white;//rgba($black, .03) !default;
+$card-cap-color:                    $primary;//inherit !default;
 // $card-bg:                           $white !default;
 
 // $card-img-overlay-padding:          1.25rem !default;

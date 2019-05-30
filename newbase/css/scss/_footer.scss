@@ -63,6 +63,29 @@
         }
       }
     }
+    &.footer--chat {
+      @include media-breakpoint-up(md) {
+        height: 86px;
+        width: 100%;
+        background: $darkblue;
+        color:#fff;
+        font-family: "Montserrat Regular";
+        font-size: 0.9em;
+        a,
+        a:hover,
+        a:active,
+        a:focus {
+          color:#fff;
+        }
+        &__details {
+          text-align: center;
+          a {
+            text-decoration: underline;
+          }
+        }
+      }
+      
+    }
   }
 }
 

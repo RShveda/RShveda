@@ -38,4 +38,13 @@
   &--favorite-orange {
     background-image: $icon-favorite-orange;
   }
+  &--arrow {
+    background-image: $icon-dropdown;
+  }
+  &--search {
+    background-image: $icon-search;
+  }
+  &--search-white {
+    background-image: $icon-search-white;
+  }
 }
