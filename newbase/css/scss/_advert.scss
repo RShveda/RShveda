@@ -23,6 +23,7 @@
     }
 }
 
+
 .swiper-container.main-gallery {
     @include media-breakpoint-up(lg) {
         .swiper {
@@ -403,4 +404,29 @@
             }
         }
     }
+}
+
+/* ------------- iPad / Tablet / Landscape -------------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1366px)
+and (orientation : landscape) {
+  .item-page__content .item__img-area {
+    height: calc(100vh - 290px);
+  }
+}
+
+/* ------------- Full Hd -------------- */
+@media only screen
+and (min-device-width : 1280px)
+and (min-device-height : 960px) {
+  .item-page {
+    &__content {
+      .item {
+        &__img-area {
+          height: 700px;
+        }
+      }
+    }
+  }
 }

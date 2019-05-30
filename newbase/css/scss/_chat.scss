@@ -1,0 +1,17 @@
+/* ------------- Home -------------- */
+.wrapper {
+    &--chat {
+        height: 100vh;
+        @include media-breakpoint-up(lg) {
+            min-height: 610px;
+        }
+    }
+}
+
+.content {
+    /* ------------- Content Part (Chat) -------------- */
+    &--chat {
+        
+    }
+}
+

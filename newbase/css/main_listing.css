@@ -1517,7 +1517,7 @@ textarea.form-control {
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 0.25rem;
+  border-radius: 2rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
     .btn {
@@ -5867,7 +5867,7 @@ a.text-dark:hover, a.text-dark:focus {
             display: flex;
             align-items: center;
             transition: .12s ease-out; }
-          .header__nav__item a:hover {
+          .header__nav__item a:hover, .header__nav__item a.active {
             border-bottom-color: var(--orange); } }
       @media (min-width: 992px) {
         .header__nav__item {
@@ -5929,19 +5929,19 @@ a.text-dark:hover, a.text-dark:focus {
     @media (min-width: 1200px) {
       .header__location {
         min-width: 444px; } }
-  .header--advert .header__logo {
+  .header--advert .header__logo, .header--chat .header__logo {
     width: 110px;
     max-width: 110px;
     min-width: 110px; }
-    .header--advert .header__logo .logo {
+    .header--advert .header__logo .logo, .header--chat .header__logo .logo {
       clip: auto; }
     @media (min-width: 992px) {
-      .header--advert .header__logo {
+      .header--advert .header__logo, .header--chat .header__logo {
         width: 160px;
         max-width: 160px;
         min-width: 160px; } }
     @media (min-width: 1200px) {
-      .header--advert .header__logo {
+      .header--advert .header__logo, .header--chat .header__logo {
         width: 240px;
         max-width: 240px;
         min-width: 240px; } }
@@ -6130,14 +6130,6 @@ a.nounderline {
     vertical-align: middle;
     margin-right: 6px; }
 
-/* ------------- iPad / Tablet / Landscape -------------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: landscape) {
-  .item-page__content .item__img-area {
-    height: calc(100vh - 290px); } }
-/* ------------- Full Hd -------------- */
-@media only screen and (min-device-width: 1280px) and (min-device-height: 960px) {
-  .item-page__content .item__img-area {
-    height: 700px; } }
 /*** For IE ***/
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .listing__item--large .item__img--main img,
@@ -6400,6 +6392,136 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
       font-size: 1.4em;
       height: 56px; }
 
+/* ------------- Listing Item -------------- */
+.item__img-area {
+  position: relative; }
+  .item__img-area:after {
+    content: '';
+    display: block;
+    padding-bottom: calc(100% / 1.5); }
+  .item__img-area .swiper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
+  .item__img-area .swiper-slide > img {
+    width: 100%; }
+  .item__img-area .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    opacity: 0.5; }
+  .item__img-area .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #ee650d; }
+  .item__img-area .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 0;
+    height: 24px; }
+.item__content-area {
+  padding: 8px 8px 44px 8px;
+  position: relative; }
+.item__price {
+  font-family: "Montserrat Bold";
+  -webkit-appearance: none;
+  font-size: 1.2em;
+  color: #ee650d;
+  margin: 0 0 4px 0; }
+.item__location {
+  font-size: 0.8em;
+  margin: 0 0 4px 0; }
+.item__added-date, .item__btn--contact-agent {
+  position: absolute;
+  bottom: 8px; }
+.item__added-date {
+  font-size: 0.7em;
+  color: var(--gray);
+  left: 8px; }
+.item__btn--contact-agent {
+  width: 136px;
+  height: 36px;
+  font-size: 0.8em;
+  right: 8px; }
+  .item__btn--contact-agent:hover, .item__btn--contact-agent:active {
+    background: #ff7c28;
+    border-color: #ff7c28;
+    color: #fff; }
+.item__main-details {
+  font-size: 0.8em;
+  margin-bottom: 8px; }
+  .item__main-details .detail__item:not(:last-child):after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background: #dadada;
+    margin: 0 4px; }
+.item__icon-favorite {
+  position: absolute;
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+  z-index: 2;
+  background-size: 27px;
+  width: 45px;
+  height: 40px;
+  top: 0;
+  right: 0; }
+  .item__icon-favorite--added {
+    background-image: url(../images/icon-favorite-added.svg);
+    animation-name: icon-favorites-added;
+    animation-timing-function: cubic-bezier(0.35, 0.56, 0.52, 1.39);
+    animation-duration: 220ms;
+    animation-iteration-count: 1;
+    animation-play-state: running; }
+.item__icon-photos {
+  opacity: .8;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  height: 20px;
+  min-width: 28px;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-size: 14px;
+  background-position: 6px center;
+  color: #fff;
+  z-index: 2;
+  border-radius: 5px;
+  padding-left: 24px;
+  padding-right: 6px;
+  font-family: "Montserrat Regular";
+  font-size: 0.8em;
+  font-style: normal; }
+.item__link {
+  text-decoration: none;
+  color: inherit; }
+  .item__link:hover, .item__link:active {
+    color: inherit;
+    text-decoration: none; }
+  .item__link--overlay {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+
+/* ------------- Item Details (Main Bullets) -------------- */
+.detail__item > sup {
+  font-size: 0.6em; }
+.detail__item__icon {
+  margin-right: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 12px;
+  height: 12px; }
+@media (min-width: 992px) {
+  .detail__item:not(:last-child):after {
+    margin: 0 10px; }
+  .detail__item__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px; } }
+
 /*--------------------------------------------*/
 /*                  Listing                   */
 /*--------------------------------------------*/
@@ -6561,136 +6683,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   height: 30px;
   font-size: 0.8em;
   padding-left: 6px; }
-
-/* ------------- Listing Item -------------- */
-.item__img-area {
-  position: relative; }
-  .item__img-area:after {
-    content: '';
-    display: block;
-    padding-bottom: calc(100% / 1.5); }
-  .item__img-area .swiper-container {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px; }
-  .item__img-area .swiper-slide > img {
-    width: 100%; }
-  .item__img-area .swiper-pagination-bullet {
-    width: 6px;
-    height: 6px;
-    background: #fff;
-    opacity: 0.5; }
-  .item__img-area .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: #ee650d; }
-  .item__img-area .swiper-container-horizontal > .swiper-pagination-bullets {
-    bottom: 0;
-    height: 24px; }
-.item__content-area {
-  padding: 8px 8px 44px 8px;
-  position: relative; }
-.item__price {
-  font-family: "Montserrat Bold";
-  -webkit-appearance: none;
-  font-size: 1.2em;
-  color: #ee650d;
-  margin: 0 0 4px 0; }
-.item__location {
-  font-size: 0.8em;
-  margin: 0 0 4px 0; }
-.item__added-date, .item__btn--contact-agent {
-  position: absolute;
-  bottom: 8px; }
-.item__added-date {
-  font-size: 0.7em;
-  color: var(--gray);
-  left: 8px; }
-.item__btn--contact-agent {
-  width: 136px;
-  height: 36px;
-  font-size: 0.8em;
-  right: 8px; }
-  .item__btn--contact-agent:hover, .item__btn--contact-agent:active {
-    background: #ff7c28;
-    border-color: #ff7c28;
-    color: #fff; }
-.item__main-details {
-  font-size: 0.8em;
-  margin-bottom: 8px; }
-  .item__main-details .detail__item:not(:last-child):after {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    width: 4px;
-    height: 4px;
-    border-radius: 100%;
-    background: #dadada;
-    margin: 0 4px; }
-.item__icon-favorite {
-  position: absolute;
-  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-  z-index: 2;
-  background-size: 27px;
-  width: 45px;
-  height: 40px;
-  top: 0;
-  right: 0; }
-  .item__icon-favorite--added {
-    background-image: url(../images/icon-favorite-added.svg);
-    animation-name: icon-favorites-added;
-    animation-timing-function: cubic-bezier(0.35, 0.56, 0.52, 1.39);
-    animation-duration: 220ms;
-    animation-iteration-count: 1;
-    animation-play-state: running; }
-.item__icon-photos {
-  opacity: .8;
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  height: 20px;
-  min-width: 28px;
-  background-color: rgba(0, 0, 0, 0.7);
-  background-size: 14px;
-  background-position: 6px center;
-  color: #fff;
-  z-index: 2;
-  border-radius: 5px;
-  padding-left: 24px;
-  padding-right: 6px;
-  font-family: "Montserrat Regular";
-  font-size: 0.8em;
-  font-style: normal; }
-.item__link {
-  text-decoration: none;
-  color: inherit; }
-  .item__link:hover, .item__link:active {
-    color: inherit;
-    text-decoration: none; }
-  .item__link--overlay {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%; }
-
-/* ------------- Item Details (Main Bullets) -------------- */
-.detail__item > sup {
-  font-size: 0.6em; }
-.detail__item__icon {
-  margin-right: 4px;
-  display: inline-block;
-  vertical-align: middle;
-  width: 12px;
-  height: 12px; }
-@media (min-width: 992px) {
-  .detail__item:not(:last-child):after {
-    margin: 0 10px; }
-  .detail__item__icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px; } }
 
 /* ------------- Filters -------------- */
 .filters {

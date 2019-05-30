@@ -10,24 +10,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
     <meta name="x-stylesheet-fallback-test" content="" class="choices" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("position","relative",["\/lib\/choices\/choices.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="./css/main_home.css" />
+    <link rel="stylesheet" href="./css/main_chat.css" />
 
 </head>
 
 <body>
-    <div class="wrapper wrapper--home d-flex flex-column justify-content-between">
+    <div class="wrapper wrapper--chat d-flex flex-column justify-content-lg-between">
         
-        <header class="header header--home d-flex justify-content-end">
-            <div class="header__logo">
-                <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+        <header class="header header--chat d-flex justify-content-end d-print-none">
+            <div class="header__logo d-flex align-items-center">
+                <a href="">
+                    <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+                </a>
             </div>
-            <div class="header__location"></div>
+            
             <button class="header__button btn btn--nav d-md-none" id="btn_nav">
                 <span class="btn--nav__line"></span>
                 <span class="btn--nav__line"></span>
                 <span class="btn--nav__line"></span>
             </button>
-            <nav class="header__nav" id="nav_panel">
+            <nav class="header__nav flex-md-fill" id="nav_panel">
                 <div class="header__nav__top d-flex justify-content-between align-items-center d-md-none">
                     <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
                     <button class="btn btn--close" id="btn_nav__close">
@@ -36,10 +38,8 @@
                     </button>
                 </div>
                 <ul class="d-md-flex justify-content-end">
-                    <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">Buy</a></li>
-                    <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">Rent</a></li>
-                    <li class="header__nav__item"><a href="#">Customer Account</a></li>
-                    <li class="header__nav__item"><a href="#">Language</a></li>
+                    <li class="header__nav__item"><a href="#" class="active">My Contasts</a></li>
+                    <li class="header__nav__item"><a href="#">My Offer</a></li>
                     <li class="header__nav__item d-md-none"><a href="#">About</a></li>
                 </ul>
                 <div class="header__nav__footer d-md-none">
@@ -54,7 +54,17 @@
         </header>
  
         <section class="content content--chat">
-            
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">Content</div> 
+                            <div class="card-footer">Footer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
         </section>
 
         <footer class="footer footer--global d-none d-lg-flex align-items-center">

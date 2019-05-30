@@ -22,6 +22,7 @@
 @import '../../lib/bootstrap/scss/close';
 @import '../../lib/bootstrap/scss/modal';
 @import '../../lib/bootstrap/scss/utilities';
+@import "../../lib/bootstrap/scss/card";
 
 // Add custom here
 @import '_fonts';
@@ -29,7 +30,6 @@
 @import '_header';
 @import '_icons';
 @import '_common';
-@import '_item';
-@import '_contact_form';
-@import '_advert';
+
+@import '_chat';
 @import '_footer';
