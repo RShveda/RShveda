@@ -3,6 +3,8 @@ a.nounderline {
     text-decoration: none !important
 }
 
+
+
 /* ------------- Animation Favorite -------------- */
 @keyframes icon-favorites-added {
     0% {
@@ -29,6 +31,9 @@ a.nounderline {
     font-size: 2em;
     color: $darkgray;
     margin-top: 0;
+    &.smaller {
+      font-size: 18px;
+    }
 }
 
 /* ------------- Input -------------- */

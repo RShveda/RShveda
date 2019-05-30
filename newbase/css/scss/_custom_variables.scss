@@ -129,19 +129,19 @@ $primary:       $orange-primary; //$blue !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$theme-colors: map-merge(
-  (
-    "primary":    $primary,
-    "secondary":  $secondary,
-    "success":    $success,
-    "info":       $info,
-    "warning":    $warning,
-    "danger":     $danger,
-    "light":      $light,
-    "dark":       $dark
-  ),
-  $theme-colors
-);
+// $theme-colors: map-merge(
+//   (
+//     "primary":    $primary,
+//     "secondary":  $secondary,
+//     "success":    $success,
+//     "info":       $info,
+//     "warning":    $warning,
+//     "danger":     $danger,
+//     "light":      $light,
+//     "dark":       $dark
+//   ),
+//   $theme-colors
+// );
 
 // Set a specific jump point for requesting color jumps
 // $theme-color-interval:      8% !default;
@@ -583,7 +583,7 @@ $btn-border-radius:            2rem;//$border-radius !default;
 
 // $custom-control-indicator-checked-color:        $component-active-color !default;
 // $custom-control-indicator-checked-bg:           $component-active-bg !default;
-$custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5) !default;
+// $custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5) !default;
 // $custom-control-indicator-checked-box-shadow:   none !default;
 // $custom-control-indicator-checked-border-color: $custom-control-indicator-checked-bg !default;
 
@@ -848,11 +848,11 @@ $custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5)
 
 // $card-spacer-y:                     .75rem !default;
 // $card-spacer-x:                     1.25rem !default;
-// $card-border-width:                 $border-width !default;
-// $card-border-radius:                $border-radius !default;
-// $card-border-color:                 rgba($black, .125) !default;
-// $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
-// $card-cap-bg:                       rgba($black, .03) !default;
+$card-border-width:                    0;//$border-width !default;
+$card-border-radius:                   8px;//$border-radius !default;
+$card-border-color:                    $lightgray;//rgba($black, .125) !default;
+$card-inner-border-radius:             7px;//calc(#{$card-border-radius} - #{$card-border-width}) !default;
+$card-cap-bg:                       $primary;//rgba($black, .03) !default;
 // $card-cap-color:                    inherit !default;
 // $card-bg:                           $white !default;
 

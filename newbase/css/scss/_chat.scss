@@ -11,7 +11,11 @@
 .content {
     /* ------------- Content Part (Chat) -------------- */
     &--chat {
-        
+        .card {
+            @include media-breakpoint-up(lg) {
+                border-width: 1px;
+            }
+        }
     }
 }
 

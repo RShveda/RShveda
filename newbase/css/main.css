@@ -6049,6 +6049,8 @@ a.nounderline {
   font-size: 2em;
   color: #484848;
   margin-top: 0; }
+  .title.smaller {
+    font-size: 18px; }
 
 /* ------------- Input -------------- */
 .input {
