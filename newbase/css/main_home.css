@@ -6398,21 +6398,21 @@ a.nounderline {
       .footer--home__nav > a:first-child {
         margin-right: 24px; } }
 @media (min-width: 992px) {
-  .footer--global--global {
+  .footer--global {
     height: 86px;
     width: 100%;
     background: #233034;
     color: #fff;
     font-family: "Montserrat Regular";
     font-size: 0.9em; }
-    .footer--global--global a,
-    .footer--global--global a:hover,
-    .footer--global--global a:active,
-    .footer--global--global a:focus {
+    .footer--global a,
+    .footer--global a:hover,
+    .footer--global a:active,
+    .footer--global a:focus {
       color: #fff; }
-    .footer--global--global__details {
+    .footer--global__details {
       text-align: center; }
-      .footer--global--global__details a {
+      .footer--global__details a {
         text-decoration: underline; } }
 
 /*# sourceMappingURL=main_home.css.map */

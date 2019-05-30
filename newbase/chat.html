@@ -1,0 +1,112 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Vizzit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <meta name="x-stylesheet-fallback-test" content="" class="choices" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("position","relative",["\/lib\/choices\/choices.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="./css/main_home.css" />
+
+</head>
+
+<body>
+    <div class="wrapper wrapper--home d-flex flex-column justify-content-between">
+        
+        <header class="header header--home d-flex justify-content-end">
+            <div class="header__logo">
+                <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+            </div>
+            <div class="header__location"></div>
+            <button class="header__button btn btn--nav d-md-none" id="btn_nav">
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+            </button>
+            <nav class="header__nav" id="nav_panel">
+                <div class="header__nav__top d-flex justify-content-between align-items-center d-md-none">
+                    <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+                    <button class="btn btn--close" id="btn_nav__close">
+                        <span class="btn--close__line"></span>
+                        <span class="btn--close__line"></span>
+                    </button>
+                </div>
+                <ul class="d-md-flex justify-content-end">
+                    <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">Buy</a></li>
+                    <li class="header__nav__item header__nav__item--hidden-mobile"><a href="#">Rent</a></li>
+                    <li class="header__nav__item"><a href="#">Customer Account</a></li>
+                    <li class="header__nav__item"><a href="#">Language</a></li>
+                    <li class="header__nav__item d-md-none"><a href="#">About</a></li>
+                </ul>
+                <div class="header__nav__footer d-md-none">
+                    Interested in Vizzit project?<br>
+                    <a href="#" target="_blank">Learn here</a> how it works!
+                    <span>
+                        © 2019 Vizzit<br>
+                        <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                    </span>
+                </div>
+            </nav>
+        </header>
+ 
+        <section class="content content--chat">
+            
+        </section>
+
+        <footer class="footer footer--global d-none d-lg-flex align-items-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col d-flex justify-content-between align-items-center pr-5 pl-5">
+                        <div class="footer--global__nav">
+                            <ul class="list-unstyled m-0">
+                                <li class="list-inline-item"><a href="#">About</a></li>
+                                <li class="list-inline-item"><a href="#">Agency Section</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer--global__details">
+                            Interested in Vizzit project? <a href="#" target="_blank">Learn here</a> how it works!
+                        </div>
+                        <div class="footer--global__nav">
+                            © 2019 Vizzit - <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
+    </script>
+    <script>(window.jQuery||document.write("\u003Cscript src=\u0022\/lib\/jquery\/dist\/jquery.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script>($.fn.modal||document.write("\u003Cscript src=\u0022\/lib\/bootstrap\/js\/bootstrap.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script>(Popper||document.write("\u003Cscript src=\u0022\/lib\/popper\/dist\/js\/popper.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script type="text/javascript" defer>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+        {
+            document.write('<script src="/js/polyfill.js"><\/script>');
+            document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CArray.prototype.includes%2CString.prototype.includes%2CObject.assign%2CArray.prototype.findIndex%2CArray.prototype.find%2CArray.from%2CCustomEvent%2Cfetch%2Ces5%2CElement.prototype.classList%2CrequestAnimationFrame"><\/script>');
+        }
+    </script>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js" crossorigin="anonymous"></script>
+    <script>(Choices||document.write("\u003Cscript src=\u0022\/lib\/choices\/choices.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script type="text/javascript" src="./js/navigation.js"></script>
+    <script type="text/javascript" src="./js/location_selector.js"></script>
+    
+
+</body>
+</html>
