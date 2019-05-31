@@ -6509,9 +6509,28 @@ a.nounderline {
   .card-animated .card-header {
     min-width: 100%;
     max-width: 100%;
-    width: 100%; }
+    width: 100%;
+    border-bottom: 1px solid #dadada; }
+    @media (min-width: 768px) {
+      .card-animated .card-header {
+        border-bottom: none; } }
   .card-animated.show {
     transform: translateX(0); }
+  .card-animated .card-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-family: "Montserrat Regular";
+    font-size: 0.9em; }
+  @media (min-width: 768px) {
+    .card-animated {
+      transform: translateX(0);
+      position: relative;
+      flex: 1;
+      height: 100%;
+      min-height: 100%;
+      overflow: auto;
+      z-index: 1; } }
   @media (min-width: 768px) {
     .card-animated {
       transform: translateX(0);

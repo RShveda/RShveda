@@ -83,9 +83,32 @@
         min-width: 100%;
         max-width: 100%;
         width: 100%;
+        border-bottom: 1px solid $lightgray;
+        @include media-breakpoint-up(md) {
+            border-bottom: none;
+        }
     }
     &.show {
         transform: translateX(0);
+    }
+
+    .card-footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-family: "Montserrat Regular";
+        font-size: 0.9em;
+ 
+    }
+
+    @include media-breakpoint-up(md) {
+      transform: translateX(0);
+      position: relative;
+      flex: 1;
+      height: 100%;
+      min-height: 100%;
+      overflow: auto;
+      z-index: 1;
     }
 
     @include media-breakpoint-up(md) {
@@ -107,9 +130,6 @@
         &:hover {
             text-decoration: none;
             color: $primary;
-            // @include media-breakpoint-up(md) {
-            //     background: $light;
-            // }
         }
         &.active {
             @include media-breakpoint-up(md) {

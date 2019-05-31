@@ -5519,7 +5519,7 @@ button.bg-dark:focus {
   font-weight: 400 !important; }
 
 .font-weight-bold {
-  font-weight: 700 !important; }
+  font-weight: 600 !important; }
 
 .font-weight-bolder {
   font-weight: bolder !important; }
@@ -6026,10 +6026,38 @@ a.text-dark:hover, a.text-dark:focus {
     background-image: url(../images/icon-eye.svg); }
   .icon--favorite-orange {
     background-image: url(../images/icon-favorite-orange.svg); }
+  .icon--arrow {
+    background-image: url(../images/icon-dropdown.svg); }
+  .icon--search {
+    background-image: url(../images/icon-search.svg); }
+  .icon--search-white {
+    background-image: url(../images/icon-search-white.svg); }
+  .icon--close {
+    background-image: url(../images/icon-close.svg); }
+  .icon--close-white {
+    background-image: url(../images/icon-close-white.svg); }
+  .icon--count {
+    border-radius: 100%;
+    background-color: #ee650d;
+    width: 1rem;
+    height: 1rem;
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+    display: inline-flex;
+    justify-content: center; }
+  .icon--check-orange {
+    background-image: url(../images/icon-check-orange.svg);
+    width: 1rem;
+    height: 1rem;
+    display: inline-block; }
 
 /* ------------- Global -------------- */
 a.nounderline {
   text-decoration: none !important; }
+
+.smaller {
+  font-size: 11px; }
 
 /* ------------- Animation Favorite -------------- */
 @keyframes icon-favorites-added {
@@ -6075,6 +6103,12 @@ a.nounderline {
     background-repeat: no-repeat;
     -webkit-appearance: none;
     cursor: pointer; }
+  .input--with-icon {
+    background-size: 1.5rem;
+    background-image: url(../images/icon-search.svg);
+    padding-left: 3rem;
+    background-position: left 12px center;
+    background-repeat: no-repeat; }
 
 /* ------------- Custom Inputs (Radio and Checkbox) -------------- */
 .custom-input--radio-checker {
@@ -6415,7 +6449,7 @@ a.nounderline {
     border-top: 1px solid #dadada;
     background: rgba(218, 218, 218, 0.2); }
   .choices__list--dropdown .choices__item--selectable.is-highlighted {
-    background-color: #f8f9fa; }
+    background-color: #F8F8F8; }
   .choices__list--multiple .choices__item {
     font-size: 1em;
     background-color: #ee650d;
@@ -6653,7 +6687,7 @@ a.nounderline {
       background-size: 10px;
       background-repeat: no-repeat; }
       .locations__list__item:hover {
-        background-color: #f8f9fa; }
+        background-color: #F8F8F8; }
     @media (min-width: 768px) {
       .locations__list {
         display: none; } }
@@ -7490,6 +7524,23 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     .footer--global__details {
       text-align: center; }
       .footer--global__details a {
+        text-decoration: underline; } }
+@media (min-width: 768px) {
+  .footer--global.footer--chat {
+    height: 86px;
+    width: 100%;
+    background: #233034;
+    color: #fff;
+    font-family: "Montserrat Regular";
+    font-size: 0.9em; }
+    .footer--global.footer--chat a,
+    .footer--global.footer--chat a:hover,
+    .footer--global.footer--chat a:active,
+    .footer--global.footer--chat a:focus {
+      color: #fff; }
+    .footer--global.footer--chat__details {
+      text-align: center; }
+      .footer--global.footer--chat__details a {
         text-decoration: underline; } }
 
 /*# sourceMappingURL=main.css.map */
