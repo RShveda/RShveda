@@ -6393,11 +6393,12 @@ a.nounderline {
 .search-block {
   position: absolute;
   top: 0.5rem;
-  right: 1.25rem;
+  right: 1rem;
   height: 56px;
   display: flex;
   justify-content: flex-end;
-  transition: .44s ease-in; }
+  transition: .44s ease-in;
+  max-width: calc(100% - 60px); }
   .search-block .form-wrap {
     width: 0;
     display: inline-block;
@@ -6408,18 +6409,16 @@ a.nounderline {
     transition: .55s ease-in; }
   .search-block input {
     height: 100%; }
-  .search-block.active {
-    max-width: calc(100% - 60px); }
-    .search-block.active .form-wrap {
-      width: calc(100% - 30px);
-      opacity: 1; }
-    .search-block.active .icon--search {
-      transform: scale(0) rotate(90deg); }
-    .search-block.active .icon--close {
-      transform: scale(1) rotate(0deg); }
-    @media (min-width: 768px) {
-      .search-block.active {
-        max-width: calc(100% - 30px); } }
+  .search-block.active .form-wrap {
+    width: calc(100% - 30px);
+    opacity: 1; }
+  .search-block.active .icon--search {
+    transform: scale(0) rotate(90deg); }
+  .search-block.active .icon--close {
+    transform: scale(1) rotate(0deg); }
+  @media (min-width: 768px) {
+    .search-block {
+      max-width: calc(100% - 30px); } }
 
 .search-block .icon {
   width: 1.5rem;
@@ -6450,6 +6449,9 @@ a.nounderline {
 
 .card-group > .card {
   flex: 0 0 100%; }
+  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px; }
   @media (min-width: 768px) {
     .card-group > .card {
       border-width: 1px; } }
@@ -6491,11 +6493,12 @@ a.nounderline {
 .card-animated {
   flex: none;
   position: fixed;
-  overflow-y: scroll;
+  overflow-y: auto;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  flex: 1 1 100%;
   width: 100%;
   height: 100%;
   min-height: 380px;
@@ -6503,14 +6506,21 @@ a.nounderline {
   transform: translateX(100%);
   transition: .18s ease-out;
   z-index: 10; }
+  .card-animated .card-header {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%; }
   .card-animated.show {
     transform: translateX(0); }
   @media (min-width: 768px) {
     .card-animated {
       transform: translateX(0);
-      position: relative;
-      flex: 1;
+      position: absolute;
+      width: 100%;
       height: 100%;
+      left: auto;
+      left: unset;
+      right: 0;
       min-height: 100%;
       overflow: auto;
       z-index: 1; } }
@@ -6518,9 +6528,9 @@ a.nounderline {
 .chat-item:hover {
   text-decoration: none;
   color: #ee650d; }
-  @media (min-width: 768px) {
-    .chat-item:hover {
-      background: #F8F8F8; } }
+@media (min-width: 768px) {
+  .chat-item.active {
+    background: #F8F8F8; } }
 
 @media (min-width: 768px) {
   .footer--home {

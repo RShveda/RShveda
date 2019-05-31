@@ -11,6 +11,11 @@
 .card-group {
     & > .card {
         flex: 0 0 100%;
+        &:not(:first-child):not(:last-child):not(:only-child) {
+            border-top-right-radius: $card-border-radius;
+            border-bottom-right-radius: $card-border-radius;
+        }
+
         @include media-breakpoint-up(md) {
             border-width: 1px;
         }
@@ -42,8 +47,7 @@
         } 
     }
     &-title {
-        overflow: auto hidden;
-        
+        overflow: auto hidden;        
     }
     .icon--arrow {
         transform: rotate(90deg);
@@ -62,11 +66,12 @@
 .card-animated {
     flex: none;
     position: fixed;
-    overflow-y: scroll;
+    overflow-y: auto;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    flex: 1 1 100%;
     width: 100%;
     height: 100%;
     min-height: 380px;
@@ -74,16 +79,23 @@
     transform: translateX(100%);
     transition: .18s ease-out;
     z-index: 10;
-
+    .card-header {
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
     &.show {
         transform: translateX(0);
     }
 
     @include media-breakpoint-up(md) {
         transform: translateX(0);
-        position: relative;
-        flex: 1;
+        position: absolute;
+        width: 100%;
         height: 100%;
+        left: auto;
+        left: unset;
+        right: 0;
         min-height: 100%;
         overflow: auto;
         z-index: 1;
@@ -95,6 +107,11 @@
         &:hover {
             text-decoration: none;
             color: $primary;
+            // @include media-breakpoint-up(md) {
+            //     background: $light;
+            // }
+        }
+        &.active {
             @include media-breakpoint-up(md) {
                 background: $light;
             }
