@@ -3,7 +3,9 @@ a.nounderline {
     text-decoration: none !important
 }
 
-
+.smaller {
+  font-size: $smaller-font-size;
+}
 
 /* ------------- Animation Favorite -------------- */
 @keyframes icon-favorites-added {

@@ -8,191 +8,101 @@
     }
 }
 
-.content {
-    /* ------------- Content Part (Chat) -------------- */
-    &--chat {
-        .card-group {
-            & > .card {
-                flex: 0 0 100%;
-                @include media-breakpoint-up(md) {
-                    border-width: 1px;
-                }
-            }
+.card-group {
+    & > .card {
+        flex: 0 0 100%;
+        @include media-breakpoint-up(md) {
+            border-width: 1px;
         }
-        
-        .card-header {
-            font-weight: 600;
-            font-size: 18px;
-            height: 72px;
-            .card-subtitle {
-                display: block;
-                font-size: 12px;
-                &.smaller {
-                    font-size: 11px;
-                    margin-top: -0.1rem;
-                    color: $gray;
-                    @include media-breakpoint-up(md) {
-                        color: $white;
-                        opacity: 0.6;
-                    }
-                } 
-            }
-            &-title {
-                overflow: auto hidden;
-                
-            }
-            .icon--arrow {
-                transform: rotate(90deg);
-                width: 1rem;
-                height: 1rem;
-                background-size:  auto;
-            }
-            
+    }
+
+    @include media-breakpoint-up(md) {
+        height: calc(100vh - 265px);
+    }
+    @include media-breakpoint-up(lg) {
+        height: calc(100vh - 300px);
+    }
+}
+
+.card-header {
+    font-weight: 600;
+    font-size: 18px;
+    height: 72px;
+    .card-subtitle {
+        display: block;
+        font-size: 12px;
+        &.smaller {
+            font-size: $smaller-font-size;
+            margin-top: -0.1rem;
+            color: $gray;
             @include media-breakpoint-up(md) {
-                background: $primary;
                 color: $white;
+                opacity: 0.6;
+            }
+        } 
+    }
+    &-title {
+        overflow: auto hidden;
+        
+    }
+    .icon--arrow {
+        transform: rotate(90deg);
+        width: 1rem;
+        height: 1rem;
+        background-size:  auto;
+        cursor: pointer;
+    }
+    
+    @include media-breakpoint-up(md) {
+        background: $primary;
+        color: $white;
+    }
+}
+
+.card-animated {
+    flex: none;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    background: #fff;
+    transform: translateX(100%);
+    transition: .18s ease-out;
+    z-index: 10;
+
+    &.show {
+        transform: translateX(0);
+    }
+
+    @include media-breakpoint-up(md) {
+        transform: translateX(0);
+        position: relative;
+        flex: 1;
+        height: 100%;
+        min-height: 100%;
+        overflow: auto;
+        z-index: 1;
+    }
+}
+
+.chat {
+    &-item {
+        &:hover {
+            text-decoration: none;
+            color: $primary;
+            @include media-breakpoint-up(md) {
+                background: $light;
             }
         }
-        
-        
     }
 }
 
 
-/**** Search Start ****/
-.search-cont {
-    margin-bottom: 10px;
-    position: relative;
-    height: 55px;
-    width: 50px;
-    float: right;
-    // background-color: $white;
-    margin-right: 20px;
-    transition: .44s ease-in;
-    > .icon--search {
-      position: absolute;
-      right: 0;
-      bottom: 5px;
-      z-index: 2;
-      transform: scale(1) rotate(0deg);
-      background-color: $white;
-    }
-    .icon--close {
-      position: absolute;
-      right: 0px;
-      bottom: 5px;
-      transform: scale(0) rotate(-90deg);
-    }
-  }
-  .single-post .search-cont {
-    margin-right: 0px;
-  }
-  .active.search-cont {
-      position: absolute;
-      background-color: $white;
-    width: 100%;
-    transition: .44s ease-in;
-    > .icon-search {
-        transform: scale(0) rotate(90deg);
-    }
-    .icon-close { 
-        transform: scale(1) rotate(0deg);
-    }
-  }
-  .search-form {
-    display: inline-block;
-    /*width: 0;*/
-    overflow: hidden;
-    input {
-      width: calc(100% - 60px);
-      vertical-align: top;
-    }
-  }
-  .active .search-form {
-    width: calc(100% - 50px);
-  }
-  .search-form .form-wrap {
-    opacity: 0;
-    @include transition(.66s, ease-in);
-  }
-  .active .search-form .form-wrap {
-    opacity: 1;
-  }
-  .btn-search {
-    border: none;
-    background: transparent;
-    height: 55px;
-    width: 50px;
-    outline: none;
-    padding-top: 10px;
-    .icon-search {
-      position: relative;
-    }
-  }
-  /**** Search End ****/
 
 
-  .search-block {
-      position: absolute;
-      top: 0.5rem; 
-      right: 0;
-      height: 56px;
-      display: flex;
-      justify-content: flex-end;
-      transition: .44s ease-in;
-      .form-wrap {
-        width: 0;
-        display: inline-block;
-        overflow: hidden;
-        position: relative;
-        height: 100%;
-        opacity: 0;
-        transition: .55s ease-in;
-      }
-      input {
-        height: 100%;
-      }
-      .icon--search {
-            width: 1.5rem;
-            display: inline-block;
-            height: 100%;
-            margin-left: 0.5rem;
-            will-change: transform;
-            transition: 0.22s ease-in;
-            transform: scale(1) rotate(0deg);
-            
-            @include media-breakpoint-up(md) {
-                background-image: $icon-search-white;
-            }
-       }
-       .icon--close {
-            position: absolute;
-            width: 1.5rem;
-            display: inline-block;
-            height: 100%;
-            margin-left: 0.5rem;
-            will-change: transform;
-            transition: 0.22s ease-in;
-            transform: scale(0) rotate(-90deg);
-            @include media-breakpoint-up(md) {
-                // background-image: $icon-close-white;
-            }
-        }
-      
-      &.active {
-        max-width: calc(100% - 30px);
-        .form-wrap {
-            width: calc(100% - 30px);
-            opacity: 1;
-        }
-        .icon--search {
-            transform: scale(0) rotate(90deg);
-        }
-        .icon-close { 
-            transform: scale(1) rotate(0deg);
-        }
-      }
-      @include media-breakpoint-up(md) {
-        right: 1.25rem;
-      }
-  }
+  

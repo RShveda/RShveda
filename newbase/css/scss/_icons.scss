@@ -47,4 +47,27 @@
   &--search-white {
     background-image: $icon-search-white;
   }
+  &--close {
+    background-image: $icon-close;
+  }
+  &--close-white {
+    background-image: $icon-close-white;
+  }
+  &--count {
+    border-radius: 100%;
+    background-color: $primary;
+    width: 1rem;
+    height: 1rem;
+    color: $white;
+    text-align: center;
+    font-size: 10px;
+    display: inline-flex;
+    justify-content: center;
+  }
+  &--check-orange {
+    background-image: $icon-check-orange;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+  }
 }

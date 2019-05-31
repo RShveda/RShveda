@@ -36,10 +36,13 @@ $icon-dropdown: url(../images/icon-dropdown.svg);
 $icon-dropup: url(../images/icon-dropup.svg);
 $icon-check: url(../images/icon-check.svg);
 $icon-check-white: url(../images/icon-check-white.svg);
+$icon-check-orange: url(../images/icon-check-orange.svg);
 $icon-share: url(../images/icon-share.svg);
 $icon-print: url(../images/icon-print.svg);
 $icon-search: url(../images/icon-search.svg);
 $icon-search-white: url(../images/icon-search-white.svg);
+$icon-close: url(../images/icon-close.svg);
+$icon-close-white: url(../images/icon-close-white.svg);
 
 // Custom color system:
 $orange-primary:#ee650d;
@@ -49,6 +52,7 @@ $darkgray:#484848;
 $gray:#989696;
 $lightgray:#dadada;
 
+$smaller-font-size:             11px;
 
 // CUSTOM BS VARIABLES:
 
@@ -60,7 +64,7 @@ $lightgray:#dadada;
 // Color system
 
 $white:    #fff !default;
-// $gray-100: #f8f9fa !default;
+$gray-100: #F8F8F8;//#f8f9fa !default;
 // $gray-200: #e9ecef !default;
 // $gray-300: #dee2e6 !default;
 // $gray-400: #ced4da !default;
@@ -127,7 +131,7 @@ $primary:       $orange-primary; //$blue !default;
 // $warning:       $yellow !default;
 // $danger:        $red !default;
 // $light:         $gray-100 !default;
-// $dark:          $gray-800 !default;
+$dark:          $darkgray;//$gray-800 !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -341,7 +345,7 @@ $component-active-bg:         theme-color("primary") !default;
 // $font-weight-lighter:         lighter !default;
 // $font-weight-light:           300 !default;
 // $font-weight-normal:          400 !default;
-// $font-weight-bold:            700 !default;
+$font-weight-bold:            600;//700 !default;
 // $font-weight-bolder:          bolder !default;
 
 // $font-weight-base:            $font-weight-normal !default;
