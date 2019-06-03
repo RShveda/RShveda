@@ -65,7 +65,7 @@
                                 <div class="card-body text-center px-0 pt-md-2">
                                     <h1 class="title smaller text-center d-md-none">My Contacts</h1>
                                     <div class="border-bottom pb-2 px-md-3">
-                                        <input type="text" class="input input--with-icon" placeholder="Search for a chat">
+                                        <input type="text" class="input input--with-icon  input--with-icon-search" placeholder="Search for a chat">
                                     </div>
 
                                     <div class="chat-items">
@@ -163,8 +163,18 @@
                                         </div>
 
                                     </div>
-                                    <div class="card-body text-center">
-                                        <p class="card-text">Some text inside the second card</p>
+                                    <div class="card-body text-center px-3">
+                                        <p class="smaller text-muted date-separator">Today</p>
+                                        <div class="d-flex flex-column align-items-start flex-wrap">
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <span class="text-msg">Lorem ipsum dolor sit amet, consec tetur adipiscing elit</span>
+                                            <span class="time-sent smaller text-nowrap text-right text-muted ">5:45 PM</span>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <span class="text-msg">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span>
+                                            <span class="time-sent smaller text-nowrap text-right"><span class="icon icon--check-double mx-1"></span>5:45 PM</span>
+                                        </div>
+                                    </div>
                                     </div>
                                     <div class="card-footer bg-light d-flex px-3">
                                         <input class="form-control input input--with-icon" type="text"  placeholder="Type a message...">
@@ -205,7 +215,13 @@
                                <div class="card-body text-center">
                                     <p class="card-text">Some text inside the second card</p>
                                </div>
-                               
+                               <div class="card-footer bg-light d-flex px-3">
+                                    <input class="form-control input input--with-icon" type="text"  placeholder="Type a message...">
+                                    <input type="file" name="input_file" id="input_file" class="d-none">
+                                    <label for="input_file" class="icon icon--file"></label>
+                                    <a href="tel:555-33-55" class="btn btn--call "></a>  
+                                    <button type="sumbit" class="btn btn--send"></button> 
+                                </div>
                            
 
 

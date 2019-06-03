@@ -1265,7 +1265,7 @@ textarea.form-control {
   margin-top: 0.3rem;
   margin-left: -1.25rem; }
   .form-check-input:disabled ~ .form-check-label {
-    color: #6c757d; }
+    color: #989696; }
 
 .form-check-label {
   margin-bottom: 0; }
@@ -5582,7 +5582,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #212529 !important; }
 
 .text-muted {
-  color: #6c757d !important; }
+  color: #989696 !important; }
 
 .text-black-50 {
   color: rgba(0, 0, 0, 0.5) !important; }
@@ -5774,6 +5774,15 @@ a.text-dark:hover, a.text-dark:focus {
       max-width: 190px;
       font-size: 0.9em;
       height: 100%; } }
+  .btn--send {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background-color: #ee650d;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    background-image: url(../images/icon-send.svg); }
 
 .header {
   height: 50px;
@@ -6051,6 +6060,14 @@ a.text-dark:hover, a.text-dark:focus {
     width: 1rem;
     height: 1rem;
     display: inline-block; }
+  .icon--file {
+    background-image: url(../images/icon-file.svg); }
+  .icon--check-double {
+    background-image: url(../images/icon-check-double.svg);
+    width: 1rem;
+    height: 0.8rem;
+    display: inline-block;
+    vertical-align: middle; }
 
 /* ------------- Global -------------- */
 a.nounderline {
@@ -6105,10 +6122,13 @@ a.nounderline {
     cursor: pointer; }
   .input--with-icon {
     background-size: 1.5rem;
-    background-image: url(../images/icon-search.svg);
     padding-left: 3rem;
     background-position: left 12px center;
     background-repeat: no-repeat; }
+    .input--with-icon-search {
+      background-image: url(../images/icon-search.svg); }
+    .input--with-icon-file {
+      background-image: url(../images/icon-file.svg); }
 
 /* ------------- Custom Inputs (Radio and Checkbox) -------------- */
 .custom-input--radio-checker {

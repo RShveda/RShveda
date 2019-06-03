@@ -73,4 +73,11 @@
   &--file {
     background-image: $icon-file;
   }
+  &--check-double {
+    background-image: $icon-check-double;
+    width: 1rem;
+    height: 0.8rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
