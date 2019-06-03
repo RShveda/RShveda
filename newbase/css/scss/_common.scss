@@ -42,7 +42,7 @@ a.nounderline {
 .input {
     width: 100%;
     height: 46px;
-    border-radius: 5px;
+    // border-radius: 5px;
     border: 1px solid $lightgray;
     color: $darkgray;
     background-color: #fff;
@@ -67,10 +67,15 @@ a.nounderline {
     }
     &--with-icon {
       background-size: 1.5rem;
-      background-image: $icon-search;
       padding-left: 3rem;
       background-position: left 12px center;
       background-repeat: no-repeat;
+      &-search {
+        background-image: $icon-search;
+      }
+      &-file {
+        background-image: $icon-file;
+      }
     }
 }
 

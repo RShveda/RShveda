@@ -1154,7 +1154,7 @@ mark,
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 5px;
-  border-radius: 0.25rem;
+  border-radius: 5px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
     .form-control {
@@ -1230,7 +1230,7 @@ select.form-control:focus::-ms-value {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem; }
+  border-radius: 8px; }
 
 select.form-control[size], select.form-control[multiple] {
   height: auto; }

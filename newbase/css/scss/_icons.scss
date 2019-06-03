@@ -70,4 +70,7 @@
     height: 1rem;
     display: inline-block;
   }
+  &--file {
+    background-image: $icon-file;
+  }
 }

@@ -43,6 +43,8 @@ $icon-search: url(../images/icon-search.svg);
 $icon-search-white: url(../images/icon-search-white.svg);
 $icon-close: url(../images/icon-close.svg);
 $icon-close-white: url(../images/icon-close-white.svg);
+$icon-file: url(../images/icon-file.svg);
+$icon-send: url(../images/icon-send.svg);
 
 // Custom color system:
 $orange-primary:#ee650d;
@@ -529,8 +531,8 @@ $btn-border-radius:            2rem;//$border-radius !default;
 // $input-border-width:                    $input-btn-border-width !default;
 // $input-box-shadow:                      inset 0 1px 1px rgba($black, .075) !default;
 
-// $input-border-radius:                   $border-radius !default;
-// $input-border-radius-lg:                $border-radius-lg !default;
+$input-border-radius:                   5px;//$border-radius !default;
+$input-border-radius-lg:                8px;//$border-radius-lg !default;
 // $input-border-radius-sm:                $border-radius-sm !default;
 
 // $input-focus-bg:                        $input-bg !default;

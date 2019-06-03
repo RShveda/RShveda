@@ -98,9 +98,49 @@
         bottom: 0;
         font-family: "Montserrat Regular";
         font-size: 0.9em;
- 
+        width: 100%;
+        .input {
+            width: calc(100% - 52px);
+            border-radius: 8px;
+            height: 40px;
+        }
+        .btn {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            bottom: auto;
+            bottom: unset;
+            left: auto;
+            left: unset;
+            margin-left: 0.75rem;
+            box-shadow: none;
+            transition: $transition-base;
+            &--call {
+                display: block;
+            }
+            &--send {
+                display: none;
+            }
+        }
+        .icon--file {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 28px;
+            top: 16px;
+            cursor: pointer;
+        }
+        &.focused {
+            .btn {
+                &--call {
+                    display: none;
+                }
+                &--send {
+                    display: block;
+                }
+            }
+        }
     }
-
     @include media-breakpoint-up(md) {
       transform: translateX(0);
       position: relative;

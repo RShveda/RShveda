@@ -1154,7 +1154,7 @@ mark,
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 5px;
-  border-radius: 2rem;
+  border-radius: 5px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
     .form-control {
@@ -1230,7 +1230,7 @@ select.form-control:focus::-ms-value {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem; }
+  border-radius: 8px; }
 
 select.form-control[size], select.form-control[multiple] {
   height: auto; }
@@ -2098,7 +2098,7 @@ input[type="button"].btn-block {
   color: #495057;
   background-color: #fff;
   border: 1px solid #ced4da;
-  border-radius: 2rem; }
+  border-radius: 5px; }
   .custom-file-label::after {
     position: absolute;
     top: 0;
@@ -2113,7 +2113,7 @@ input[type="button"].btn-block {
     content: "Browse";
     background-color: #e9ecef;
     border-left: inherit;
-    border-radius: 0 2rem 2rem 0; }
+    border-radius: 0 5px 5px 0; }
 
 .custom-range {
   width: 100%;
@@ -5960,6 +5960,15 @@ a.text-dark:hover, a.text-dark:focus {
       max-width: 190px;
       font-size: 0.9em;
       height: 100%; } }
+  .btn--send {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background-color: #ee650d;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    background-image: url(../images/icon-send.svg); }
 
 .header {
   height: 50px;
@@ -6237,6 +6246,8 @@ a.text-dark:hover, a.text-dark:focus {
     width: 1rem;
     height: 1rem;
     display: inline-block; }
+  .icon--file {
+    background-image: url(../images/icon-file.svg); }
 
 /* ------------- Global -------------- */
 a.nounderline {
@@ -6270,7 +6281,6 @@ a.nounderline {
 .input {
   width: 100%;
   height: 46px;
-  border-radius: 5px;
   border: 1px solid #dadada;
   color: #484848;
   background-color: #fff;
@@ -6291,10 +6301,13 @@ a.nounderline {
     cursor: pointer; }
   .input--with-icon {
     background-size: 1.5rem;
-    background-image: url(../images/icon-search.svg);
     padding-left: 3rem;
     background-position: left 12px center;
     background-repeat: no-repeat; }
+    .input--with-icon-search {
+      background-image: url(../images/icon-search.svg); }
+    .input--with-icon-file {
+      background-image: url(../images/icon-file.svg); }
 
 /* ------------- Custom Inputs (Radio and Checkbox) -------------- */
 .custom-input--radio-checker {
@@ -6521,7 +6534,38 @@ a.nounderline {
     left: 0;
     bottom: 0;
     font-family: "Montserrat Regular";
-    font-size: 0.9em; }
+    font-size: 0.9em;
+    width: 100%; }
+    .card-animated .card-footer .input {
+      width: calc(100% - 52px);
+      border-radius: 8px;
+      height: 40px; }
+    .card-animated .card-footer .btn {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      bottom: auto;
+      bottom: unset;
+      left: auto;
+      left: unset;
+      margin-left: 0.75rem;
+      box-shadow: none;
+      transition: all 0.2s ease-in-out; }
+      .card-animated .card-footer .btn--call {
+        display: block; }
+      .card-animated .card-footer .btn--send {
+        display: none; }
+    .card-animated .card-footer .icon--file {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 28px;
+      top: 16px;
+      cursor: pointer; }
+    .card-animated .card-footer.focused .btn--call {
+      display: none; }
+    .card-animated .card-footer.focused .btn--send {
+      display: block; }
   @media (min-width: 768px) {
     .card-animated {
       transform: translateX(0);
