@@ -80,4 +80,9 @@
     display: inline-block;
     vertical-align: middle;
   }
+  &--download {
+    background-image: $icon-download;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }

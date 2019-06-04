@@ -6254,6 +6254,10 @@ a.text-dark:hover, a.text-dark:focus {
     height: 0.8rem;
     display: inline-block;
     vertical-align: middle; }
+  .icon--download {
+    background-image: url(../images/icon-download.svg);
+    width: 1.5rem;
+    height: 1.5rem; }
 
 /* ------------- Global -------------- */
 a.nounderline {
@@ -6537,7 +6541,9 @@ a.nounderline {
   .card-animated.show {
     transform: translateX(0); }
   .card-animated .card-body {
-    font-family: 'OpenSans Regular'; }
+    font-family: 'OpenSans Regular';
+    max-height: calc(100% - 128px);
+    overflow-y: auto; }
   .card-animated .card-footer {
     position: absolute;
     left: 0;
@@ -6625,27 +6631,67 @@ a.nounderline {
   border-radius: 0.6rem;
   font-size: 0.875rem;
   line-height: 1.125rem;
-  padding: 0.75rem;
   text-align: left;
   position: relative;
   margin-bottom: 1rem;
-  max-width: calc(100% - 28px);
-  display: flex;
-  justify-content: space-between; }
+  max-width: calc(100% - 28px); }
+  .speech-bubble .doc-size {
+    padding: 0 0.75rem 0.25rem; }
   .speech-bubble .time-sent {
-    margin-bottom: -0.15rem;
-    margin-left: 0.5rem;
-    align-self: flex-end; }
+    padding: 0 0.75rem 0.25rem;
+    text-align: right; }
+    .speech-bubble .time-sent .doc-size {
+      position: absolute;
+      left: 0;
+      bottom: 0; }
+  .speech-bubble .text-msg {
+    padding: 0.5rem 0.75rem 0; }
+  .speech-bubble .img-msg {
+    max-width: 228px; }
+    .speech-bubble .img-msg ~ .time-sent {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: #fff; }
+    @media (min-width: 768px) {
+      .speech-bubble .img-msg {
+        max-width: 244px; } }
+  .speech-bubble .doc-msg {
+    max-width: 228px;
+    min-width: 140px;
+    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+    background-image: url(../images/icon-doc-white.svg);
+    background-repeat: no-repeat;
+    background-position: 0.75rem center;
+    min-height: 42px;
+    display: flex;
+    align-items: center; }
+    .speech-bubble .doc-msg > small {
+      display: block;
+      line-height: 1.3; }
+    @media (min-width: 768px) {
+      .speech-bubble .doc-msg {
+        max-width: 244px; } }
   .speech-bubble--left {
     background-color: #EAEAEA;
     border-top-left-radius: 0;
-    color: #484848;
-    margin-right: 28px; }
+    color: #484848; }
+    .speech-bubble--left .time-sent {
+      color: #989696; }
+    .speech-bubble--left .doc-size {
+      color: #989696; }
+    .speech-bubble--left .doc-msg {
+      background-image: url(../images/icon-doc.svg);
+      padding-right: 3.25rem;
+      font-family: 'OpenSans Bold'; }
+      .speech-bubble--left .doc-msg .icon--download {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.75rem; }
   .speech-bubble--right {
     background-color: #ee650d;
     border-top-right-radius: 0;
     color: #fff;
-    margin-left: 28px;
     align-self: flex-end; }
   @media (min-width: 768px) {
     .speech-bubble {
