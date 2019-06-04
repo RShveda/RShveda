@@ -6552,6 +6552,10 @@ a.nounderline {
     width: 100%; }
     .card-animated .card-footer .form-block {
       position: relative; }
+      .card-animated .card-footer .form-block.focused .btn--call {
+        display: none; }
+      .card-animated .card-footer .form-block.focused .btn--send {
+        display: block; }
     .card-animated .card-footer .attached-block {
       max-width: 100%;
       overflow-x: auto; }
@@ -6621,10 +6625,6 @@ a.nounderline {
       left: 16px;
       top: 8px;
       cursor: pointer; }
-    .card-animated .card-footer.focused .btn--call {
-      display: none; }
-    .card-animated .card-footer.focused .btn--send {
-      display: block; }
   @media (min-width: 768px) {
     .card-animated {
       transform: translateX(0);

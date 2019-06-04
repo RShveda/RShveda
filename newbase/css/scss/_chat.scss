@@ -105,9 +105,18 @@
         width: 100%;
         .form-block {
             position: relative;
+            &.focused {
+                .btn {
+                    &--call {
+                        display: none;
+                    }
+                    &--send {
+                        display: block;
+                    }
+                }
+            }
         }
         .attached-block {
-            
             max-width: 100%;
             overflow-x: auto;
             .icon--close {
@@ -189,16 +198,7 @@
             top: 8px;
             cursor: pointer;
         }
-        &.focused {
-            .btn {
-                &--call {
-                    display: none;
-                }
-                &--send {
-                    display: block;
-                }
-            }
-        }
+        
     }
     @include media-breakpoint-up(md) {
       transform: translateX(0);
