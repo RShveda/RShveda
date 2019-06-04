@@ -6068,6 +6068,10 @@ a.text-dark:hover, a.text-dark:focus {
     height: 0.8rem;
     display: inline-block;
     vertical-align: middle; }
+  .icon--download {
+    background-image: url(../images/icon-download.svg);
+    width: 1.5rem;
+    height: 1.5rem; }
 
 /* ------------- Global -------------- */
 a.nounderline {

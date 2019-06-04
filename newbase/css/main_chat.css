@@ -6545,12 +6545,56 @@ a.nounderline {
     max-height: calc(100% - 128px);
     overflow-y: auto; }
   .card-animated .card-footer {
-    position: absolute;
     left: 0;
     bottom: 0;
     font-family: 'OpenSans Regular';
     font-size: 0.9em;
     width: 100%; }
+    .card-animated .card-footer .form-block {
+      position: relative; }
+    .card-animated .card-footer .attached-block {
+      max-width: 100%;
+      overflow-x: auto; }
+      .card-animated .card-footer .attached-block .icon--close {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        right: 0.75rem;
+        top: calc(50% - 0.5rem);
+        cursor: pointer; }
+      .card-animated .card-footer .attached-block .doc-msg {
+        background-color: #fff;
+        background-image: url(../images/icon-doc.svg);
+        padding-right: 3.25rem;
+        flex-wrap: wrap;
+        border-radius: 0.6rem;
+        max-width: 210px;
+        min-width: 210px;
+        position: relative;
+        display: inline-block;
+        margin-right: 0.5rem;
+        margin-bottom: 0.75rem;
+        margin-top: 0.25rem; }
+        .card-animated .card-footer .attached-block .doc-msg > small {
+          font-family: 'OpenSans Bold'; }
+        .card-animated .card-footer .attached-block .doc-msg .doc-size {
+          flex-basis: 75%;
+          padding: 0; }
+      .card-animated .card-footer .attached-block .img-msg {
+        max-width: 80px;
+        max-height: 80px;
+        min-width: 80px;
+        min-height: 80px;
+        border-radius: 0.6rem;
+        margin-right: 0.5rem;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 0.75rem;
+        margin-top: 0.25rem; }
+        .card-animated .card-footer .attached-block .img-msg .icon--close {
+          background-image: url(../images/icon-close-orange.svg);
+          top: 0.5rem;
+          right: 0.5rem; }
     .card-animated .card-footer .input {
       width: calc(100% - 52px);
       border-radius: 8px;
@@ -6574,8 +6618,8 @@ a.nounderline {
       position: absolute;
       width: 24px;
       height: 24px;
-      left: 28px;
-      top: 16px;
+      left: 16px;
+      top: 8px;
       cursor: pointer; }
     .card-animated .card-footer.focused .btn--call {
       display: none; }
@@ -6635,43 +6679,6 @@ a.nounderline {
   position: relative;
   margin-bottom: 1rem;
   max-width: calc(100% - 28px); }
-  .speech-bubble .doc-size {
-    padding: 0 0.75rem 0.25rem; }
-  .speech-bubble .time-sent {
-    padding: 0 0.75rem 0.25rem;
-    text-align: right; }
-    .speech-bubble .time-sent .doc-size {
-      position: absolute;
-      left: 0;
-      bottom: 0; }
-  .speech-bubble .text-msg {
-    padding: 0.5rem 0.75rem 0; }
-  .speech-bubble .img-msg {
-    max-width: 228px; }
-    .speech-bubble .img-msg ~ .time-sent {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      color: #fff; }
-    @media (min-width: 768px) {
-      .speech-bubble .img-msg {
-        max-width: 244px; } }
-  .speech-bubble .doc-msg {
-    max-width: 228px;
-    min-width: 140px;
-    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
-    background-image: url(../images/icon-doc-white.svg);
-    background-repeat: no-repeat;
-    background-position: 0.75rem center;
-    min-height: 42px;
-    display: flex;
-    align-items: center; }
-    .speech-bubble .doc-msg > small {
-      display: block;
-      line-height: 1.3; }
-    @media (min-width: 768px) {
-      .speech-bubble .doc-msg {
-        max-width: 244px; } }
   .speech-bubble--left {
     background-color: #EAEAEA;
     border-top-left-radius: 0;
@@ -6696,6 +6703,48 @@ a.nounderline {
   @media (min-width: 768px) {
     .speech-bubble {
       max-width: 75%; } }
+
+.doc-size {
+  padding: 0 0.75rem 0.25rem; }
+
+.time-sent {
+  padding: 0 0.75rem 0.25rem;
+  text-align: right; }
+  .time-sent .doc-size {
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+
+.text-msg {
+  padding: 0.5rem 0.75rem 0; }
+
+.img-msg {
+  max-width: 228px; }
+  .img-msg ~ .time-sent {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff; }
+  @media (min-width: 768px) {
+    .img-msg {
+      max-width: 244px; } }
+
+.doc-msg {
+  max-width: 228px;
+  min-width: 140px;
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+  background-image: url(../images/icon-doc-white.svg);
+  background-repeat: no-repeat;
+  background-position: 0.75rem center;
+  min-height: 42px;
+  display: flex;
+  align-items: center; }
+  .doc-msg > small {
+    display: block;
+    line-height: 1.3; }
+  @media (min-width: 768px) {
+    .doc-msg {
+      max-width: 244px; } }
 
 @media (min-width: 768px) {
   .footer--home {
