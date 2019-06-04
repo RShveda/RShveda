@@ -6505,9 +6505,10 @@ a.nounderline {
     overflow: auto hidden; }
   .card-header .icon--arrow {
     transform: rotate(90deg);
-    width: 1rem;
-    height: 1rem;
-    background-size: auto;
+    width: 100%;
+    height: 1.5rem;
+    background-size: 18px;
+    background-position-y: bottom;
     cursor: pointer; }
   @media (min-width: 768px) {
     .card-header {
