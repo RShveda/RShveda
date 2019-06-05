@@ -36,6 +36,10 @@
 
         
     }
+
+    @include media-breakpoint-up(sm) {
+        max-width: calc(100% - 54px);
+    }
     @include media-breakpoint-up(md) {
         max-width: calc(100% - 30px);
     }

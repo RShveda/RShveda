@@ -6440,6 +6440,9 @@ a.nounderline {
     transform: scale(0) rotate(90deg); }
   .search-block.active .icon--close {
     transform: scale(1) rotate(0deg); }
+  @media (min-width: 576px) {
+    .search-block {
+      max-width: calc(100% - 54px); } }
   @media (min-width: 768px) {
     .search-block {
       max-width: calc(100% - 30px); } }
