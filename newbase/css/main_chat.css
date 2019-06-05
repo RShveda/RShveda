@@ -6468,7 +6468,7 @@ a.nounderline {
       .search-block .icon--close {
         background-image: url(../images/icon-close-white.svg); } }
 
-/* ------------- Home -------------- */
+/* ------------- Chat -------------- */
 .wrapper--chat {
   height: 100vh; }
   @media (min-width: 768px) {
@@ -6681,6 +6681,7 @@ a.nounderline {
   .date-separator:after {
     margin-right: -100%; }
 
+/**** Speech Bubbles Start ****/
 .speech-bubble {
   border-radius: 0.6rem;
   font-size: 0.875rem;
@@ -6725,6 +6726,8 @@ a.nounderline {
     left: 0;
     bottom: 0; }
 
+/**** Speech Bubbles End ****/
+/**** Attached Files Start ****/
 .text-msg {
   padding: 0.5rem 0.75rem 0; }
 
@@ -6756,6 +6759,7 @@ a.nounderline {
     .doc-msg {
       max-width: 244px; } }
 
+/**** Attached Files End ****/
 @media (min-width: 768px) {
   .footer--home {
     width: 100%; }

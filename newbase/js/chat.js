@@ -69,8 +69,5 @@ function toggleChatView(chat_first, chat_item_first) {
             chat_item_first.classList.remove("collapsed");
             chat_item_first.classList.add("active");
         }     
-    } else {
-        // if (chat_shown !== null)
-        //     chat_shown.classList.remove("show");
-    }
+    } 
 }

@@ -1,4 +1,4 @@
-/* ------------- Home -------------- */
+/* ------------- Chat -------------- */
 .wrapper {
     &--chat {
         height: 100vh;
@@ -219,15 +219,6 @@
         }
         
     }
-    // @include media-breakpoint-up(md) {
-    //   transform: translateX(0);
-    //   position: relative;
-    //   flex: 1;
-    //   height: 100%;
-    //   min-height: 100%;
-    //   overflow: hidden;
-    //   z-index: 1;
-    // }
 
     @include media-breakpoint-up(md) {
         transform: translateX(0);
@@ -278,7 +269,8 @@
         margin-right: -100%;
     }
 }
-  
+
+/**** Speech Bubbles Start ****/ 
 .speech-bubble {
     border-radius: $border-radius-lg;
     font-size: 0.875rem;
@@ -320,7 +312,6 @@
         max-width: 75%;
     }
 }
-
 .doc-size { 
     padding: 0 0.75rem 0.25rem;
 }
@@ -333,6 +324,9 @@
         bottom: 0;
     }
 }
+/**** Speech Bubbles End ****/ 
+
+/**** Attached Files Start ****/ 
 .text-msg {
     padding: 0.5rem 0.75rem 0;
 }
@@ -368,4 +362,5 @@
         max-width: 244px;
     }
 }
+/**** Attached Files End ****/ 
   
