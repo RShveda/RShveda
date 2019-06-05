@@ -16,17 +16,10 @@
             border-bottom-right-radius: $card-border-radius;
         }
         &:first-child {
-            max-height: 100%;
-            .card-body {
-                max-height: 100%;
-                overflow-y: auto;
-            }
             @include media-breakpoint-up(md) {
-                max-height: auto;
-                max-height: unset;
+                max-height: 100%;
                 .card-body {
-                    max-height: auto;
-                    max-height: unset;
+                    max-height: 100%;
                     overflow-y: auto;
                 }
             }

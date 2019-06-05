@@ -6480,19 +6480,12 @@ a.nounderline {
   .card-group > .card:not(:first-child):not(:last-child):not(:only-child) {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px; }
-  .card-group > .card:first-child {
-    max-height: 100%; }
-    .card-group > .card:first-child .card-body {
-      max-height: 100%;
-      overflow-y: auto; }
-    @media (min-width: 768px) {
-      .card-group > .card:first-child {
-        max-height: auto;
-        max-height: unset; }
-        .card-group > .card:first-child .card-body {
-          max-height: auto;
-          max-height: unset;
-          overflow-y: auto; } }
+  @media (min-width: 768px) {
+    .card-group > .card:first-child {
+      max-height: 100%; }
+      .card-group > .card:first-child .card-body {
+        max-height: 100%;
+        overflow-y: auto; } }
   @media (min-width: 768px) {
     .card-group > .card {
       border-width: 1px; } }
