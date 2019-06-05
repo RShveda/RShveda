@@ -6422,7 +6422,7 @@ a.nounderline {
   display: flex;
   justify-content: flex-end;
   transition: .44s ease-in;
-  max-width: calc(100% - 60px); }
+  max-width: calc(100% - 44px); }
   .search-block .form-wrap {
     width: 0;
     display: inline-block;
