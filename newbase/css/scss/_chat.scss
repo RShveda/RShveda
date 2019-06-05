@@ -15,7 +15,23 @@
             border-top-right-radius: $card-border-radius;
             border-bottom-right-radius: $card-border-radius;
         }
-
+        &:first-child {
+            max-height: 100%;
+            .card-body {
+                max-height: 100%;
+                overflow-y: auto;
+            }
+            @include media-breakpoint-up(md) {
+                max-height: auto;
+                max-height: unset;
+                .card-body {
+                    max-height: auto;
+                    max-height: unset;
+                    overflow-y: auto;
+                }
+            }
+        }
+        
         @include media-breakpoint-up(md) {
             border-width: 1px;
         }
@@ -33,6 +49,8 @@
     font-weight: 600;
     font-size: 18px;
     height: 72px;
+    min-height: 72px;
+    position: relative;
     .card-subtitle {
         display: block;
         font-size: 12px;
@@ -54,8 +72,8 @@
         width: 100%;
         height: 1.5rem;
         background-size: 18px;
-        background-position-y: bottom;
         cursor: pointer;
+        margin-left: -1rem;
     }
     
     @include media-breakpoint-up(md) {
@@ -201,15 +219,15 @@
         }
         
     }
-    @include media-breakpoint-up(md) {
-      transform: translateX(0);
-      position: relative;
-      flex: 1;
-      height: 100%;
-      min-height: 100%;
-      overflow: auto;
-      z-index: 1;
-    }
+    // @include media-breakpoint-up(md) {
+    //   transform: translateX(0);
+    //   position: relative;
+    //   flex: 1;
+    //   height: 100%;
+    //   min-height: 100%;
+    //   overflow: hidden;
+    //   z-index: 1;
+    // }
 
     @include media-breakpoint-up(md) {
         transform: translateX(0);
@@ -220,7 +238,7 @@
         left: unset;
         right: 0;
         min-height: 100%;
-        overflow: auto;
+        overflow: hidden;
         z-index: 1;
     }
 }

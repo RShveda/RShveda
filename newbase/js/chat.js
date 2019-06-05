@@ -8,14 +8,14 @@
         chat_inputs = document.querySelectorAll('.card-footer .input');
 
     /**** Search Animation Start ****/
-    Array.from(search_icons).forEach(item => {
+    Array.from(search_icons).forEach(function(item) {
         item.addEventListener('click', function(event) {
             let search_block = item.parentNode;
             search_block.classList.add('active');
         });
     });
 
-    Array.from(close_search_icons).forEach(item => {
+    Array.from(close_search_icons).forEach(function(item) {
         item.addEventListener('click', function(event) {
             let search_block = item.parentNode;
             search_block.classList.remove('active');
@@ -24,9 +24,9 @@
     /**** Search Animation End ****/
 
     /**** Toggle ChatView (Mobile) Start ****/
-    Array.from(chat_items).forEach(item => {
+    Array.from(chat_items).forEach(function(item) {
         item.addEventListener('click', function(event) {
-            Array.from(chat_items).forEach(item => {
+            Array.from(chat_items).forEach(function(item) {
                 item.classList.remove('active');
             });
             if (item.classList.contains('collapsed'))
@@ -38,14 +38,14 @@
 
     toggleChatView(chat_first, chat_item_first);
 
-    window.addEventListener('resize', () => { 
+    window.addEventListener('resize', function() { 
         toggleChatView(chat_first, chat_item_first);
     });
     /**** Toggle ChatView (Mobile) End ****/
 
     
 
-    Array.from(chat_inputs).forEach(item => {
+    Array.from(chat_inputs).forEach(function(item) {
         let input_block = item.parentNode;
         item.addEventListener("focus", function() {
             input_block.classList.add('focused');
