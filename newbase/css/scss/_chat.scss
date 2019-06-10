@@ -32,6 +32,8 @@
 
     @include media-breakpoint-up(md) {
         height: calc(100vh - 265px);
+        margin-top: -2rem;
+        position: relative;
     }
     @include media-breakpoint-up(lg) {
         height: calc(100vh - 300px);
@@ -221,6 +223,7 @@
         left: auto;
         left: unset;
         right: 0;
+        top: 0;
         // min-height: 100%;
         overflow: hidden;
         z-index: 1;

@@ -6491,7 +6491,9 @@ a.nounderline {
       border-width: 1px; } }
 @media (min-width: 768px) {
   .card-group {
-    height: calc(100vh - 265px); } }
+    height: calc(100vh - 265px);
+    margin-top: -2rem;
+    position: relative; } }
 @media (min-width: 992px) {
   .card-group {
     height: calc(100vh - 300px); } }
@@ -6647,6 +6649,7 @@ a.nounderline {
       left: auto;
       left: unset;
       right: 0;
+      top: 0;
       overflow: hidden;
       z-index: 1; } }
 
