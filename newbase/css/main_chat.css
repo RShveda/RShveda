@@ -5922,6 +5922,15 @@ a.text-dark:hover, a.text-dark:focus {
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.24);
     background-image: url(../images/icon-call.svg);
     background-size: 20px; }
+  .btn--call-white {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    background-image: url(../images/icon-call-orange.svg);
+    background-size: 24px; }
   .btn--contact {
     position: fixed;
     right: 12px;
@@ -5963,12 +5972,13 @@ a.text-dark:hover, a.text-dark:focus {
   .btn--send {
     width: 40px;
     height: 40px;
-    position: relative;
-    background-color: #ee650d;
+    position: absolute;
+    background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 5;
-    background-image: url(../images/icon-send.svg); }
+    background-image: url(../images/icon-send-gray.svg);
+    right: 0; }
 
 .header {
   height: 50px;
@@ -6417,12 +6427,13 @@ a.nounderline {
 .search-block {
   position: absolute;
   top: 0.5rem;
-  right: 1rem;
+  right: 60px;
   height: calc(100% - 1rem);
   display: flex;
   justify-content: flex-end;
   transition: .44s ease-in;
-  max-width: calc(100% - 44px); }
+  max-width: calc(100% - 90px);
+  text-align: right; }
   .search-block .form-wrap {
     width: 0;
     display: inline-block;
@@ -6442,10 +6453,12 @@ a.nounderline {
     transform: scale(1) rotate(0deg); }
   @media (min-width: 576px) {
     .search-block {
-      max-width: calc(100% - 54px); } }
+      max-width: calc(100% - 102px);
+      right: 64px; } }
   @media (min-width: 768px) {
     .search-block {
-      max-width: calc(100% - 30px); } }
+      max-width: calc(100% - 92px);
+      right: 76px; } }
 
 .search-block .icon {
   width: 1.5rem;
@@ -6524,6 +6537,9 @@ a.nounderline {
     background-size: 18px;
     cursor: pointer;
     margin-left: -1rem; }
+    @media (min-width: 576px) {
+      .card-header .icon--arrow {
+        margin-left: -1.5rem; } }
   @media (min-width: 768px) {
     .card-header {
       background: #ee650d;
@@ -6550,6 +6566,14 @@ a.nounderline {
     max-width: 100%;
     width: 100%;
     border-bottom: 1px solid #dadada; }
+    .card-animated .card-header .call-block {
+      text-align: right;
+      padding-right: 0; }
+      .card-animated .card-header .call-block .btn {
+        margin-right: -0.5rem; }
+    @media (min-width: 576px) {
+      .card-animated .card-header .call-block .btn {
+        margin-right: 0; } }
     @media (min-width: 768px) {
       .card-animated .card-header {
         border-bottom: none; } }
@@ -6567,10 +6591,6 @@ a.nounderline {
     width: 100%; }
     .card-animated .card-footer .form-block {
       position: relative; }
-      .card-animated .card-footer .form-block.focused .btn--call {
-        display: none; }
-      .card-animated .card-footer .form-block.focused .btn--send {
-        display: block; }
     .card-animated .card-footer .attached-block {
       max-width: 100%;
       overflow-x: auto; }
@@ -6615,24 +6635,8 @@ a.nounderline {
           top: 0.5rem;
           right: 0.5rem; }
     .card-animated .card-footer .input {
-      width: calc(100% - 52px);
       border-radius: 8px;
       height: 40px; }
-    .card-animated .card-footer .btn {
-      position: relative;
-      width: 40px;
-      height: 40px;
-      bottom: auto;
-      bottom: unset;
-      left: auto;
-      left: unset;
-      margin-left: 0.75rem;
-      box-shadow: none;
-      transition: all 0.2s ease-in-out; }
-      .card-animated .card-footer .btn--call {
-        display: block; }
-      .card-animated .card-footer .btn--send {
-        display: none; }
     .card-animated .card-footer .icon--file {
       position: absolute;
       width: 24px;

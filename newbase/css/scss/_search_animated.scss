@@ -3,12 +3,13 @@
 .search-block {
     position: absolute;
     top: 0.5rem; 
-    right: 1rem;
+    right: 60px;
     height: calc(100% - 1rem);
     display: flex;
     justify-content: flex-end;
     transition: .44s ease-in;
-    max-width: calc(100% - 44px);
+    max-width: calc(100% - 90px);
+    text-align: right;
     .form-wrap {
         width: 0;
         display: inline-block;
@@ -38,10 +39,12 @@
     }
 
     @include media-breakpoint-up(sm) {
-        max-width: calc(100% - 54px);
+        max-width: calc(100% - 102px);
+        right: 64px;
     }
     @include media-breakpoint-up(md) {
-        max-width: calc(100% - 30px);
+        max-width: calc(100% - 92px);
+        right: 76px;
     }
   
   }

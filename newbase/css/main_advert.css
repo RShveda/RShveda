@@ -5736,6 +5736,15 @@ a.text-dark:hover, a.text-dark:focus {
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.24);
     background-image: url(../images/icon-call.svg);
     background-size: 20px; }
+  .btn--call-white {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    background-image: url(../images/icon-call-orange.svg);
+    background-size: 24px; }
   .btn--contact {
     position: fixed;
     right: 12px;
@@ -5777,12 +5786,13 @@ a.text-dark:hover, a.text-dark:focus {
   .btn--send {
     width: 40px;
     height: 40px;
-    position: relative;
-    background-color: #ee650d;
+    position: absolute;
+    background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 5;
-    background-image: url(../images/icon-send.svg); }
+    background-image: url(../images/icon-send-gray.svg);
+    right: 0; }
 
 .header {
   height: 50px;

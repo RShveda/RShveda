@@ -145,6 +145,16 @@
     background-image: $icon-call;
     background-size: 20px;
   }
+  &--call-white {
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    background-image: $icon-call-orange;
+    background-size: 24px;
+  }
 
   &--contact {
     position: fixed;
@@ -201,12 +211,12 @@
   &--send {
     width: 40px;
     height: 40px;
-    position: relative;
-    background-color: $primary;
+    position: absolute;
+    background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 5;
-    background-image: $icon-send;
-    // background-size: 20px;
+    background-image: $icon-send-gray;
+    right: 0;
   }
 }
