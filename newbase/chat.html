@@ -60,9 +60,9 @@
                                 <div class="card-header d-none d-md-flex align-items-center">
                                     My Agency
                                 </div>
-                                <div class="card-body text-center px-0 pt-md-2">
+                                <div class="card-body text-center px-0 pt-md-0">
                                     <h1 class="title smaller text-center d-md-none">My Contacts</h1>
-                                    <div class="border-bottom pb-2 px-md-3">
+                                    <div class="border-bottom py-2 px-md-3 bg-white chat-search">
                                         <input type="text" class="input input--with-icon  input--with-icon-search" placeholder="Search for a chat">
                                     </div>
 
@@ -153,7 +153,10 @@
                                             Last seen today at 14:01
                                         </p>
                                     </div>
-                                    <div class="col-2 col-md-4 col-lg-6 call-block">
+                                    <div class="col-2 col-md-4 col-lg-6 call-block d-none d-md-block">
+                                        <a href="tel:555-33-55" class="btn btn--call-white " data-toggle="modal" data-target="#telModal"></a>  
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-6 call-block d-md-none">
                                         <a href="tel:555-33-55" class="btn btn--call-white "></a>  
                                     </div>
                                     <div class="col-2 px-0 search-block" id="search_block">
@@ -720,6 +723,34 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal fade tel-modal" id="telModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header pb-3">
+                    <h5 class="modal-title">Phone</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body text-center">
+                    <h5 class="">Jhon Snow, France</h5>
+                    <span class="icon d-inline-block">
+                        <img src="images/flag.svg" class="img-fluid">
+                    </span>
+                    <a href="tel:+33470082660" class="tel-link">+33 4 70 08 26 60</a> 
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                
+                </div> 
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">

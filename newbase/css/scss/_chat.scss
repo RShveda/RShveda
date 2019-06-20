@@ -219,6 +219,11 @@
 }
 
 .chat {
+    &-search {
+        position: sticky;
+        top: 0;
+        width: 100%;
+    }
     &-item {
         &:hover {
             text-decoration: none;
@@ -347,4 +352,17 @@
     }
 }
 /**** Attached Files End ****/ 
-  
+
+.tel {
+    &-modal {
+        font-family: 'Montserrat Regular';
+        .modal-dialog {
+            margin-top: 18%;
+        }
+    }
+    &-link {
+        color: $black;
+        font-weight: 500;
+        vertical-align: middle;
+    }
+}
