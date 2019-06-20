@@ -6200,44 +6200,6 @@ a.nounderline {
     vertical-align: middle;
     margin-right: 6px; }
 
-/*** For IE ***/
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .listing__item--large .item__img--main img,
-  .listing__item--large .item__img--miniatures-col img {
-    min-width: 1px; } }
-@supports (-ms-ime-align: auto) {
-  .listing__item--large .item__img--main img,
-  .listing__item--large .item__img--miniatures-col img {
-    min-width: 1px; } }
-@media all and (min-width: 992px) and (-ms-high-contrast: none), (min-width: 992px) and (-ms-high-contrast: active) {
-  .contact-form-area {
-    position: relative; } }
-/* ------------- iPhone 6, 7, & 8 Landscape for Gallery -------------- */
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
-  .modal-gallery .gallery-thumbs {
-    display: none; }
-
-  .modal-gallery .modal-body {
-    max-width: 130vh;
-    max-height: 90vh;
-    margin: 5vh auto; }
-
-  .modal.fade .btn--modal-close {
-    right: 10px;
-    left: auto; } }
-/* ------------- iPhone X, XS Max Landscape for Gallery -------------- */
-@media only screen and (min-device-width: 375px) and (max-device-width: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
-  .modal-gallery .gallery-thumbs {
-    display: none; }
-
-  .modal-gallery .modal-body {
-    max-width: 140vh;
-    max-height: 90vh;
-    margin: 5vh auto; }
-
-  .modal.fade .btn--modal-close {
-    right: 10px;
-    left: auto; } }
 /* ------------- Range Sliders -------------- */
 .noUi-horizontal {
   height: 4px; }
@@ -6462,6 +6424,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
       font-size: 1.4em;
       height: 56px; }
 
+/*** For IE ***/
 /* ------------- Listing Item -------------- */
 .item__img-area {
   position: relative; }
@@ -7362,5 +7325,47 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
       text-align: center; }
       .footer--global.footer--chat__details a {
         text-decoration: underline; } }
+
+/*** For IE ***/
+@media all and (min-width: 992px) and (-ms-high-contrast: none), (min-width: 992px) and (-ms-high-contrast: active) {
+  .contact-form-area {
+    position: relative; }
+
+  .chat-search {
+    position: relative; } }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .listing__item--large .item__img--main img,
+  .listing__item--large .item__img--miniatures-col img {
+    min-width: 1px; } }
+@supports (-ms-ime-align: auto) {
+  .listing__item--large .item__img--main img,
+  .listing__item--large .item__img--miniatures-col img {
+    min-width: 1px; } }
+/* ------------- iPhone 6, 7, & 8 Landscape for Gallery -------------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+  .modal-gallery .gallery-thumbs {
+    display: none; }
+
+  .modal-gallery .modal-body {
+    max-width: 130vh;
+    max-height: 90vh;
+    margin: 5vh auto; }
+
+  .modal.fade .btn--modal-close {
+    right: 10px;
+    left: auto; } }
+/* ------------- iPhone X, XS Max Landscape for Gallery -------------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  .modal-gallery .gallery-thumbs {
+    display: none; }
+
+  .modal-gallery .modal-body {
+    max-width: 140vh;
+    max-height: 90vh;
+    margin: 5vh auto; }
+
+  .modal.fade .btn--modal-close {
+    right: 10px;
+    left: auto; } }
 
 /*# sourceMappingURL=main_listing.css.map */
