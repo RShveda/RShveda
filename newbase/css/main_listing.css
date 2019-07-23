@@ -6540,9 +6540,12 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     height: 62px;
     display: block;
     margin: 0 auto 20px; }
+  .modal .signup-form p {
+    font-size: 14px; }
   .modal .signup-form .modal-title {
     color: inherit;
-    font-family: 'OpenSans Bold'; }
+    font-family: 'OpenSans Bold';
+    font-size: 1rem; }
 
 /*** For IE ***/
 /* ------------- Listing Item -------------- */

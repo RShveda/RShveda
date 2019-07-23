@@ -317,9 +317,13 @@
             display: block;
             margin: 0 auto 20px;
         }
+        p {
+            font-size: 14px; 
+        }
         .modal-title {
             color: inherit;
             font-family: 'OpenSans Bold';
+            font-size: 1rem;
         }
     }
 }
