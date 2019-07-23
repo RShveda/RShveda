@@ -32,6 +32,18 @@
       color:inherit;
     }
   }
+  &--gray {
+    height: 46px;
+    font-size: 1.02em;
+    background: $lightgray;
+    border:1px solid $lightgray;
+    color: $dark;
+    &:hover,
+    &:active{
+      background: $white;;
+      color: inherit;
+    }
+  }
 
   &--nav,
   &--filters,

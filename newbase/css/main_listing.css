@@ -5647,6 +5647,15 @@ a.text-dark:hover, a.text-dark:focus {
     .btn--secondary:hover, .btn--secondary:active {
       background: #dadada;
       color: inherit; }
+  .btn--gray {
+    height: 46px;
+    font-size: 1.02em;
+    background: #dadada;
+    border: 1px solid #dadada;
+    color: #484848; }
+    .btn--gray:hover, .btn--gray:active {
+      background: #fff;
+      color: inherit; }
   .btn--nav, .btn--filters, .btn--close {
     max-width: 50px;
     height: 50px;
@@ -6082,6 +6091,12 @@ a.text-dark:hover, a.text-dark:focus {
     background-image: url(../images/icon-download.svg);
     width: 1.5rem;
     height: 1.5rem; }
+  .icon--apple {
+    background-image: url(../images/icon-apple.svg);
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin-right: 0.5rem; }
 
 /* ------------- Global -------------- */
 a.nounderline {
@@ -6200,6 +6215,104 @@ a.nounderline {
     vertical-align: middle;
     margin-right: 6px; }
 
+/* ------------- Material Outlined Textfields (Input, Textarea) -------------- */
+.material-textfield-outlined {
+  position: relative;
+  display: inline-block;
+  padding-top: 6px;
+  font-size: 1em;
+  width: 100%;
+  overflow: hidden; }
+  .material-textfield-outlined input, .material-textfield-outlined textarea {
+    margin: 0;
+    border: solid 1px;
+    border-color: #ee650d;
+    border-top-color: transparent;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: inherit; }
+    .material-textfield-outlined input + span, .material-textfield-outlined textarea + span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      border-color: #ee650d;
+      width: 100%;
+      max-height: 100%;
+      font-size: 10px;
+      line-height: 13px;
+      cursor: text;
+      transition: color 0.2s, font-size 0.2s, line-height 0.2s; }
+      .material-textfield-outlined input + span::before, .material-textfield-outlined input + span::after, .material-textfield-outlined textarea + span::before, .material-textfield-outlined textarea + span::after {
+        content: "";
+        display: block;
+        margin-top: 6px;
+        border-top: solid 1px;
+        border-top-color: #ee650d;
+        min-width: 10px;
+        height: 8px;
+        pointer-events: none; }
+      .material-textfield-outlined input + span::before, .material-textfield-outlined textarea + span::before {
+        margin-right: 4px;
+        border-left: solid 1px transparent;
+        border-radius: 4px 0; }
+      .material-textfield-outlined input + span::after, .material-textfield-outlined textarea + span::after {
+        flex-grow: 1;
+        margin-left: 4px;
+        border-right: solid 1px transparent;
+        border-radius: 0 4px; }
+  .material-textfield-outlined:hover > input, .material-textfield-outlined:hover > textarea {
+    border-color: #ee650d;
+    border-top-color: transparent; }
+    .material-textfield-outlined:hover > input + span::before, .material-textfield-outlined:hover > input + span::after, .material-textfield-outlined:hover > textarea + span::before, .material-textfield-outlined:hover > textarea + span::after {
+      border-top-color: #ee650d; }
+    .material-textfield-outlined:hover > input:not(:focus):placeholder-shown, .material-textfield-outlined:hover > textarea:not(:focus):placeholder-shown {
+      border-color: #ee650d; }
+  .material-textfield-outlined > input:not(:focus):placeholder-shown, .material-textfield-outlined > textarea:not(:focus):placeholder-shown {
+    border-top-color: #ee650d; }
+    .material-textfield-outlined > input:not(:focus):placeholder-shown + span, .material-textfield-outlined > textarea:not(:focus):placeholder-shown + span {
+      font-size: 1rem;
+      line-height: 58px; }
+      .material-textfield-outlined > input:not(:focus):placeholder-shown + span::before, .material-textfield-outlined > input:not(:focus):placeholder-shown + span::after, .material-textfield-outlined > textarea:not(:focus):placeholder-shown + span::before, .material-textfield-outlined > textarea:not(:focus):placeholder-shown + span::after {
+        border-top-color: transparent; }
+  .material-textfield-outlined > input:focus, .material-textfield-outlined > textarea:focus {
+    border-color: #ee650d;
+    border-top-color: transparent;
+    outline: none; }
+    .material-textfield-outlined > input:focus + span::before, .material-textfield-outlined > input:focus + span::after, .material-textfield-outlined > textarea:focus + span::before, .material-textfield-outlined > textarea:focus + span::after {
+      border-top-color: #ee650d; }
+  .material-textfield-outlined > input:disabled, .material-textfield-outlined > textarea:disabled {
+    border-color: #dadada;
+    border-top-color: transparent !important;
+    color: #dadada;
+    pointer-events: none; }
+    .material-textfield-outlined > input:disabled + span, .material-textfield-outlined > textarea:disabled + span {
+      border-color: #dadada !important;
+      border-top-color: transparent !important;
+      color: #dadada;
+      pointer-events: none; }
+      .material-textfield-outlined > input:disabled + span::before, .material-textfield-outlined > input:disabled + span::after, .material-textfield-outlined > textarea:disabled + span::before, .material-textfield-outlined > textarea:disabled + span::after {
+        border-top-color: #dadada !important; }
+    .material-textfield-outlined > input:disabled:placeholder-shown, .material-textfield-outlined > textarea:disabled:placeholder-shown {
+      border-top-color: #dadada !important; }
+      .material-textfield-outlined > input:disabled:placeholder-shown + span, .material-textfield-outlined > textarea:disabled:placeholder-shown + span {
+        border-top-color: #dadada !important; }
+        .material-textfield-outlined > input:disabled:placeholder-shown + span::before, .material-textfield-outlined > input:disabled:placeholder-shown + span::after, .material-textfield-outlined > textarea:disabled:placeholder-shown + span::before, .material-textfield-outlined > textarea:disabled:placeholder-shown + span::after {
+          border-top-color: transparent !important; }
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .material-textfield-outlined > input,
+    .material-textfield-outlined > input + span,
+    .material-textfield-outlined > textarea,
+    .material-textfield-outlined > textarea + span,
+    .material-textfield-outlined > input + span::before,
+    .material-textfield-outlined > input + span::after,
+    .material-textfield-outlined > textarea + span::before,
+    .material-textfield-outlined > textarea + span::after {
+      transition-duration: 0.1s; } } }
 /* ------------- Range Sliders -------------- */
 .noUi-horizontal {
   height: 4px; }
@@ -6423,6 +6536,13 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
       padding: 0 18px;
       font-size: 1.4em;
       height: 56px; }
+  .modal .signup-form .signup__logo {
+    height: 62px;
+    display: block;
+    margin: 0 auto 20px; }
+  .modal .signup-form .modal-title {
+    color: inherit;
+    font-family: 'OpenSans Bold'; }
 
 /*** For IE ***/
 /* ------------- Listing Item -------------- */

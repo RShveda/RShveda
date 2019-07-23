@@ -165,6 +165,7 @@
         border: 1px solid $lightgray;
         border-radius: 5px;
     }
+
 }
 
 /* ------------- Modal -------------- */
@@ -307,6 +308,18 @@
             padding: 0 18px;
             font-size: 1.4em;
             height: 56px;
+        }
+    }
+
+    .signup-form {
+        .signup__logo {
+            height: 62px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .modal-title {
+            color: inherit;
+            font-family: 'OpenSans Bold';
         }
     }
 }
