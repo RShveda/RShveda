@@ -322,8 +322,12 @@
         }
         .modal-title {
             color: inherit;
-            font-family: 'OpenSans Bold';
             font-size: 1rem;
+        }
+        .modal-header {
+            p {
+                font-family: 'OpenSans Bold';
+            }
         }
     }
 }

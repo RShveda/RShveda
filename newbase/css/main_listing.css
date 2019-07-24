@@ -6105,6 +6105,9 @@ a.nounderline {
 .smaller {
   font-size: 11px; }
 
+.font-weight-semi {
+  font-family: 'OpenSans Semibold'; }
+
 /* ------------- Animation Favorite -------------- */
 @keyframes icon-favorites-added {
   0% {
@@ -6158,6 +6161,20 @@ a.nounderline {
       background-image: url(../images/icon-search.svg); }
     .input--with-icon-file {
       background-image: url(../images/icon-file.svg); }
+  .input--verif {
+    border-color: #ee650d;
+    letter-spacing: 1.25rem;
+    padding-left: 1.45rem;
+    padding-right: 1.45rem;
+    width: 146px;
+    margin: auto;
+    display: block;
+    font-size: 1.45rem; }
+    .input--verif:placeholder-shown {
+      letter-spacing: 1.15rem; }
+    .input--verif:focus {
+      border-color: #ee650d;
+      padding-right: 0; }
 
 /* ------------- Custom Inputs (Radio and Checkbox) -------------- */
 .custom-input--radio-checker {
@@ -6544,8 +6561,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     font-size: 14px; }
   .modal .signup-form .modal-title {
     color: inherit;
-    font-family: 'OpenSans Bold';
     font-size: 1rem; }
+  .modal .signup-form .modal-header p {
+    font-family: 'OpenSans Bold'; }
 
 /*** For IE ***/
 /* ------------- Listing Item -------------- */

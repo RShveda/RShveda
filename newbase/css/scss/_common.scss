@@ -7,6 +7,9 @@ a.nounderline {
   font-size: $smaller-font-size;
 }
 
+.font-weight-semi {
+    font-family: 'OpenSans Semibold';
+}
 /* ------------- Animation Favorite -------------- */
 @keyframes icon-favorites-added {
     0% {
@@ -76,6 +79,23 @@ a.nounderline {
       &-file {
         background-image: $icon-file;
       }
+    }
+    &--verif {
+        border-color: $primary;
+        letter-spacing: 1.25rem;
+        padding-left: 1.45rem;
+        padding-right: 1.45rem;
+        width: 146px;
+        margin: auto;
+        display: block;
+        font-size: 1.45rem;
+        &:placeholder-shown {
+            letter-spacing: 1.15rem;
+        }
+        &:focus {
+            border-color: $primary;
+            padding-right: 0;
+        }
     }
 }
 
