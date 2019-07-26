@@ -1,0 +1,47 @@
+.second-nav {
+    .header__nav {
+        transform: translateX(0);
+        position: relative;
+        flex: 1;
+        height: 100%;
+        min-height: 100%;
+        overflow: auto;
+        z-index: 1;
+        ul {
+            padding: 0 24px;
+        }
+        &__item {
+            a {
+                border-bottom: 3px solid #fff;
+                border-top: 3px solid #fff;
+                padding: 15px 12px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                transition: .12s ease-out;
+                &.active {
+                    border-bottom-color: var(--orange);
+                }
+            }
+        }
+    }
+    @include media-breakpoint-up(md) {
+        margin-top: -50px;
+    } 
+}
+
+.chat-item {
+    position: relative;
+    color: $darkblue;
+    .icon--count {
+        position: absolute;
+        bottom: 0.75rem;
+        right: 0;
+        @include media-breakpoint-up(md) {
+            right: 0.5rem;
+        }
+    }
+}
+.chat-image {
+    margin-right: 0.5rem;
+}

@@ -52,26 +52,26 @@
                 </div>
             </nav>
         </header>
-        <section class="second-nav">
+        <section class="second-nav px-3">
             <div class="row justify-content-center">
-
+                <div class="col-12 col-md-11 col-lg-10 px-0 border-bottom d-flex flex-column justify-content-between">
+                    <nav class="header__nav  flex-md-fill">
+                        <ul class="d-flex justify-content-between px-0">
+                            <li class="header__nav__item col px-0"><a href="#" class="justify-content-center"><i class="icon icon--favorite-gray"></i><span class="d-none d-md-inline">Favorites</span></a></li>
+                            <li class="header__nav__item col px-0"><a class="justify-content-center active" href="#"><i class="icon icon--msg-gray"></i><span class="d-none d-md-inline">Messenger</span></a></li>
+                            <li class="header__nav__item col px-0"><a  href="#" class="justify-content-center"><i class="icon icon--alert-gray"></i><span class="d-none d-md-inline text-nowrap">My research & alerts</span></a></li>
+                            <li class="header__nav__item col px-0"><a href="#" class="justify-content-center"><i class="icon icon--user-gray"></i><span class="d-none d-md-inline">My account</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </section>
         <section class="content content--chat">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-11 d-flex flex-column justify-content-md-between">
-                        <nav class="header__nav flex-md-fill">
-                            <ul class="d-flex justify-content-between">
-                                <li class="header__nav__item d-none d-md-block"><a href="#">Buy</a></li>
-                                <li class="header__nav__item d-none d-md-block"><a href="#">Rent</a></li>
-                                <li class="header__nav__item"><a class="active" href="#">Customer Account</a></li>
-                                <li class="header__nav__item"><a href="#">Language</a></li>
-                            </ul>
-                        </nav>
-                    </div>
                     <div class="col-12 col-md-11 col-lg-10 px-0">
                         <div class="card-group align-items-stretch" id="accordion">
-                            <div class="card col-12 col-md-4 px-md-0">
+                            <div class="card col-12 col-md-5 col-lg-4 px-md-0">
                                 <div class="card-header d-none d-md-flex align-items-center">
                                     My Agency
                                 </div>
@@ -82,13 +82,18 @@
                                     </div>
 
                                     <div class="chat-items">
-                                        <a class="chat-item d-flex justify-content-between align-items-baseline py-2 px-md-3 border-bottom collapsed" data-toggle="collapse" href="#chat1">
-                                            <span class="d-block text-left font-weight-bold">
-                                                Agency 1
-                                                <small class="d-block text-dark">Shall we meet today?</small>
-                                            </span>
+                                        <a class="chat-item d-flex justify-content-between py-2 px-md-2 border-bottom collapsed" data-toggle="collapse" href="#chat1">
+                                            <div class="d-flex align-items-start">
+                                                <img src="images/image_chat.png" class="chat-image d-block">
+                                                <div class="d-block text-left font-weight-bold">
+                                                    <p class="mb-0">The Grande House<span class="d-none d-sm-inline d-md-none">, St. James`s, London, SW1A</span></p>
+                                                    <p class="mb-0">30 000 000 €</p>
+                                                    <small class="d-block text-muted">Agency XXX</small>
+                                                </div>
+                                            </div>
+                                            
                                             <span class="d-block text-right">
-                                                <small class="smaller d-block text-dark">5:45 PM</small>
+                                                <small class="smaller d-block text-dark text-nowrap mt-1">5:45 PM</small>
                                                 <span class="icon--count">2</span>   
                                             </span>
                                         </a>
@@ -152,7 +157,7 @@
                             </div>
 
                             <!-- First Chat (Active Attached Document): -->
-                            <div class="card col-12 col-md-8 px-0 collapse chat-view card-animated" id="chat1" data-parent="#accordion" >                            
+                            <div class="card col-12 col-md-7 col-lg-8 px-0 collapse chat-view card-animated" id="chat1" data-parent="#accordion" >                            
                                 <div class="card-header d-flex align-items-center px-3 justify-content-between">
                                     <div class="col-1 px-0 d-md-none">
                                         <span class="icon icon--arrow" data-toggle="collapse" href="#chat1"></span>

@@ -5988,6 +5988,19 @@ a.text-dark:hover, a.text-dark:focus {
     z-index: 5;
     background-image: url(../images/icon-send-gray.svg);
     right: 0; }
+  .btn--pass-visible {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    background-image: url(../images/icon-visible.svg);
+    background-size: 1.5rem; }
+    .btn--pass-visible.active {
+      background-image: url(../images/icon-invisible.svg); }
 
 .header {
   height: 50px;
@@ -6283,26 +6296,45 @@ a.text-dark:hover, a.text-dark:focus {
     height: 1rem;
     display: inline-block;
     margin-right: 0.5rem; }
+  .icon--visible {
+    background-image: url(../images/icon-visible.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block; }
+  .icon--invisible {
+    background-image: url(../images/icon-invisible.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block; }
   .icon--favorite-gray {
     background-image: url(../images/icon-favorite-gray.svg);
     width: 1.5rem;
     height: 1.5rem;
-    display: inline-block; }
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem; }
   .icon--msg-gray {
     background-image: url(../images/icon-msg-gray.svg);
     width: 1.5rem;
     height: 1.5rem;
-    display: inline-block; }
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem; }
   .icon--alert-gray {
     background-image: url(../images/icon-alert-gray.svg);
     width: 1.5rem;
     height: 1.5rem;
-    display: inline-block; }
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem; }
   .icon--user-gray {
     background-image: url(../images/icon-user-gray.svg);
+    background-size: auto;
     width: 1.5rem;
     height: 1.5rem;
-    display: inline-block; }
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem; }
 
 /* ------------- Global -------------- */
 a.nounderline {
@@ -6367,15 +6399,17 @@ a.nounderline {
       background-image: url(../images/icon-search.svg); }
     .input--with-icon-file {
       background-image: url(../images/icon-file.svg); }
+    .input--with-icon-pass {
+      padding-left: 14px;
+      padding-right: 3rem; }
   .input--verif {
     border-color: #ee650d;
-    letter-spacing: 1.2rem;
-    padding-left: 1.45rem;
-    width: 146px;
+    letter-spacing: 1rem;
+    width: 160px;
     margin: auto;
     display: block;
     font-size: 1.2rem;
-    width: calc(11.5ch + 1.45rem); }
+    text-align: center; }
     .input--verif:focus {
       border-color: #ee650d; }
 
@@ -6476,12 +6510,12 @@ a.nounderline {
       .md-textfield-outlined input + span::before, .md-textfield-outlined textarea + span::before {
         margin-right: 4px;
         border-left: solid 1px transparent;
-        border-radius: 4px 0; }
+        border-radius: 5px 0; }
       .md-textfield-outlined input + span::after, .md-textfield-outlined textarea + span::after {
         flex-grow: 1;
         margin-left: 4px;
         border-right: solid 1px transparent;
-        border-radius: 0 4px; }
+        border-radius: 0 5px; }
   .md-textfield-outlined:hover > input, .md-textfield-outlined:hover > textarea {
     border-color: #ee650d;
     border-top-color: transparent; }
@@ -6915,6 +6949,44 @@ a.nounderline {
   color: #000;
   font-weight: 500;
   vertical-align: middle; }
+
+.second-nav .header__nav {
+  transform: translateX(0);
+  position: relative;
+  flex: 1;
+  height: 100%;
+  min-height: 100%;
+  overflow: auto;
+  z-index: 1; }
+  .second-nav .header__nav ul {
+    padding: 0 24px; }
+  .second-nav .header__nav__item a {
+    border-bottom: 3px solid #fff;
+    border-top: 3px solid #fff;
+    padding: 15px 12px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: .12s ease-out; }
+    .second-nav .header__nav__item a.active {
+      border-bottom-color: var(--orange); }
+@media (min-width: 768px) {
+  .second-nav {
+    margin-top: -50px; } }
+
+.chat-item {
+  position: relative;
+  color: #233034; }
+  .chat-item .icon--count {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0; }
+    @media (min-width: 768px) {
+      .chat-item .icon--count {
+        right: 0.5rem; } }
+
+.chat-image {
+  margin-right: 0.5rem; }
 
 @media (min-width: 768px) {
   .footer--home {

@@ -109,23 +109,32 @@
     width: 1.5rem;
     height: 1.5rem;
     display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
   &--msg-gray {
     background-image: $icon-msg-gray;
     width: 1.5rem;
     height: 1.5rem;
     display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
   &--alert-gray {
     background-image: $icon-alert-gray;
     width: 1.5rem;
     height: 1.5rem;
     display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
   &--user-gray {
     background-image: $icon-user-gray;
+    background-size: auto;
     width: 1.5rem;
     height: 1.5rem;
     display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 }
