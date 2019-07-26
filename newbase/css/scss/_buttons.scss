@@ -231,4 +231,19 @@
     background-image: $icon-send-gray;
     right: 0;
   }
+  &--pass-visible {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: 12px;
+    bottom:12px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    background-image: $icon-visible;
+    background-size: 1.5rem;
+    &.active {
+      background-image: $icon-invisible;
+    }
+  }
 }

@@ -1,0 +1,798 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Vizzit</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="./css/main_customer_account.css" />
+
+</head>
+
+<body>
+    <div class="wrapper wrapper--chat d-flex flex-column justify-content-md-between">
+        
+        <header class="header header--chat d-flex justify-content-end d-print-none">
+            <div class="header__logo d-flex align-items-center">
+                <a href="">
+                    <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+                </a>
+            </div>
+            
+            <button class="header__button btn btn--nav d-md-none" id="btn_nav">
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+            </button>
+            <nav class="header__nav flex-md-fill" id="nav_panel">
+                <div class="header__nav__top d-flex justify-content-between align-items-center d-md-none">
+                    <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+                    <button class="btn btn--close" id="btn_nav__close">
+                        <span class="btn--close__line"></span>
+                        <span class="btn--close__line"></span>
+                    </button>
+                </div>
+                <ul class="d-md-flex justify-content-end">
+                    <li class="header__nav__item d-none d-md-block"><a href="#">Buy</a></li>
+                    <li class="header__nav__item d-none d-md-block"><a href="#">Rent</a></li>
+                    <li class="header__nav__item"><a class="active" href="#">Customer Account</a></li>
+                    <li class="header__nav__item"><a href="#">Language</a></li>
+                    <li class="header__nav__item d-md-none"><a href="#">About</a></li>
+                </ul>
+                <div class="header__nav__footer d-md-none">
+                    Interested in Vizzit project?<br>
+                    <a href="#" target="_blank">Learn here</a> how it works!
+                    <span>
+                        © 2019 Vizzit<br>
+                        <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                    </span>
+                </div>
+            </nav>
+        </header>
+        <section class="second-nav">
+            <div class="row justify-content-center">
+
+        </section>
+        <section class="content content--chat">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-11 d-flex flex-column justify-content-md-between">
+                        <nav class="header__nav flex-md-fill">
+                            <ul class="d-flex justify-content-between">
+                                <li class="header__nav__item d-none d-md-block"><a href="#">Buy</a></li>
+                                <li class="header__nav__item d-none d-md-block"><a href="#">Rent</a></li>
+                                <li class="header__nav__item"><a class="active" href="#">Customer Account</a></li>
+                                <li class="header__nav__item"><a href="#">Language</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-12 col-md-11 col-lg-10 px-0">
+                        <div class="card-group align-items-stretch" id="accordion">
+                            <div class="card col-12 col-md-4 px-md-0">
+                                <div class="card-header d-none d-md-flex align-items-center">
+                                    My Agency
+                                </div>
+                                <div class="card-body text-center px-0 pt-md-0">
+                                    <h1 class="title smaller text-center d-md-none">My Contacts</h1>
+                                    <div class="border-bottom py-2 px-md-3 bg-white chat-search">
+                                        <input type="text" class="input input--with-icon  input--with-icon-search" placeholder="Search for a chat">
+                                    </div>
+
+                                    <div class="chat-items">
+                                        <a class="chat-item d-flex justify-content-between align-items-baseline py-2 px-md-3 border-bottom collapsed" data-toggle="collapse" href="#chat1">
+                                            <span class="d-block text-left font-weight-bold">
+                                                Agency 1
+                                                <small class="d-block text-dark">Shall we meet today?</small>
+                                            </span>
+                                            <span class="d-block text-right">
+                                                <small class="smaller d-block text-dark">5:45 PM</small>
+                                                <span class="icon--count">2</span>   
+                                            </span>
+                                        </a>
+
+                                        <a class="chat-item d-flex justify-content-between align-items-baseline py-2 px-md-3 border-bottom collapsed" data-toggle="collapse" href="#chat2">
+                                            <span class="d-block text-left font-weight-bold">
+                                                Agency 2
+                                                <small class="d-block text-dark">Shall we meet today?</small>
+                                            </span>
+                                            <span class="d-block text-right">
+                                                <small class="smaller d-block text-dark">Yesterday</small>
+                                                <span class="icon icon--check-orange"></span>   
+                                            </span>
+                                        </a>
+
+                                        <a class="chat-item d-flex justify-content-between align-items-baseline py-2 px-md-3 border-bottom collapsed" data-toggle="collapse" href="#chat3">
+                                            <span class="d-block text-left font-weight-bold">
+                                                Agency 3
+                                                <small class="d-block text-dark">Shall we meet today?</small>
+                                            </span>
+                                            <span class="d-block text-right">
+                                                <small class="smaller d-block text-dark">Friday</small>
+                                                <span class="icon icon--check-orange"></span>   
+                                            </span>
+                                        </a>
+
+                                        <a class="chat-item d-flex justify-content-between align-items-baseline py-2 px-md-3 border-bottom collapsed" data-toggle="collapse" href="#chat4">
+                                            <span class="d-block text-left font-weight-bold">
+                                                Agency 4
+                                                <small class="d-block text-dark">Shall we meet today?</small>
+                                            </span>
+                                            <span class="d-block text-right">
+                                                <small class="smaller d-block text-dark">Friday</small>
+                                                <span class="icon icon--check-orange"></span>   
+                                            </span>
+                                        </a>
+
+                                        <a class="chat-item d-flex justify-content-between align-items-baseline py-2 px-md-3 border-bottom collapsed" data-toggle="collapse" href="#chat5">
+                                            <span class="d-block text-left font-weight-bold">
+                                                Agency 5
+                                                <small class="d-block text-dark">Shall we meet today?</small>
+                                            </span>
+                                            <span class="d-block text-right">
+                                                <small class="smaller d-block text-dark">Monday</small>
+                                                 
+                                            </span>
+                                        </a>
+
+                                        <a class="chat-item d-flex justify-content-between align-items-baseline py-2 px-md-3 border-bottom collapsed" data-toggle="collapse" href="#chat6">
+                                            <span class="d-block text-left font-weight-bold">
+                                                Agency 6
+                                                <small class="d-block text-dark">Shall we meet today?</small>
+                                            </span>
+                                            <span class="d-block text-right">
+                                                <small class="smaller d-block text-dark">14/05/2019</small>
+                                                 
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- First Chat (Active Attached Document): -->
+                            <div class="card col-12 col-md-8 px-0 collapse chat-view card-animated" id="chat1" data-parent="#accordion" >                            
+                                <div class="card-header d-flex align-items-center px-3 justify-content-between">
+                                    <div class="col-1 px-0 d-md-none">
+                                        <span class="icon icon--arrow" data-toggle="collapse" href="#chat1"></span>
+                                    </div>
+                                    <div class="card-header-title col-9 col-md-8 col-lg-6 px-0">
+                                        <p class="mb-0">
+                                            Jhon Snow, France
+                                        </p>
+                                        <p class="card-subtitle small mb-0 text-nowrap">
+                                            Villiers-Sur Marne – 369 000 €
+                                        </p>
+                                        <p class="card-subtitle small smaller mb-0 text-nowrap">
+                                            Last seen today at 14:01
+                                        </p>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-6 call-block d-none d-md-block">
+                                        <a href="tel:555-33-55" class="btn btn--call-white " data-toggle="modal" data-target="#telModal"></a>  
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-6 call-block d-md-none">
+                                        <a href="tel:555-33-55" class="btn btn--call-white "></a>  
+                                    </div>
+                                    <div class="col-2 px-0 search-block" id="search_block">
+                                        <div class="form-wrap">
+                                            <input class="form-control input input--with-icon input--with-icon-search" type="text"  placeholder="">
+                                        </div>
+                                        <span class="icon icon--search"></span>
+                                        <span class="icon icon--close"></span>
+                                    </div>
+
+                                </div>
+
+                                <div class="card-body text-center p-3">
+                                    <p class="smaller text-muted date-separator">Today</p>
+                                    <div class="d-flex flex-column align-items-start flex-wrap">
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="text-msg">Lorem ipsum dolor sit amet, consec tetur adipiscing elit</div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="text-msg">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div>
+                                            <div class="time-sent smaller text-nowrap"><span class="icon icon--check-double mx-1"></span>5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="img-msg">
+                                                <img src="./images/image.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                <span class="icon icon--check-double mx-1"></span>5:45 PM
+                                            </div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                                <a href="" class="icon icon--download"></a>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                5:45 PM</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer bg-light  px-3">
+                                    <div class="attached-block d-flex flex-nowrap align-items-start">
+                                        <!-- Attached item (document): -->
+                                        <div class="doc-msg">
+                                            <small>Document.pdf</small>
+                                            <div class="doc-size smaller">12 MB</div>
+                                            <span class="icon icon--close"></span>
+                                        </div>
+
+                                        <!-- Attached item (image): -->
+                                        <!--<div class="img-msg">
+                                            <img src="./images/image.png" alt="" class="">
+                                            <span class="icon icon--close"></span>
+                                        </div>-->
+                                    </div>
+
+                                    <div class="form-block d-flex">
+                                        <input class="form-control input input--with-icon" type="text"  placeholder="Type a message...">
+                                        <input type="file" name="input_file" id="input_file" class="d-none">
+                                        <label for="input_file" class="icon icon--file"></label>
+                                        
+                                        <button type="sumbit" class="btn btn--send"></button> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Secont Chat (Active Attached Images): -->
+                            <div class="card col-12 col-md-8 px-0 collapse chat-view card-animated" id="chat2" data-parent="#accordion" >                            
+                                <div class="card-header d-flex align-items-center px-3 justify-content-between">
+                                    <div class="col-1 px-0 d-md-none">
+                                        <span class="icon icon--arrow" data-toggle="collapse" href="#chat2"></span>
+                                    </div>
+                                    <div class="card-header-title col-9 col-md-8 col-lg-6 px-0">
+                                        <p class="mb-0">
+                                            Jack London, England
+                                        </p>
+                                        <p class="card-subtitle small mb-0 text-nowrap">
+                                            Villiers-Sur Marne – 369 000 €
+                                        </p>
+                                        <p class="card-subtitle small smaller mb-0 text-nowrap">
+                                            Last seen today at 14:01
+                                        </p>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-6 call-block ">
+                                        <a href="tel:555-33-55" class="btn btn--call-white "></a>  
+                                    </div>
+                                    <div class="col-2 px-0 search-block" id="search_block">
+                                        <div class="form-wrap">
+                                            <input class="form-control input input--with-icon input--with-icon-search" type="text"  placeholder="">
+                                        </div>
+                                        <span class="icon icon--search"></span>
+                                        <span class="icon icon--close"></span>
+                                    </div>
+                                </div>
+
+                                <div class="card-body text-center p-3">
+                                    <p class="smaller text-muted date-separator">Today</p>
+                                    <div class="d-flex flex-column align-items-start flex-wrap">
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="text-msg">Lorem ipsum dolor sit amet, consec tetur adipiscing elit</div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="text-msg">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div>
+                                            <div class="time-sent smaller text-nowrap"><span class="icon icon--check-double mx-1"></span>5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="img-msg">
+                                                <img src="./images/image.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                <span class="icon icon--check-double mx-1"></span>5:45 PM
+                                            </div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                                <a href="" class="icon icon--download"></a>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                5:45 PM</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer bg-light  px-3">
+                                    <div class="attached-block d-flex flex-nowrap align-items-start">
+                                        <!-- Attached item (document): -->
+                                        <!--<div class="doc-msg">
+                                            <small>Document.pdf</small>
+                                            <div class="doc-size smaller">12 MB</div>
+                                            <span class="icon icon--close"></span>
+                                        </div>-->
+
+                                        <!-- Attached item (image): -->
+                                        <div class="img-msg">
+                                            <img src="./images/image.png" alt="" class="">
+                                            <span class="icon icon--close"></span>
+                                        </div>
+                                        <div class="img-msg">
+                                            <img src="./images/image.png" alt="" class="">
+                                            <span class="icon icon--close"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-block d-flex">
+                                        <input class="form-control input input--with-icon" type="text"  placeholder="Type a message...">
+                                        <input type="file" name="input_file" id="input_file" class="d-none">
+                                        <label for="input_file" class="icon icon--file"></label>
+                                        <button type="sumbit" class="btn btn--send"></button> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Third Chat (Without Active Attached Files): -->
+                            <div class="card col-12 col-md-8 px-0 collapse chat-view card-animated" id="chat3" data-parent="#accordion" >                            
+                                <div class="card-header d-flex align-items-center px-3 justify-content-between">
+                                    <div class="col-1 px-0 d-md-none">
+                                        <span class="icon icon--arrow" data-toggle="collapse" href="#chat3"></span>
+                                    </div>
+                                    <div class="card-header-title col-9 col-md-8 col-lg-6 px-0">
+                                        <p class="mb-0">
+                                            Jhon Snow, France
+                                        </p>
+                                        <p class="card-subtitle small mb-0 text-nowrap">
+                                            Villiers-Sur Marne – 369 000 €
+                                        </p>
+                                        <p class="card-subtitle small smaller mb-0 text-nowrap">
+                                            Last seen today at 14:01
+                                        </p>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-6 call-block">
+                                        <a href="tel:555-33-55" class="btn btn--call-white "></a>  
+                                    </div>
+                                    <div class="col-2 px-0 search-block" id="search_block">
+                                        <div class="form-wrap">
+                                            <input class="form-control input input--with-icon input--with-icon-search" type="text"  placeholder="">
+                                        </div>
+                                        <span class="icon icon--search"></span>
+                                        <span class="icon icon--close"></span>
+                                    </div>
+                                </div>
+
+                                <div class="card-body text-center p-3">
+                                    <p class="smaller text-muted date-separator">Today</p>
+                                    <div class="d-flex flex-column align-items-start flex-wrap">
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="text-msg">Lorem ipsum dolor sit amet, consec tetur adipiscing elit</div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="text-msg">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div>
+                                            <div class="time-sent smaller text-nowrap"><span class="icon icon--check-double mx-1"></span>5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="img-msg">
+                                                <img src="./images/image.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                <span class="icon icon--check-double mx-1"></span>5:45 PM
+                                            </div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                                <a href="" class="icon icon--download"></a>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                5:45 PM</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer bg-light  px-3">
+                                    <div class="attached-block d-flex flex-nowrap align-items-start">
+                                        <!-- Attached item (document): -->
+                                        <!--<div class="doc-msg">
+                                            <small>Document.pdf</small>
+                                            <div class="doc-size smaller">12 MB</div>
+                                            <span class="icon icon--close"></span>
+                                        </div>-->
+
+                                        <!-- Attached item (image): -->
+                                        <!--<div class="img-msg">
+                                            <img src="./images/image.png" alt="" class="">
+                                            <span class="icon icon--close"></span>
+                                        </div>-->
+                                    </div>
+
+                                    <div class="form-block d-flex">
+                                        <input class="form-control input input--with-icon" type="text"  placeholder="Type a message...">
+                                        <input type="file" name="input_file" id="input_file" class="d-none">
+                                        <label for="input_file" class="icon icon--file"></label>
+                                        <button type="sumbit" class="btn btn--send"></button> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4th Chat -->
+                            <div class="card col-12 col-md-8 px-0 collapse chat-view card-animated" id="chat4" data-parent="#accordion" >                            
+                                <div class="card-header d-flex align-items-center px-3 justify-content-between">
+                                    <div class="col-1 px-0 d-md-none">
+                                        <span class="icon icon--arrow" data-toggle="collapse" href="#chat4"></span>
+                                    </div>
+                                    <div class="card-header-title col-9 col-md-8 col-lg-6 px-0">
+                                        <p class="mb-0">
+                                            Jhon Snow, France
+                                        </p>
+                                        <p class="card-subtitle small mb-0 text-nowrap">
+                                            Villiers-Sur Marne – 369 000 €
+                                        </p>
+                                        <p class="card-subtitle small smaller mb-0 text-nowrap">
+                                            Last seen today at 14:01
+                                        </p>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-6 call-block">
+                                        <a href="tel:555-33-55" class="btn btn--call-white "></a>  
+                                    </div>
+                                    <div class="col-2 px-0 search-block" id="search_block">
+                                        <div class="form-wrap">
+                                            <input class="form-control input input--with-icon input--with-icon-search" type="text"  placeholder="">
+                                        </div>
+                                        <span class="icon icon--search"></span>
+                                        <span class="icon icon--close"></span>
+                                    </div>
+                                </div>
+
+                                <div class="card-body text-center p-3">
+                                    <p class="smaller text-muted date-separator">Today</p>
+                                    <div class="d-flex flex-column align-items-start flex-wrap">
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="text-msg">Lorem ipsum dolor sit amet, consec tetur adipiscing elit</div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="text-msg">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div>
+                                            <div class="time-sent smaller text-nowrap"><span class="icon icon--check-double mx-1"></span>5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="img-msg">
+                                                <img src="./images/image.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                <span class="icon icon--check-double mx-1"></span>5:45 PM
+                                            </div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                                <a href="" class="icon icon--download"></a>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                5:45 PM</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer bg-light  px-3">
+                                    <div class="attached-block d-flex flex-nowrap align-items-start">
+                                        <!-- Attached item (document): -->
+                                        <!--<div class="doc-msg">
+                                            <small>Document.pdf</small>
+                                            <div class="doc-size smaller">12 MB</div>
+                                            <span class="icon icon--close"></span>
+                                        </div>-->
+
+                                        <!-- Attached item (image): -->
+                                        <!--<div class="img-msg">
+                                            <img src="./images/image.png" alt="" class="">
+                                            <span class="icon icon--close"></span>
+                                        </div>-->
+                                    </div>
+
+                                    <div class="form-block d-flex">
+                                        <input class="form-control input input--with-icon" type="text"  placeholder="Type a message...">
+                                        <input type="file" name="input_file" id="input_file" class="d-none">
+                                        <label for="input_file" class="icon icon--file"></label>
+                                        <button type="sumbit" class="btn btn--send"></button> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 5th Chat -->
+                            <div class="card col-12 col-md-8 px-0 collapse chat-view card-animated" id="chat5" data-parent="#accordion" >                            
+                                <div class="card-header d-flex align-items-center px-3 justify-content-between">
+                                    <div class="col-1 px-0 d-md-none">
+                                        <span class="icon icon--arrow" data-toggle="collapse" href="#chat5"></span>
+                                    </div>
+                                    <div class="card-header-title col-9 col-md-8 col-lg-6 px-0">
+                                        <p class="mb-0">
+                                            Jhon Snow, France
+                                        </p>
+                                        <p class="card-subtitle small mb-0 text-nowrap">
+                                            Villiers-Sur Marne – 369 000 €
+                                        </p>
+                                        <p class="card-subtitle small smaller mb-0 text-nowrap">
+                                            Last seen today at 14:01
+                                        </p>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-6 call-block">
+                                        <a href="tel:555-33-55" class="btn btn--call-white "></a>  
+                                    </div>
+                                    <div class="col-2 px-0 search-block" id="search_block">
+                                        <div class="form-wrap">
+                                            <input class="form-control input input--with-icon input--with-icon-search" type="text"  placeholder="">
+                                        </div>
+                                        <span class="icon icon--search"></span>
+                                        <span class="icon icon--close"></span>
+                                    </div>
+                                </div>
+
+                                <div class="card-body text-center p-3">
+                                    <p class="smaller text-muted date-separator">Today</p>
+                                    <div class="d-flex flex-column align-items-start flex-wrap">
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="text-msg">Lorem ipsum dolor sit amet, consec tetur adipiscing elit</div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="text-msg">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div>
+                                            <div class="time-sent smaller text-nowrap"><span class="icon icon--check-double mx-1"></span>5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="img-msg">
+                                                <img src="./images/image.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                <span class="icon icon--check-double mx-1"></span>5:45 PM
+                                            </div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                                <a href="" class="icon icon--download"></a>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                5:45 PM</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer bg-light  px-3">
+                                    <div class="attached-block d-flex flex-nowrap align-items-start">
+                                        <!-- Attached item (document): -->
+                                        <!--<div class="doc-msg">
+                                            <small>Document.pdf</small>
+                                            <div class="doc-size smaller">12 MB</div>
+                                            <span class="icon icon--close"></span>
+                                        </div>-->
+
+                                        <!-- Attached item (image): -->
+                                        <!--<div class="img-msg">
+                                            <img src="./images/image.png" alt="" class="">
+                                            <span class="icon icon--close"></span>
+                                        </div>-->
+                                    </div>
+
+                                    <div class="form-block d-flex">
+                                        <input class="form-control input input--with-icon" type="text"  placeholder="Type a message...">
+                                        <input type="file" name="input_file" id="input_file" class="d-none">
+                                        <label for="input_file" class="icon icon--file"></label>
+                                        <button type="sumbit" class="btn btn--send"></button> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 6th Chat -->
+                            <div class="card col-12 col-md-8 px-0 collapse chat-view card-animated" id="chat6" data-parent="#accordion" >                            
+                                <div class="card-header d-flex align-items-center px-3 justify-content-between">
+                                    <div class="col-1 px-0 d-md-none">
+                                        <span class="icon icon--arrow" data-toggle="collapse" href="#chat6"></span>
+                                    </div>
+                                    <div class="card-header-title col-9 col-md-8 col-lg-6 px-0">
+                                        <p class="mb-0">
+                                            Jhon Snow, France
+                                        </p>
+                                        <p class="card-subtitle small mb-0 text-nowrap">
+                                            Villiers-Sur Marne – 369 000 €
+                                        </p>
+                                        <p class="card-subtitle small smaller mb-0 text-nowrap">
+                                            Last seen today at 14:01
+                                        </p>
+                                    </div>
+                                    <div class="col-2 col-md-4 col-lg-6 call-block">
+                                        <a href="tel:555-33-55" class="btn btn--call-white "></a>  
+                                    </div>
+                                    <div class="col-2 px-0 search-block" id="search_block">
+                                        <div class="form-wrap">
+                                            <input class="form-control input input--with-icon input--with-icon-search" type="text"  placeholder="">
+                                        </div>
+                                        <span class="icon icon--search"></span>
+                                        <span class="icon icon--close"></span>
+                                    </div>
+                                </div>
+
+                                <div class="card-body text-center p-3">
+                                    <p class="smaller text-muted date-separator">Today</p>
+                                    <div class="d-flex flex-column align-items-start flex-wrap">
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="text-msg">Lorem ipsum dolor sit amet, consec tetur adipiscing elit</div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="text-msg">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div>
+                                            <div class="time-sent smaller text-nowrap"><span class="icon icon--check-double mx-1"></span>5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="img-msg">
+                                                <img src="./images/image.png" alt="" class="img-fluid">
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">5:45 PM</div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--right">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                <span class="icon icon--check-double mx-1"></span>5:45 PM
+                                            </div>
+                                        </div>
+                                        <div class="speech-bubble speech-bubble--left">
+                                            <div class="doc-msg">
+                                                <small>Document.pdf</small>
+                                                <a href="" class="icon icon--download"></a>
+                                            </div>
+                                            <div class="time-sent smaller text-nowrap">
+                                                <div class="doc-size smaller">12 MB</div>
+                                                5:45 PM</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer bg-light  px-3">
+                                    <div class="attached-block d-flex flex-nowrap align-items-start">
+                                        <!-- Attached item (document): -->
+                                        <!--<div class="doc-msg">
+                                            <small>Document.pdf</small>
+                                            <div class="doc-size smaller">12 MB</div>
+                                            <span class="icon icon--close"></span>
+                                        </div>-->
+
+                                        <!-- Attached item (image): -->
+                                        <!--<div class="img-msg">
+                                            <img src="./images/image.png" alt="" class="">
+                                            <span class="icon icon--close"></span>
+                                        </div>-->
+                                    </div>
+
+                                    <div class="form-block d-flex">
+                                        <input class="form-control input input--with-icon" type="text"  placeholder="Type a message...">
+                                        <input type="file" name="input_file" id="input_file" class="d-none">
+                                        <label for="input_file" class="icon icon--file"></label>
+                                        <button type="sumbit" class="btn btn--send"></button> 
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+
+        <footer class="footer footer--global footer--chat d-none d-md-flex align-items-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col d-flex justify-content-between align-items-center pr-5 pl-5">
+                        <div class="footer--global__nav">
+                            <ul class="list-unstyled m-0">
+                                <li class="list-inline-item"><a href="#">About</a></li>
+                                <li class="list-inline-item"><a href="#">Agency Section</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer--global__details">
+                            Interested in Vizzit project? <a href="#" target="_blank">Learn here</a> how it works!
+                        </div>
+                        <div class="footer--global__nav">
+                            © 2019 Vizzit - <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal fade tel-modal" id="telModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header pb-3">
+                    <h5 class="modal-title">Phone</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body text-center">
+                    <h5 class="">Jhon Snow, France</h5>
+                    <span class="icon d-inline-block">
+                        <img src="images/flag.svg" class="img-fluid">
+                    </span>
+                    <a href="tel:+33470082660" class="tel-link">+33 4 70 08 26 60</a> 
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
+    </script>
+    <script>(window.jQuery||document.write("\u003Cscript src=\u0022\/lib\/jquery\/dist\/jquery.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script>($.fn.modal||document.write("\u003Cscript src=\u0022\/lib\/bootstrap\/js\/bootstrap.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script>(Popper||document.write("\u003Cscript src=\u0022\/lib\/popper\/dist\/js\/popper.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script type="text/javascript" defer>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+        {
+            document.write('<script src="/js/polyfill.js"><\/script>');
+            document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CArray.prototype.includes%2CString.prototype.includes%2CObject.assign%2CArray.prototype.findIndex%2CArray.prototype.find%2CArray.from%2CCustomEvent%2Cfetch%2Ces5%2CElement.prototype.classList%2CrequestAnimationFrame"><\/script>');
+        }
+    </script>
+
+    
+
+    <script type="text/javascript" src="./js/navigation.js"></script>
+    <script type="text/javascript" src="./js/chat.js"></script>
+    
+
+</body>
+</html>

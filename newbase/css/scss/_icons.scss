@@ -92,4 +92,40 @@
     display: inline-block;
     margin-right: 0.5rem;
   }
+  &--visible {
+    background-image: $icon-visible;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+  }
+  &--invisible {
+    background-image: $icon-invisible;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+  }
+  &--favorite-gray {
+    background-image: $icon-favorite-gray;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+  }
+  &--msg-gray {
+    background-image: $icon-msg-gray;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+  }
+  &--alert-gray {
+    background-image: $icon-alert-gray;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+  }
+  &--user-gray {
+    background-image: $icon-user-gray;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+  }
 }

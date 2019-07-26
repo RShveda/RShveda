@@ -1,7 +1,7 @@
 ﻿
 document.addEventListener('DOMContentLoaded', function () {
 
-    /******** Material Outlined Inputs Floating Label (for MS Edge Support) ********/
+    /******** Material Outlined Inputs Floating Label ********/
     let mdnputs = document.getElementsByClassName('md-input');
     // Iterate throught all "outlinedInputs"
     for (var i = 0; i < mdnputs.length; i++) {
@@ -19,5 +19,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 event.target.classList.remove("focused");
         });
     }
+
+    /**** Material Outlined Inputs Show/Hide Password ****/
+    let passbtns = document.getElementsByClassName('btn--pass-visible');
+    for (var i = 0; i < passbtns.length; i++) {
+        let passinputTemp = passbtns.item(i).nextElementSibling;
+        passbtns.item(i).addEventListener('click', function (event) {
+            event.target.classList.toggle("active");
+            passinputTemp.type = passinputTemp.type === "password" ? passinputTemp.type = "text" : passinputTemp.type = "password";
+        })
+    }
+
 });
 
