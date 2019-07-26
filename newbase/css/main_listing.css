@@ -6315,12 +6315,12 @@ a.nounderline {
       .md-textfield-outlined input + span::before, .md-textfield-outlined textarea + span::before {
         margin-right: 4px;
         border-left: solid 1px transparent;
-        border-radius: 4px 0; }
+        border-radius: 5px 0; }
       .md-textfield-outlined input + span::after, .md-textfield-outlined textarea + span::after {
         flex-grow: 1;
         margin-left: 4px;
         border-right: solid 1px transparent;
-        border-radius: 0 4px; }
+        border-radius: 0 5px; }
   .md-textfield-outlined:hover > input, .md-textfield-outlined:hover > textarea {
     border-color: #ee650d;
     border-top-color: transparent; }

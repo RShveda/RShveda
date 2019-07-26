@@ -10,6 +10,11 @@
     left: 12px;
     background-position: center right 15px;
   }
+  &--pass-visible {
+    right: auto;
+    right: unset;
+    left: 12px;
+  }
   @include media-breakpoint-up(lg) {
     &--alert {
       padding: 0 26px 0 0;

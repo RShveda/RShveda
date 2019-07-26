@@ -57,6 +57,43 @@
     &--dropdown {
         background-position: left 10px center;
     }
+    &--verif {
+        padding-left: 14px;
+        padding-right: 0;
+    }
+    &--with-icon-pass {
+        padding-left: 3rem;
+        padding-right: 14px;
+    }
+}
+/* ------------- Material Outlined Textfields (Input, Textarea) -------------- */
+.md-textfield-outlined {
+    input, textarea {
+        & + span {
+            left: auto;
+            left: unset;
+            right: 0;
+            &::before {
+                margin-right: auto;
+                margin-right: unset;
+                margin-left: 4px;
+
+                border-left: none;
+                border-right: solid 1px transparent;
+                border-radius: 0 4px;
+            }
+            &::after {
+                flex-grow: 1;
+                margin-left: auto;
+                margin-left: unset;
+                margin-right: 5px;
+
+                border-right: none;
+                border-left: solid 1px transparent;
+                border-radius: 5px 0;
+            }
+        }
+    }
 }
 
 /*--------------------------------------------*/

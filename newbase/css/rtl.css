@@ -10,6 +10,10 @@
   right: unset;
   left: 12px;
   background-position: center right 15px; }
+.btn--pass-visible {
+  right: auto;
+  right: unset;
+  left: 12px; }
 @media (min-width: 992px) {
   .btn--alert {
     padding: 0 26px 0 0;
@@ -106,6 +110,33 @@
   padding-right: 14px; }
   .input--dropdown {
     background-position: left 10px center; }
+  .input--verif {
+    padding-left: 14px;
+    padding-right: 0; }
+  .input--with-icon-pass {
+    padding-left: 3rem;
+    padding-right: 14px; }
+
+/* ------------- Material Outlined Textfields (Input, Textarea) -------------- */
+.md-textfield-outlined input + span, .md-textfield-outlined textarea + span {
+  left: auto;
+  left: unset;
+  right: 0; }
+  .md-textfield-outlined input + span::before, .md-textfield-outlined textarea + span::before {
+    margin-right: auto;
+    margin-right: unset;
+    margin-left: 4px;
+    border-left: none;
+    border-right: solid 1px transparent;
+    border-radius: 0 4px; }
+  .md-textfield-outlined input + span::after, .md-textfield-outlined textarea + span::after {
+    flex-grow: 1;
+    margin-left: auto;
+    margin-left: unset;
+    margin-right: 5px;
+    border-right: none;
+    border-left: solid 1px transparent;
+    border-radius: 5px 0; }
 
 /*--------------------------------------------*/
 /*                  Home                   */
