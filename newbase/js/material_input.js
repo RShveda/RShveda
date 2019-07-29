@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
         verifinputs.item(i).addEventListener('focus', function (event) {
+            event.preventDefault();
             event.target.select();
         }, true)
     }
