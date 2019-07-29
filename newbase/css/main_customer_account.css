@@ -6620,12 +6620,13 @@ a.nounderline {
       padding-right: 3rem; }
   .input--verif {
     border-color: #ee650d;
-    letter-spacing: 1rem;
-    width: 160px;
-    margin: auto;
-    display: block;
+    width: 46px;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    display: inline-block;
     font-size: 1.2rem;
-    text-align: center; }
+    text-align: center;
+    padding-left: 0; }
     .input--verif:focus {
       border-color: #ee650d; }
 

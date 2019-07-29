@@ -90,21 +90,21 @@ a.nounderline {
       }
     }
     &--verif {
-        border-color: $primary;
-        letter-spacing: 1rem;
-        width: 160px;
-        margin: auto;
-        display: block;
-        font-size: 1.2rem;
-        text-align: center;
         // border-color: $primary;
-        // width: 46px;
-        // margin-left: 0.25rem;
-        // margin-right: 0.25rem;
-        // display: inline-block;
+        // letter-spacing: 1rem;
+        // width: 160px;
+        // margin: auto;
+        // display: block;
         // font-size: 1.2rem;
         // text-align: center;
-        // padding-left: 0;
+        border-color: $primary;
+        width: 46px;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+        display: inline-block;
+        font-size: 1.2rem;
+        text-align: center;
+        padding-left: 0;
         &:focus {
             border-color: $primary;
         }
