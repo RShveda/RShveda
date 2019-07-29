@@ -33,7 +33,12 @@
 .chat-item {
     position: relative;
     color: $darkblue;
-    .icon--count {
+    line-height: 1rem;
+    font-size: 0.875rem;
+    div {
+        position: relative;
+    }
+    .icon--count, .icon--check-orange {
         position: absolute;
         bottom: 0.75rem;
         right: 0;
@@ -43,5 +48,16 @@
     }
 }
 .chat-image {
+    width: 70px;
+    height: 60px;
+    min-width: 70px;
+    max-width: 70px;
     margin-right: 0.5rem;
+    overflow: hidden;
+    @include media-breakpoint-up(sm) {
+        width: 67px;
+        min-width: 67px;
+        max-width: 67px;
+        height: 50px;
+    }
 }

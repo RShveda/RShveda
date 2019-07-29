@@ -6976,17 +6976,32 @@ a.nounderline {
 
 .chat-item {
   position: relative;
-  color: #233034; }
-  .chat-item .icon--count {
+  color: #233034;
+  line-height: 1rem;
+  font-size: 0.875rem; }
+  .chat-item div {
+    position: relative; }
+  .chat-item .icon--count, .chat-item .icon--check-orange {
     position: absolute;
     bottom: 0.75rem;
     right: 0; }
     @media (min-width: 768px) {
-      .chat-item .icon--count {
+      .chat-item .icon--count, .chat-item .icon--check-orange {
         right: 0.5rem; } }
 
 .chat-image {
-  margin-right: 0.5rem; }
+  width: 70px;
+  height: 60px;
+  min-width: 70px;
+  max-width: 70px;
+  margin-right: 0.5rem;
+  overflow: hidden; }
+  @media (min-width: 576px) {
+    .chat-image {
+      width: 67px;
+      min-width: 67px;
+      max-width: 67px;
+      height: 50px; } }
 
 @media (min-width: 768px) {
   .footer--home {
