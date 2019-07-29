@@ -34,10 +34,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let verifinputs = document.getElementsByClassName('input--verif');
     for (var i = 0; i < verifinputs.length; i++) {
         verifinputs.item(i).addEventListener('input', function (event) {
-            if (event.target.value.length)
-                event.target.nextElementSibling.focus();
+            if (event.target.value.length){
+                if (event.target.nextElementSibling !== null)
+                    event.target.nextElementSibling.focus();
+            }
+                
             else {
-                event.target.previousElementSibling.select();
+                if (event.target.previousElementSibling !== null) {
+                    event.target.previousElementSibling.focus();
+                    event.target.previousElementSibling.select();
+                }
             }
         })
     }
