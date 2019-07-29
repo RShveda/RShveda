@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             else {
                 if (event.target.previousElementSibling !== null) {
                     event.target.previousElementSibling.focus();
+                    event.target.previousElementSibling.click();
                     event.target.previousElementSibling.select();
                 }
             }
