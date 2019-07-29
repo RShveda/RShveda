@@ -231,6 +231,16 @@
     background-image: $icon-send-gray;
     right: 0;
   }
+
+  &--more {
+    width: 24px;
+    height: 40px;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: $icon-more;
+  }
+
   &--pass-visible {
     width: 1.5rem;
     height: 1.5rem;

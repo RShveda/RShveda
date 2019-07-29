@@ -17,8 +17,14 @@
 
     Array.from(close_search_icons).forEach(function(item) {
         item.addEventListener('click', function(event) {
-            let search_block = item.parentNode;
-            search_block.classList.remove('active');
+            let search_block; 
+            if (!event.target.classList.contains("icon--close-dropdown")) {
+                search_block = item.parentNode;
+                search_block.classList.remove('active');
+            } else {
+                search_block = item.parentNode.parentNode;
+                search_block.classList.remove('active');
+            }
         });
     });
     /**** Search Animation End ****/
@@ -55,7 +61,17 @@
             input_block.classList.remove('focused');
         }, true);
     });
-    
+
+
+
+    let search_items = document.querySelectorAll('.search-item');
+    Array.from(search_items).forEach(function(item) {
+        item.addEventListener('click', function(event) {
+            event.stopImmediatePropagation();
+            // event.target.previousElementSibling.classList.remove("d-none");
+            event.target.parentNode.classList.add("active");
+        });
+    });
 
 });
 

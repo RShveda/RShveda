@@ -47,6 +47,9 @@
   &--search-white {
     background-image: $icon-search-white;
   }
+  &--search-orange {
+    background-image: $icon-search-orange;
+  }
   &--close {
     background-image: $icon-close;
   }
@@ -136,5 +139,15 @@
     display: inline-block;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+  }
+  &--more {
+    background-image: $icon-more;
+    background-size: auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+  }
+  &--delete-orange {
+    background-image: $icon-delete-orange;
   }
 }
