@@ -42,11 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
             else {
                 if (event.target.previousElementSibling !== null) {
                     event.target.previousElementSibling.focus();
-                    event.target.previousElementSibling.click();
-                    event.target.previousElementSibling.select();
+                    // event.target.previousElementSibling.click();
+                    // event.target.previousElementSibling.select();
                 }
             }
         })
+        verifinputs.item(i).addEventListener('focus', function (event) {
+            event.target.select();
+        }, true)
     }
 
 });
