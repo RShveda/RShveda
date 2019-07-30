@@ -41,6 +41,9 @@
 }
 
 /**** Chat List Item ****/
+.chat-search {
+    z-index: 1;
+}
 .chat-item {
     position: relative;
     color: $darkblue;
@@ -88,6 +91,8 @@
     font-size: 0.875rem;
     @include media-breakpoint-up(md) {
         top: 0;
+        height: 100%;
+        min-height: 100%;
     }
     .card-header {
         color: $darkblue;

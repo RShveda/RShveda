@@ -6562,6 +6562,10 @@ a.nounderline {
 .dropdown-menu {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); }
 
+.window-fixed {
+  position: fixed;
+  width: 100%; }
+
 /* ------------- Animation Favorite -------------- */
 @keyframes icon-favorites-added {
   0% {
@@ -7196,6 +7200,9 @@ a.nounderline {
     margin-top: -50px; } }
 
 /**** Chat List Item ****/
+.chat-search {
+  z-index: 1; }
+
 .chat-item {
   position: relative;
   color: #233034;
@@ -7239,7 +7246,9 @@ a.nounderline {
   font-size: 0.875rem; }
   @media (min-width: 768px) {
     .card-animated {
-      top: 0; } }
+      top: 0;
+      height: 100%;
+      min-height: 100%; } }
   .card-animated .card-header {
     color: #233034;
     line-height: 1rem;
