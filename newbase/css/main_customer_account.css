@@ -7173,6 +7173,7 @@ a.nounderline {
 .wrapper--chat.window-fixed {
   position: fixed;
   width: 100%;
+  min-height: 320px;
   top: 0; }
 
 /**** Second Level Navigation ****/
