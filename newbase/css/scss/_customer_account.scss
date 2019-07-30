@@ -1,3 +1,12 @@
+.header--chat {
+    .header__logo {
+        .logo{
+            &.icon {
+                width: 1rem;
+            }
+        }
+    }
+}
 /**** Second Level Navigation ****/
 .second-nav {
     .header__nav {
@@ -56,6 +65,13 @@
     max-width: 70px;
     margin-right: 0.5rem;
     overflow: hidden;
+    .property-details & {
+        width: 93px;
+        height: 80px;
+        min-width: 93px;
+        max-width: 93px;
+        border-radius: 0.25rem;
+    }
     @include media-breakpoint-up(sm) {
         width: 67px;
         min-width: 67px;
@@ -67,6 +83,9 @@
 /**** Chat Item ****/
 .card-animated {
     top: 50px;
+    height: calc(100% - 50px);
+    min-height: calc(100% - 50px);
+    font-size: 0.875rem;
     @include media-breakpoint-up(md) {
         top: 0;
     }
@@ -137,5 +156,24 @@
     }
     @include media-breakpoint-up(md) {
         transform: translate3d(-110px, 40px, 0px) !important;
+    }
+}
+
+.speech-bubble {
+    &--center {
+        background-color: $gray-400;
+        color: $dark;
+        border-radius: 0.25rem;
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 0.5rem;
+        font-family: 'OpenSans Semibold';
+    }
+    a {
+        color: $white;
+        font-family: 'OpenSans Semibold';
+        text-decoration: underline;
+        display: block;
+        padding: 0.5rem 0.25rem 0;
     }
 }
