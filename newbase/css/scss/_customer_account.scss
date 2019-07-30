@@ -141,6 +141,9 @@
         display: none;
         align-items: center;
         padding: 0 0.5rem;
+        input {
+            width: calc(100% - 2rem);
+        }
         .icon {
             width: 1.5rem;
             height: 1.5rem;

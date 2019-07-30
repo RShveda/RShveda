@@ -7287,6 +7287,8 @@ a.nounderline {
   display: none;
   align-items: center;
   padding: 0 0.5rem; }
+  .search-dropdown .form-wrap input {
+    width: calc(100% - 2rem); }
   .search-dropdown .form-wrap .icon {
     width: 1.5rem;
     height: 1.5rem;
