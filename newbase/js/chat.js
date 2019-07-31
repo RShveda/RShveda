@@ -98,7 +98,6 @@ function toggleChatView(chat_first, chat_item_first) {
     
     if (window.innerWidth > 767) {
         fixChatView(false);
-        chat_search.classList.remove("not-sticky");
         if (chat_shown == null) {
             chat_first.classList.add("show");
             chat_item_first.classList.remove("collapsed");
@@ -138,5 +137,7 @@ function unStickyChatSearch(chat_search) {
             chat_search.classList.remove("not-sticky");
         }
         lastScrollTop = st <= 0 ? 0 : st;
-    } 
+    } else {
+        chat_search.classList.remove("not-sticky");
+    }
 }

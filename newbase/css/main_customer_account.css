@@ -7176,6 +7176,17 @@ a.nounderline {
   min-height: 320px;
   top: 0; }
 
+.card-without-chats .btn {
+  width: 100%; }
+@media (min-width: 768px) {
+  .card-without-chats {
+    height: calc(100vh - 300px); } }
+@media (min-width: 992px) {
+  .card-without-chats {
+    height: calc(100vh - 340px); }
+    .card-without-chats .btn {
+      width: 270px; } }
+
 /**** Second Level Navigation ****/
 .second-nav .header__nav {
   transform: translateX(0);
