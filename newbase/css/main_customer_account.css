@@ -7242,9 +7242,6 @@ a.nounderline {
 
 /**** Chat Item ****/
 .card-animated {
-  top: 50px;
-  height: calc(100% - 50px);
-  min-height: calc(100% - 50px);
   font-size: 0.875rem; }
   @media (min-width: 768px) {
     .card-animated {

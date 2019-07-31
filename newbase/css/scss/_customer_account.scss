@@ -94,9 +94,9 @@
 
 /**** Chat Item ****/
 .card-animated {
-    top: 50px;
-    height: calc(100% - 50px);
-    min-height: calc(100% - 50px);
+    // top: 50px;
+    // height: calc(100% - 50px);
+    // min-height: calc(100% - 50px);
     font-size: 0.875rem;
     @include media-breakpoint-up(md) {
         top: 0;
