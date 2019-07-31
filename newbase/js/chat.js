@@ -59,9 +59,9 @@
         toggleChatView(chat_first, chat_item_first);
     });
 
-    let lastScrollTop = 0;
+    
     window.addEventListener("scroll", function(){
-        unStickyChatSearch();
+        unStickyChatSearch(chat_search);
     })
 
     /**** Toggle ChatView (Mobile) End ****/
@@ -126,7 +126,8 @@ function fixChatView(status) {
 }
 
 // Toggle Chat Search sticky/not sticky if scroll up/down (for mobile):
-function unStickyChatSearch() {
+let lastScrollTop = 0;
+function unStickyChatSearch(chat_search) {
     let st = window.pageYOffset || document.documentElement.scrollTop; 
     if (window.innerWidth < 768) {
         if (st > lastScrollTop){
