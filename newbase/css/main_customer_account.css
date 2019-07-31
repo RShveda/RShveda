@@ -7204,6 +7204,8 @@ a.nounderline {
 /**** Chat List Item ****/
 .chat-search {
   z-index: 1; }
+  .chat-search.not-sticky {
+    position: relative; }
 
 .chat-item {
   position: relative;

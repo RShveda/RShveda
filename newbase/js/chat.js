@@ -5,8 +5,9 @@
         chat_items = document.querySelectorAll('.chat-item'),
         chat_first = document.querySelector(".card-animated"),
         chat_item_first = document.querySelector(".chat-item"),
-        chat_inputs = document.querySelectorAll('.card-footer .input'),
-        chat_back_btns = document.querySelectorAll('.icon--arrow');
+        // chat_inputs = document.querySelectorAll('.card-footer .input'),
+        chat_back_btns = document.querySelectorAll('.icon--arrow'),
+        chat_search = document.querySelector('.chat-search');
 
     /**** Search Animation Start ****/
     Array.from(search_icons).forEach(function(item) {
@@ -58,6 +59,11 @@
         toggleChatView(chat_first, chat_item_first);
     });
 
+    let lastScrollTop = 0;
+    window.addEventListener("scroll", function(){
+        unStickyChatSearch();
+    })
+
     /**** Toggle ChatView (Mobile) End ****/
 
     
@@ -92,6 +98,7 @@ function toggleChatView(chat_first, chat_item_first) {
     
     if (window.innerWidth > 767) {
         fixChatView(false);
+        chat_search.classList.remove("not-sticky");
         if (chat_shown == null) {
             chat_first.classList.add("show");
             chat_item_first.classList.remove("collapsed");
@@ -116,4 +123,19 @@ function fixChatView(status) {
     } else {
         chat_wrapper.classList.remove("window-fixed");
     }
+}
+
+// Toggle Chat Search sticky/not sticky if scroll up/down (for mobile):
+function unStickyChatSearch() {
+    let st = window.pageYOffset || document.documentElement.scrollTop; 
+    if (window.innerWidth < 768) {
+        if (st > lastScrollTop){
+            // downscroll code
+            chat_search.classList.add("not-sticky");
+        } else {
+            // upscroll code
+            chat_search.classList.remove("not-sticky");
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
+    } 
 }

@@ -52,6 +52,9 @@
 /**** Chat List Item ****/
 .chat-search {
     z-index: 1;
+    &.not-sticky {
+        position: relative;
+    }
 }
 .chat-item {
     position: relative;
