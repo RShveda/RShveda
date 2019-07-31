@@ -59,7 +59,9 @@
         }
     }
     @include media-breakpoint-up(md) {
-        margin-top: -50px;
+        .wrapper--chat & {
+            margin-top: -50px;
+        }
     } 
 }
 

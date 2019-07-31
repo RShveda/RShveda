@@ -1,0 +1,584 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Vizzit</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css" />
+    <meta name="x-stylesheet-fallback-test" content="" class="swiper-container" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("position","relative",["\/lib\/swiper\/dist\/swiper.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+    
+    <link rel="stylesheet" href="./css/main_customer_account.css" />
+
+</head>
+
+<body>
+    <div class="wrapper wrapper--listing d-flex flex-column justify-content-md-between">
+        
+        <header class="header header--chat d-flex justify-content-end d-print-none">
+            <div class="header__logo d-flex align-items-center">
+                <a href="home.html" class="d-none d-md-flex">
+                    <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+                </a>
+                <a href="home.html" class="d-flex d-md-none">
+                    <span class="logo icon icon--close"></span>
+                </a>
+            </div>
+            
+            <button class="header__button btn btn--nav d-md-none" id="btn_nav">
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+            </button>
+            <nav class="header__nav flex-md-fill" id="nav_panel">
+                <div class="header__nav__top d-flex justify-content-between align-items-center d-md-none">
+                    <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+                    <button class="btn btn--close" id="btn_nav__close">
+                        <span class="btn--close__line"></span>
+                        <span class="btn--close__line"></span>
+                    </button>
+                </div>
+                <ul class="d-md-flex justify-content-end">
+                    <li class="header__nav__item d-none d-md-block"><a href="#">Buy</a></li>
+                    <li class="header__nav__item d-none d-md-block"><a href="#">Rent</a></li>
+                    <li class="header__nav__item"><a class="active" href="#">Customer Account</a></li>
+                    <li class="header__nav__item"><a href="#">Language</a></li>
+                    <li class="header__nav__item d-md-none"><a href="#">About</a></li>
+                </ul>
+                <div class="header__nav__footer d-md-none">
+                    Interested in Vizzit project?<br>
+                    <a href="#" target="_blank">Learn here</a> how it works!
+                    <span>
+                        © 2019 Vizzit<br>
+                        <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                    </span>
+                </div>
+            </nav>
+        </header>
+        <section class="second-nav px-3">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-11 col-lg-10 px-md-0 d-flex flex-column justify-content-between">
+                    <nav class="header__nav  flex-md-fill border-bottom">
+                        <ul class="d-flex justify-content-between px-0">
+                            <li class="header__nav__item col px-0"><a href="#" class="justify-content-center  active"><i class="icon icon--favorite-gray"></i><span class="d-none d-md-inline">Favorites</span></a></li>
+                            <li class="header__nav__item col px-0"><a class="justify-content-center" href="#"><i class="icon icon--msg-gray"></i><span class="d-none d-md-inline">Messenger</span></a></li>
+                            <li class="header__nav__item col px-0"><a  href="#" class="justify-content-center"><i class="icon icon--alert-gray"></i><span class="d-none d-md-inline text-nowrap">My research & alerts</span></a></li>
+                            <li class="header__nav__item col px-0"><a href="#" class="justify-content-center"><i class="icon icon--user-gray"></i><span class="d-none d-md-inline">My account</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <section class="content content--favorites">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <!-- if there are no favorites: -->
+                    <!-- <div class="col-12 col-md-11 col-lg-10 pt-5 pt-md-0 text-center card-without-chats">
+                        <p>You do not have favorites yet.</p>
+                        <a href="advert.html">
+                            <button class="btn btn--main my-2">Make your first search</button>
+                        </a>
+                    </div> -->
+                    <div class="col-12 col-md-11 col-lg-10 px-0 ">
+                        <div class="card-group align-items-stretch justify-content-center">
+                            <div class="col-12 col-md-9 col-xl-7 py-1 py-md-2">
+                                <div class="py-2 bg-white chat-search">
+                                    <input type="text" class="input input--with-icon  input--with-icon-search" placeholder="Search for a favorites">
+                                </div>
+                            </div>
+                            <div class="col-12 px-md-0">
+                                <div class="content--listing__grid d-md-flex flex-md-wrap justify-content-between">
+
+                                    <div class="listing__item listing__item--large">
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-photos icon icon--photos">2</i>
+                                        <div class="item__img-area">
+                                            <div class="swiper-container">
+                                                <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_1.jpg?636912981550000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_2.jpg?636912981550000000" />
+                                                        </a>
+                                                </div>
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                                
+                                        </div>
+                                        <div class="item__content-area ">
+                                            <a target="_blank" class="item__link" href="/property/57764a-studiolebrun">
+                                                <p class="item__price">
+                                                    210000 &#x20AC;
+                                                </p>
+                                                <div class="item__short-description small mb-3 ">
+                                                    Rue des Marronniers - 5 min m&#xE9;tro La Muette et 3 min Rer C .
+                                                </div>
+                                                <div class="item__main-details">
+                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--area"></i>20 m<sup>2</sup>
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--room"></i>1 rooms
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                                                        </span>
+                                                </div>
+
+                                            </a>
+                                                <span class="item__added-date">Added on 19/04/2019</span>
+                                            <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                                        </div>
+                                    </div>
+                                            
+                                    <div class="listing__item listing__item--large ">
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-photos icon icon--photos">12</i>
+                                        <div class="item__img-area ">
+                                            <div class="swiper-container ">
+                                                <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_1.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_2.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_3.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_4.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_5.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_6.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_7.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_8.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_9.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_10.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_11.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_12.jpg?636911677220000000" />
+                                                        </a>
+                                                </div>
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="item__content-area ">
+                                            <a target="_blank" class="item__link" href="/property/57764a-arealinfournier">
+                                                <p class="item__price">
+                                                    770000 &#x20AC;
+                                                </p>
+                                                <div class="item__short-description small mb-3 ">
+                                                    Rue des Marronniers - 5 min m&#xE9;tro La Muette et 3 min Rer C .
+                                                </div>
+                                                <div class="item__main-details">
+                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--area"></i>90 m<sup>2</sup>
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--room"></i>5 rooms
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--bedroom"></i>3 bedrooms
+                                                        </span>
+                                                </div>
+                                                
+                                            </a>
+                                                <span class="item__added-date">Added on 18/04/2019</span>
+                                            <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                                        </div>
+                                    </div>
+                                            
+                                    <div class="listing__item listing__item--large ">
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-photos icon icon--photos">8</i>
+                                        <div class="item__img-area ">
+                                            <div class="swiper-container ">
+                                                <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_1.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_2.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_3.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_4.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_5.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_6.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_7.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_8.jpg?636910799320000000" />
+                                                        </a>
+                                                </div>
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+
+                                        </div>
+                                        <div class="item__content-area ">
+                                            <a target="_blank" class="item__link" href="/property/57764a-marronniers">
+                                                <p class="item__price">
+                                                    2050000 &#x20AC;
+                                                </p>
+                                                <div class="item__short-description small mb-3 ">
+                                                    Rue des Marronniers - 5 min m&#xE9;tro La Muette et 3 min Rer C .
+                                                </div>
+                                                <div class="item__main-details">
+                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--area"></i>179 m<sup>2</sup>
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--room"></i>5 rooms
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--bedroom"></i>4 bedrooms
+                                                        </span>
+                                                </div>
+                                            </a>
+                                                <span class="item__added-date">Added on 17/04/2019</span>
+                                            <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                                        </div>
+                                    </div>
+                                            
+                                    <div class="listing__item listing__item--large">
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-photos icon icon--photos">2</i>
+                                        <div class="item__img-area">
+                                            <div class="swiper-container">
+                                                <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_1.jpg?636912981550000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-studiolebrun/Photos/57764a-studiolebrun_2.jpg?636912981550000000" />
+                                                        </a>
+                                                </div>
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                                
+                                        </div>
+                                        <div class="item__content-area ">
+                                            <a target="_blank" class="item__link" href="/property/57764a-studiolebrun">
+                                                <p class="item__price">
+                                                    210000 &#x20AC;
+                                                </p>
+                                                <div class="item__short-description small mb-3 ">
+                                                    Rue des Marronniers - 5 min m&#xE9;tro La Muette et 3 min Rer C .
+                                                </div>
+                                                <div class="item__main-details">
+                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--area"></i>20 m<sup>2</sup>
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--room"></i>1 rooms
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--bedroom"></i>1 bedrooms
+                                                        </span>
+                                                </div>
+
+                                            </a>
+                                                <span class="item__added-date">Added on 19/04/2019</span>
+                                            <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                                        </div>
+                                    </div>
+                                            
+                                    <div class="listing__item listing__item--large ">
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-photos icon icon--photos">12</i>
+                                        <div class="item__img-area ">
+                                            <div class="swiper-container ">
+                                                <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_1.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_2.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_3.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_4.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_5.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_6.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_7.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_8.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_9.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_10.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_11.jpg?636911677220000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-arealinfournier/Photos/57764a-arealinfournier_12.jpg?636911677220000000" />
+                                                        </a>
+                                                </div>
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="item__content-area ">
+                                            <a target="_blank" class="item__link" href="/property/57764a-arealinfournier">
+                                                <p class="item__price">
+                                                    770000 &#x20AC;
+                                                </p>
+                                                <div class="item__short-description small mb-3 ">
+                                                    Rue des Marronniers - 5 min m&#xE9;tro La Muette et 3 min Rer C .
+                                                </div>
+                                                <div class="item__main-details">
+                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--area"></i>90 m<sup>2</sup>
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--room"></i>5 rooms
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--bedroom"></i>3 bedrooms
+                                                        </span>
+                                                </div>
+                                                
+                                            </a>
+                                                <span class="item__added-date">Added on 18/04/2019</span>
+                                            <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                                        </div>
+                                    </div>
+                                            
+                                    <div class="listing__item listing__item--large ">
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-photos icon icon--photos">8</i>
+                                        <div class="item__img-area ">
+                                            <div class="swiper-container ">
+                                                <div class="swiper-wrapper">
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_1.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_2.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_3.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_4.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_5.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_6.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_7.jpg?636910799320000000" />
+                                                        </a>
+                                                        <a class="swiper-slide" href="#" target="_blank">
+                                                            <img src="https://cdn.green-acres.com/57764a/57764a-marronniers/Photos/57764a-marronniers_8.jpg?636910799320000000" />
+                                                        </a>
+                                                </div>
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+
+                                        </div>
+                                        <div class="item__content-area ">
+                                            <a target="_blank" class="item__link" href="/property/57764a-marronniers">
+                                                <p class="item__price">
+                                                    2050000 &#x20AC;
+                                                </p>
+                                                <div class="item__short-description small mb-3 ">
+                                                    Rue des Marronniers - 5 min m&#xE9;tro La Muette et 3 min Rer C .
+                                                </div>
+                                                <div class="item__main-details">
+                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--area"></i>179 m<sup>2</sup>
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--room"></i>5 rooms
+                                                        </span>
+                                                                        <span class="detail__item">
+                                                            <i class="detail__item__icon icon icon--bedroom"></i>4 bedrooms
+                                                        </span>
+                                                </div>
+                                            </a>
+                                                <span class="item__added-date">Added on 17/04/2019</span>
+                                            <button class="btn btn--secondary item__btn--contact-agent" data-toggle="modal" data-target="#contact_modal">Contact Agent</button>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>  
+        </section>
+
+        <footer class="footer footer--global footer--chat d-none d-md-flex align-items-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col d-flex justify-content-between align-items-center pr-5 pl-5">
+                        <div class="footer--global__nav">
+                            <ul class="list-unstyled m-0">
+                                <li class="list-inline-item"><a href="#">About</a></li>
+                                <li class="list-inline-item"><a href="#">Agency Section</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer--global__details">
+                            Interested in Vizzit project? <a href="#" target="_blank">Learn here</a> how it works!
+                        </div>
+                        <div class="footer--global__nav">
+                            © 2019 Vizzit - <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="contact_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <p class="contact-form__price item__price d-flex align-items-center">
+                        30 000 000 €
+                    </p>
+                    <div class="contact-form__agency-details">
+                        Contact <b>TODEOR AGENCY</b> about <b>Amazing 5 bedroom terraced house very well situated</b>
+                    </div>
+                    <div class="contact-form__body">
+                        <div class="text-right">
+                            <a href="#" class="contact-form__link d-inline-block">Legal Notice</a>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control input" type="text" placeholder="Your name" id="client_name" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control input" type="text" placeholder="Your phone" id="client_phone" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control input" type="email" placeholder="Your email" id="client_email" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label class="contact-form__label">You would like...</label>
+                            <div class="row">
+                                <div class="col-6 pr-0">
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="contacted">
+                                        <span class="input d-inline-block"></span>To be contacted
+                                    </label>
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="visit">
+                                        <span class="input d-inline-block"></span>To visit
+                                    </label>
+                                </div>
+                                <div class="col-6 pl-0">
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="photos">
+                                        <span class="input d-inline-block"></span>More photos
+                                    </label>
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="information">
+                                        <span class="input d-inline-block"></span>More information
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control input" type="email" placeholder="Type Your message" id="client_message" autocomplete="off"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="custom-input--small-checkbox">
+                                <input type="checkbox" name="alert">
+                                <span class="input d-inline-block"></span>Email alert on similar properties
+                            </label>
+                        </div>
+                        <button class="btn btn--main contact-form__btn">Contact Agent</button>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+                <span class="btn--close__line"></span>
+                <span class="btn--close__line"></span>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
+    </script>
+    <script>(window.jQuery||document.write("\u003Cscript src=\u0022\/lib\/jquery\/dist\/jquery.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script>(Popper||document.write("\u003Cscript src=\u0022\/lib\/popper\/dist\/js\/popper.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script>($.fn.modal||document.write("\u003Cscript src=\u0022\/lib\/bootstrap\/js\/bootstrap.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+    
+    
+    
+    <script type="text/javascript" defer>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+        {
+            document.write('<script src="/js/polyfill.js"><\/script>');
+            document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CArray.prototype.includes%2CString.prototype.includes%2CObject.assign%2CArray.prototype.findIndex%2CArray.prototype.find%2CArray.from%2CCustomEvent%2Cfetch%2Ces5%2CElement.prototype.classList%2CrequestAnimationFrame"><\/script>');
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js" crossorigin="anonymous">
+    </script>
+    <script>(Swiper||document.write("\u003Cscript src=\u0022\/lib\/swiper\/dist\/swiper.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    
+    
+    <script type="text/javascript" src="./js/navigation.js"></script>
+    <script type="text/javascript" src="./js/favorites.js" defer></script>
+    <!-- <script type="text/javascript" src="./js/chat.js"></script> -->
+    
+
+</body>
+</html>

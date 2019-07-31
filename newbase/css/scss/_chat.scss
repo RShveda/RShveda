@@ -8,7 +8,7 @@
     }
 }
 
-.card-group {
+.wrapper--chat .card-group {
     & > .card {
         flex: 0 0 100%;
         &:not(:first-child):not(:last-child):not(:only-child) {
@@ -31,12 +31,12 @@
     }
 
     @include media-breakpoint-up(md) {
-        height: calc(100vh - 265px);
+        min-height: calc(100vh - 265px);
         margin-top: -2rem;
         position: relative;
     }
     @include media-breakpoint-up(lg) {
-        height: calc(100vh - 300px);
+        min-height: calc(100vh - 300px);
     }
 }
 

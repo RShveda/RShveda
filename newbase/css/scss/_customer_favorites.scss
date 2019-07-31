@@ -1,0 +1,18 @@
+.listing__item {
+    width: 100%;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    color: #484848;
+    overflow: hidden;
+    margin-bottom: 24px;
+    position: relative;
+    font-family: "OpenSans Regular";
+    &--large {
+        @include media-breakpoint-up(md) {
+            max-width: calc(50% - 12px);
+        }
+        @include media-breakpoint-up(xl) {
+            max-width: calc(33% - 12px);
+        }
+    }
+}
