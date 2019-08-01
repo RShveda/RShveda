@@ -330,6 +330,15 @@
             }
         }
     }
+    &.remove-modal {
+        p {
+            font-size: 0.875rem;
+        }
+        h5 {
+            font-size: 1rem
+        }
+    }
+
 }
 
 /*** For IE ***/

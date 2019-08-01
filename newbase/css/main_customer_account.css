@@ -7024,6 +7024,10 @@ a.nounderline {
     font-size: 1rem; }
   .modal .signup-form .modal-header p {
     font-family: 'OpenSans Bold'; }
+  .modal.remove-modal p {
+    font-size: 0.875rem; }
+  .modal.remove-modal h5 {
+    font-size: 1rem; }
 
 /*** For IE ***/
 /* ------------- Listing Item -------------- */

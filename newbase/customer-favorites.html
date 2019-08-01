@@ -94,7 +94,7 @@
                                 <div class="content--listing__grid d-md-flex flex-md-wrap justify-content-between">
 
                                     <div class="listing__item listing__item--large">
-                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added" data-toggle="modal" data-target="#remove_modal" data-item="Property 1" data-item-id="1"></i>
                                         <i class="item__icon-photos icon icon--photos">2</i>
                                         <div class="item__img-area">
                                             <div class="swiper-container">
@@ -137,7 +137,7 @@
                                     </div>
                                             
                                     <div class="listing__item listing__item--large ">
-                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added" data-toggle="modal" data-target="#remove_modal" data-item="Property 2" data-item-id="2"></i>
                                         <i class="item__icon-photos icon icon--photos">12</i>
                                         <div class="item__img-area ">
                                             <div class="swiper-container ">
@@ -210,7 +210,7 @@
                                     </div>
                                             
                                     <div class="listing__item listing__item--large ">
-                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added" data-toggle="modal" data-target="#remove_modal" data-item="Property 3" data-item-id="3"></i>
                                         <i class="item__icon-photos icon icon--photos">8</i>
                                         <div class="item__img-area ">
                                             <div class="swiper-container ">
@@ -270,7 +270,7 @@
                                     </div>
                                             
                                     <div class="listing__item listing__item--large">
-                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added" data-toggle="modal" data-target="#remove_modal" data-item="Property 4" data-item-id="4"></i>
                                         <i class="item__icon-photos icon icon--photos">2</i>
                                         <div class="item__img-area">
                                             <div class="swiper-container">
@@ -313,7 +313,7 @@
                                     </div>
                                             
                                     <div class="listing__item listing__item--large ">
-                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added" data-toggle="modal" data-target="#remove_modal" data-item="Property 5" data-item-id="5"></i>
                                         <i class="item__icon-photos icon icon--photos">12</i>
                                         <div class="item__img-area ">
                                             <div class="swiper-container ">
@@ -386,7 +386,7 @@
                                     </div>
                                             
                                     <div class="listing__item listing__item--large ">
-                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added"></i>
+                                        <i class="item__icon-favorite icon icon--favorite item__icon-favorite--added" data-toggle="modal" data-target="#remove_modal" data-item="Property 6" data-item-id="6"></i>
                                         <i class="item__icon-photos icon icon--photos">8</i>
                                         <div class="item__img-area ">
                                             <div class="swiper-container ">
@@ -538,6 +538,35 @@
                         </div>
                         <button class="btn btn--main contact-form__btn">Contact Agent</button>
                     </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+                <span class="btn--close__line"></span>
+                <span class="btn--close__line"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="modal fade remove-modal" id="remove_modal">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header pb-3">
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body text-center">
+                    <p>Are you sure you want to remove</p>
+                    <h5 class="font-weight-semi mb-3" id="title_favorite">The Grande House, St. James`s, London, SW1A</h5>
+                    <p>from favorites?</p>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer d-block pb-2">
+                    <button class="btn btn--main btn--login mb-1" data-dismiss="modal" id="btn_remove_favorite" data-item-id="">Yes</button>
+                    <hr class="mb-0"/>
+                    <button class="btn btn--main btn--signup" data-dismiss="modal" id="btn_unremove_favorite" data-item-id="">Cancel</button>
                 </div>
             </div>
             <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
