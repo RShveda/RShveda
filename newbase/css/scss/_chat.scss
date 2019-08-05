@@ -6,6 +6,14 @@
             min-height: 610px;
         }
     }
+    &--alerts {
+        @include media-breakpoint-up(md) {
+            @media only screen and (orientation: portrait) {
+                min-height: 610px;
+            }
+            
+        }
+    }
 }
 
 .wrapper--chat .card-group {

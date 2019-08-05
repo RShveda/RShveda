@@ -7204,6 +7204,9 @@ a.nounderline {
   @media (min-width: 768px) {
     .wrapper--chat {
       min-height: 610px; } }
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+  .wrapper--alerts {
+    min-height: 610px; } }
 
 .wrapper--chat .card-group > .card {
   flex: 0 0 100%; }
@@ -7534,7 +7537,7 @@ a.nounderline {
       border-bottom-color: var(--orange); }
 @media (min-width: 768px) {
   .wrapper--chat .second-nav {
-    margin-top: -50px; } }
+    margin-top: -49px; } }
 
 /**** Chat List Item ****/
 .chat-search {
