@@ -225,7 +225,7 @@
         top: 0;
         width: 100%;
     }
-    &-item {
+    &-item:not(.without-link) {
         &:hover {
             text-decoration: none;
             color: $primary;

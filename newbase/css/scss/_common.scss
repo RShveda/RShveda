@@ -10,6 +10,9 @@ a.nounderline {
 .font-weight-semi {
     font-family: 'OpenSans Semibold';
 }
+.line-height-18 {
+    line-height: 18px;
+}
 
 .dropdown-menu {
     box-shadow: $dropdown-box-shadow;
@@ -71,6 +74,22 @@ a.nounderline {
         background-repeat: no-repeat;
         -webkit-appearance: none;
         cursor: pointer;
+        &-alert {
+            background-image: $icon-alert-orange, $icon-dropdown;
+            background-position: left center, right center;
+            background-size: 16px, 10px;
+            background-repeat: no-repeat;
+            -webkit-appearance: none;
+            padding: 0.5rem 1.25rem 0.5rem 1.65rem;
+            cursor: pointer;
+            font-family: 'OpenSans Semibold';
+            border: none;
+            width: auto;
+            height: auto;
+            &-d {
+                background-image: $icon-alert-orange-d, $icon-dropdown;
+            }
+        }
     }
     &--with-icon {
       background-size: 1.5rem;
@@ -86,6 +105,9 @@ a.nounderline {
       &-pass {
         padding-left: 14px;
         padding-right: 3rem;
+      }
+      &-alert {
+        background-image: $icon-alert-d;
       }
     }
     &--verif {

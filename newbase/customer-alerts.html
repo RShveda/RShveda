@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Vizzit</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css" />
+    <meta name="x-stylesheet-fallback-test" content="" class="swiper-container" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("position","relative",["\/lib\/swiper\/dist\/swiper.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+    
+    <link rel="stylesheet" href="./css/main_customer_account.css" />
+
+</head>
+
+<body>
+    <div class="wrapper wrapper--chat d-flex flex-column justify-content-md-between">
+        
+        <header class="header header--chat d-flex justify-content-end d-print-none">
+            <div class="header__logo d-flex align-items-center">
+                <a href="home.html" class="d-none d-md-flex">
+                    <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+                </a>
+                <a href="home.html" class="d-flex d-md-none">
+                    <span class="logo icon icon--close"></span>
+                </a>
+            </div>
+            
+            <button class="header__button btn btn--nav d-md-none" id="btn_nav">
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+                <span class="btn--nav__line"></span>
+            </button>
+            <nav class="header__nav flex-md-fill" id="nav_panel">
+                <div class="header__nav__top d-flex justify-content-between align-items-center d-md-none">
+                    <img class="logo" src="./images/logo-full.svg" alt="Vizzit Logo" />
+                    <button class="btn btn--close" id="btn_nav__close">
+                        <span class="btn--close__line"></span>
+                        <span class="btn--close__line"></span>
+                    </button>
+                </div>
+                <ul class="d-md-flex justify-content-end">
+                    <li class="header__nav__item d-none d-md-block"><a href="#">Buy</a></li>
+                    <li class="header__nav__item d-none d-md-block"><a href="#">Rent</a></li>
+                    <li class="header__nav__item"><a class="active" href="#">Customer Account</a></li>
+                    <li class="header__nav__item"><a href="#">Language</a></li>
+                    <li class="header__nav__item d-md-none"><a href="#">About</a></li>
+                </ul>
+                <div class="header__nav__footer d-md-none">
+                    Interested in Vizzit project?<br>
+                    <a href="#" target="_blank">Learn here</a> how it works!
+                    <span>
+                        © 2019 Vizzit<br>
+                        <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                    </span>
+                </div>
+            </nav>
+        </header>
+        <section class="second-nav px-3">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-11 col-lg-10 px-md-0 d-flex flex-column justify-content-between">
+                    <nav class="header__nav  flex-md-fill border-bottom">
+                        <ul class="d-flex justify-content-between px-0">
+                            <li class="header__nav__item col px-0"><a href="#" class="justify-content-center "><i class="icon icon--favorite-gray"></i><span class="d-none d-md-inline">Favorites</span></a></li>
+                            <li class="header__nav__item col px-0"><a class="justify-content-center" href="#"><i class="icon icon--msg-gray"></i><span class="d-none d-md-inline">Messenger</span></a></li>
+                            <li class="header__nav__item col px-0"><a  href="#" class="justify-content-center active"><i class="icon icon--alert-gray"></i><span class="d-none d-md-inline text-nowrap">My research & alerts</span></a></li>
+                            <li class="header__nav__item col px-0"><a href="#" class="justify-content-center"><i class="icon icon--user-gray"></i><span class="d-none d-md-inline">My account</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <section class="content content--favorites">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <!-- if there are no favorites: -->
+                    <!-- <div class="col-12 col-md-11 col-lg-10 pt-5 pt-md-0 text-center card-without-chats">
+                        <p>You do not have favorites yet.</p>
+                        <a href="advert.html">
+                            <button class="btn btn--main my-2">Make your first search</button>
+                        </a>
+                    </div> -->
+                    <div class="col-12 col-md-8 col-lg-6 px-0 ">
+                        <div class="card-group align-items-stretch justify-content-center">
+
+                            <!-- Saved Searches (alerts) -->
+                            <div class="col-12 px-md-0 py-2 mt-4">
+                                <h1 class="title smaller text-center pb-2 border-bottom">Saved Searches</h1>
+                                <div>
+                                    <div class="chat-item without-link d-flex justify-content-between align-items-center py-2  border-bottom mb-2">
+                                        <div class="font-weight-semi">
+                                            <p class="line-height-18 mb-1">
+                                                <span class="text-primary">Properties in London</span> to rent
+                                            </p>
+                                            <select name="" class="input input--dropdown-alert">
+                                                <option value="0" selected>Every 7 days</option>
+                                                <option value="1">Instantly</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <span class="icon icon-16 icon--close mb-2"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-item without-link d-flex justify-content-between align-items-center py-2 border-bottom mb-2">
+                                        <div class="font-weight-semi">
+                                            <p class="line-height-18 mb-1">
+                                                <span class="text-primary">2+ bed properties up to 8000,000
+                                                in london</span> to sale
+                                            </p>
+                                            <select name="" class="input input--dropdown-alert">
+                                                <option value="0" >Every 7 days</option>
+                                                <option value="1" selected>Instantly</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <span class="icon icon-16 icon--close mb-2"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-item without-link d-flex justify-content-between align-items-center py-2  border-bottom mb-2">
+                                        <div class="font-weight-semi">
+                                            <p class="line-height-18 mb-1">
+                                                <span class="text-primary">Properties in London</span> to rent
+                                            </p>
+                                            <select name="" class="input input--dropdown-alert">
+                                                <option value="0" selected>Every 7 days</option>
+                                                <option value="1">Instantly</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <span class="icon icon-16 icon--close mb-2"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Historic search -->
+                            <div class="col-12 px-md-0 py-2 mt-3">
+                                <h1 class="title smaller text-center pb-2 border-bottom">Historic search</h1>
+                                <div>
+                                    <div class="chat-item without-link d-flex justify-content-between align-items-center py-2  border-bottom mb-2">
+                                        <div class="font-weight-semi">
+                                            <p class="line-height-18 mb-1">
+                                                <span class="text-primary">Properties in London</span> to rent
+                                            </p>
+                                            <select name="" class="input input--dropdown-alert input--dropdown-alert-d" placeholder="">
+                                                <option value="" selected disabled>Create alert</option>
+                                                <option value="0" >Every 7 days</option>
+                                                <option value="1">Instantly</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <span class="icon icon-16 icon--favorite-orange mb-2" ></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-item without-link d-flex justify-content-between align-items-center py-2  border-bottom mb-2">
+                                        <div class="font-weight-semi">
+                                            <p class="line-height-18 mb-1">
+                                                <span class="text-primary">2+ bed properties up to 8000,000 in london
+                                                    </span> to sale
+                                            </p>
+                                            <select name="" class="input input--dropdown-alert input--dropdown-alert-d" placeholder="">
+                                                <option value="" selected disabled>Create alert</option>
+                                                <option value="0" >Every 7 days</option>
+                                                <option value="1">Instantly</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <span class="icon icon-16 icon--favorite-orange mb-2" ></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>  
+        </section>
+
+        <footer class="footer footer--global footer--chat d-none d-md-flex align-items-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col d-flex justify-content-between align-items-center pr-5 pl-5">
+                        <div class="footer--global__nav">
+                            <ul class="list-unstyled m-0">
+                                <li class="list-inline-item"><a href="#">About</a></li>
+                                <li class="list-inline-item"><a href="#">Agency Section</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer--global__details">
+                            Interested in Vizzit project? <a href="#" target="_blank">Learn here</a> how it works!
+                        </div>
+                        <div class="footer--global__nav">
+                            © 2019 Vizzit - <a href="#" target="_blank">Cookies</a>, <a href="#" target="_blank">Privacy & Terms</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="contact_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <p class="contact-form__price item__price d-flex align-items-center">
+                        30 000 000 €
+                    </p>
+                    <div class="contact-form__agency-details">
+                        Contact <b>TODEOR AGENCY</b> about <b>Amazing 5 bedroom terraced house very well situated</b>
+                    </div>
+                    <div class="contact-form__body">
+                        <div class="text-right">
+                            <a href="#" class="contact-form__link d-inline-block">Legal Notice</a>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control input" type="text" placeholder="Your name" id="client_name" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control input" type="text" placeholder="Your phone" id="client_phone" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control input" type="email" placeholder="Your email" id="client_email" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label class="contact-form__label">You would like...</label>
+                            <div class="row">
+                                <div class="col-6 pr-0">
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="contacted">
+                                        <span class="input d-inline-block"></span>To be contacted
+                                    </label>
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="visit">
+                                        <span class="input d-inline-block"></span>To visit
+                                    </label>
+                                </div>
+                                <div class="col-6 pl-0">
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="photos">
+                                        <span class="input d-inline-block"></span>More photos
+                                    </label>
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="information">
+                                        <span class="input d-inline-block"></span>More information
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control input" type="email" placeholder="Type Your message" id="client_message" autocomplete="off"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="custom-input--small-checkbox">
+                                <input type="checkbox" name="alert">
+                                <span class="input d-inline-block"></span>Email alert on similar properties
+                            </label>
+                        </div>
+                        <button class="btn btn--main contact-form__btn">Contact Agent</button>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+                <span class="btn--close__line"></span>
+                <span class="btn--close__line"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="modal fade remove-modal" id="remove_modal">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header pb-3">
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body text-center">
+                    <p>Are you sure you want to remove</p>
+                    <h5 class="font-weight-semi mb-3" id="title_favorite">The Grande House, St. James`s, London, SW1A</h5>
+                    <p>from favorites?</p>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer d-block pb-2">
+                    <button class="btn btn--main btn--login mb-1" data-dismiss="modal" id="btn_remove_favorite" data-item-id="">Yes</button>
+                    <hr class="mb-0"/>
+                    <button class="btn btn--main btn--signup" data-dismiss="modal" id="btn_unremove_favorite" data-item-id="">Cancel</button>
+                </div>
+            </div>
+            <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+                <span class="btn--close__line"></span>
+                <span class="btn--close__line"></span>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous">
+    </script>
+    <script>(window.jQuery||document.write("\u003Cscript src=\u0022\/lib\/jquery\/dist\/jquery.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script>(Popper||document.write("\u003Cscript src=\u0022\/lib\/popper\/dist\/js\/popper.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script>($.fn.modal||document.write("\u003Cscript src=\u0022\/lib\/bootstrap\/js\/bootstrap.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+    
+    
+    
+    <script type="text/javascript" defer>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+        {
+            document.write('<script src="/js/polyfill.js"><\/script>');
+            document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CArray.prototype.includes%2CString.prototype.includes%2CObject.assign%2CArray.prototype.findIndex%2CArray.prototype.find%2CArray.from%2CCustomEvent%2Cfetch%2Ces5%2CElement.prototype.classList%2CrequestAnimationFrame"><\/script>');
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js" crossorigin="anonymous">
+    </script>
+    <script>(Swiper||document.write("\u003Cscript src=\u0022\/lib\/swiper\/dist\/swiper.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
+
+    
+    
+    <script type="text/javascript" src="./js/navigation.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            let btn_favorite = document.getElementsByClassName('icon--favorite-orange');
+
+            Array.from(btn_favorite).forEach(function(element) {
+                element.addEventListener('click', function () {
+                this.classList.toggle('item__icon-favorite--added');
+                });
+            });
+        })
+    </script>
+
+</body>
+</html>

@@ -5,6 +5,10 @@
   background-size: 100%;
   background-repeat: no-repeat;
   display: block;
+  &-16 {
+    width: 1rem;
+    height: 1rem;
+  }
   &--area {
     background-image: $icon-area;
   }
