@@ -83,6 +83,10 @@
             text-decoration: underline;
           }
         }
+        &.footer--chat-customer {
+          position: absolute;
+          bottom: 0;
+        }
       }
       
     }
