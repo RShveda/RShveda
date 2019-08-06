@@ -8,6 +8,8 @@
     }
 }
 .wrapper--chat {
+    height: auto;
+    min-height: 100vh;
     &.window-fixed {
         position: fixed;
         width: 100%;
