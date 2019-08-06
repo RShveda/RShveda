@@ -74,107 +74,94 @@
         <section class="content content--favorites">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <!-- if there are no favorites: -->
-                    <!-- <div class="col-12 col-md-11 col-lg-10 pt-5 pt-md-0 text-center card-without-chats">
-                        <p>You do not have favorites yet.</p>
-                        <a href="advert.html">
-                            <button class="btn btn--main my-2">Make your first search</button>
-                        </a>
-                    </div> -->
-                    <div class="col-12 col-md-8 col-lg-6 px-0 ">
-                        <div class="card-group align-items-stretch justify-content-center">
 
-                            <!-- Saved Searches (alerts) -->
-                            <div class="col-12 px-md-0 py-2 mt-3">
-                                <h1 class="title smaller text-center pb-2 border-bottom">Saved Searches</h1>
-                                <div>
-                                    <div class="chat-item without-link d-flex justify-content-between align-items-center py-2  border-bottom mb-2">
-                                        <div class="font-weight-semi">
-                                            <p class="line-height-18 mb-1">
-                                                <span class="text-primary">Properties in London</span> to rent
-                                            </p>
-                                            <select name="" class="input input--dropdown-alert">
-                                                <option value="0" selected>Every 7 days</option>
-                                                <option value="1">Instantly</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <span class="icon icon-16 icon--close mb-2"></span>
-                                        </div>
+                    <div class="col-12 col-md-11 col-lg-10 px-0 ">
+                        <div class="card-group align-items-stretch justify-content-center justify-content-md-around">
+
+                            <!-- Complete profile -->
+                            <div class="col-12 col-md-5 col-lg-4  px-md-0 py-2 mt-3">
+                                <div class="mb-4 mb-md-0">
+                                    <h1 class="title smaller text-center pb-2 ">Complete your profile</h1>
+                                    <div class="form-group mb-0">
+                                        <label class="md-textfield-outlined">
+                                            <input placeholder=" " class="input md-input" name="user_lastname" id="user_lastname" autocomplete="off" value="Doe">
+                                            <span>Surname</span>
+                                        </label>
                                     </div>
-
-                                    <div class="chat-item without-link d-flex justify-content-between align-items-center py-2 border-bottom mb-2">
-                                        <div class="font-weight-semi">
-                                            <p class="line-height-18 mb-1">
-                                                <span class="text-primary">2+ bed properties up to 8000,000
-                                                in london</span> to sale
-                                            </p>
-                                            <select name="" class="input input--dropdown-alert">
-                                                <option value="0" >Every 7 days</option>
-                                                <option value="1" selected>Instantly</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <span class="icon icon-16 icon--close mb-2"></span>
-                                        </div>
+                                    <div class="form-group mb-0">
+                                        <label class="md-textfield-outlined">
+                                            <input placeholder=" " class="input md-input" name="user_firstname" id="user_firstname" autocomplete="off" value="John">
+                                            <span>Name</span>
+                                        </label>
                                     </div>
-
-                                    <div class="chat-item without-link d-flex justify-content-between align-items-center py-2  border-bottom mb-2">
-                                        <div class="font-weight-semi">
-                                            <p class="line-height-18 mb-1">
-                                                <span class="text-primary">Properties in London</span> to rent
-                                            </p>
-                                            <select name="" class="input input--dropdown-alert">
-                                                <option value="0" selected>Every 7 days</option>
-                                                <option value="1">Instantly</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <span class="icon icon-16 icon--close mb-2"></span>
-                                        </div>
+                                    <div class="form-group mb-0">
+                                        <label class="md-textfield-outlined">
+                                            <input type="email" placeholder=" " class="input md-input" name="user_email" id="user_email" autocomplete="off" value="Jhon@mail.com">
+                                            <span>Email</span>
+                                        </label>
                                     </div>
-
-
-
-                                    
+                                    <div class="form-group mb-0">
+                                        <label class="md-textfield-outlined">
+                                            <input placeholder=" " class="input md-input" name="user_address" id="user_address" autocomplete="off" value="St. Linkoln 123">
+                                            <span>Address</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <label class="md-textfield-outlined">
+                                            <input placeholder=" " class="input md-input" name="user_city" id="user_city" autocomplete="off" value="Paris">
+                                            <span>City</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <label class="md-textfield-outlined">
+                                            <input placeholder=" " class="input md-input" name="user_postcode" id="user_postcode" autocomplete="off" value="33145">
+                                            <span>Post Code</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group mb-1">
+                                        <label class="md-textfield-outlined">
+                                            <input placeholder=" " class="input md-input" name="user_country" id="user_country" autocomplete="off" value="France">
+                                            <span>Country</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn--main btn--login">Update</button>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Historic search -->
-                            <div class="col-12 px-md-0 py-2 mt-3">
-                                <h1 class="title smaller text-center pb-2 border-bottom">Historic search</h1>
-                                <div>
-                                    <div class="chat-item without-link d-flex justify-content-between align-items-center py-2  border-bottom mb-2">
-                                        <div class="font-weight-semi">
-                                            <p class="line-height-18 mb-1">
-                                                <span class="text-primary">Properties in London</span> to rent
-                                            </p>
-                                            <select name="" class="input input--dropdown-alert input--dropdown-alert-d" placeholder="">
-                                                <option value="" selected disabled>Create alert</option>
-                                                <option value="0" >Every 7 days</option>
-                                                <option value="1">Instantly</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <span class="icon icon-16 icon--favorite-orange mb-2" ></span>
-                                        </div>
+                            <div class="col-12 col-md-5 col-lg-4 px-md-0 py-2 mt-3">
+                                <div class="mb-5">
+                                    <h1 class="title smaller text-center pb-2 ">Change your phone</h1>
+                                    <div class="form-group mb-1">
+                                        <label class="md-textfield-outlined">
+                                            <input type="tel" placeholder=" " class="input md-input" name="user_phone" id="user_phone" autocomplete="off" value="+33 1 45 35 97 33">
+                                            <span>Your phone</span>
+                                        </label>
                                     </div>
-
-                                    <div class="chat-item without-link d-flex justify-content-between align-items-center py-2  border-bottom mb-2">
-                                        <div class="font-weight-semi">
-                                            <p class="line-height-18 mb-1">
-                                                <span class="text-primary">2+ bed properties up to 8000,000 in london
-                                                    </span> to sale
-                                            </p>
-                                            <select name="" class="input input--dropdown-alert input--dropdown-alert-d" placeholder="">
-                                                <option value="" selected disabled>Create alert</option>
-                                                <option value="0" >Every 7 days</option>
-                                                <option value="1">Instantly</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <span class="icon icon-16 icon--favorite-orange mb-2" ></span>
-                                        </div>
+                                    <div class="form-group">
+                                        <button class="btn btn--main btn--login">Update</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h1 class="title smaller text-center pb-2 ">Change password</h1>
+                                    <div class="form-group mb-0">
+                                        <label class="md-textfield-outlined">
+                                            <i class="btn btn--pass-visible"></i>
+                                            <input type="password" placeholder=" " class="input md-input input--with-icon input--with-icon-pass" name="user_password_curr" id="user_password" autocomplete="off" value="12345678">
+                                            <span>Current Password</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group mb-1">
+                                        <label class="md-textfield-outlined">
+                                            <i class="btn btn--pass-visible"></i>
+                                            <input type="password" placeholder=" " class="input md-input input--with-icon input--with-icon-pass" name="user_passowrd_new" id="user_password" autocomplete="off" value="12345678">
+                                            <span>New Password</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn--main btn--login">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -237,6 +224,8 @@
     
     
     <script type="text/javascript" src="./js/navigation.js"></script>
+    <script type="text/javascript" src="./js/material_input.js" defer></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
             let btn_favorite = document.getElementsByClassName('icon--favorite-orange');
