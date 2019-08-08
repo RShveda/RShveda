@@ -6052,6 +6052,9 @@ a.text-dark:hover, a.text-dark:focus {
   background-size: 100%;
   background-repeat: no-repeat;
   display: block; }
+  .icon-16 {
+    width: 1rem;
+    height: 1rem; }
   .icon--area {
     background-image: url(../images/icon-area.svg); }
   .icon--room {
@@ -6093,7 +6096,7 @@ a.text-dark:hover, a.text-dark:focus {
     height: 1rem;
     color: #fff;
     text-align: center;
-    font-size: 10px;
+    font-size: 11px;
     display: inline-flex;
     justify-content: center; }
   .icon--check-orange {
@@ -6177,6 +6180,9 @@ a.nounderline {
 .font-weight-semi {
   font-family: 'OpenSans Semibold'; }
 
+.line-height-18 {
+  line-height: 18px; }
+
 .dropdown-menu {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); }
 
@@ -6217,6 +6223,12 @@ a.nounderline {
   .input:focus {
     border-color: #989696;
     box-shadow: none; }
+  .input:invalid {
+    box-shadow: none; }
+  .input:-moz-submit-invalid {
+    box-shadow: none; }
+  .input:-moz-ui-invalid {
+    box-shadow: none; }
   .input--dropdown {
     background-image: url(../images/icon-dropdown.svg);
     background-position: right 10px center;
@@ -6224,6 +6236,20 @@ a.nounderline {
     background-repeat: no-repeat;
     -webkit-appearance: none;
     cursor: pointer; }
+    .input--dropdown-alert {
+      background-image: url(../images/icon-alert-orange.svg), url(../images/icon-dropdown.svg);
+      background-position: left center, right center;
+      background-size: 16px, 10px;
+      background-repeat: no-repeat;
+      -webkit-appearance: none;
+      padding: 0.5rem 1.25rem 0.5rem 1.65rem;
+      cursor: pointer;
+      font-family: 'OpenSans Semibold';
+      border: none;
+      width: auto;
+      height: auto; }
+      .input--dropdown-alert-d {
+        background-image: url(../images/icon-alert-orange-d.svg), url(../images/icon-dropdown.svg); }
   .input--with-icon {
     background-size: 1.5rem;
     padding-left: 3rem;
@@ -6236,6 +6262,8 @@ a.nounderline {
     .input--with-icon-pass {
       padding-left: 14px;
       padding-right: 3rem; }
+    .input--with-icon-alert {
+      background-image: url(../images/icon-alert-d.svg); }
   .input--verif {
     border-color: #ee650d;
     width: 46px;
@@ -6351,6 +6379,9 @@ a.nounderline {
         margin-left: 4px;
         border-right: solid 1px transparent;
         border-radius: 0 5px; }
+  .md-textfield-outlined textarea {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; }
   .md-textfield-outlined:hover > input, .md-textfield-outlined:hover > textarea {
     border-color: #ee650d;
     border-top-color: transparent; }
@@ -6435,6 +6466,54 @@ a.nounderline {
     .md-textfield-outlined > textarea + span::before,
     .md-textfield-outlined > textarea + span::after {
       transition-duration: 0.1s; } } }
+/* ------------- Material Radio Buttons  -------------- */
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0); }
+  50% {
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1); }
+  100% {
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0); } }
+.md-radio {
+  margin-bottom: 0.5rem; }
+  .md-radio.md-radio-inline {
+    display: inline-block; }
+  .md-radio input[type="radio"] {
+    display: none; }
+    .md-radio input[type="radio"]:checked + label:before {
+      border-color: #ee650d;
+      animation: ripple 0.2s linear forwards; }
+    .md-radio input[type="radio"]:checked + label:after {
+      transform: scale(1); }
+  .md-radio label {
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    padding: 0 30px;
+    margin-bottom: 0;
+    cursor: pointer;
+    vertical-align: middle;
+    line-height: 20px; }
+    .md-radio label:before, .md-radio label:after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      transition: all .3s ease;
+      transition-property: transform, border-color; }
+    .md-radio label:before {
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #989696; }
+    .md-radio label:after {
+      top: 5px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      transform: scale(0);
+      background: #ee650d; }
+
 /* ------------- Range Sliders -------------- */
 .noUi-horizontal {
   height: 4px; }
@@ -6530,8 +6609,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   .contact-form__label {
     color: #989696;
     font-size: 0.9em; }
-  .contact-form input.input {
-    height: 40px; }
   .contact-form textarea {
     height: 86px;
     font-size: 0.9em;
@@ -6669,6 +6746,10 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     font-size: 1rem; }
   .modal .signup-form .modal-header p {
     font-family: 'OpenSans Bold'; }
+  .modal.remove-modal p {
+    font-size: 0.875rem; }
+  .modal.remove-modal h5 {
+    font-size: 1rem; }
 
 /*** For IE ***/
 /* ------------- Listing Item -------------- */
@@ -7570,7 +7651,10 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     .footer--global.footer--chat__details {
       text-align: center; }
       .footer--global.footer--chat__details a {
-        text-decoration: underline; } }
+        text-decoration: underline; }
+    .footer--global.footer--chat.footer--chat-customer {
+      position: absolute;
+      bottom: 0; } }
 
 /*** For IE ***/
 @media all and (min-width: 992px) and (-ms-high-contrast: none), (min-width: 992px) and (-ms-high-contrast: active) {

@@ -53,7 +53,7 @@
     <ul class="d-md-flex justify-content-end">
         <li class="header__nav__item d-none d-md-block"><a href="#">Buy</a></li>
         <li class="header__nav__item d-none d-md-block"><a href="#">Rent</a></li>
-        <li class="header__nav__item"><a href="#">Customer Account</a></li>
+        <li class="header__nav__item"><a href="#" data-toggle="modal" data-target="#login_modal">Customer Account</a></li>
         <li class="header__nav__item"><a href="#">Language</a></li>
         <li class="header__nav__item d-md-none"><a href="#">About</a></li>
     </ul>
@@ -207,68 +207,145 @@ imop<br>
                     </div>
                 </div>
                 
-    <div class="modal fade" id="contact_modal">
+    <!-- <div class="modal fade" id="contact_modal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="contact-form">
                     
-<form>
-    <p class="contact-form__price item__price d-flex align-items-center">
-        30 000 000 €
-    </p>
-    <div class="contact-form__agency-details">
-        Contact <b>TODEOR AGENCY</b> about <b>Amazing 5 bedroom terraced house very well situated</b>
-    </div>
-    <div class="contact-form__body">
-        <div class="text-right">
-            <a href="#" class="contact-form__link d-inline-block">Legal Notice</a>
-        </div>
-        <div class="form-group">
-            <input class="form-control input" type="text" placeholder="Your name" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <input class="form-control input" type="text" placeholder="Your phone" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <input class="form-control input" type="email" placeholder="Your email" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <label class="contact-form__label">You would like...</label>
-            <div class="row">
-                <div class="col-6 pr-0">
-                    <label class="custom-input--small-checkbox">
-                        <input type="checkbox" name="contacted">
-                        <span class="input d-inline-block"></span>To be contacted
-                    </label>
-                    <label class="custom-input--small-checkbox">
-                        <input type="checkbox" name="visit">
-                        <span class="input d-inline-block"></span>To visit
-                    </label>
-                </div>
-                <div class="col-6 pl-0">
-                    <label class="custom-input--small-checkbox">
-                        <input type="checkbox" name="photos">
-                        <span class="input d-inline-block"></span>More photos
-                    </label>
-                    <label class="custom-input--small-checkbox">
-                        <input type="checkbox" name="information">
-                        <span class="input d-inline-block"></span>More information
-                    </label>
+                    <form>
+                        <p class="contact-form__price item__price d-flex align-items-center">
+                            30 000 000 €
+                        </p>
+                        <div class="contact-form__agency-details">
+                            Contact <b>TODEOR AGENCY</b> about <b>Amazing 5 bedroom terraced house very well situated</b>
+                        </div>
+                        <div class="contact-form__body">
+                            <div class="text-right">
+                                <a href="#" class="contact-form__link d-inline-block">Legal Notice</a>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control input" type="text" placeholder="Your name" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control input" type="text" placeholder="Your phone" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control input" type="email" placeholder="Your email" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label class="contact-form__label">You would like...</label>
+                                <div class="row">
+                                    <div class="col-6 pr-0">
+                                        <label class="custom-input--small-checkbox">
+                                            <input type="checkbox" name="contacted">
+                                            <span class="input d-inline-block"></span>To be contacted
+                                        </label>
+                                        <label class="custom-input--small-checkbox">
+                                            <input type="checkbox" name="visit">
+                                            <span class="input d-inline-block"></span>To visit
+                                        </label>
+                                    </div>
+                                    <div class="col-6 pl-0">
+                                        <label class="custom-input--small-checkbox">
+                                            <input type="checkbox" name="photos">
+                                            <span class="input d-inline-block"></span>More photos
+                                        </label>
+                                        <label class="custom-input--small-checkbox">
+                                            <input type="checkbox" name="information">
+                                            <span class="input d-inline-block"></span>More information
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control input" type="email" placeholder="Type Your message" id="client_message" autocomplete="off"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="custom-input--small-checkbox">
+                                    <input type="checkbox" name="alert">
+                                    <span class="input d-inline-block"></span>Email alert on similar properties
+                                </label>
+                            </div>
+                            <button class="btn btn--main contact-form__btn">Contact Agent</button>
+                        </div>
+                    </form>
                 </div>
             </div>
+            <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+                <span class="btn--close__line"></span>
+                <span class="btn--close__line"></span>
+            </button>
         </div>
-        <div class="form-group">
-            <textarea class="form-control input" type="email" placeholder="Type Your message" id="client_message" autocomplete="off"></textarea>
-        </div>
-        <div class="form-group">
-            <label class="custom-input--small-checkbox">
-                <input type="checkbox" name="alert">
-                <span class="input d-inline-block"></span>Email alert on similar properties
-            </label>
-        </div>
-        <button class="btn btn--main contact-form__btn">Contact Agent</button>
-    </div>
-</form>
+    </div> -->
+    
+    <div class="modal fade" id="contact_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <p class="contact-form__price item__price d-flex align-items-center">
+                        30 000 000 €
+                    </p>
+                    <div class="contact-form__agency-details">
+                        Contact <b>TODEOR AGENCY</b> about <b>Amazing 5 bedroom terraced house very well situated</b>
+                    </div>
+                    <div class="contact-form__body">
+                        <div class="text-right">
+                            <a href="#" class="contact-form__link d-inline-block">Legal Notice</a>
+                        </div>
+                        <div class="form-group mb-1">
+                            <label class="md-textfield-outlined">
+                                <input type="text" placeholder=" " class="input md-input" name="client_name" id="client_name" autocomplete="off" value="">
+                                <span>Your name</span>
+                            </label>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input class="form-control input border-primary" type="text" placeholder="Your phone" id="client_phone" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label class="md-textfield-outlined">
+                                <input type="email" placeholder=" " class="input md-input" name="client_email" id="client_email" autocomplete="off" value="">
+                                <span>Your email</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="contact-form__label">You would like...</label>
+                            <div class="row">
+                                <div class="col-6 pr-0">
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="contacted">
+                                        <span class="input d-inline-block"></span>To be contacted
+                                    </label>
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="visit">
+                                        <span class="input d-inline-block"></span>To visit
+                                    </label>
+                                </div>
+                                <div class="col-6 pl-0">
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="photos">
+                                        <span class="input d-inline-block"></span>More photos
+                                    </label>
+                                    <label class="custom-input--small-checkbox">
+                                        <input type="checkbox" name="information">
+                                        <span class="input d-inline-block"></span>More information
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-0">
+                            <label class="md-textfield-outlined">
+                                <textarea type="text" placeholder=" " class="input md-input" name="client_message" id="client_message" autocomplete="off" value=""></textarea>
+                                <span>Your name</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="custom-input--small-checkbox">
+                                <input type="checkbox" name="alert">
+                                <span class="input d-inline-block"></span>Email alert on similar properties
+                            </label>
+                        </div>
+                        <button class="btn btn--main contact-form__btn">Contact Agent</button>
+                    </div>
                 </div>
             </div>
             <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
@@ -277,71 +354,254 @@ imop<br>
             </button>
         </div>
     </div>
+    
+    <div class="modal fade" id="login_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content signup-form">
+                <div class="modal-header d-block pt-lg-4">
+                    <img src="./images/logo-full.svg?v=d-LSKtJFKn7Q2IpmPPKE_tY5j6bSpunHUqzYzKI7XOA" class="signup__logo" alt="Vizzit Logo" />
+                    <p class="modal-title text-center mb-2 mb-lg-3">
+                        Connect and find your favorites, searches, alerts and conversations 
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-form">
+                        <div class="form-group">
+                            <label class="md-textfield-outlined">
+                                <input type="tel" placeholder=" " class="input md-input" id="user_phone" autocomplete="off" value="+33 1 45 35 97 33">
+                                <span>Your phone</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="md-textfield-outlined">
+                                <i class="btn btn--pass-visible"></i>
+                                <input type="password" placeholder=" " class="input md-input input--with-icon input--with-icon-pass" id="user_password" autocomplete="off" value="12345678">
+                                <span>Password</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-block pb-2">
+                    <a href="customer-chat.html">
+                        <button class="btn btn--main btn--login mb-2">Sign in</button>
+                    </a>
+                    <button class="btn btn--main btn--signup" data-dismiss="modal" data-toggle="modal" data-target="#forgotpass_modal">Forgot password</button>
+                    <hr class="mt-2 mb-4"/>
+                    <button class="btn btn--gray btn--login"><span class="icon icon--apple"></span>Sign in with Apple</button>
+                    <p class="text-center mt-3 mb-0">Don`t have an account on Vizzit?</p>
+                    <button class="btn btn--main btn--signup" data-dismiss="modal" data-toggle="modal" data-target="#signup_modal">Create account</button>
+                </div>
+            </div>
+            <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+                <span class="btn--close__line"></span>
+                <span class="btn--close__line"></span>
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="signup_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content signup-form">
+                <div class="modal-header d-block pt-lg-4">
+                    <img src="./images/logo-full.svg?v=d-LSKtJFKn7Q2IpmPPKE_tY5j6bSpunHUqzYzKI7XOA" class="signup__logo" alt="Vizzit Logo" />
+                    <p class="modal-title text-center mb-2 mb-lg-3">
+                        Sign up and manage your favorites, searches, alerts and conversations. 
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-form">
+                        <div class="form-group">
+                            <label class="md-textfield-outlined">
+                                <input placeholder=" " class="input md-input" id="user_name" autocomplete="off" value="Jhon Doe">
+                                <span>Name</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="md-textfield-outlined">
+                                <input type="tel" placeholder=" " class="input md-input" id="user_phone" autocomplete="off" value="+33 1 45 35 97 33">
+                                <span>Your phone</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="md-textfield-outlined">
+                                <i class="btn btn--pass-visible"></i>
+                                <input type="password" placeholder=" " class="input md-input input--with-icon input--with-icon-pass" id="user_password" autocomplete="off" value="12345678">
+                                <span>Password</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- <a href="#" class="link--forgot-pass">Forgot Password?</a> -->
+                </div>
+                <div class="modal-footer d-block pb-2">
+                    <button class="btn btn--main btn--login mb-2" data-dismiss="modal" data-toggle="modal" data-target="#verifMsg_modal">Validate</button>
+                    <hr class=""/>
+                    <p class="text-center mb-0">Already have an account on Vizzit?</p>
+                    <button class="btn btn--main btn--signup" data-dismiss="modal" data-toggle="modal" data-target="#login_modal">Sign In</button>
+                </div>
+            </div>
+            <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+                <span class="btn--close__line"></span>
+                <span class="btn--close__line"></span>
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="verifMsg_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content signup-form">
+                <div class="modal-header d-block pt-lg-4">
+                    <img src="./images/logo-full.svg?v=d-LSKtJFKn7Q2IpmPPKE_tY5j6bSpunHUqzYzKI7XOA" class="signup__logo" alt="Vizzit Logo" />
+                    <p class="text-center mb-1">
+                        Your verification code has been sent to your phone number 
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-title font-weight-semi text-center">+33 1 45 35 97 33</p>
+                    <div class="row align-items-center justify-content-center mb-3">
+                        <p class="font-weight-semi text-center mb-0">Wrong number?</p>
+                        <button class="btn btn--main btn--signup w-auto" data-dismiss="modal" data-toggle="modal" data-target="#signup_modal">Try again</button>
+                    </div>
+                    <div class="modal-form">
+                        <!-- <div class="form-group"> -->
+                        <div class="form-group d-flex justify-content-center">
+                            <!-- <input type="text" placeholder="____" class="input input--verif" size="4" id="verif_code" autocomplete="off" value="" maxlength="4"> -->
+                            <input type="text" placeholder="" class="input input--verif" size="1" id="verif_code_1" autocomplete="off" value=""  maxlength="1" autofocus>
+                            <input type="text" placeholder="" class="input input--verif" size="1" id="verif_code_2" autocomplete="off" value="" maxlength="1">
+                            <input type="text" placeholder="" class="input input--verif" size="1" id="verif_code_3" autocomplete="off" value="" maxlength="1">
+                            <input type="text" placeholder="" class="input input--verif" size="1" id="verif_code_4" autocomplete="off" value="" maxlength="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-block pb-2">
+                    <button class="btn btn--main btn--login mb-2">Confirm</button>
+                    <hr class="mb-1"/>
+                    <button class="btn btn--main btn--signup " data-dismiss="modal" data-toggle="modal" data-target="#verifCall_modal">Call me instead</button>
+                </div>
+            </div>
+            <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+                <span class="btn--close__line"></span>
+                <span class="btn--close__line"></span>
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="verifCall_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content signup-form">
+                <div class="modal-header d-block pt-lg-4">
+                    <img src="./images/logo-full.svg?v=d-LSKtJFKn7Q2IpmPPKE_tY5j6bSpunHUqzYzKI7XOA" class="signup__logo" alt="Vizzit Logo" />
+                    <p class="text-center mb-1">
+                        Your verification code is being delivered by an automatic call 
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-title font-weight-semi text-center">+33 1 45 35 97 33</p>
+                    <div class="row align-items-center justify-content-center mb-3">
+                        <p class="font-weight-semi text-center mb-0">Wrong number?</p>
+                        <button class="btn btn--main btn--signup w-auto" data-dismiss="modal" data-toggle="modal" data-target="#signup_modal">Try again</button>
+                    </div>
+                    <div class="modal-form">
+                        <!-- <div class="form-group"> -->
+                        <div class="form-group d-flex justify-content-center">
+                            <!-- <input type="text" placeholder="____" class="input input--verif" size="4" id="verif_code" autocomplete="off" value="" maxlength="4"> -->
+                            <input type="text" placeholder="" class="input input--verif" size="1" id="verif_code_1" autocomplete="off" value=""  maxlength="1" autofocus>
+                            <input type="text" placeholder="" class="input input--verif" size="1" id="verif_code_2" autocomplete="off" value="" maxlength="1">
+                            <input type="text" placeholder="" class="input input--verif" size="1" id="verif_code_3" autocomplete="off" value="" maxlength="1">
+                            <input type="text" placeholder="" class="input input--verif" size="1" id="verif_code_4" autocomplete="off" value="" maxlength="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-block pb-2">
+                    <button class="btn btn--main btn--login mb-2">Confirm</button>
+                    <hr class="mb-1"/>
+                    <button class="btn btn--main btn--signup " data-dismiss="modal" data-toggle="modal" data-target="#verifMsg_modal">Text me instead</button>
+                </div>
+            </div>
+            <button type="button" class="btn btn--secondary btn--modal-close d-md-none" data-dismiss="modal">
+                <span class="btn--close__line"></span>
+                <span class="btn--close__line"></span>
+            </button>
+        </div>
+    </div>
+
+
+
     <div class="d-lg-block col-lg-3 contact-form-area p-0 pr-lg-3 pl-lg-0">
         <div class="contact-form">
             
-<form>
-    <p class="contact-form__price item__price d-flex align-items-center">
-        30 000 000 €
-    </p>
-    <div class="contact-form__agency-details">
-        Contact <b>TODEOR AGENCY</b> about <b>Amazing 5 bedroom terraced house very well situated</b>
-    </div>
-    <div class="contact-form__body">
-        <div class="text-right">
-            <a href="#" class="contact-form__link d-inline-block">Legal Notice</a>
-        </div>
-        <div class="form-group">
-            <input class="form-control input" type="text" placeholder="Your name" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <input class="form-control input" type="text" placeholder="Your phone" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <input class="form-control input" type="email" placeholder="Your email" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <label class="contact-form__label">You would like...</label>
-            <div class="row">
-                <div class="col-6 pr-0">
-                    <label class="custom-input--small-checkbox">
-                        <input type="checkbox" name="contacted">
-                        <span class="input d-inline-block"></span>To be contacted
-                    </label>
-                    <label class="custom-input--small-checkbox">
-                        <input type="checkbox" name="visit">
-                        <span class="input d-inline-block"></span>To visit
-                    </label>
+            <form>
+                <p class="contact-form__price item__price d-flex align-items-center">
+                    30 000 000 €
+                </p>
+                <div class="contact-form__agency-details">
+                    Contact <b>TODEOR AGENCY</b> about <b>Amazing 5 bedroom terraced house very well situated</b>
                 </div>
-                <div class="col-6 pl-0">
-                    <label class="custom-input--small-checkbox">
-                        <input type="checkbox" name="photos">
-                        <span class="input d-inline-block"></span>More photos
-                    </label>
-                    <label class="custom-input--small-checkbox">
-                        <input type="checkbox" name="information">
-                        <span class="input d-inline-block"></span>More information
-                    </label>
+                <div class="contact-form__body">
+                    <div class="text-right">
+                        <a href="#" class="contact-form__link d-inline-block">Legal Notice</a>
+                    </div>
+                    <div class="form-group mb-1">
+                        <label class="md-textfield-outlined">
+                            <input type="text" placeholder=" " class="input md-input" name="client_name" id="client_name" autocomplete="off" value="">
+                            <span>Your name</span>
+                        </label>
+                    </div>
+                    <div class="form-group mb-2">
+                        <input class="form-control input border-primary" type="text" placeholder="Your phone" id="client_phone" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label class="md-textfield-outlined">
+                            <input type="email" placeholder=" " class="input md-input" name="client_email" id="client_email" autocomplete="off" value="">
+                            <span>Your email</span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="contact-form__label">You would like...</label>
+                        <div class="row">
+                            <div class="col-6 pr-0">
+                                <label class="custom-input--small-checkbox">
+                                    <input type="checkbox" name="contacted">
+                                    <span class="input d-inline-block"></span>To be contacted
+                                </label>
+                                <label class="custom-input--small-checkbox">
+                                    <input type="checkbox" name="visit">
+                                    <span class="input d-inline-block"></span>To visit
+                                </label>
+                            </div>
+                            <div class="col-6 pl-0">
+                                <label class="custom-input--small-checkbox">
+                                    <input type="checkbox" name="photos">
+                                    <span class="input d-inline-block"></span>More photos
+                                </label>
+                                <label class="custom-input--small-checkbox">
+                                    <input type="checkbox" name="information">
+                                    <span class="input d-inline-block"></span>More information
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label class="md-textfield-outlined">
+                            <textarea type="text" placeholder=" " class="input md-input" name="client_message" id="client_message" autocomplete="off" value=""></textarea>
+                            <span>Your name</span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-input--small-checkbox">
+                            <input type="checkbox" name="alert">
+                            <span class="input d-inline-block"></span>Email alert on similar properties
+                        </label>
+                    </div>
+                    <button class="btn btn--main contact-form__btn">Contact Agent</button>
                 </div>
+            </form>
+
+            <div class="d-none d-lg-flex">
+                <span class="input item__btn-favorite d-flex align-items-center justify-content-center">Add to Favorites</span>
+                <span class="input item__btn-share"></span>
+                <span class="input item__btn-print print_btn"></span>
             </div>
-        </div>
-        <div class="form-group">
-            <textarea class="form-control input" type="email" placeholder="Type Your message" id="client_message" autocomplete="off"></textarea>
-        </div>
-        <div class="form-group">
-            <label class="custom-input--small-checkbox">
-                <input type="checkbox" name="alert">
-                <span class="input d-inline-block"></span>Email alert on similar properties
-            </label>
-        </div>
-        <button class="btn btn--main contact-form__btn">Contact Agent</button>
-    </div>
-</form>
-                <div class="d-none d-lg-flex">
-                    <span class="input item__btn-favorite d-flex align-items-center justify-content-center">Add to Favorites</span>
-                    <span class="input item__btn-share"></span>
-                    <span class="input item__btn-print print_btn"></span>
-                </div>
+
         </div>
     </div>
     <div id="btn_contact" class="floating-btn-group--contact d-lg-none">
@@ -426,6 +686,9 @@ imop<br>
 <script>(ClipboardJS||document.write("\u003Cscript src=\u0022\/lib\/clipboard\/clipboard.min.js\u0022 crossorigin=\u0022anonymous\u0022\u003E\u003C\/script\u003E"));</script>
 
     <script type="text/javascript" src="./js/listing_item.js" defer></script>
+    <script type="text/javascript" src="./js/input_material.js" defer></script>
+    <script type="text/javascript" src="./js/input_material_password.js" defer></script>
+    <script type="text/javascript" src="./js/input_pincode.js" defer></script>
 
 </body>
 </html>

@@ -32,12 +32,15 @@
 @import '_icons';
 @import '_common';
 
-@import '_contact_form';
+// for Favorites: 
 @import '_item';
-// @import '_listing';
 @import '_customer_favorites';
 
+// for Messenger:
 @import '_chat';
+
+// for Favorites, Messenger, Alerts, My Account:
+@import '_contact_form';
 @import '_customer_chat';
 
 @import '_footer';

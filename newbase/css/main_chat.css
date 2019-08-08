@@ -6565,6 +6565,9 @@ a.nounderline {
         margin-left: 4px;
         border-right: solid 1px transparent;
         border-radius: 0 5px; }
+  .md-textfield-outlined textarea {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; }
   .md-textfield-outlined:hover > input, .md-textfield-outlined:hover > textarea {
     border-color: #ee650d;
     border-top-color: transparent; }

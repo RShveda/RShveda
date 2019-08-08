@@ -5647,6 +5647,15 @@ a.text-dark:hover, a.text-dark:focus {
     .btn--secondary:hover, .btn--secondary:active {
       background: #dadada;
       color: inherit; }
+  .btn--gray {
+    height: 46px;
+    font-size: 1.02em;
+    background: #dadada;
+    border: 1px solid #dadada;
+    color: #484848; }
+    .btn--gray:hover, .btn--gray:active {
+      background: #fff;
+      color: inherit; }
   .btn--nav, .btn--filters, .btn--close {
     max-width: 50px;
     height: 50px;
@@ -5793,6 +5802,26 @@ a.text-dark:hover, a.text-dark:focus {
     z-index: 5;
     background-image: url(../images/icon-send-gray.svg);
     right: 0; }
+  .btn--more {
+    width: 24px;
+    height: 40px;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/icon-more.svg); }
+  .btn--pass-visible {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    background-image: url(../images/icon-visible.svg);
+    background-size: 1.5rem; }
+    .btn--pass-visible.active {
+      background-image: url(../images/icon-invisible.svg); }
 
 .header {
   height: 50px;
@@ -6023,6 +6052,9 @@ a.text-dark:hover, a.text-dark:focus {
   background-size: 100%;
   background-repeat: no-repeat;
   display: block; }
+  .icon-16 {
+    width: 1rem;
+    height: 1rem; }
   .icon--area {
     background-image: url(../images/icon-area.svg); }
   .icon--room {
@@ -6051,6 +6083,8 @@ a.text-dark:hover, a.text-dark:focus {
     background-image: url(../images/icon-search.svg); }
   .icon--search-white {
     background-image: url(../images/icon-search-white.svg); }
+  .icon--search-orange {
+    background-image: url(../images/icon-search-orange.svg); }
   .icon--close {
     background-image: url(../images/icon-close.svg); }
   .icon--close-white {
@@ -6062,7 +6096,7 @@ a.text-dark:hover, a.text-dark:focus {
     height: 1rem;
     color: #fff;
     text-align: center;
-    font-size: 10px;
+    font-size: 11px;
     display: inline-flex;
     justify-content: center; }
   .icon--check-orange {
@@ -6082,6 +6116,59 @@ a.text-dark:hover, a.text-dark:focus {
     background-image: url(../images/icon-download.svg);
     width: 1.5rem;
     height: 1.5rem; }
+  .icon--apple {
+    background-image: url(../images/icon-apple.svg);
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin-right: 0.5rem; }
+  .icon--visible {
+    background-image: url(../images/icon-visible.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block; }
+  .icon--invisible {
+    background-image: url(../images/icon-invisible.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block; }
+  .icon--favorite-gray {
+    background-image: url(../images/icon-favorite-gray.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem; }
+  .icon--msg-gray {
+    background-image: url(../images/icon-msg-gray.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem; }
+  .icon--alert-gray {
+    background-image: url(../images/icon-alert-gray.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem; }
+  .icon--user-gray {
+    background-image: url(../images/icon-user-gray.svg);
+    background-size: auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem; }
+  .icon--more {
+    background-image: url(../images/icon-more.svg);
+    background-size: auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block; }
+  .icon--delete-orange {
+    background-image: url(../images/icon-delete-orange.svg); }
 
 /* ------------- Global -------------- */
 a.nounderline {
@@ -6089,6 +6176,15 @@ a.nounderline {
 
 .smaller {
   font-size: 11px; }
+
+.font-weight-semi {
+  font-family: 'OpenSans Semibold'; }
+
+.line-height-18 {
+  line-height: 18px; }
+
+.dropdown-menu {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); }
 
 /* ------------- Animation Favorite -------------- */
 @keyframes icon-favorites-added {
@@ -6127,6 +6223,12 @@ a.nounderline {
   .input:focus {
     border-color: #989696;
     box-shadow: none; }
+  .input:invalid {
+    box-shadow: none; }
+  .input:-moz-submit-invalid {
+    box-shadow: none; }
+  .input:-moz-ui-invalid {
+    box-shadow: none; }
   .input--dropdown {
     background-image: url(../images/icon-dropdown.svg);
     background-position: right 10px center;
@@ -6134,6 +6236,20 @@ a.nounderline {
     background-repeat: no-repeat;
     -webkit-appearance: none;
     cursor: pointer; }
+    .input--dropdown-alert {
+      background-image: url(../images/icon-alert-orange.svg), url(../images/icon-dropdown.svg);
+      background-position: left center, right center;
+      background-size: 16px, 10px;
+      background-repeat: no-repeat;
+      -webkit-appearance: none;
+      padding: 0.5rem 1.25rem 0.5rem 1.65rem;
+      cursor: pointer;
+      font-family: 'OpenSans Semibold';
+      border: none;
+      width: auto;
+      height: auto; }
+      .input--dropdown-alert-d {
+        background-image: url(../images/icon-alert-orange-d.svg), url(../images/icon-dropdown.svg); }
   .input--with-icon {
     background-size: 1.5rem;
     padding-left: 3rem;
@@ -6143,6 +6259,22 @@ a.nounderline {
       background-image: url(../images/icon-search.svg); }
     .input--with-icon-file {
       background-image: url(../images/icon-file.svg); }
+    .input--with-icon-pass {
+      padding-left: 14px;
+      padding-right: 3rem; }
+    .input--with-icon-alert {
+      background-image: url(../images/icon-alert-d.svg); }
+  .input--verif {
+    border-color: #ee650d;
+    width: 46px;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    display: inline-block;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-left: 0; }
+    .input--verif:focus {
+      border-color: #ee650d; }
 
 /* ------------- Custom Inputs (Radio and Checkbox) -------------- */
 .custom-input--radio-checker {
@@ -6200,124 +6332,188 @@ a.nounderline {
     vertical-align: middle;
     margin-right: 6px; }
 
-/* ------------- Material Outlined Inputs -------------- */
-/* Input, Textarea */
-.form-group .pure-material-textfield-outlined.label {
-  --pure-material-safari-helper1: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+/* ------------- Material Outlined Textfields (Input, Textarea) -------------- */
+.md-textfield-outlined {
   position: relative;
   display: inline-block;
   padding-top: 6px;
   font-size: 1em;
   width: 100%;
   overflow: hidden; }
-  .form-group .pure-material-textfield-outlined.label input, .form-group .pure-material-textfield-outlined.label textarea {
-    box-sizing: border-box;
+  .md-textfield-outlined input, .md-textfield-outlined textarea {
     margin: 0;
     border: solid 1px;
-    /* Safari */
-    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    border-color: #ee650d;
     border-top-color: transparent;
-    border-radius: 4px;
-    padding: 15px 13px 15px;
     width: 100%;
-    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
-    background-color: transparent;
-    box-shadow: none;
-    /* Firefox */
     font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    caret-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
-    transition: border 0.2s, box-shadow 0.2s; }
-    .form-group .pure-material-textfield-outlined.label input + span, .form-group .pure-material-textfield-outlined.label textarea + span {
+    font-size: 1rem;
+    line-height: inherit; }
+    .md-textfield-outlined input + span, .md-textfield-outlined textarea + span {
       position: absolute;
       top: 0;
       left: 0;
       display: flex;
-      border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+      border-color: #ee650d;
       width: 100%;
       max-height: 100%;
-      color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
-      font-size: 75%;
-      line-height: 15px;
+      font-size: 10px;
+      line-height: 13px;
       cursor: text;
       transition: color 0.2s, font-size 0.2s, line-height 0.2s; }
-      .form-group .pure-material-textfield-outlined.label input + span::before, .form-group .pure-material-textfield-outlined.label input + span::after, .form-group .pure-material-textfield-outlined.label textarea + span::before, .form-group .pure-material-textfield-outlined.label textarea + span::after {
+      .md-textfield-outlined input + span::before, .md-textfield-outlined input + span::after, .md-textfield-outlined textarea + span::before, .md-textfield-outlined textarea + span::after {
         content: "";
         display: block;
-        box-sizing: border-box;
         margin-top: 6px;
         border-top: solid 1px;
-        border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+        border-top-color: #ee650d;
         min-width: 10px;
         height: 8px;
-        pointer-events: none;
-        box-shadow: inset 0 1px transparent;
-        transition: border-color 0.2s, box-shadow 0.2s; }
-      .form-group .pure-material-textfield-outlined.label input + span::before, .form-group .pure-material-textfield-outlined.label textarea + span::before {
+        pointer-events: none; }
+      .md-textfield-outlined input + span::before, .md-textfield-outlined textarea + span::before {
         margin-right: 4px;
         border-left: solid 1px transparent;
-        border-radius: 4px 0; }
-      .form-group .pure-material-textfield-outlined.label input + span::after, .form-group .pure-material-textfield-outlined.label textarea + span::after {
+        border-radius: 5px 0; }
+      .md-textfield-outlined input + span::after, .md-textfield-outlined textarea + span::after {
         flex-grow: 1;
         margin-left: 4px;
         border-right: solid 1px transparent;
-        border-radius: 0 4px; }
-  .form-group .pure-material-textfield-outlined.label:hover > input, .form-group .pure-material-textfield-outlined.label:hover > textarea {
-    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+        border-radius: 0 5px; }
+  .md-textfield-outlined textarea {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; }
+  .md-textfield-outlined:hover > input, .md-textfield-outlined:hover > textarea {
+    border-color: #ee650d;
     border-top-color: transparent; }
-    .form-group .pure-material-textfield-outlined.label:hover > input + span::before, .form-group .pure-material-textfield-outlined.label:hover > input + span::after, .form-group .pure-material-textfield-outlined.label:hover > textarea + span::before, .form-group .pure-material-textfield-outlined.label:hover > textarea + span::after {
-      border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87); }
-    .form-group .pure-material-textfield-outlined.label:hover > input:not(:focus):placeholder-shown, .form-group .pure-material-textfield-outlined.label:hover > textarea:not(:focus):placeholder-shown {
-      border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87); }
-  .form-group .pure-material-textfield-outlined.label > input:not(:focus):placeholder-shown, .form-group .pure-material-textfield-outlined.label > textarea:not(:focus):placeholder-shown {
-    border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6); }
-    .form-group .pure-material-textfield-outlined.label > input:not(:focus):placeholder-shown + span, .form-group .pure-material-textfield-outlined.label > textarea:not(:focus):placeholder-shown + span {
-      font-size: inherit;
-      line-height: 68px; }
-      .form-group .pure-material-textfield-outlined.label > input:not(:focus):placeholder-shown + span::before, .form-group .pure-material-textfield-outlined.label > input:not(:focus):placeholder-shown + span::after, .form-group .pure-material-textfield-outlined.label > textarea:not(:focus):placeholder-shown + span::before, .form-group .pure-material-textfield-outlined.label > textarea:not(:focus):placeholder-shown + span::after {
+    .md-textfield-outlined:hover > input + span::before, .md-textfield-outlined:hover > input + span::after, .md-textfield-outlined:hover > textarea + span::before, .md-textfield-outlined:hover > textarea + span::after {
+      border-top-color: #ee650d; }
+    .md-textfield-outlined:hover > input:not(:focus):placeholder-shown, .md-textfield-outlined:hover > textarea:not(:focus):placeholder-shown {
+      border-color: #ee650d; }
+    .md-textfield-outlined:hover > input:not(:focus):-moz-placeholder, .md-textfield-outlined:hover > textarea:not(:focus):-moz-placeholder {
+      border-color: #ee650d; }
+    .md-textfield-outlined:hover > input:not(:focus):-ms-input-placeholder, .md-textfield-outlined:hover > textarea:not(:focus):-ms-input-placeholder {
+      border-color: #ee650d; }
+    .md-textfield-outlined:hover > input:not(.focused), .md-textfield-outlined:hover > textarea:not(.focused) {
+      border-color: #ee650d; }
+  .md-textfield-outlined > input:not(:focus):placeholder-shown, .md-textfield-outlined > textarea:not(:focus):placeholder-shown {
+    border-top-color: #ee650d; }
+    .md-textfield-outlined > input:not(:focus):placeholder-shown + span, .md-textfield-outlined > textarea:not(:focus):placeholder-shown + span {
+      font-size: 1rem;
+      line-height: 58px; }
+      .md-textfield-outlined > input:not(:focus):placeholder-shown + span::before, .md-textfield-outlined > input:not(:focus):placeholder-shown + span::after, .md-textfield-outlined > textarea:not(:focus):placeholder-shown + span::before, .md-textfield-outlined > textarea:not(:focus):placeholder-shown + span::after {
         border-top-color: transparent; }
-  .form-group .pure-material-textfield-outlined.label > input:focus, .form-group .pure-material-textfield-outlined.label > textarea:focus {
-    border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+  .md-textfield-outlined > input:not(:focus):-moz-placeholder, .md-textfield-outlined > textarea:not(:focus):-moz-placeholder {
+    border-top-color: #ee650d; }
+    .md-textfield-outlined > input:not(:focus):-moz-placeholder + span, .md-textfield-outlined > textarea:not(:focus):-moz-placeholder + span {
+      font-size: 1rem;
+      line-height: 58px; }
+      .md-textfield-outlined > input:not(:focus):-moz-placeholder + span::before, .md-textfield-outlined > input:not(:focus):-moz-placeholder + span::after, .md-textfield-outlined > textarea:not(:focus):-moz-placeholder + span::before, .md-textfield-outlined > textarea:not(:focus):-moz-placeholder + span::after {
+        border-top-color: transparent; }
+  .md-textfield-outlined > input:not(:focus):-ms-input-placeholder, .md-textfield-outlined > textarea:not(:focus):-ms-input-placeholder {
+    border-top-color: #ee650d; }
+    .md-textfield-outlined > input:not(:focus):-ms-input-placeholder + span, .md-textfield-outlined > textarea:not(:focus):-ms-input-placeholder + span {
+      font-size: 1rem;
+      line-height: 58px; }
+      .md-textfield-outlined > input:not(:focus):-ms-input-placeholder + span::before, .md-textfield-outlined > input:not(:focus):-ms-input-placeholder + span::after, .md-textfield-outlined > textarea:not(:focus):-ms-input-placeholder + span::before, .md-textfield-outlined > textarea:not(:focus):-ms-input-placeholder + span::after {
+        border-top-color: transparent; }
+  .md-textfield-outlined > input:not(.focused), .md-textfield-outlined > textarea:not(.focused) {
+    border-top-color: #ee650d; }
+    .md-textfield-outlined > input:not(.focused) + span, .md-textfield-outlined > textarea:not(.focused) + span {
+      font-size: 1rem;
+      line-height: 58px; }
+      .md-textfield-outlined > input:not(.focused) + span::before, .md-textfield-outlined > input:not(.focused) + span::after, .md-textfield-outlined > textarea:not(.focused) + span::before, .md-textfield-outlined > textarea:not(.focused) + span::after {
+        border-top-color: transparent; }
+  .md-textfield-outlined > input:focus, .md-textfield-outlined > input.focused, .md-textfield-outlined > textarea:focus, .md-textfield-outlined > textarea.focused {
+    border-color: #ee650d;
     border-top-color: transparent;
-    box-shadow: inset 1px 0 var(--pure-material-safari-helper1), inset -1px 0 var(--pure-material-safari-helper1), inset 0 -1px var(--pure-material-safari-helper1);
     outline: none; }
-    .form-group .pure-material-textfield-outlined.label > input:focus + span, .form-group .pure-material-textfield-outlined.label > textarea:focus + span {
-      color: rgb(var(--pure-material-primary-rgb, 33, 150, 243)); }
-      .form-group .pure-material-textfield-outlined.label > input:focus + span::before, .form-group .pure-material-textfield-outlined.label > input:focus + span::after, .form-group .pure-material-textfield-outlined.label > textarea:focus + span::before, .form-group .pure-material-textfield-outlined.label > textarea:focus + span::after {
-        border-top-color: var(--pure-material-safari-helper1) !important;
-        box-shadow: inset 0 1px var(--pure-material-safari-helper1); }
-  .form-group .pure-material-textfield-outlined.label > input:disabled, .form-group .pure-material-textfield-outlined.label > textarea:disabled {
-    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important;
+    .md-textfield-outlined > input:focus + span::before, .md-textfield-outlined > input:focus + span::after, .md-textfield-outlined > input.focused + span::before, .md-textfield-outlined > input.focused + span::after, .md-textfield-outlined > textarea:focus + span::before, .md-textfield-outlined > textarea:focus + span::after, .md-textfield-outlined > textarea.focused + span::before, .md-textfield-outlined > textarea.focused + span::after {
+      border-top-color: #ee650d; }
+  .md-textfield-outlined > input:disabled, .md-textfield-outlined > textarea:disabled {
+    border-color: #dadada;
     border-top-color: transparent !important;
-    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    color: #dadada;
     pointer-events: none; }
-    .form-group .pure-material-textfield-outlined.label > input:disabled + span, .form-group .pure-material-textfield-outlined.label > textarea:disabled + span {
-      border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important;
+    .md-textfield-outlined > input:disabled + span, .md-textfield-outlined > textarea:disabled + span {
+      border-color: #dadada !important;
       border-top-color: transparent !important;
-      color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+      color: #dadada;
       pointer-events: none; }
-      .form-group .pure-material-textfield-outlined.label > input:disabled + span::before, .form-group .pure-material-textfield-outlined.label > input:disabled + span::after, .form-group .pure-material-textfield-outlined.label > textarea:disabled + span::before, .form-group .pure-material-textfield-outlined.label > textarea:disabled + span::after {
-        border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important; }
-    .form-group .pure-material-textfield-outlined.label > input:disabled:placeholder-shown, .form-group .pure-material-textfield-outlined.label > textarea:disabled:placeholder-shown {
-      border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important; }
-      .form-group .pure-material-textfield-outlined.label > input:disabled:placeholder-shown + span, .form-group .pure-material-textfield-outlined.label > textarea:disabled:placeholder-shown + span {
-        border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important; }
-        .form-group .pure-material-textfield-outlined.label > input:disabled:placeholder-shown + span::before, .form-group .pure-material-textfield-outlined.label > input:disabled:placeholder-shown + span::after, .form-group .pure-material-textfield-outlined.label > textarea:disabled:placeholder-shown + span::before, .form-group .pure-material-textfield-outlined.label > textarea:disabled:placeholder-shown + span::after {
+      .md-textfield-outlined > input:disabled + span::before, .md-textfield-outlined > input:disabled + span::after, .md-textfield-outlined > textarea:disabled + span::before, .md-textfield-outlined > textarea:disabled + span::after {
+        border-top-color: #dadada !important; }
+    .md-textfield-outlined > input:disabled:placeholder-shown, .md-textfield-outlined > textarea:disabled:placeholder-shown {
+      border-top-color: #dadada !important; }
+      .md-textfield-outlined > input:disabled:placeholder-shown + span, .md-textfield-outlined > textarea:disabled:placeholder-shown + span {
+        border-top-color: #dadada !important; }
+        .md-textfield-outlined > input:disabled:placeholder-shown + span::before, .md-textfield-outlined > input:disabled:placeholder-shown + span::after, .md-textfield-outlined > textarea:disabled:placeholder-shown + span::before, .md-textfield-outlined > textarea:disabled:placeholder-shown + span::after {
+          border-top-color: transparent !important; }
+    .md-textfield-outlined > input:disabled:-moz-placeholder, .md-textfield-outlined > textarea:disabled:-moz-placeholder {
+      border-top-color: #dadada !important; }
+      .md-textfield-outlined > input:disabled:-moz-placeholder + span, .md-textfield-outlined > textarea:disabled:-moz-placeholder + span {
+        border-top-color: #dadada !important; }
+        .md-textfield-outlined > input:disabled:-moz-placeholder + span::before, .md-textfield-outlined > input:disabled:-moz-placeholder + span::after, .md-textfield-outlined > textarea:disabled:-moz-placeholder + span::before, .md-textfield-outlined > textarea:disabled:-moz-placeholder + span::after {
           border-top-color: transparent !important; }
 
 /* Faster transition in Safari for less noticable fractional font-size issue */
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
-    .pure-material-textfield-outlined > input,
-    .pure-material-textfield-outlined > input + span,
-    .pure-material-textfield-outlined > textarea,
-    .pure-material-textfield-outlined > textarea + span,
-    .pure-material-textfield-outlined > input + span::before,
-    .pure-material-textfield-outlined > input + span::after,
-    .pure-material-textfield-outlined > textarea + span::before,
-    .pure-material-textfield-outlined > textarea + span::after {
+    .md-textfield-outlined > input,
+    .md-textfield-outlined > input + span,
+    .md-textfield-outlined > textarea,
+    .md-textfield-outlined > textarea + span,
+    .md-textfield-outlined > input + span::before,
+    .md-textfield-outlined > input + span::after,
+    .md-textfield-outlined > textarea + span::before,
+    .md-textfield-outlined > textarea + span::after {
       transition-duration: 0.1s; } } }
+/* ------------- Material Radio Buttons  -------------- */
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0); }
+  50% {
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1); }
+  100% {
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0); } }
+.md-radio {
+  margin-bottom: 0.5rem; }
+  .md-radio.md-radio-inline {
+    display: inline-block; }
+  .md-radio input[type="radio"] {
+    display: none; }
+    .md-radio input[type="radio"]:checked + label:before {
+      border-color: #ee650d;
+      animation: ripple 0.2s linear forwards; }
+    .md-radio input[type="radio"]:checked + label:after {
+      transform: scale(1); }
+  .md-radio label {
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    padding: 0 30px;
+    margin-bottom: 0;
+    cursor: pointer;
+    vertical-align: middle;
+    line-height: 20px; }
+    .md-radio label:before, .md-radio label:after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      transition: all .3s ease;
+      transition-property: transform, border-color; }
+    .md-radio label:before {
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #989696; }
+    .md-radio label:after {
+      top: 5px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      transform: scale(0);
+      background: #ee650d; }
+
 /* ------------- Choices Input -------------- */
 .choices {
   font-family: "OpenSans Regular";
@@ -6572,7 +6768,10 @@ a.nounderline {
     .footer--global.footer--chat__details {
       text-align: center; }
       .footer--global.footer--chat__details a {
-        text-decoration: underline; } }
+        text-decoration: underline; }
+    .footer--global.footer--chat.footer--chat-customer {
+      position: absolute;
+      bottom: 0; } }
 
 /*** For IE ***/
 @media all and (min-width: 992px) and (-ms-high-contrast: none), (min-width: 992px) and (-ms-high-contrast: active) {

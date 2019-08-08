@@ -1,7 +1,5 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
 
-    
-
     let btn_favorite = document.getElementsByClassName('item__icon-favorite');
     let btn_remove_favorite = document.getElementById('btn_remove_favorite');
     let btn_unremove_favorite = document.getElementById('btn_unremove_favorite');
